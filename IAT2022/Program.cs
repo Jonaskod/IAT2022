@@ -1,10 +1,37 @@
+using IAT2022.Data;
+using IAT2022.Repositories;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-var app = builder.Build();
+string connectionPostgres = builder.Configuration["ConnectionStrings:Default"];
+string connectionSQLite = builder.Configuration["ConnectionStrings:Develop"];
 
+
+
+builder.Services.AddDbContext<AppDbContext>(o => o.UseSqlite(connectionSQLite)); // Hur man ansluter till sqllite databas (DBeaver) Pirater/Hockeyclubar
+builder.Services.AddScoped<IDbRepository, DbRepository>();
+
+builder.Services.AddDbContext<LoginDbContext>(
+   options => options.UseSqlite(connectionSQLite));
+
+builder.Services.AddIdentity<IdentityUser, IdentityRole>()
+ .AddEntityFrameworkStores<LoginDbContext>();
+
+builder.Services.Configure<IdentityOptions>(options =>
+{
+    options.Password.RequireDigit = false;
+    options.Password.RequireLowercase = false;
+    options.Password.RequireUppercase = false;
+    options.Password.RequiredLength = 5;
+    options.Password.RequireNonAlphanumeric = false;
+});
+
+var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
 {
@@ -19,6 +46,8 @@ app.UseStaticFiles();
 app.UseRouting();
 
 app.UseAuthorization();
+
+app.UseAuthentication();
 
 app.MapControllerRoute(
     name: "default",

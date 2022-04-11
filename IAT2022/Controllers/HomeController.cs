@@ -1,24 +1,26 @@
 ﻿using IAT2022.Models;
+using IAT2022.Repositories;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace IAT2022.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-
         public HomeController(ILogger<HomeController> logger)
         {
             _logger = logger;
         }
-
-        public IActionResult Index()
+        
+        public async Task<IActionResult> Index()
         {
             return View();
         }
-
-        public IActionResult Privacy()
+       
+        public async Task<IActionResult> Privacy()
         {
             return View();
         }

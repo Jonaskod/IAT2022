@@ -14,11 +14,12 @@ namespace IAT2022.Controllers
         {
             _logger = logger;
         }
-        
+ 
         public async Task<IActionResult> Index()
         {
             return View();
         }
+        
        
         public async Task<IActionResult> Privacy()
         {

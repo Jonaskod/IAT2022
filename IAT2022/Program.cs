@@ -20,7 +20,7 @@ builder.Services.AddDbContext<LoginDbContext>(
    options => options.UseSqlite(connectionSQLite));
 
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()
- .AddEntityFrameworkStores<LoginDbContext>();
+ .AddEntityFrameworkStores<LoginDbContext>().AddDefaultTokenProviders();
 
 builder.Services.Configure<IdentityOptions>(options =>
 {
@@ -51,6 +51,6 @@ app.UseAuthentication();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{controller=Account}/{action=Login}/{id?}");
 
 app.Run();

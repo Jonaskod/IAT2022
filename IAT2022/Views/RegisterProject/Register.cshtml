@@ -11,7 +11,7 @@
              </div>
              <div class="form-group">
                 <label asp-for="TypeOfProject">Typ av Projekt</label>
-                <select name="Type" id="TypeOfProject">
+                <select name="TypeOfProject" id="TypeOfProject">
                     <option value="Process">
                         "Process"
                     </option>
@@ -35,9 +35,9 @@
                 <input asp-for="Comment" class="form-control"/>
                 <span asp-validation-for="Comment" class="text-danger"></span>
 
-                 <button type="submit" class="btn-save">Registrera</button>
+                 <button type="submit" value="submit" class="btn-save">Registrera</button>
 
-                <button type="submit" class="btn-cancel" asp-area="" asp-controller="Home" asp-action="Index" >Cancel</button>
+                <button type="submit" class="btn-cancel" asp-area="" asp-controller="Home" asp-action="Index">Cancel</button>
             </div>
        
         </form>

@@ -22,7 +22,8 @@ namespace IAT2022.Migrations
                     IPR = table.Column<int>(type: "INTEGER", nullable: true),
                     Team = table.Column<int>(type: "INTEGER", nullable: true),
                     Buissness = table.Column<int>(type: "INTEGER", nullable: true),
-                    Finance = table.Column<int>(type: "INTEGER", nullable: true)
+                    Finance = table.Column<int>(type: "INTEGER", nullable: true),
+                    ProjectType = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {

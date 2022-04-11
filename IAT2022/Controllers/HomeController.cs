@@ -19,8 +19,8 @@ namespace IAT2022.Controllers
         {
             return View();
         }
+
         
-       
         public async Task<IActionResult> Privacy()
         {
             return View();

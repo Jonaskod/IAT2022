@@ -1,22 +1,63 @@
-﻿@using IAT2022.ViewModels
-@model ProjectInformationViewModel
+﻿@using IAT2022.Data.Poco.QuestionsPoco
+@using IAT2022.ViewModels
+@model CustomerQuestionsPoco
 <h1>Välj det som stämmer för ditt projekt</h1>
 <h2>GÖR VAL FÖR FANANNANNANANA</h2>
-<ul>
-  <li>
-    <input type="checkbox" id="check_1" name="check_1" value="check_1">
-    <label for="check_1">S</label>
-  </li>
-  <li>
-    <input type="checkbox" id="check_2" name="check_2" value="check_2">
-    <label for="check_2">M</label>
-  </li>
-  <li>
-    <input type="checkbox" id="check_3" name="check_3" value="check_3">
-    <label for="check_3">L</label>
-  </li>
-  <li>
-    <input type="checkbox" id="check_4" name="check_4" value="check_4">
-    <label for="check_4">XL</label>
-  </li>
-</ul>
+
+<section class="app">
+  <i class="fa fa-rocket"></i>
+
+
+     
+        <article class="feature1">
+        <input type="checkbox" id="feature1"/>
+        <div>
+            <span>
+            @Model.K1
+            </span>
+        </div>
+        </article>
+  
+        <article class="feature2">
+        <input type="checkbox" id="feature2"/>
+        <div>
+            <span>
+            @Model.K2
+            </span>
+        </div>
+        </article>
+    
+
+        <article class="feature3">
+        <input type="checkbox" id="feature3"/>
+        <div>
+            <span>
+            @Model.K3
+            </span>
+        </div>
+        </article>
+  
+        <article class="feature4">
+        <input type="checkbox" id="feature4" checked/>
+        <div>
+            <span>
+            @Model.K4
+            </span>
+        </div>
+        </article>
+
+  
+  <h3>
+    <span class="blue-color"></span>Välj dom alternativ som stämmer för ditt projekt
+  </h3>
+  
+  <a asp-action="" class="upgrade-btn">Nästa</a>
+  
+  
+</section>
+
+<div class="social">
+  <a href="https://www.linkedin.com/in/florin-cornea-b5118057/" target="_blank">
+    <i class="fab fa-linkedin"></i>
+  </a>
+</div>

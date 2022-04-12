@@ -8,7 +8,7 @@ namespace IAT2022.Data.Poco
         public string? ProjectName { get; set; }
         public string? Description { get; set; }
         public string? Owner { get; set; }
-        public int? Customer { get; set; }
+        public CustomerPoco? Customer { get; set; }
         public int? Product { get; set; }
         public int? IPR { get; set; }
         public int? Team { get; set; }

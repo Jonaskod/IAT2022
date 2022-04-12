@@ -15,15 +15,17 @@ namespace IAT2022.Controllers
         }
         public IActionResult Index()
         {
+            var questions = _dbRepository.GetCustomerQuestions();
             var data = TempData["mydata"];
             ProjectInformationViewModel model = new();
             model.Project = _dbRepository.GetSingleProject(data.ToString());
-            if (model.Project.Customer <= 0)
-            {
-                return View(model);
-            }
-            return View();
+            //if (model.Project.Customer <= 0)
+            //{
+            //    return View(model);
+            //}
+            return View(questions);
         }
+        
         
     }
 }

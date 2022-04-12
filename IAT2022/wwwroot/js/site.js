@@ -1,4 +1,5 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
-
-// Write your JavaScript code.
+﻿
+const db = new sqlite3.Database('./IATDB.db')
+db.all("SELECT * FROM CUSTOMERQUESTIONS")
+let answer = db.get("SELECT * FROM CUSTOMERQUESTIONS")
+console.log(answer);

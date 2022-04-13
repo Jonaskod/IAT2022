@@ -95,6 +95,9 @@ namespace IAT2022.Migrations
                     b.Property<int?>("IPR")
                         .HasColumnType("INTEGER");
 
+                    b.Property<bool>("K1TEST")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Owner")
                         .HasColumnType("TEXT");
 

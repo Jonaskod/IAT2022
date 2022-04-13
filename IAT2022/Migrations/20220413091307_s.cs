@@ -4,12 +4,37 @@
 
 namespace IAT2022.Migrations
 {
-    public partial class asssssd : Migration
+    public partial class s : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "CustomerPoco",
+                name: "CustomerQuestions",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    K1 = table.Column<string>(type: "TEXT", nullable: true),
+                    K2 = table.Column<string>(type: "TEXT", nullable: true),
+                    K3 = table.Column<string>(type: "TEXT", nullable: true),
+                    K4 = table.Column<string>(type: "TEXT", nullable: true),
+                    K5a = table.Column<string>(type: "TEXT", nullable: true),
+                    K5b = table.Column<string>(type: "TEXT", nullable: true),
+                    K6a = table.Column<string>(type: "TEXT", nullable: true),
+                    K6b = table.Column<string>(type: "TEXT", nullable: true),
+                    K7a = table.Column<string>(type: "TEXT", nullable: true),
+                    K7b = table.Column<string>(type: "TEXT", nullable: true),
+                    K8a = table.Column<string>(type: "TEXT", nullable: true),
+                    K8b = table.Column<string>(type: "TEXT", nullable: true),
+                    K9 = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CustomerQuestions", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CustomerValue",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
@@ -26,7 +51,7 @@ namespace IAT2022.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_CustomerPoco", x => x.Id);
+                    table.PrimaryKey("PK_CustomerValue", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -35,6 +60,7 @@ namespace IAT2022.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
+                    K1TEST = table.Column<bool>(type: "INTEGER", nullable: false),
                     ProjectName = table.Column<string>(type: "TEXT", nullable: true),
                     Description = table.Column<string>(type: "TEXT", nullable: true),
                     Owner = table.Column<string>(type: "TEXT", nullable: true),
@@ -50,9 +76,9 @@ namespace IAT2022.Migrations
                 {
                     table.PrimaryKey("PK_Projects", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_Projects_CustomerPoco_CustomerId",
+                        name: "FK_Projects_CustomerValue_CustomerId",
                         column: x => x.CustomerId,
-                        principalTable: "CustomerPoco",
+                        principalTable: "CustomerValue",
                         principalColumn: "Id");
                 });
 
@@ -92,10 +118,13 @@ namespace IAT2022.Migrations
                 name: "CommentPoco");
 
             migrationBuilder.DropTable(
+                name: "CustomerQuestions");
+
+            migrationBuilder.DropTable(
                 name: "Projects");
 
             migrationBuilder.DropTable(
-                name: "CustomerPoco");
+                name: "CustomerValue");
         }
     }
 }

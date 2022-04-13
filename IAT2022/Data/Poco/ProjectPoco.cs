@@ -5,6 +5,7 @@ namespace IAT2022.Data.Poco
     public class ProjectPoco
     {
         public int Id { get; set; }
+        public bool K1TEST { get; set; }
         public string? ProjectName { get; set; }
         public string? Description { get; set; }
         public string? Owner { get; set; }

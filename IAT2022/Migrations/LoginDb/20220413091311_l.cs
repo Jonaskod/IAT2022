@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace IAT2022.Migrations.LoginDb
 {
-    public partial class lss : Migration
+    public partial class l : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

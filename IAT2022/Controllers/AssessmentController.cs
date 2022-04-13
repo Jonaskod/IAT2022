@@ -25,6 +25,10 @@ namespace IAT2022.Controllers
             //}
             return View(questions);
         }
+        public void Test(bool k1)
+        {
+            
+        }
         
         
     }

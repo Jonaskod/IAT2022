@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IAT2022.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220412111641_sd")]
-    partial class sd
+    [Migration("20220413091307_s")]
+    partial class s
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -97,6 +97,9 @@ namespace IAT2022.Migrations
                     b.Property<int?>("IPR")
                         .HasColumnType("INTEGER");
 
+                    b.Property<bool>("K1TEST")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Owner")
                         .HasColumnType("TEXT");
 
@@ -137,16 +140,28 @@ namespace IAT2022.Migrations
                     b.Property<string>("K4")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("K5")
+                    b.Property<string>("K5a")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("K6")
+                    b.Property<string>("K5b")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("K7")
+                    b.Property<string>("K6a")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("K8")
+                    b.Property<string>("K6b")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("K7a")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("K7b")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("K8a")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("K8b")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("K9")

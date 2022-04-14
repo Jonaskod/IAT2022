@@ -15,7 +15,7 @@ namespace IAT2022.Repositories
         }
         public ProjectPoco GetSingleProject(string id)
         {
-            var project = _appDbContext.Projects.Where(x=>x.Id == int.Parse(id)).Include(x=>x.Comments).First();
+            var project = _appDbContext.Projects.Where(x=>x.Id == int.Parse(id)).Include(x=>x.Comments).Include(x=>x.Customer).First();
             return project;
         }
         public List<ProjectPoco>? GetAllProjects(string name)
@@ -31,6 +31,8 @@ namespace IAT2022.Repositories
         {
             try
             {
+                CustomerPoco customer = new CustomerPoco();
+                model.Customer = customer;
                 _appDbContext.Projects?.Add(model);
                 _appDbContext.SaveChanges();
                 return model;

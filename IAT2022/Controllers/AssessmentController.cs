@@ -30,21 +30,25 @@ namespace IAT2022.Controllers
             //{
             //    return View(model);
             //}
+            TempData["iddata"] = Model.Project.Id;//Skickar med tempdata mellan controllers
             return View(Model);
         }
-        public IActionResult Indexx(ProjectInformationViewModel Project)
-        {
-            _dbRepository.UpdateProject(Project.Project);
-            return View();
-        }
+        
         public IActionResult Test(bool K1TEST, bool K2TEST, bool K3TEST, bool K4TEST)
         {
-            K1 = K1TEST;
-            K2 = K2TEST;
-            K3 = K3TEST;
-            K4 = K4TEST;
+            var data = TempData["iddata"];
+            var aids = _dbRepository.GetSingleProject(data.ToString());
+
+            aids.Customer.K1 = K1TEST;
+            aids.Customer.K2 = K2TEST;
+            aids.Customer.K3 = K3TEST;
+            aids.Customer.K4 = K4TEST;
+            _dbRepository.UpdateProject(aids);
             //SKRIV TILL DB - UPPDATERA PROJEKT
-            return View();
+            Model = new (_dbRepository);
+            Model.Project = aids;
+            TempData["mydata"] = aids.Id;
+            return View(Model);
         }
         
         

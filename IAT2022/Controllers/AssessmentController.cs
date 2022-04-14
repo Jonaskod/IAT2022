@@ -29,14 +29,51 @@ namespace IAT2022.Controllers
             return View(Model);
         }
         
-        public IActionResult Test(bool K1TEST, bool K2TEST, bool K3TEST, bool K4TEST)
+        public IActionResult Test(List<bool> kresultlist)
         {
             var data = TempData["iddata"];
             var aids = _dbRepository.GetSingleProject(data.ToString());
-            aids.Customer.K1 = K1TEST;
-            aids.Customer.K2 = K2TEST;
-            aids.Customer.K3 = K3TEST;
-            aids.Customer.K4 = K4TEST;
+            aids.Customer.K1=kresultlist[0];
+            aids.Customer.K2=kresultlist[1];
+            aids.Customer.K3=kresultlist[2];
+            aids.Customer.K4=kresultlist[3];
+            if (kresultlist[4] || kresultlist[5])
+            {
+                aids.Customer.K5 = true;
+            }
+            else
+            {
+                aids.Customer.K5=false;
+            }
+            
+            if (kresultlist[6] || kresultlist[7])
+            {
+                aids.Customer.K6 = true;
+            }
+            else
+            {
+                aids.Customer.K6=false;
+            }
+            
+            if (kresultlist[8] || kresultlist[9])
+            {
+                aids.Customer.K7 = true;
+            }
+            else
+            {
+                aids.Customer.K7=false; 
+            }
+            
+            if (kresultlist[10] || kresultlist[11])
+            {
+                aids.Customer.K8 = true;
+            }
+            else
+            {
+                aids.Customer.K8=false;
+            }
+            aids.Customer.K9=kresultlist[12];
+
             _dbRepository.UpdateProject(aids);
             //SKRIV TILL DB - UPPDATERA PROJEKT
             Model = new (_dbRepository);

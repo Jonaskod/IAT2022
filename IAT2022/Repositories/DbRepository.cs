@@ -42,11 +42,17 @@ namespace IAT2022.Repositories
             }
             
         }
+        public ProjectPoco UpdateProject(ProjectPoco project)
+        {
+            _appDbContext.Projects.Update(project);
+            _appDbContext.SaveChanges();
+            return project;
+        }
         public void SeedCustomerQuestions() 
         {
-            if (_appDbContext.CustomerQuestions.Count() == 0) 
+            if (!_appDbContext.CustomerQuestions.Any()) 
             {
-                CustomerQuestionsPoco customerQuestionsPoco = new CustomerQuestionsPoco();
+                CustomerQuestionsPoco customerQuestionsPoco = new ();
                 customerQuestionsPoco.K1 = "Du har identifierad ett behov eller problem.";
                 customerQuestionsPoco.K2 = "Du har undersökt vilka som har behovet.";
                 customerQuestionsPoco.K3 = "Du har haft direkt kontakt med några behovsägare och ämnesexperter.";

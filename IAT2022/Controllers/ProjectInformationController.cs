@@ -14,7 +14,7 @@ namespace IAT2022.Controllers
         }
         public IActionResult ProjectInformation(int id)
         {
-            ProjectInformationViewModel projectInformationViewModel = new ProjectInformationViewModel();
+            ProjectInformationViewModel projectInformationViewModel = new (_dbRepository);
             projectInformationViewModel.Project = _dbRepository.GetSingleProject(id.ToString());
             return View(projectInformationViewModel);
         }

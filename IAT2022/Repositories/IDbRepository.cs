@@ -10,5 +10,6 @@ namespace IAT2022.Repositories
         ProjectPoco GetSingleProject(string id);
         ProjectPoco RegisterProject(ProjectPoco model);
         void SeedCustomerQuestions();
+        ProjectPoco UpdateProject(ProjectPoco project);
     }
 }

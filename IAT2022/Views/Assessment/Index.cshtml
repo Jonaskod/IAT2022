@@ -1,10 +1,8 @@
-﻿@using IAT2022.Data.Poco.QuestionsPoco
-@using IAT2022.ViewModels
-@model CustomerQuestionsPoco
+﻿@using IAT2022.ViewModels
+@model ProjectInformationViewModel
 <h1>Välj det som stämmer för ditt projekt</h1>
 <h2>GÖR VAL FÖR FANANNANNANANA</h2>
-<script src="~/js/">
-</script>
+<h3 id="ProjectId">@Model.Project.Id.ToString()</h3>
 
 <section class="app">
   <i class="fa fa-rocket"></i>
@@ -15,7 +13,7 @@
         <input type="checkbox" id="feature1"/>
         <div>
             <span>
-            @Model.K1
+            @Model.CustomerQuestions.K1
             </span>
         </div>
         </article>
@@ -25,7 +23,7 @@
         <input type="checkbox" id="feature2"/>
         <div>
             <span>
-            @Model.K2
+            @Model.CustomerQuestions.K2
             </span>
         </div>
         </article>
@@ -35,7 +33,7 @@
         <input type="checkbox" id="feature3"/>
         <div>
             <span>
-            @Model.K3
+            @Model.CustomerQuestions.K3
             </span>
         </div>
         </article>
@@ -44,7 +42,7 @@
         <input type="checkbox" id="feature4" checked/>
         <div>
             <span>
-            @Model.K4
+            @Model.CustomerQuestions.K4
             </span>
         </div>
         </article>

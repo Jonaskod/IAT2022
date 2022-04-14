@@ -4,11 +4,14 @@
 <h2>GÖR VAL FÖR FANANNANNANANA</h2>
 <h3 id="ProjectId">@Model.Project.Id.ToString()</h3>
 
+<div class ="slideshow-container">
+
 <section class="app">
   <i class="fa fa-rocket"></i>
 
         
-     
+        <div class="mySlides">
+
         <article class="feature1">
         <input type="checkbox" id="feature1"/>
         <div>
@@ -19,6 +22,7 @@
         </article>
 
 
+       
         <article class="feature2">
         <input type="checkbox" id="feature2"/>
         <div>
@@ -27,8 +31,9 @@
             </span>
         </div>
         </article>
-    
+        
 
+        
         <article class="feature3">
         <input type="checkbox" id="feature3"/>
         <div>
@@ -37,7 +42,8 @@
             </span>
         </div>
         </article>
-  
+        
+
         <article class="feature4">
         <input type="checkbox" id="feature4" checked/>
         <div>
@@ -46,13 +52,117 @@
             </span>
         </div>
         </article>
+        </div>
 
+        <div class="mySlides">
+
+            <article class="feature1">
+            <input type="checkbox" id="feature1"/>
+            <div>
+                <span>
+                @Model.CustomerQuestions.K5a
+                </span>
+            </div>
+            </article>
+
+            <article class="feature1">
+            <input type="checkbox" id="feature1"/>
+            <div>
+                <span>
+                @Model.CustomerQuestions.K5b
+                </span>
+            </div>
+            </article>
+
+            <article class="feature1">
+            <input type="checkbox" id="feature1"/>
+            <div>
+                <span>
+                @Model.CustomerQuestions.K6a
+                </span>
+            </div>
+            </article>
+
+            <article class="feature1">
+            <input type="checkbox" id="feature1"/>
+            <div>
+                <span>
+                @Model.CustomerQuestions.K6b
+                </span>
+            </div>
+            </article>
+
+        </div>
+
+
+                <div class="mySlides">
+
+            <article class="feature1">
+            <input type="checkbox" id="feature1"/>
+            <div>
+                <span>
+                @Model.CustomerQuestions.K7a
+                </span>
+            </div>
+            </article>
+
+            <article class="feature1">
+            <input type="checkbox" id="feature1"/>
+            <div>
+                <span>
+                @Model.CustomerQuestions.K7b
+                </span>
+            </div>
+            </article>
+
+            <article class="feature1">
+            <input type="checkbox" id="feature1"/>
+            <div>
+                <span>
+                @Model.CustomerQuestions.K8a
+                </span>
+            </div>
+            </article>
+
+            <article class="feature1">
+            <input type="checkbox" id="feature1"/>
+            <div>
+                <span>
+                @Model.CustomerQuestions.K8b
+                </span>
+            </div>
+            </article>
+
+            <article class="feature1">
+            <input type="checkbox" id="feature1"/>
+            <div>
+                <span>
+                @Model.CustomerQuestions.K9
+                </span>
+            </div>
+            </article>
+
+        </div>
+
+
+        <a class="prev" onclick="plusSlides(-1)">Tillbaka</a>
+        <a class="next" onclick="plusSlides(1)">Nästa</a>
+
+        </div>
+
+        <div class="dot-container">
+          <span class="dot" onclick="currentSlide(1)"></span> 
+          <span class="dot" onclick="currentSlide(2)"></span> 
+          <span class="dot" onclick="currentSlide(3)"></span> 
+        </div>
+
+</div>
   
   <h3>
     <span class="blue-color"></span>Välj dom alternativ som stämmer för ditt projekt
   </h3>
   
-  <a asp-action="" id="upgrade-btn">Nästa</a>
+
   <button type="button" id="test">TESTAR</button>
  
   

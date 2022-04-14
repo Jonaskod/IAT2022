@@ -9,12 +9,7 @@ namespace IAT2022.Controllers
     {
         private readonly IDbRepository _dbRepository;
         private ProjectInformationViewModel Model { get; set; }
-        private bool K1 { get; set; }
-        private bool K2 { get; set; }
-        private bool K3 { get; set; }
-        private bool K4 { get; set; }
-
-
+        
         public AssessmentController(IDbRepository dbRepository)
         {
             _dbRepository = dbRepository;
@@ -38,7 +33,6 @@ namespace IAT2022.Controllers
         {
             var data = TempData["iddata"];
             var aids = _dbRepository.GetSingleProject(data.ToString());
-
             aids.Customer.K1 = K1TEST;
             aids.Customer.K2 = K2TEST;
             aids.Customer.K3 = K3TEST;

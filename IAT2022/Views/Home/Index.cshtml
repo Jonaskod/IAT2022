@@ -1,8 +1,17 @@
-﻿@{
+﻿@using IAT2022.ViewModels
+@{
     ViewData["Title"] = "Home Page";
 }
+@model HomeViewModel
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
     <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+<div>
+    @foreach(var item in Model.Projects)
+    {
+        <li><a asp-controller="ProjectInformation" asp-action="ProjectInformation" asp-route-id="@item.Id">@item.ProjectName</a></li>
+        
+    }
 </div>

@@ -1,66 +1,26 @@
 ﻿@using IAT2022.ViewModels
 @model ProjectInformationViewModel
 <h1>Välj det som stämmer för ditt projekt</h1>
-<h2>GÖR VAL FÖR FANANNANNANANA</h2>
+<h2>@Model.Project.ProjectName</h2>
 
 
-<div class ="slideshow-container">
-
-<section class="app">
-  <i class="fa fa-rocket"></i>
-
-        
-        <div class="mySlides">
-
-        <article class="feature">
-        <input type="checkbox" id="feature" name="checkbox"/>
-        <div>
-            <span>
-            @Model.CustomerQuestions.K1
-            </span>
-        </div>
-        </article>
+<div class ="slideshow-container"> 
 
 
-       
-        <article class="feature">
-        <input type="checkbox" id="feature" name="checkbox"/>
-        <div>
-            <span>
-            @Model.CustomerQuestions.K2
-            </span>
-        </div>
-        </article>
-        
 
-        
-        <article class="feature">
-        <input type="checkbox" id="feature" name="checkbox"/>
-        <div>
-            <span>
-            @Model.CustomerQuestions.K3
-            </span>
-        </div>
-        </article>
-        
 
-        <article class="feature">
-        <input type="checkbox" id="feature" name="checkbox"/>
-        <div>
-            <span>
-            @Model.CustomerQuestions.K4
-            </span>
-        </div>
-        </article>
-        </div>
+    <section class="app">
 
-        <div class="mySlides">
+        <i class="fa fa-rocket"></i>
+
+            <div class="mySlides">
 
             <article class="feature">
             <input type="checkbox" id="feature" name="checkbox"/>
             <div>
                 <span>
-                @Model.CustomerQuestions.K5a
+                    <h6>K1 - Need</h6>
+                @Model.CustomerQuestions.K1
                 </span>
             </div>
             </article>
@@ -69,94 +29,147 @@
             <input type="checkbox" id="feature" name="checkbox"/>
             <div>
                 <span>
-                @Model.CustomerQuestions.K5b
+                    <h6>K2 - Need</h6>
+                @Model.CustomerQuestions.K2
                 </span>
             </div>
             </article>
+        
+
+        
+            <article class="feature">
+            <input type="checkbox" id="feature" name="checkbox"/>
+            <div>
+                <span>
+                    <h6>K3 - Need</h6>
+                @Model.CustomerQuestions.K3
+                </span>
+            </div>
+            </article>
+        
 
             <article class="feature">
             <input type="checkbox" id="feature" name="checkbox"/>
             <div>
                 <span>
-                @Model.CustomerQuestions.K6a
+                    <h6>K4 - Need</h6>
+                @Model.CustomerQuestions.K4
                 </span>
             </div>
             </article>
-
-            <article class="feature">
-            <input type="checkbox" id="feature" name="checkbox"/>
-            <div>
-                <span>
-                @Model.CustomerQuestions.K6b
-                </span>
             </div>
-            </article>
 
-        </div>
+            <div class="mySlides">
+
+                <article class="feature">
+                <input type="checkbox" id="feature" name="checkbox"/>
+                <div>
+                    <span>
+                        <h6>K5 - Approach</h6>
+                    @Model.CustomerQuestions.K5a
+                    </span>
+                </div>
+                </article>
+
+                <article class="feature">
+                <input type="checkbox" id="feature" name="checkbox"/>
+                <div>
+                    <span>
+                        <h6>K5 - Approach</h6>
+                    @Model.CustomerQuestions.K5b
+                    </span>
+                </div>
+                </article>
+
+                <article class="feature">
+                <input type="checkbox" id="feature" name="checkbox"/>
+                <div>
+                    <span>
+                        <h6>K6 - Approach</h6>
+                    @Model.CustomerQuestions.K6a
+                    </span>
+                </div>
+                </article>
+
+                <article class="feature">
+                <input type="checkbox" id="feature" name="checkbox"/>
+                <div>
+                    <span>
+                        <h6>K6 - Approach</h6>
+                    @Model.CustomerQuestions.K6b
+                    </span>
+                </div>
+                </article>
+            </div>
 
 
                 <div class="mySlides">
 
-            <article class="feature">
-            <input type="checkbox" id="feature" name="checkbox"/>
-            <div>
-                <span>
-                @Model.CustomerQuestions.K7a
-                </span>
+                <article class="feature">
+                <input type="checkbox" id="feature" name="checkbox"/>
+                <div>
+                    <span>
+                        <h6>K7 - Business</h6>
+                    @Model.CustomerQuestions.K7a
+                    </span>
+                </div>
+                </article>
+
+                <article class="feature">
+                <input type="checkbox" id="feature" name="checkbox"/>
+                <div>
+                    <span>
+                        <h6>K7 - Business</h6>
+                    @Model.CustomerQuestions.K7b
+                    </span>
+                </div>
+                </article>
+
+                <article class="feature">
+                <input type="checkbox" id="feature" name="checkbox"/>
+                <div>
+                    <span>
+                        <h6>K8 - Business</h6>
+                    @Model.CustomerQuestions.K8a
+                    </span>
+                </div>
+                </article>
+
+                <article class="feature">
+                <input type="checkbox" id="feature" name="checkbox"/>
+                <div>
+                    <span>
+                        <h6>K8 - Business</h6>
+                    @Model.CustomerQuestions.K8b
+                    </span>
+                </div>
+                </article>
+
+                <article class="feature">
+                <input type="checkbox" id="feature" name="checkbox"/>
+                <div>
+                    <span>
+                        <h6>K9 - Business</h6>
+                    @Model.CustomerQuestions.K9
+                    </span>
+                </div>
+                </article>
+
             </div>
-            </article>
-
-            <article class="feature">
-            <input type="checkbox" id="feature" name="checkbox"/>
-            <div>
-                <span>
-                @Model.CustomerQuestions.K7b
-                </span>
-            </div>
-            </article>
-
-            <article class="feature">
-            <input type="checkbox" id="feature" name="checkbox"/>
-            <div>
-                <span>
-                @Model.CustomerQuestions.K8a
-                </span>
-            </div>
-            </article>
-
-            <article class="feature">
-            <input type="checkbox" id="feature" name="checkbox"/>
-            <div>
-                <span>
-                @Model.CustomerQuestions.K8b
-                </span>
-            </div>
-            </article>
-
-            <article class="feature">
-            <input type="checkbox" id="feature" name="checkbox"/>
-            <div>
-                <span>
-                @Model.CustomerQuestions.K9
-                </span>
-            </div>
-            </article>
-
-        </div>
-
-
-        <a class="prev" onclick="plusSlides(-1)">Tillbaka</a>
-        <a class="next" onclick="plusSlides(1)">Nästa</a>
-
-        </div>
-
-        <div class="dot-container">
-          <span class="dot" onclick="currentSlide(1)"></span> 
-          <span class="dot" onclick="currentSlide(2)"></span> 
-          <span class="dot" onclick="currentSlide(3)"></span> 
-        </div>
-
 </div>
+
+            <a class="prev" onclick="plusSlides(-1)">Tillbaka</a>
+            <a class="next" onclick="plusSlides(1)">Nästa</a>
+
+            </div>
+
+            <div class="dot-container">
+                <span class="dot" onclick="currentSlide(1)"></span> 
+                <span class="dot" onclick="currentSlide(2)"></span> 
+                <span class="dot" onclick="currentSlide(3)"></span> 
+            </div>
+
+
   
   <h3>
     <span class="blue-color"></span>Välj dom alternativ som stämmer för ditt projekt

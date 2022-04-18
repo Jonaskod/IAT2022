@@ -141,3 +141,7 @@ input[type=checkbox]:checked ~ div {
     padding-bottom: 462px;
     width: 200px;
 }
+.tableFormat {
+    width: 1000px;
+    height: 100px;
+}

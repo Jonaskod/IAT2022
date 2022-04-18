@@ -71,6 +71,19 @@ article {
         cursor: pointer;
     }
 
+.slideshow-container{
+    display:flex;
+    flex-direction:row;
+    border-style:solid;
+    border-color:wheat;
+}
+/*.mySlides{
+    display:flex;
+    flex-direction:column;
+    border-style:solid;
+    border-color:saddlebrown;
+}
+*/
 input[type=checkbox]:checked ~ div {
     background-color: #50bcf2;
 }

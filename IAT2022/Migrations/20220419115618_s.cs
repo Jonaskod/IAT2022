@@ -55,6 +55,40 @@ namespace IAT2022.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "ProjectTags",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Tag1 = table.Column<string>(type: "TEXT", nullable: true),
+                    Tag2 = table.Column<string>(type: "TEXT", nullable: true),
+                    Tag3 = table.Column<string>(type: "TEXT", nullable: true),
+                    Tag4 = table.Column<string>(type: "TEXT", nullable: true),
+                    Tag5 = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ProjectTags", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "TagsBoolPoco",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Tag1 = table.Column<bool>(type: "INTEGER", nullable: false),
+                    Tag2 = table.Column<bool>(type: "INTEGER", nullable: false),
+                    Tag3 = table.Column<bool>(type: "INTEGER", nullable: false),
+                    Tag4 = table.Column<bool>(type: "INTEGER", nullable: false),
+                    Tag5 = table.Column<bool>(type: "INTEGER", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TagsBoolPoco", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Projects",
                 columns: table => new
                 {
@@ -70,7 +104,8 @@ namespace IAT2022.Migrations
                     Team = table.Column<int>(type: "INTEGER", nullable: true),
                     Buissness = table.Column<int>(type: "INTEGER", nullable: true),
                     Finance = table.Column<int>(type: "INTEGER", nullable: true),
-                    ProjectType = table.Column<string>(type: "TEXT", nullable: true)
+                    ProjectType = table.Column<string>(type: "TEXT", nullable: true),
+                    TagsBoolId = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -79,6 +114,11 @@ namespace IAT2022.Migrations
                         name: "FK_Projects_CustomerValue_CustomerId",
                         column: x => x.CustomerId,
                         principalTable: "CustomerValue",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Projects_TagsBoolPoco_TagsBoolId",
+                        column: x => x.TagsBoolId,
+                        principalTable: "TagsBoolPoco",
                         principalColumn: "Id");
                 });
 
@@ -110,6 +150,11 @@ namespace IAT2022.Migrations
                 name: "IX_Projects_CustomerId",
                 table: "Projects",
                 column: "CustomerId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Projects_TagsBoolId",
+                table: "Projects",
+                column: "TagsBoolId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
@@ -121,10 +166,16 @@ namespace IAT2022.Migrations
                 name: "CustomerQuestions");
 
             migrationBuilder.DropTable(
+                name: "ProjectTags");
+
+            migrationBuilder.DropTable(
                 name: "Projects");
 
             migrationBuilder.DropTable(
                 name: "CustomerValue");
+
+            migrationBuilder.DropTable(
+                name: "TagsBoolPoco");
         }
     }
 }

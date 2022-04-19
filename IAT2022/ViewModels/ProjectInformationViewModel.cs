@@ -10,11 +10,25 @@ namespace IAT2022.ViewModels
 
         public ProjectPoco Project { get; set; }
         public CustomerQuestionsPoco CustomerQuestions { get; set; }
+        public ProjectTagsPoco ProjectTagsPoco { get; set; }
         public ProjectInformationViewModel(IDbRepository dbRepository)
         {
             _dbRepository = dbRepository;
+            ProjectTagsPoco = _dbRepository.GetTags();
             CustomerQuestions = _dbRepository.GetCustomerQuestions();
         }
+        public string GetTagsForProject()
+        {
+            if (Project.TagsBool.Tag1)
+            {
+                return ProjectTagsPoco.Tag1;
+            }
+            return "";
+        }
+
+        
+
+
       
        
     }

@@ -19,6 +19,7 @@ namespace IAT2022.Controllers
             _logger = logger;
             _dbRepository = dbRepository;
             _dbRepository.SeedCustomerQuestions();
+            _dbRepository.SeedTags();
         }
  
         public async Task<IActionResult> Index()

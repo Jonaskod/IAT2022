@@ -110,6 +110,9 @@ namespace IAT2022.Migrations
                     b.Property<string>("ProjectType")
                         .HasColumnType("TEXT");
 
+                    b.Property<int?>("TagsBoolId")
+                        .HasColumnType("INTEGER");
+
                     b.Property<int?>("Team")
                         .HasColumnType("INTEGER");
 
@@ -117,7 +120,35 @@ namespace IAT2022.Migrations
 
                     b.HasIndex("CustomerId");
 
+                    b.HasIndex("TagsBoolId");
+
                     b.ToTable("Projects");
+                });
+
+            modelBuilder.Entity("IAT2022.Data.Poco.ProjectTagsPoco", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Tag1")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Tag2")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Tag3")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Tag4")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("Tag5")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ProjectTags");
                 });
 
             modelBuilder.Entity("IAT2022.Data.Poco.QuestionsPoco.CustomerQuestionsPoco", b =>
@@ -170,6 +201,32 @@ namespace IAT2022.Migrations
                     b.ToTable("CustomerQuestions");
                 });
 
+            modelBuilder.Entity("IAT2022.Data.Poco.TagsBoolPoco", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("Tag1")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("Tag2")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("Tag3")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("Tag4")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<bool>("Tag5")
+                        .HasColumnType("INTEGER");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TagsBoolPoco");
+                });
+
             modelBuilder.Entity("IAT2022.Data.Poco.CommentPoco", b =>
                 {
                     b.HasOne("IAT2022.Data.Poco.ProjectPoco", null)
@@ -183,7 +240,13 @@ namespace IAT2022.Migrations
                         .WithMany()
                         .HasForeignKey("CustomerId");
 
+                    b.HasOne("IAT2022.Data.Poco.TagsBoolPoco", "TagsBool")
+                        .WithMany()
+                        .HasForeignKey("TagsBoolId");
+
                     b.Navigation("Customer");
+
+                    b.Navigation("TagsBool");
                 });
 
             modelBuilder.Entity("IAT2022.Data.Poco.ProjectPoco", b =>

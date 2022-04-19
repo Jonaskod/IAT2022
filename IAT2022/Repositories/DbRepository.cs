@@ -15,7 +15,7 @@ namespace IAT2022.Repositories
         }
         public ProjectPoco GetSingleProject(string id)
         {
-            var project = _appDbContext.Projects.Where(x=>x.Id == int.Parse(id)).Include(x=>x.Comments).Include(x=>x.Customer).First();
+            var project = _appDbContext.Projects.Where(x=>x.Id == int.Parse(id)).Include(x=>x.Comments).Include(x=>x.Customer).Include(x=>x.TagsBool).First();
             return project;
         }
         public List<ProjectPoco>? GetAllProjects(string name)
@@ -74,6 +74,27 @@ namespace IAT2022.Repositories
             }
 
         }
+        public void SeedTags()
+        {
+            if (!_appDbContext.ProjectTags.Any())
+            {
+                ProjectTagsPoco projectTagsPoco = new ();
+                projectTagsPoco.Tag1 = "Kommersiell";
+                projectTagsPoco.Tag2 = "Icke kommersiellt";
+                projectTagsPoco.Tag3 = "Mjukvara Applikation";
+                projectTagsPoco.Tag4 = "Ny Teknologi";
+                projectTagsPoco.Tag5 = "Ny metodik";
+                _appDbContext.ProjectTags.Add(projectTagsPoco);
+                _appDbContext.SaveChanges();
+
+            }
+        }
+        public ProjectTagsPoco GetTags()
+        {
+            var tags = _appDbContext.ProjectTags.FirstOrDefault();
+            return tags;
+        }
+
         public CustomerQuestionsPoco GetCustomerQuestions()
         {
             var questions = _appDbContext.CustomerQuestions.FirstOrDefault();

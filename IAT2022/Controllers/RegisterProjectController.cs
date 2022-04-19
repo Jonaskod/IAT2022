@@ -16,7 +16,8 @@ namespace IAT2022.Controllers
         }
         public IActionResult Register()
         {
-            return View();
+            RegisterProjectViewModel registerProjectViewModel = new(_dbRepository);  
+            return View(registerProjectViewModel);
         }
         [HttpPost]
         public async Task<IActionResult> Register(RegisterProjectViewModel model) //Snygga till!
@@ -28,6 +29,9 @@ namespace IAT2022.Controllers
             projectPoco.Description = model.Description;
             projectPoco.Owner=User.Identity.Name;
             projectPoco.ProjectType = model.TypeOfProject;
+            projectPoco.TagsBool = model.TagsBool;
+            
+
             if (model.Comment!=null)
             {
                 CommentPoco commentPoco = new();

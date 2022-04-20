@@ -1,6 +1,8 @@
-﻿namespace IAT2022.Data.Poco
+﻿using System.Collections;
+
+namespace IAT2022.Data.Poco
 {
-    public class CustomerPoco
+    public class CustomerPoco 
     {
         public int Id { get; set; }   
 
@@ -14,5 +16,6 @@
         public bool K8 { get; set; }
         public bool K9 { get; set; }
 
+        
     }
 }

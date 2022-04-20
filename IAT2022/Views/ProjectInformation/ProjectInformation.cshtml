@@ -28,19 +28,83 @@ table, th, td {
             <td></td>
             <td></td>
             <td></td>
-            <td></td>  
+                <td></td>
             }
             else
             {
-            @*<td>1 @Model.Project.Customer.K1</td>
-            <td>2 @Model.Project.Customer.K2</td>
-            <td>3 @Model.Project.Customer.K3</td>
-            <td>4 @Model.Project.Customer.K4</td>
-            <td>5 @Model.Project.Customer.K5</td>
-            <td>6 @Model.Project.Customer.K6</td>
-            <td>7 @Model.Project.Customer.K7</td>
-            <td>8 @Model.Project.Customer.K8</td>
-            <td>9 @Model.Project.Customer.K9</td> *@   
+                @if (@Model.Project.Customer.K1)
+                {
+                    <td style="background-color:#00FF00; color:black;">K1</td>
+                }
+                else
+                {
+                    <td style="background-color:#FF0000">K1</td>
+                }
+                @if (@Model.Project.Customer.K2)
+                {
+                    <td style="background-color:#00FF00; color:black;">K2</td>
+                }
+                else
+                {
+                    <td style="background-color:#FF0000">K2</td>
+                }
+                @if (@Model.Project.Customer.K3)
+                {
+                    <td style="background-color:#00FF00; color:black;">K3</td>
+                }
+                else
+                {
+                    <td style="background-color:#FF0000">K3</td>
+                }
+                @if (@Model.Project.Customer.K4)
+                {
+                    <td style="background-color:#00FF00; color:black;">K4</td>
+                }
+                else
+                {
+                    <td style="background-color:#FF0000">K4</td>
+                }
+                @if (@Model.Project.Customer.K5)
+                {
+                    <td style="background-color:#00FF00; color:black;">K5</td>
+                }
+                else
+                {
+                    <td style="background-color:#FF0000">K5</td>
+                }
+                @if (@Model.Project.Customer.K6)
+                {
+                    <td style="background-color:#00FF00; color:black;">K6</td>
+                }
+                else
+                {
+                    <td style="background-color:#FF0000">K6</td>
+                }
+                @if (@Model.Project.Customer.K7)
+                {
+                    <td style="background-color:#00FF00; color:black;">K7</td>
+                }
+                else
+                {
+                    <td style="background-color:#FF0000">K7</td>
+                }
+                @if (@Model.Project.Customer.K8)
+                {
+                    <td style="background-color:#00FF00; color:black;">K8</td>
+                }
+                else
+                {
+                    <td style="background-color:#FF0000">K8</td>
+                }
+                @if (@Model.Project.Customer.K9)
+                {
+                    <td style="background-color:#00FF00; color:black;">K9</td>
+                }
+                else
+                {
+                    <td style="background-color:#FF0000">K9</td>
+                }
+            
             }
       </tr>
 

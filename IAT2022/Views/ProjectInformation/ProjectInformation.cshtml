@@ -11,7 +11,10 @@ table, th, td {
 </style>
 <h1>@*@Model.GetTagsForProject()*@</h1>
 <div class="AssessmentTable">
-   
+   @foreach (var item in Model.Project.Tags)
+   {
+       <label class="TagClass">@item.Description</label>
+   }
     <table>
       <tr class="tableFormat">
         <td>KUND</td>

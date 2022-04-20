@@ -1,6 +1,7 @@
 ﻿@using IAT2022.ViewModels
 @model RegisterProjectViewModel
 
+
 <form method="post">
             <div asp-validation-summary="All" class="text-danger"></div>
              <div class="form-group">
@@ -35,9 +36,25 @@
                 <input asp-for="Comment" class="form-control"/>
                 <span asp-validation-for="Comment" class="text-danger"></span>
 
+
+
+            </div>
+            <div>
+            @for (var i = 0; i < Model.Tags.Count(); i++)
+            {
+                <label asp-for="Tags">Välj det som stämmer in på ditt projekt</label>
+                <input asp-for="TagsBool[i]" type="checkbox" id="Tag1" />
+                <label for="Tag1">@Model.Tags[i].Description</label>
+                
+            }
+            
+            
+
+
+            </div>
                  <button type="submit" value="submit" class="btn-save">Registrera</button>
 
                 <button type="submit" class="btn-cancel" asp-area="" asp-controller="Home" asp-action="Index">Cancel</button>
-            </div>
+
        
         </form>

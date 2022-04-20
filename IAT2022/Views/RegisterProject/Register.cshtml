@@ -40,13 +40,23 @@
 
             </div>
             <div>
+                <div class="LabelHeader">
+                <label>Välj kategori som passar ditt projekt</label>
+                </div>
+                <div class="TagContainer">
             @for (var i = 0; i < Model.Tags.Count(); i++)
             {
-                <label asp-for="Tags">Välj det som stämmer in på ditt projekt</label>
-                <input asp-for="TagsBool[i]" type="checkbox" id="Tag1" />
-                <label for="Tag1">@Model.Tags[i].Description</label>
+                <div class="TagDiv">
+                    <labe>
+                        <input asp-for="TagsBool[i]" type="checkbox"><span>@Model.Tags[i].Description</span>
+                    </labe>
+                </div>
+                
+                @*<input asp-for="TagsBool[i]" type="checkbox" id="Tag1" class="TagCategory" />
+                <label for="Tag1" class="checkboxlabel">@Model.Tags[i].Description</label>*@
                 
             }
+                </div>
             
             
 

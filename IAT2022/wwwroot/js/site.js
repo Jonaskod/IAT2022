@@ -16,8 +16,6 @@ for (let i = 0; i < checkboxlist.length; i++) {
     } )
 }
 
-
-
 function Update() {
     $(document).ready(function () {
 

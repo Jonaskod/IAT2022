@@ -208,6 +208,88 @@ input[type=checkbox]:checked ~ div {
         max-height: 600px;
     }
 }
+.BtnChoosePath:link, .BtnChoosePath:visited{
+    background-color:white;
+    color:black;
+    text-align:center;
+    padding:5% 5%;
+    display: inline-block;
+    border-style:solid;
+    border-color:slategray;
+    
+        
+}
+.BtnChoosePath:active, .BtnChoosePath:hover {
+    background-color: lightslategray;
+    cursor: pointer;
+}
+li{
+    list-style:none;
+    
+}
+.MyProjectsDiv{
+    display:flex;
+    flex-wrap:wrap;
+    
+}
+.SaveBtn:link, .SaveBtn:visited {
+    background-color: white;
+    color: black;
+    text-align: center;
+    padding: 5% 5%;
+    display: inline-block;
+    border-style: solid;
+    border-color: slategray
+}
+.MyProjects:link, .MyProjects:visited {
+    display:inline-block;
+    padding:1%1%;
+    background-color:white;
+    text-align:center;
+    width:250px;
+    height:100px;
+    margin:0.1%;
+    color:black;
+    border-style:solid;
+    border-color:lightslategrey;
+    border-radius:25%;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style:italic;
+    text-decoration:none;
+}
+.MyProjects:hover{
+    background-color:yellow;
+}
+.TagContainer{
+    display:flex;
+    flex-direction:row;
+}
+.TagDiv {
+    margin: 4px;
+    border-radius: 4px;
+    overflow: auto;
+    width: 50%;
+    float: left;
+    border-style: solid;
+    border-color: yellow;
+}
+.TagDiv label{
+    
+}
+.TagDiv label span{
+    text-align:center;
+    padding:2%;
+    display:block;
+    
+}
+.TagDiv label input{
+    position:absolute;
+    
+}
+.TagDiv input:checked + span{
+    background-color:green;
+    color:black;
+}
 @media screen and (max-width: 489px) {
     .slideshow-container {
         max-width:380px;

@@ -8,7 +8,7 @@ namespace IAT2022.Repositories
         List<ProjectPoco>? GetAllProjects(string name);
         CustomerQuestionsPoco GetCustomerQuestions();
         ProjectPoco GetSingleProject(string id);
-        ProjectTagsPoco GetTags();
+        List<ProjectTagsPoco> GetTags();
         ProjectPoco RegisterProject(ProjectPoco model);
         void SeedCustomerQuestions();
         void SeedTags();

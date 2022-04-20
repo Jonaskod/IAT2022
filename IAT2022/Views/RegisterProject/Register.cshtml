@@ -40,28 +40,16 @@
 
             </div>
             <div>
-
+            @for (var i = 0; i < Model.Tags.Count(); i++)
+            {
+                <label asp-for="Tags">Välj det som stämmer in på ditt projekt</label>
+                <input asp-for="TagsBool[i]" type="checkbox" id="Tag1" />
+                <label for="Tag1">@Model.Tags[i].Description</label>
                 
-
-                <label asp-for="Tags">Välj det som stämmer in på ditt projekt</label>
-                <input asp-for="TagsBool.Tag1" type="checkbox" id="Tag1" />
-                <label for="Tag1">@Model.Tags.Tag1.ToString()</label>
-
-                @*<label asp-for="Tags">Välj det som stämmer in på ditt projekt</label>
-                <input asp-for="TagsPoco.Tag3" type="checkbox" id="Tag1" />
-                <label for="Tag1">@Model.Tags.Tag3.ToString()</label>
-
-                <label asp-for="Tags">Välj det som stämmer in på ditt projekt</label>
-                <input asp-for="TagsPoco.Tag4" type="checkbox" id="Tag1" />
-                <label for="Tag1">@Model.Tags.Tag4.ToString()</label>
-
-                <label asp-for="Tags">Välj det som stämmer in på ditt projekt</label>
-                <input asp-for="TagsPoco.Tag5" type="checkbox" id="Tag1" />
-                <label for="Tag1">@Model.Tags.Tag5.ToString()</label>*@
-
-
+            }
             
-        
+            
+
 
             </div>
                  <button type="submit" value="submit" class="btn-save">Registrera</button>

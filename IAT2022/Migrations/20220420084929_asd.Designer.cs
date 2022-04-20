@@ -3,6 +3,7 @@ using System;
 using IAT2022.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IAT2022.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220420084929_asd")]
+    partial class asd
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.3");
@@ -135,12 +137,7 @@ namespace IAT2022.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("ProjectPocoId")
-                        .HasColumnType("INTEGER");
-
                     b.HasKey("Id");
-
-                    b.HasIndex("ProjectPocoId");
 
                     b.ToTable("ProjectTags");
                 });
@@ -243,18 +240,9 @@ namespace IAT2022.Migrations
                     b.Navigation("TagsBool");
                 });
 
-            modelBuilder.Entity("IAT2022.Data.Poco.ProjectTagsPoco", b =>
-                {
-                    b.HasOne("IAT2022.Data.Poco.ProjectPoco", null)
-                        .WithMany("Tags")
-                        .HasForeignKey("ProjectPocoId");
-                });
-
             modelBuilder.Entity("IAT2022.Data.Poco.ProjectPoco", b =>
                 {
                     b.Navigation("Comments");
-
-                    b.Navigation("Tags");
                 });
 #pragma warning restore 612, 618
         }

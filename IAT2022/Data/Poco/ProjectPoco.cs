@@ -17,7 +17,8 @@ namespace IAT2022.Data.Poco
         public int? Finance { get; set; }
         public string? ProjectType { get; set; }
         public List<CommentPoco>? Comments { get; set; }
-        public TagsBoolPoco? TagsBool { get; set; } 
+        public List<ProjectTagsPoco> Tags { get; set; }
+        //public TagsForProject? TagsForProject { get; set; } 
     
     }
 }

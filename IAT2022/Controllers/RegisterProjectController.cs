@@ -24,12 +24,14 @@ namespace IAT2022.Controllers
         {
             
             ProjectPoco projectPoco = new();
+            
+            projectPoco.Tags = Convert(model.TagsBool);
             projectPoco.Comments = new();
             projectPoco.ProjectName = model.Name;
             projectPoco.Description = model.Description;
             projectPoco.Owner=User.Identity.Name;
             projectPoco.ProjectType = model.TypeOfProject;
-            projectPoco.TagsBool = model.TagsBool;
+            
             
 
             if (model.Comment!=null)
@@ -41,6 +43,19 @@ namespace IAT2022.Controllers
             _dbRepository.RegisterProject(projectPoco);
             TempData["mydata"] = projectPoco.Id;//Skickar med tempdata mellan controllers
             return RedirectToAction("Index", "Assessment");
+        }
+        public List<ProjectTagsPoco> Convert(List<bool> tagsBool)
+        {
+            List<ProjectTagsPoco> projectTagsPocoList = new List<ProjectTagsPoco>();
+            var tags = _dbRepository.GetTags();
+            for (int i = 0; i < tagsBool.Count(); i++)
+            {
+                if (tagsBool[i])
+                {
+                    projectTagsPocoList.Add(tags[i]);
+                }
+            }
+            return projectTagsPocoList;
         }
     }
 }

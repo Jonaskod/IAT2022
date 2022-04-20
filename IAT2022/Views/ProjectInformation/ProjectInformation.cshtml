@@ -9,7 +9,7 @@ table, th, td {
   border:1px solid black;
 }
 </style>
-<h1>@Model.GetTagsForProject()</h1>
+<h1>@*@Model.GetTagsForProject()*@</h1>
 <div class="AssessmentTable">
    
     <table>
@@ -29,7 +29,7 @@ table, th, td {
             }
             else
             {
-            <td>1 @Model.Project.Customer.K1</td>
+            @*<td>1 @Model.Project.Customer.K1</td>
             <td>2 @Model.Project.Customer.K2</td>
             <td>3 @Model.Project.Customer.K3</td>
             <td>4 @Model.Project.Customer.K4</td>
@@ -37,7 +37,7 @@ table, th, td {
             <td>6 @Model.Project.Customer.K6</td>
             <td>7 @Model.Project.Customer.K7</td>
             <td>8 @Model.Project.Customer.K8</td>
-            <td>9 @Model.Project.Customer.K9</td>    
+            <td>9 @Model.Project.Customer.K9</td> *@   
             }
       </tr>
 

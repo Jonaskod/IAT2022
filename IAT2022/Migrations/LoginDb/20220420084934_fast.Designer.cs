@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IAT2022.Migrations.LoginDb
 {
     [DbContext(typeof(LoginDbContext))]
-    [Migration("20220419115623_l")]
-    partial class l
+    [Migration("20220420084934_fast")]
+    partial class fast
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

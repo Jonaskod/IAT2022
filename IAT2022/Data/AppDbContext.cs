@@ -10,6 +10,7 @@ namespace IAT2022.Data
         public DbSet<CustomerPoco> CustomerValue { get; set; }
         public  DbSet<CustomerQuestionsPoco> CustomerQuestions  { get; set; }
         public DbSet<ProjectTagsPoco> ProjectTags { get; set; } 
+
         
 
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)

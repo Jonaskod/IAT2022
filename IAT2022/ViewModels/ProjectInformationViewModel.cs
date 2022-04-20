@@ -14,17 +14,17 @@ namespace IAT2022.ViewModels
         public ProjectInformationViewModel(IDbRepository dbRepository)
         {
             _dbRepository = dbRepository;
-            ProjectTagsPoco = _dbRepository.GetTags();
+            //ProjectTagsPoco = _dbRepository.GetTags();
             CustomerQuestions = _dbRepository.GetCustomerQuestions();
         }
-        public string GetTagsForProject()
-        {
-            if (Project.TagsBool.Tag1)
-            {
-                return ProjectTagsPoco.Tag1;
-            }
-            return "";
-        }
+        //public string GetTagsForProject()
+        //{
+        //    if (Project.TagsBool.Tag1)do
+        //    {
+        //        return ProjectTagsPoco.Tag1;
+        //    }
+        //    return "";
+        //}
 
         
 

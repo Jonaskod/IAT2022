@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IAT2022.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220419115618_s")]
-    partial class s
+    [Migration("20220420090018_asssd")]
+    partial class asssd
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -133,22 +133,16 @@ namespace IAT2022.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Tag1")
+                    b.Property<string>("Description")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Tag2")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Tag3")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Tag4")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("Tag5")
-                        .HasColumnType("TEXT");
+                    b.Property<int?>("ProjectPocoId")
+                        .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ProjectPocoId");
 
                     b.ToTable("ProjectTags");
                 });
@@ -203,7 +197,7 @@ namespace IAT2022.Migrations
                     b.ToTable("CustomerQuestions");
                 });
 
-            modelBuilder.Entity("IAT2022.Data.Poco.TagsBoolPoco", b =>
+            modelBuilder.Entity("IAT2022.Data.Poco.TagsBool", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -226,7 +220,7 @@ namespace IAT2022.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("TagsBoolPoco");
+                    b.ToTable("TagsBool");
                 });
 
             modelBuilder.Entity("IAT2022.Data.Poco.CommentPoco", b =>
@@ -242,7 +236,7 @@ namespace IAT2022.Migrations
                         .WithMany()
                         .HasForeignKey("CustomerId");
 
-                    b.HasOne("IAT2022.Data.Poco.TagsBoolPoco", "TagsBool")
+                    b.HasOne("IAT2022.Data.Poco.TagsBool", "TagsBool")
                         .WithMany()
                         .HasForeignKey("TagsBoolId");
 
@@ -251,9 +245,18 @@ namespace IAT2022.Migrations
                     b.Navigation("TagsBool");
                 });
 
+            modelBuilder.Entity("IAT2022.Data.Poco.ProjectTagsPoco", b =>
+                {
+                    b.HasOne("IAT2022.Data.Poco.ProjectPoco", null)
+                        .WithMany("Tags")
+                        .HasForeignKey("ProjectPocoId");
+                });
+
             modelBuilder.Entity("IAT2022.Data.Poco.ProjectPoco", b =>
                 {
                     b.Navigation("Comments");
+
+                    b.Navigation("Tags");
                 });
 #pragma warning restore 612, 618
         }

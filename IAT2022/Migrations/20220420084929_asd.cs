@@ -4,7 +4,7 @@
 
 namespace IAT2022.Migrations
 {
-    public partial class s : Migration
+    public partial class asd : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -60,11 +60,7 @@ namespace IAT2022.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    Tag1 = table.Column<string>(type: "TEXT", nullable: true),
-                    Tag2 = table.Column<string>(type: "TEXT", nullable: true),
-                    Tag3 = table.Column<string>(type: "TEXT", nullable: true),
-                    Tag4 = table.Column<string>(type: "TEXT", nullable: true),
-                    Tag5 = table.Column<string>(type: "TEXT", nullable: true)
+                    Description = table.Column<string>(type: "TEXT", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -72,7 +68,7 @@ namespace IAT2022.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "TagsBoolPoco",
+                name: "TagsBool",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
@@ -118,7 +114,7 @@ namespace IAT2022.Migrations
                     table.ForeignKey(
                         name: "FK_Projects_TagsBoolPoco_TagsBoolId",
                         column: x => x.TagsBoolId,
-                        principalTable: "TagsBoolPoco",
+                        principalTable: "TagsBool",
                         principalColumn: "Id");
                 });
 
@@ -175,7 +171,7 @@ namespace IAT2022.Migrations
                 name: "CustomerValue");
 
             migrationBuilder.DropTable(
-                name: "TagsBoolPoco");
+                name: "TagsBool");
         }
     }
 }

@@ -14,6 +14,7 @@ namespace IAT2022.Controllers
         {
             _dbRepository = dbRepository;
         }
+
         public IActionResult Register()
         {
             RegisterProjectViewModel registerProjectViewModel = new(_dbRepository);  
@@ -42,7 +43,7 @@ namespace IAT2022.Controllers
             }
             _dbRepository.RegisterProject(projectPoco);
             TempData["mydata"] = projectPoco.Id;//Skickar med tempdata mellan controllers
-            return RedirectToAction("Index", "Assessment");
+            return View("ChoosePath", model);
         }
         public List<ProjectTagsPoco> Convert(List<bool> tagsBool)
         {
@@ -56,6 +57,21 @@ namespace IAT2022.Controllers
                 }
             }
             return projectTagsPocoList;
+        }
+
+        public IActionResult ChoosePath()
+        {
+            var data = TempData["iddata"];
+            RegisterProjectViewModel model = new();
+            model.ProjectPoco = _dbRepository.GetSingleProject(data.ToString());
+
+            TempData["mydata"] = model.ProjectPoco.Id;
+            return View(model);
+        }
+        public IActionResult Customer(RegisterProjectViewModel model)
+        {
+            
+            return RedirectToAction("Index", "Assessment");
         }
     }
 }

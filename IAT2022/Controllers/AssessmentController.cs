@@ -28,58 +28,42 @@ namespace IAT2022.Controllers
             TempData["iddata"] = Model.Project.Id;//Skickar med tempdata mellan controllers
             return View(Model);
         }
+
         
-        public IActionResult Test(List<bool> kresultlist)
+        public void Test(List<bool> boolResult)
         {
             var data = TempData["iddata"];
-            var aids = _dbRepository.GetSingleProject(data.ToString());
-            aids.Customer.K1=kresultlist[0];
-            aids.Customer.K2=kresultlist[1];
-            aids.Customer.K3=kresultlist[2];
-            aids.Customer.K4=kresultlist[3];
-            if (kresultlist[4] || kresultlist[5])
+            var project = _dbRepository.GetSingleProject(data.ToString());
+            if (boolResult != null)
             {
-                aids.Customer.K5 = true;
-            }
-            else
-            {
-                aids.Customer.K5=false;
-            }
-            
-            if (kresultlist[6] || kresultlist[7])
-            {
-                aids.Customer.K6 = true;
-            }
-            else
-            {
-                aids.Customer.K6=false;
-            }
-            
-            if (kresultlist[8] || kresultlist[9])
-            {
-                aids.Customer.K7 = true;
-            }
-            else
-            {
-                aids.Customer.K7=false; 
-            }
-            
-            if (kresultlist[10] || kresultlist[11])
-            {
-                aids.Customer.K8 = true;
-            }
-            else
-            {
-                aids.Customer.K8=false;
-            }
-            aids.Customer.K9=kresultlist[12];
+                project.Customer.K1 = boolResult[0];
+                project.Customer.K2 = boolResult[1];
+                project.Customer.K3 = boolResult[2];
+                project.Customer.K4 = boolResult[3];
+                if (boolResult[4] || boolResult[5])
+                {
+                    project.Customer.K5 = true;
+                }
+                if (boolResult[6] || boolResult[7])
+                {
+                    project.Customer.K6 = true;
+                }
+                if (boolResult[8] || boolResult[9])
+                {
+                    project.Customer.K7 = true;
+                }
 
-            _dbRepository.UpdateProject(aids);
+                if (boolResult[10] || boolResult[11])
+                {
+                    project.Customer.K8 = true;
+                }
+                project.Customer.K9 = boolResult[12];
+            }
+            
+
+            _dbRepository.UpdateProject(project);
             //SKRIV TILL DB - UPPDATERA PROJEKT
-            Model = new (_dbRepository);
-            Model.Project = aids;
-            TempData["mydata"] = aids.Id;
-            return View(Model);
+            TempData["iddata"] = project.Id;
         }
         
         

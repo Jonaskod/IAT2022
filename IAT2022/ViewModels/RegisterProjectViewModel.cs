@@ -16,7 +16,8 @@ namespace IAT2022.ViewModels
         public string Description { get; set; }
         public string Comment { get; set; }
         public List<ProjectTagsPoco> Tags { get; set; }
-        public List<bool> TagsBool { get; set; }  
+        public List<bool> TagsBool { get; set; }
+        public ProjectPoco ProjectPoco { get; set; }
         public RegisterProjectViewModel(IDbRepository dbRepository)
         {
             _dbRepository = dbRepository;

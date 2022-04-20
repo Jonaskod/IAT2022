@@ -1,47 +1,23 @@
 ﻿let test = document.getElementById("test");
 let checkboxlist = document.getElementsByName("checkbox");
-let kresultlist = [];
-kresultlist.length = checkboxlist.length;
-kresultlist.fill(false);
+let boolResult = [];
+boolResult.length = checkboxlist.length;
+boolResult.fill(false);
 
 for (let i = 0; i < checkboxlist.length; i++) {
     checkboxlist[i].addEventListener('change', function () {
         if (checkboxlist[i].checked) {
-            kresultlist[i] = true;
-            console.log(kresultlist[i]);
+            boolResult[i] = true;
         }
         else {
-            kresultlist[i] = false;
-            console.log("Checkbox is not checked.")
+            boolResult[i] = false;
         }
+        Update();
     } )
 }
 
-test.addEventListener('click', function () {
-    Update();
-});
 
 
-
-function Update() {
-    $(document).ready(function () {
-        
-            $.ajax({
-                url: '/Assessment/test',
-                type: 'POST',
-                dataType: 'Boolean',
-                data: { K1TEST, K2TEST, K3TEST, K4TEST },
-                success: function (data) {
-
-                }, error: function (data) {
-
-                }
-            });
-        console.log(K1TEST)
-       
-    });
-
-}
 function Update() {
     $(document).ready(function () {
 
@@ -49,15 +25,13 @@ function Update() {
             url: '/Assessment/test',
             type: 'POST',
             dataType: 'Boolean',
-            data: { kresultlist },
+            data: { boolResult },
             success: function (data) {
-
+                
             }, error: function (data) {
 
             }
         });
-        console.log(K1TEST)
-
     });
 }
 
@@ -91,3 +65,4 @@ function showSlides(n) {
 var myDrop = new drop({
     selector: '#myMulti'
 });
+

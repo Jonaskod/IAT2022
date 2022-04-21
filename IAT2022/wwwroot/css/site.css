@@ -269,17 +269,13 @@ li{
     border-radius: 10%;
 }
 
-.TagCategory {
-    /*position: absolute;
-    top: 0;
-    left: 0;
-    width: 200px;
-    height: 200px;
-    opacity: 0;
-    cursor: pointer;*/
+.CustomerChecked{
+    background-color:green;
+    color:white;
 }
-.TagCategory:checked{
-
+.CustomerUnchecked{
+    background-color:red;
+    color:black;
 }
 
 @media screen and (max-width: 1352px) {

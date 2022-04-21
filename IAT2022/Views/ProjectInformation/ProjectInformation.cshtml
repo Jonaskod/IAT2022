@@ -18,94 +18,19 @@ table, th, td {
     <table>
       <tr class="tableFormat">
         <td>KUND</td>
-            @if(Model.Project.Customer == null)
+            @foreach (var item in Model.Project.Customer)
             {
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-                <td></td>
+                @if (item.Result)
+                {
+                    <td class="CustomerChecked">K @item.Id</td>
+                }
+                else
+                {
+                    <td class="CustomerUnchecked">K @item.Id</td>
+                }
             }
-            else
-            {
-                @if (@Model.Project.Customer.K1)
-                {
-                    <td style="background-color:#00FF00; color:black;">K1</td>
-                }
-                else
-                {
-                    <td style="background-color:#FF0000">K1</td>
-                }
-                @if (@Model.Project.Customer.K2)
-                {
-                    <td style="background-color:#00FF00; color:black;">K2</td>
-                }
-                else
-                {
-                    <td style="background-color:#FF0000">K2</td>
-                }
-                @if (@Model.Project.Customer.K3)
-                {
-                    <td style="background-color:#00FF00; color:black;">K3</td>
-                }
-                else
-                {
-                    <td style="background-color:#FF0000">K3</td>
-                }
-                @if (@Model.Project.Customer.K4)
-                {
-                    <td style="background-color:#00FF00; color:black;">K4</td>
-                }
-                else
-                {
-                    <td style="background-color:#FF0000">K4</td>
-                }
-                @if (@Model.Project.Customer.K5)
-                {
-                    <td style="background-color:#00FF00; color:black;">K5</td>
-                }
-                else
-                {
-                    <td style="background-color:#FF0000">K5</td>
-                }
-                @if (@Model.Project.Customer.K6)
-                {
-                    <td style="background-color:#00FF00; color:black;">K6</td>
-                }
-                else
-                {
-                    <td style="background-color:#FF0000">K6</td>
-                }
-                @if (@Model.Project.Customer.K7)
-                {
-                    <td style="background-color:#00FF00; color:black;">K7</td>
-                }
-                else
-                {
-                    <td style="background-color:#FF0000">K7</td>
-                }
-                @if (@Model.Project.Customer.K8)
-                {
-                    <td style="background-color:#00FF00; color:black;">K8</td>
-                }
-                else
-                {
-                    <td style="background-color:#FF0000">K8</td>
-                }
-                @if (@Model.Project.Customer.K9)
-                {
-                    <td style="background-color:#00FF00; color:black;">K9</td>
-                }
-                else
-                {
-                    <td style="background-color:#FF0000">K9</td>
-                }
             
-            }
+           
       </tr>
 
        <tr>

@@ -33,8 +33,6 @@ namespace IAT2022.Controllers
             projectPoco.Owner=User.Identity.Name;
             projectPoco.ProjectType = model.TypeOfProject;
             
-            
-
             if (model.Comment!=null)
             {
                 CommentPoco commentPoco = new();

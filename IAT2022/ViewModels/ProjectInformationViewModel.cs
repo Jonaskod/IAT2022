@@ -9,7 +9,7 @@ namespace IAT2022.ViewModels
         private readonly IDbRepository _dbRepository;
 
         public ProjectPoco Project { get; set; }
-        public CustomerQuestionsPoco CustomerQuestions { get; set; }
+        public List<CustomerQuestionsPoco> CustomerQuestions { get; set; }
         public ProjectTagsPoco ProjectTagsPoco { get; set; }
         public ProjectInformationViewModel(IDbRepository dbRepository)
         {

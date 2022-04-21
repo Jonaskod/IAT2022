@@ -12,149 +12,146 @@
     <section class="app">
         @*<i class="fa fa-rocket"></i>*@
 
-            <div class="mySlides">
+            
+                
+                    
+                    
+                        
+                            @for (var x = 0; x < Model.CustomerQuestions.Count(); x++)
+                            {
+                                @if (x==0)
+                                {
+                                    <div class="mySlides">
+                                        <article class="feature">
+                                        <input type="checkbox" id="feature" name="checkbox"/>
+                                        <div>
+                                        <span>
+                                        @Model.CustomerQuestions[x].QuestionDescription
+                                        </span>
+                                        </div>
+                                        </article>
+                                        <article class="feature">
+                                        <input type="checkbox" id="feature" name="checkbox"/>
+                                        <div>
+                                        <span>
+                                        @Model.CustomerQuestions[x+1].QuestionDescription
+                                        </span>
+                                        </div>
+                                        </article>
+                                        <article class="feature">
+                                        <input type="checkbox" id="feature" name="checkbox"/>
+                                        <div>
+                                        <span>
+                                        @Model.CustomerQuestions[x+2].QuestionDescription
+                                        </span>
+                                        </div>
+                                        </article>
+                                        <article class="feature">
+                                        <input type="checkbox" id="feature" name="checkbox"/>
+                                        <div>
+                                        <span>
+                                        @Model.CustomerQuestions[x+3].QuestionDescription
+                                        </span>
+                                        </div>
+                                        </article>
+                                    </div>
+                                    
+                                }
 
-            <article class="feature">
-            <input type="checkbox" id="feature" name="checkbox"/>
-            <div>
-                <span>
-                    <h6>K1 - Need</h6>
-                @Model.CustomerQuestions.K1
-                </span>
-            </div>
-            </article>
-
-            <article class="feature">
-            <input type="checkbox" id="feature" name="checkbox"/>
-            <div>
-                <span>
-                    <h6>K2 - Need</h6>
-                @Model.CustomerQuestions.K2
-                </span>
-            </div>
-            </article>
-        
-
-        
-            <article class="feature">
-            <input type="checkbox" id="feature" name="checkbox"/>
-            <div>
-                <span>
-                    <h6>K3 - Need</h6>
-                @Model.CustomerQuestions.K3
-                </span>
-            </div>
-            </article>
-        
-
-            <article class="feature">
-            <input type="checkbox" id="feature" name="checkbox"/>
-            <div>
-                <span>
-                    <h6>K4 - Need</h6>
-                @Model.CustomerQuestions.K4
-                </span>
-            </div>
-            </article>
-            </div>
-
-            <div class="mySlides">
-
-                <article class="feature">
-                <input type="checkbox" id="feature" name="checkbox"/>
-                <div>
-                    <span>
-                        <h6>K5 - Approach</h6>
-                    @Model.CustomerQuestions.K5a
-                    </span>
+                                
+                                @if (x == 3)
+                                {
+                                    <div class="mySlides">
+                                        <article class="feature">
+                                        <input type="checkbox" id="feature" name="checkbox"/>
+                                        <div>
+                                        <span>
+                                        @Model.CustomerQuestions[x].QuestionDescription
+                                        </span>
+                                        </div>
+                                        </article>
+                                        <article class="feature">
+                                        <input type="checkbox" id="feature" name="checkbox"/>
+                                        <div>
+                                        <span>
+                                        @Model.CustomerQuestions[x+1].QuestionDescription
+                                        </span>
+                                        </div>
+                                        </article>
+                                        <article class="feature">
+                                        <input type="checkbox" id="feature" name="checkbox"/>
+                                        <div>
+                                        <span>
+                                        @Model.CustomerQuestions[x+2].QuestionDescription
+                                        </span>
+                                        </div>
+                                        </article>
+                                        <article class="feature">
+                                        <input type="checkbox" id="feature" name="checkbox"/>
+                                        <div>
+                                        <span>
+                                        @Model.CustomerQuestions[x+3].QuestionDescription
+                                        </span>
+                                        </div>
+                                        </article>
+                                    </div>
+                                }
+                                @if (x == 7)
+                                {
+                                     <div class="mySlides">
+                                        <article class="feature">
+                                        <input type="checkbox" id="feature" name="checkbox"/>
+                                        <div>
+                                        <span>
+                                        @Model.CustomerQuestions[x].QuestionDescription
+                                        </span>
+                                        </div>
+                                        </article>
+                                        <article class="feature">
+                                        <input type="checkbox" id="feature" name="checkbox"/>
+                                        <div>
+                                        <span>
+                                        @Model.CustomerQuestions[x+1].QuestionDescription
+                                        </span>
+                                        </div>
+                                        </article>
+                                        <article class="feature">
+                                        <input type="checkbox" id="feature" name="checkbox"/>
+                                        <div>
+                                        <span>
+                                        @Model.CustomerQuestions[x+2].QuestionDescription
+                                        </span>
+                                        </div>
+                                        </article>
+                                        <article class="feature">
+                                        <input type="checkbox" id="feature" name="checkbox"/>
+                                        <div>
+                                        <span>
+                                        @Model.CustomerQuestions[x+3].QuestionDescription
+                                        </span>
+                                        </div>
+                                        </article>
+                                        <article class="feature">
+                                        <input type="checkbox" id="feature" name="checkbox"/>
+                                        <div>
+                                        <span>
+                                        @Model.CustomerQuestions[x+4].QuestionDescription
+                                        </span>
+                                        </div>
+                                        </article>
+                                    </div>
+                                    
+                                }
+                                
+                            }
+                            
+                    
                 </div>
-                </article>
+            
+               
+            
 
-                <article class="feature">
-                <input type="checkbox" id="feature" name="checkbox"/>
-                <div>
-                    <span>
-                        <h6>K5 - Approach</h6>
-                    @Model.CustomerQuestions.K5b
-                    </span>
-                </div>
-                </article>
-
-                <article class="feature">
-                <input type="checkbox" id="feature" name="checkbox"/>
-                <div>
-                    <span>
-                        <h6>K6 - Approach</h6>
-                    @Model.CustomerQuestions.K6a
-                    </span>
-                </div>
-                </article>
-
-                <article class="feature">
-                <input type="checkbox" id="feature" name="checkbox"/>
-                <div>
-                    <span>
-                        <h6>K6 - Approach</h6>
-                    @Model.CustomerQuestions.K6b
-                    </span>
-                </div>
-                </article>
-            </div>
-
-
-                <div class="mySlides">
-
-                <article class="feature">
-                <input type="checkbox" id="feature" name="checkbox"/>
-                <div>
-                    <span>
-                        <h6>K7 - Business</h6>
-                    @Model.CustomerQuestions.K7a
-                    </span>
-                </div>
-                </article>
-
-                <article class="feature">
-                <input type="checkbox" id="feature" name="checkbox"/>
-                <div>
-                    <span>
-                        <h6>K7 - Business</h6>
-                    @Model.CustomerQuestions.K7b
-                    </span>
-                </div>
-                </article>
-
-                <article class="feature">
-                <input type="checkbox" id="feature" name="checkbox"/>
-                <div>
-                    <span>
-                        <h6>K8 - Business</h6>
-                    @Model.CustomerQuestions.K8a
-                    </span>
-                </div>
-                </article>
-
-                <article class="feature">
-                <input type="checkbox" id="feature" name="checkbox"/>
-                <div>
-                    <span>
-                        <h6>K8 - Business</h6>
-                    @Model.CustomerQuestions.K8b
-                    </span>
-                </div>
-                </article>
-
-                <article class="feature">
-                <input type="checkbox" id="feature" name="checkbox"/>
-                <div>
-                    <span>
-                        <h6>K9 - Business</h6>
-                    @Model.CustomerQuestions.K9
-                    </span>
-                </div>
-                </article>
-
-            </div>
+            
     </section>
 </div>
             <a class="next" onclick="plusSlides(1)">Nästa</a>

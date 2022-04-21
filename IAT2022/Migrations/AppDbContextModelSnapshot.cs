@@ -42,34 +42,15 @@ namespace IAT2022.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<bool>("K1")
+                    b.Property<int?>("ProjectPocoId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<bool>("K2")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<bool>("K3")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<bool>("K4")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<bool>("K5")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<bool>("K6")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<bool>("K7")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<bool>("K8")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<bool>("K9")
+                    b.Property<bool>("Result")
                         .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ProjectPocoId");
 
                     b.ToTable("CustomerValue");
                 });
@@ -83,9 +64,6 @@ namespace IAT2022.Migrations
                     b.Property<int?>("Buissness")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("CustomerId")
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("Description")
                         .HasColumnType("TEXT");
 
@@ -93,9 +71,6 @@ namespace IAT2022.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<int?>("IPR")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<bool>("K1TEST")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Owner")
@@ -114,8 +89,6 @@ namespace IAT2022.Migrations
                         .HasColumnType("INTEGER");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CustomerId");
 
                     b.ToTable("Projects");
                 });
@@ -146,43 +119,7 @@ namespace IAT2022.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("K1")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("K2")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("K3")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("K4")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("K5a")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("K5b")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("K6a")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("K6b")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("K7a")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("K7b")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("K8a")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("K8b")
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("K9")
+                    b.Property<string>("QuestionDescription")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
@@ -197,13 +134,11 @@ namespace IAT2022.Migrations
                         .HasForeignKey("ProjectPocoId");
                 });
 
-            modelBuilder.Entity("IAT2022.Data.Poco.ProjectPoco", b =>
+            modelBuilder.Entity("IAT2022.Data.Poco.CustomerPoco", b =>
                 {
-                    b.HasOne("IAT2022.Data.Poco.CustomerPoco", "Customer")
-                        .WithMany()
-                        .HasForeignKey("CustomerId");
-
-                    b.Navigation("Customer");
+                    b.HasOne("IAT2022.Data.Poco.ProjectPoco", null)
+                        .WithMany("Customer")
+                        .HasForeignKey("ProjectPocoId");
                 });
 
             modelBuilder.Entity("IAT2022.Data.Poco.ProjectTagsPoco", b =>
@@ -216,6 +151,8 @@ namespace IAT2022.Migrations
             modelBuilder.Entity("IAT2022.Data.Poco.ProjectPoco", b =>
                 {
                     b.Navigation("Comments");
+
+                    b.Navigation("Customer");
 
                     b.Navigation("Tags");
                 });

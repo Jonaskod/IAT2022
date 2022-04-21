@@ -32,35 +32,16 @@ namespace IAT2022.Controllers
         
         public void Test(List<bool> boolResult)
         {
+
             var data = TempData["iddata"];
             var project = _dbRepository.GetSingleProject(data.ToString());
-            if (boolResult != null)
+            var categories = _dbRepository.GetCustomerQuestions();
+            for (int i = 0; i < categories.Count(); i++)
             {
-                project.Customer.K1 = boolResult[0];
-                project.Customer.K2 = boolResult[1];
-                project.Customer.K3 = boolResult[2];
-                project.Customer.K4 = boolResult[3];
-                if (boolResult[4] || boolResult[5])
-                {
-                    project.Customer.K5 = true;
-                }
-                if (boolResult[6] || boolResult[7])
-                {
-                    project.Customer.K6 = true;
-                }
-                if (boolResult[8] || boolResult[9])
-                {
-                    project.Customer.K7 = true;
-                }
-
-                if (boolResult[10] || boolResult[11])
-                {
-                    project.Customer.K8 = true;
-                }
-                project.Customer.K9 = boolResult[12];
+                
+                project.Customer[i].Result = boolResult[i];
             }
             
-
             _dbRepository.UpdateProject(project);
             //SKRIV TILL DB - UPPDATERA PROJEKT
             TempData["iddata"] = project.Id;

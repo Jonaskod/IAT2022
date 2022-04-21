@@ -14,44 +14,11 @@ namespace IAT2022.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    K1 = table.Column<string>(type: "TEXT", nullable: true),
-                    K2 = table.Column<string>(type: "TEXT", nullable: true),
-                    K3 = table.Column<string>(type: "TEXT", nullable: true),
-                    K4 = table.Column<string>(type: "TEXT", nullable: true),
-                    K5a = table.Column<string>(type: "TEXT", nullable: true),
-                    K5b = table.Column<string>(type: "TEXT", nullable: true),
-                    K6a = table.Column<string>(type: "TEXT", nullable: true),
-                    K6b = table.Column<string>(type: "TEXT", nullable: true),
-                    K7a = table.Column<string>(type: "TEXT", nullable: true),
-                    K7b = table.Column<string>(type: "TEXT", nullable: true),
-                    K8a = table.Column<string>(type: "TEXT", nullable: true),
-                    K8b = table.Column<string>(type: "TEXT", nullable: true),
-                    K9 = table.Column<string>(type: "TEXT", nullable: true)
+                    QuestionDescription = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_CustomerQuestions", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "CustomerValue",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    K1 = table.Column<bool>(type: "INTEGER", nullable: false),
-                    K2 = table.Column<bool>(type: "INTEGER", nullable: false),
-                    K3 = table.Column<bool>(type: "INTEGER", nullable: false),
-                    K4 = table.Column<bool>(type: "INTEGER", nullable: false),
-                    K5 = table.Column<bool>(type: "INTEGER", nullable: false),
-                    K6 = table.Column<bool>(type: "INTEGER", nullable: false),
-                    K7 = table.Column<bool>(type: "INTEGER", nullable: false),
-                    K8 = table.Column<bool>(type: "INTEGER", nullable: false),
-                    K9 = table.Column<bool>(type: "INTEGER", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CustomerValue", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -60,11 +27,9 @@ namespace IAT2022.Migrations
                 {
                     Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
-                    K1TEST = table.Column<bool>(type: "INTEGER", nullable: false),
                     ProjectName = table.Column<string>(type: "TEXT", nullable: true),
                     Description = table.Column<string>(type: "TEXT", nullable: true),
                     Owner = table.Column<string>(type: "TEXT", nullable: true),
-                    CustomerId = table.Column<int>(type: "INTEGER", nullable: true),
                     Product = table.Column<int>(type: "INTEGER", nullable: true),
                     IPR = table.Column<int>(type: "INTEGER", nullable: true),
                     Team = table.Column<int>(type: "INTEGER", nullable: true),
@@ -75,11 +40,6 @@ namespace IAT2022.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Projects", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Projects_CustomerValue_CustomerId",
-                        column: x => x.CustomerId,
-                        principalTable: "CustomerValue",
-                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
@@ -96,6 +56,25 @@ namespace IAT2022.Migrations
                     table.PrimaryKey("PK_CommentPoco", x => x.Id);
                     table.ForeignKey(
                         name: "FK_CommentPoco_Projects_ProjectPocoId",
+                        column: x => x.ProjectPocoId,
+                        principalTable: "Projects",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CustomerValue",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    Result = table.Column<bool>(type: "INTEGER", nullable: false),
+                    ProjectPocoId = table.Column<int>(type: "INTEGER", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CustomerValue", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_CustomerValue_Projects_ProjectPocoId",
                         column: x => x.ProjectPocoId,
                         principalTable: "Projects",
                         principalColumn: "Id");
@@ -126,9 +105,9 @@ namespace IAT2022.Migrations
                 column: "ProjectPocoId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Projects_CustomerId",
-                table: "Projects",
-                column: "CustomerId");
+                name: "IX_CustomerValue_ProjectPocoId",
+                table: "CustomerValue",
+                column: "ProjectPocoId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_ProjectTags_ProjectPocoId",
@@ -145,13 +124,13 @@ namespace IAT2022.Migrations
                 name: "CustomerQuestions");
 
             migrationBuilder.DropTable(
+                name: "CustomerValue");
+
+            migrationBuilder.DropTable(
                 name: "ProjectTags");
 
             migrationBuilder.DropTable(
                 name: "Projects");
-
-            migrationBuilder.DropTable(
-                name: "CustomerValue");
         }
     }
 }

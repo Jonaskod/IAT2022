@@ -31,8 +31,17 @@ namespace IAT2022.Repositories
         {
             try
             {
-                CustomerPoco customer = new CustomerPoco();
-                model.Customer = customer;
+                model.Customer = new();
+                for (int i = 0; i < _appDbContext.CustomerQuestions.Count(); i++)
+                {
+                    CustomerPoco customer = new();
+                    model.Customer.Add(customer);
+                }
+                model.Product = new();
+                model.IPR = new();
+                model.Buissness = new();
+                model.Finance = new();
+                model.Team = new();
                 _appDbContext.Projects?.Add(model);
                 _appDbContext.SaveChanges();
                 return model;
@@ -46,7 +55,13 @@ namespace IAT2022.Repositories
         }
         public ProjectPoco UpdateProject(ProjectPoco project)
         {
-            _appDbContext.Projects.Update(project);
+            var hej = _appDbContext.Projects.Where((x) => x.Id == project.Id).Include(x => x.Comments).Include(x => x.Customer).FirstOrDefault();
+            if (hej!=null)
+            {
+                hej = project;
+            }
+            _appDbContext.Attach(hej);
+            _appDbContext.Entry(hej).State = EntityState.Modified;
             _appDbContext.SaveChanges();
             return project;
         }
@@ -55,19 +70,43 @@ namespace IAT2022.Repositories
             if (!_appDbContext.CustomerQuestions.Any()) 
             {
                 CustomerQuestionsPoco customerQuestionsPoco = new ();
-                customerQuestionsPoco.K1 = "Du har identifierad ett behov eller problem.";
-                customerQuestionsPoco.K2 = "Du har undersökt vilka som har behovet.";
-                customerQuestionsPoco.K3 = "Du har haft direkt kontakt med några behovsägare och ämnesexperter.";
-                customerQuestionsPoco.K4 = "Flera berörda personer har bekräftad behovet och vikten av att hitta en lösning.";
-                customerQuestionsPoco.K5a = "Du har etablerade relationer med några användare som visa intresse för din lösning.";
-                customerQuestionsPoco.K5b = "Du har en potential målkund som specificera vilka krav din lösning behöver uppfyller.";
-                customerQuestionsPoco.K6a = "Nyttan och fördelar av din lösning har verifierads genom första kundtester.";
-                customerQuestionsPoco.K6b = "Du har ett partnerskap som bidra med resurser till utveckling av din lösning";
-                customerQuestionsPoco.K7a = "Du har kundavtal och börjar med testförsäljning.initial product-market - fit";
-                customerQuestionsPoco.K7b = "Pilotkunder och relevanter intressenter deltar i utökad produkttestning";
-                customerQuestionsPoco.K8a = "Första produkterna säljs till några kunder.validerad product-market - fit";
-                customerQuestionsPoco.K8b = "Ökade struktuerade försäljningsinsatser  genomförs";
-                customerQuestionsPoco.K9 = "Utbred försäjlning som kan skalas";
+                customerQuestionsPoco.QuestionDescription = "Du har identifierad ett behov eller problem.";
+                _appDbContext.CustomerQuestions.Add(customerQuestionsPoco);
+                customerQuestionsPoco = new();
+                customerQuestionsPoco.QuestionDescription = "Du har undersökt vilka som har behovet.";
+                _appDbContext.CustomerQuestions.Add (customerQuestionsPoco);
+                customerQuestionsPoco=new();
+                customerQuestionsPoco.QuestionDescription = "Du har haft direkt kontakt med några behovsägare och ämnesexperter.";
+                _appDbContext.CustomerQuestions.Add(customerQuestionsPoco);
+                customerQuestionsPoco = new();
+                customerQuestionsPoco.QuestionDescription = "Flera berörda personer har bekräftad behovet och vikten av att hitta en lösning.";
+                _appDbContext.CustomerQuestions.Add(customerQuestionsPoco);
+                customerQuestionsPoco = new();
+                customerQuestionsPoco.QuestionDescription = "Du har etablerade relationer med några användare som visa intresse för din lösning.";
+                _appDbContext.CustomerQuestions.Add(customerQuestionsPoco);
+                customerQuestionsPoco = new();
+                customerQuestionsPoco.QuestionDescription = "Du har en potential målkund som specificera vilka krav din lösning behöver uppfyller.";
+                _appDbContext.CustomerQuestions.Add(customerQuestionsPoco);
+                customerQuestionsPoco = new();
+                customerQuestionsPoco.QuestionDescription = "Nyttan och fördelar av din lösning har verifierads genom första kundtester.";
+                _appDbContext.CustomerQuestions.Add(customerQuestionsPoco);
+                customerQuestionsPoco = new();
+                customerQuestionsPoco.QuestionDescription = "Du har ett partnerskap som bidra med resurser till utveckling av din lösning";
+                _appDbContext.CustomerQuestions.Add(customerQuestionsPoco);
+                customerQuestionsPoco = new();
+                customerQuestionsPoco.QuestionDescription = "Du har kundavtal och börjar med testförsäljning.initial product-market - fit";
+                _appDbContext.CustomerQuestions.Add(customerQuestionsPoco);
+                customerQuestionsPoco = new();
+                customerQuestionsPoco.QuestionDescription = "Pilotkunder och relevanter intressenter deltar i utökad produkttestning";
+                _appDbContext.CustomerQuestions.Add(customerQuestionsPoco);
+                customerQuestionsPoco = new();
+                customerQuestionsPoco.QuestionDescription = "Första produkterna säljs till några kunder.validerad product-market - fit";
+                _appDbContext.CustomerQuestions.Add(customerQuestionsPoco);
+                customerQuestionsPoco = new();
+                customerQuestionsPoco.QuestionDescription = "Ökade struktuerade försäljningsinsatser  genomförs";
+                _appDbContext.CustomerQuestions.Add(customerQuestionsPoco);
+                customerQuestionsPoco = new();
+                customerQuestionsPoco.QuestionDescription = "Utbred försäjlning som kan skalas";
                 _appDbContext.CustomerQuestions.Add(customerQuestionsPoco);
                 _appDbContext.SaveChanges();
 
@@ -108,9 +147,9 @@ namespace IAT2022.Repositories
             return tags;
         }
 
-        public CustomerQuestionsPoco GetCustomerQuestions()
+        public List<CustomerQuestionsPoco> GetCustomerQuestions()
         {
-            var questions = _appDbContext.CustomerQuestions.FirstOrDefault();
+            var questions = _appDbContext.CustomerQuestions.ToList();
             return questions;
         }
     }

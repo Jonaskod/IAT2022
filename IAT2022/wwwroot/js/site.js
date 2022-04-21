@@ -6,10 +6,10 @@ boolResult.fill(false);
 
 
 
-test.addEventListener('click', function () {
-    console.log(boolResult);
-    Update();
-})
+//test.addEventListener('click', function () {
+//    console.log(boolResult);
+//    Update();
+//})
 for (let i = 0; i < checkboxlist.length; i++) {
     checkboxlist[i].addEventListener('change', function () {
         console.log(boolResult);
@@ -19,6 +19,7 @@ for (let i = 0; i < checkboxlist.length; i++) {
         else {
             boolResult[i] = false;
         }
+        Update();
     } )
 }
 for (let i = 0; i < checkboxlist.length; i++) {
@@ -26,7 +27,7 @@ for (let i = 0; i < checkboxlist.length; i++) {
     if (checkboxlist[i].checked) {
         boolResult[i] = true;
     }
-    boolResult[i] = false;
+    
 }
 
 function Update() {

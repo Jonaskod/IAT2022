@@ -38,7 +38,7 @@ namespace IAT2022.Controllers
             var categories = await _dbRepository.GetCustomerQuestions();
             for (int i = 0; i < categories.Count; i++)
             {
-                project.Customer[i].Result = boolResult[i];
+                project.Customer[i].Result = boolResult[i];  
             }
             
             _dbRepository.UpdateProject(project);

@@ -61,12 +61,17 @@ namespace IAT2022.Controllers
 
         public IActionResult ChoosePath()
         {
-            var data = TempData["iddata"];
-            RegisterProjectViewModel model = new();
-            model.ProjectPoco = _dbRepository.GetSingleProject(data.ToString());
 
-            TempData["mydata"] = model.ProjectPoco.Id;
-            return View(model);
+            var data = TempData["iddata"];
+            if (data != null)
+            {
+                RegisterProjectViewModel model = new();
+                model.ProjectPoco = _dbRepository.GetSingleProject(data.ToString());
+                TempData["mydata"] = model.ProjectPoco.Id;
+                return View(model);
+            }
+            return View();
+            
         }
         public IActionResult Customer(RegisterProjectViewModel model)
         {

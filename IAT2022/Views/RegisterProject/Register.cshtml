@@ -46,15 +46,14 @@
                 <div class="TagContainer">
             @for (var i = 0; i < Model.Tags.Count(); i++)
             {
-                <div class="TagDiv">
-                    <labe>
-                        <input asp-for="TagsBool[i]" type="checkbox"><span>@Model.Tags[i].Description</span>
-                    </labe>
+                <article class="feature">
+                <input asp-for="TagsBool[i]" type="checkbox" id="feature"/>
+                <div>
+                    <span>
+                    @Model.Tags[i].Description
+                    </span>
                 </div>
-                
-                @*<input asp-for="TagsBool[i]" type="checkbox" id="Tag1" class="TagCategory" />
-                <label for="Tag1" class="checkboxlabel">@Model.Tags[i].Description</label>*@
-                
+                </article>
             }
                 </div>
             

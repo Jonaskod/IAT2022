@@ -21,12 +21,18 @@ namespace IAT2022.ViewModels
         public RegisterProjectViewModel(IDbRepository dbRepository)
         {
             _dbRepository = dbRepository;
-            Tags = _dbRepository.GetTags();
+            _ = GetAll();
             
         }
         public RegisterProjectViewModel()
         {
 
+        }
+        public async Task<List<ProjectTagsPoco>> GetAll()
+        {
+            var list = await _dbRepository.GetTags();
+            Tags = list;
+            return Tags;
         }
         
     }

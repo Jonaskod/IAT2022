@@ -15,16 +15,14 @@ namespace IAT2022.ViewModels
         {
             _dbRepository = dbRepository;
             //ProjectTagsPoco = _dbRepository.GetTags();
-            CustomerQuestions = _dbRepository.GetCustomerQuestions();
+            _ = GetAll();
         }
-        //public string GetTagsForProject()
-        //{
-        //    if (Project.TagsBool.Tag1)do
-        //    {
-        //        return ProjectTagsPoco.Tag1;
-        //    }
-        //    return "";
-        //}
+        public async Task<List<CustomerQuestionsPoco>> GetAll()
+        {
+            var list = await _dbRepository.GetCustomerQuestions();
+            CustomerQuestions = list;
+            return CustomerQuestions;
+        }
 
         
 

@@ -1,6 +1,7 @@
 ﻿using IAT2022.Data;
 using IAT2022.Data.Poco;
 using IAT2022.Data.Poco.QuestionsPoco;
+using IAT2022.Data.Poco.SubCategoryPoco;
 using Microsoft.EntityFrameworkCore;
 
 namespace IAT2022.Repositories
@@ -13,12 +14,23 @@ namespace IAT2022.Repositories
         {
             _appDbContext = appDbContext;
         }
-        public ProjectPoco GetSingleProject(string id)
+        public async Task<ProjectPoco> GetSingleProject(string id)
         {
-            var project = _appDbContext.Projects.Where(x=>x.Id == int.Parse(id)).Include(x=>x.Comments).Include(x=>x.Customer).Include(x=>x.Tags).First();
-            return project;
+            try
+            {
+                var project = _appDbContext.Projects.Where(x => x.Id == int.Parse(id)).Include(x => x.Comments).Include(x => x.Tags).Include(x => x.Team).Include(x => x.Customer).FirstOrDefault();
+                project = _appDbContext.Projects.Where(x => x.Id == int.Parse(id)).Include(x => x.Business).Include(x => x.Product).Include(x => x.Finance).Include(x => x.IPR).FirstOrDefault();
+
+                return project;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
-        public List<ProjectPoco>? GetAllProjects(string name)
+        
+        public async Task<List<ProjectPoco>>? GetAllProjects(string name)
         {
             List<ProjectPoco>? list = _appDbContext.Projects?.Where(x => x.Owner == name).Include(x => x.Comments).ToList();
             if (list != null)
@@ -27,21 +39,31 @@ namespace IAT2022.Repositories
             }
             return null;
         }
-        public ProjectPoco RegisterProject(ProjectPoco model)
+        public async Task<ProjectPoco> RegisterProject(ProjectPoco model)
         {
             try
             {
                 model.Customer = new();
-                for (int i = 0; i < _appDbContext.CustomerQuestions.Count(); i++)
-                {
-                    CustomerPoco customer = new();
-                    model.Customer.Add(customer);
-                }
-                model.Product = new();
                 model.IPR = new();
-                model.Buissness = new();
+                model.Business = new();
                 model.Finance = new();
                 model.Team = new();
+                model.Product = new();
+                foreach (var item in _appDbContext.CustomerQuestions)
+                {
+                    CustomerPoco question = new();
+                    model.Customer.Add(question);
+                    ProductPoco temp = new();
+                    model.Product.Add(temp);
+                    IPRPoco iPRPoco = new();
+                    model.IPR.Add(iPRPoco);
+                    BusinessPoco iBusinessPoco = new();
+                    model.Business.Add(iBusinessPoco);
+                    FinancePoco iFinancePoco = new();
+                    model.Finance.Add(iFinancePoco);
+                    TeamPoco iTeamPoco = new();
+                    model.Team.Add(iTeamPoco);
+                }
                 _appDbContext.Projects?.Add(model);
                 _appDbContext.SaveChanges();
                 return model;
@@ -53,7 +75,7 @@ namespace IAT2022.Repositories
             }
             
         }
-        public ProjectPoco UpdateProject(ProjectPoco project)
+        public async Task<ProjectPoco> UpdateProject(ProjectPoco project)
         {
             var hej = _appDbContext.Projects.Where((x) => x.Id == project.Id).Include(x => x.Comments).Include(x => x.Customer).FirstOrDefault();
             if (hej!=null)
@@ -141,13 +163,13 @@ namespace IAT2022.Repositories
 
             }
         }
-        public List<ProjectTagsPoco> GetTags()
+        public async Task<List<ProjectTagsPoco>> GetTags()
         {
             var tags = _appDbContext.ProjectTags.ToList();
             return tags;
         }
 
-        public List<CustomerQuestionsPoco> GetCustomerQuestions()
+        public async Task<List<CustomerQuestionsPoco>> GetCustomerQuestions()
         {
             var questions = _appDbContext.CustomerQuestions.ToList();
             return questions;

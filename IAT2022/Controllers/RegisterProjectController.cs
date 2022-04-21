@@ -26,7 +26,7 @@ namespace IAT2022.Controllers
             
             ProjectPoco projectPoco = new();
             
-            projectPoco.Tags = Convert(model.TagsBool);
+            projectPoco.Tags = await Convert(model.TagsBool);
             projectPoco.Comments = new();
             projectPoco.ProjectName = model.Name;
             projectPoco.Description = model.Description;
@@ -40,14 +40,14 @@ namespace IAT2022.Controllers
                 projectPoco.Comments.Add(commentPoco);
             }
             _dbRepository.RegisterProject(projectPoco);
-            TempData["mydata"] = projectPoco.Id;//Skickar med tempdata mellan controllers
+            TempData["data"] = projectPoco.Id;//Skickar med tempdata mellan controllers
             return View("ChoosePath", model);
         }
-        public List<ProjectTagsPoco> Convert(List<bool> tagsBool)
+        public async Task<List<ProjectTagsPoco>> Convert(List<bool> tagsBool)
         {
-            List<ProjectTagsPoco> projectTagsPocoList = new List<ProjectTagsPoco>();
-            var tags = _dbRepository.GetTags();
-            for (int i = 0; i < tagsBool.Count(); i++)
+            List<ProjectTagsPoco> projectTagsPocoList = new();
+            var tags = await _dbRepository.GetTags();
+            for (int i = 0; i < tagsBool.Count; i++)
             {
                 if (tagsBool[i])
                 {
@@ -57,15 +57,15 @@ namespace IAT2022.Controllers
             return projectTagsPocoList;
         }
 
-        public IActionResult ChoosePath()
+        public async Task<IActionResult> ChoosePath()
         {
 
-            var data = TempData["iddata"];
+            var data = TempData["data"];
             if (data != null)
             {
                 RegisterProjectViewModel model = new();
-                model.ProjectPoco = _dbRepository.GetSingleProject(data.ToString());
-                TempData["mydata"] = model.ProjectPoco.Id;
+                model.ProjectPoco = await _dbRepository.GetSingleProject(data.ToString());
+                TempData["data"] = model.ProjectPoco.Id;
                 return View(model);
             }
             return View();

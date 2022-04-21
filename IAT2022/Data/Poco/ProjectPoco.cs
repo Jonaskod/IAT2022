@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using IAT2022.Data.Poco.SubCategoryPoco;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace IAT2022.Data.Poco
 {
@@ -9,11 +10,11 @@ namespace IAT2022.Data.Poco
         public string? Description { get; set; }
         public string? Owner { get; set; }
         public List<CustomerPoco>? Customer { get; set; }
-        public int? Product { get; set; }
-        public int? IPR { get; set; }
-        public int? Team { get; set; }
-        public int? Buissness { get; set; }
-        public int? Finance { get; set; }
+        public List<ProductPoco>? Product { get; set; }
+        public List<IPRPoco>? IPR { get; set; }
+        public List<TeamPoco>? Team { get; set; }
+        public List<BusinessPoco>? Business { get; set; }
+        public List<FinancePoco>? Finance { get; set; }
         public string? ProjectType { get; set; }
         public List<CommentPoco>? Comments { get; set; }
         public List<ProjectTagsPoco> Tags { get; set; }

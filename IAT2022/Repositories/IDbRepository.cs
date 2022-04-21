@@ -5,13 +5,13 @@ namespace IAT2022.Repositories
 {
     public interface IDbRepository
     {
-        List<ProjectPoco>? GetAllProjects(string name);
-        List<CustomerQuestionsPoco> GetCustomerQuestions();
-        ProjectPoco GetSingleProject(string id);
-        List<ProjectTagsPoco> GetTags();
-        ProjectPoco RegisterProject(ProjectPoco model);
+        Task<List<ProjectPoco>> GetAllProjects(string name);
+        Task<List<CustomerQuestionsPoco>> GetCustomerQuestions();
+        Task<ProjectPoco> GetSingleProject(string id);
+        Task<List<ProjectTagsPoco>> GetTags();
+        Task<ProjectPoco> RegisterProject(ProjectPoco model);
         void SeedCustomerQuestions();
         void SeedTags();
-        ProjectPoco UpdateProject(ProjectPoco project);
+        Task<ProjectPoco> UpdateProject(ProjectPoco project);
     }
 }

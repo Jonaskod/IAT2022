@@ -4,16 +4,29 @@ let boolResult = [];
 boolResult.length = checkboxlist.length;
 boolResult.fill(false);
 
+
+
+test.addEventListener('click', function () {
+    console.log(boolResult);
+    Update();
+})
 for (let i = 0; i < checkboxlist.length; i++) {
     checkboxlist[i].addEventListener('change', function () {
+        console.log(boolResult);
         if (checkboxlist[i].checked) {
             boolResult[i] = true;
         }
         else {
             boolResult[i] = false;
         }
-        Update();
     } )
+}
+for (let i = 0; i < checkboxlist.length; i++) {
+    console.log(checkboxlist[i].checked)
+    if (checkboxlist[i].checked) {
+        boolResult[i] = true;
+    }
+    boolResult[i] = false;
 }
 
 function Update() {

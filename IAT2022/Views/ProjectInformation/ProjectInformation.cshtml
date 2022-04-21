@@ -17,7 +17,7 @@ table, th, td {
    }
     <table>
       <tr class="tableFormat">
-        <td>KUND</td>
+        <td><a asp-action="Index" asp-controller="Assessment" asp-route-id="@Model.Project.Id" class="CategoryLink">KUND</a></td>
             @foreach (var item in Model.Project.Customer)
             {
                 @if (item.Result)
@@ -34,30 +34,75 @@ table, th, td {
       </tr>
 
        <tr>
-        <td>Produkt</td>
-        <td></td>
-        <td></td>
+        <td><a asp-action="Index" asp-controller="Assessment" asp-route-id="@Model.Project.Id" class="CategoryLink">Produkt</a></td>
+        @foreach (var item in Model.Project.Product)
+        {
+            @if (item.Result)
+                {
+                    <td class="CustomerChecked">P @item.Id</td>
+                }
+                else
+                {
+                    <td class="CustomerUnchecked">P @item.Id</td>
+                }
+        }
       </tr>
 
       <tr>
-        <td>IPR</td>
-        <td></td>
-        <td></td>
+        <td><a asp-action="Index" asp-controller="Assessment" asp-route-id="@Model.Project.Id" class="CategoryLink">IPR</a></td>
+        @foreach (var item in Model.Project.IPR)
+        {
+                        @if (item.Result)
+                {
+                    <td class="CustomerChecked">P @item.Id</td>
+                }
+                else
+                {
+                    <td class="CustomerUnchecked">P @item.Id</td>
+                }
+        }
       </tr>
       <tr>
-        <td>Team</td>
-        <td></td>
-        <td></td>
+        <td><a asp-action="Index" asp-controller="Assessment" asp-route-id="@Model.Project.Id" class="CategoryLink">TEAM</a></td>
+        @foreach (var item in Model.Project.Team)
+        {
+            @if (item.Result)
+                {
+                    <td class="CustomerChecked">P @item.Id</td>
+                }
+                else
+                {
+                    <td class="CustomerUnchecked">P @item.Id</td>
+                }
+        }
       </tr>
       <tr>
-        <td>Affär</td>
-        <td></td>
-        <td></td>
+        <td><a asp-action="Index" asp-controller="Assessment" asp-route-id="@Model.Project.Id" class="CategoryLink">AFFÄR</a></td>
+        @foreach (var item in Model.Project.Business)
+        {
+            @if (item.Result)
+                {
+                    <td class="CustomerChecked">P @item.Id</td>
+                }
+                else
+                {
+                    <td class="CustomerUnchecked">P @item.Id</td>
+                }
+        }
       </tr>
       <tr>
-        <td>Finnansering</td>
-        <td></td>
-        <td></td>
+        <td><a asp-action="Index" asp-controller="Assessment" asp-route-id="@Model.Project.Id" class="CategoryLink">FINNANSIERING</a></td>
+        @foreach (var item in Model.Project.Finance)
+        {
+            @if (item.Result)
+                {
+                    <td class="CustomerChecked">P @item.Id</td>
+                }
+                else
+                {
+                    <td class="CustomerUnchecked">P @item.Id</td>
+                }
+        }
       </tr>
     </table>
 </div>

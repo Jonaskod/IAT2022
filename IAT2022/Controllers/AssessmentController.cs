@@ -15,36 +15,35 @@ namespace IAT2022.Controllers
             _dbRepository = dbRepository;
             
         }
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var data = TempData["mydata"];
+            var data = TempData["data"];
             ProjectInformationViewModel model = new(_dbRepository);
-            model.Project = _dbRepository.GetSingleProject(data.ToString());
+            model.Project = await _dbRepository.GetSingleProject(data.ToString());
             Model = model;
             //if (model.Project.Customer <= 0)
             //{
             //    return View(model);
             //}
-            TempData["iddata"] = Model.Project.Id;//Skickar med tempdata mellan controllers
+            TempData["data"] = Model.Project.Id;//Skickar med tempdata mellan controllers
             return View(Model);
         }
 
         
-        public void Test(List<bool> boolResult)
+        public async void Test(List<bool> boolResult)
         {
 
-            var data = TempData["iddata"];
-            var project = _dbRepository.GetSingleProject(data.ToString());
-            var categories = _dbRepository.GetCustomerQuestions();
-            for (int i = 0; i < categories.Count(); i++)
+            var data = TempData["data"];
+            var project = await _dbRepository.GetSingleProject(data.ToString());
+            var categories = await _dbRepository.GetCustomerQuestions();
+            for (int i = 0; i < categories.Count; i++)
             {
-                
                 project.Customer[i].Result = boolResult[i];
             }
             
             _dbRepository.UpdateProject(project);
             //SKRIV TILL DB - UPPDATERA PROJEKT
-            TempData["iddata"] = project.Id;
+            TempData["data"] = project.Id;
         }
         
         

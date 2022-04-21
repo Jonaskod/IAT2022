@@ -25,7 +25,7 @@ namespace IAT2022.Controllers
         public async Task<IActionResult> Index()
         {
             HomeViewModel home = new();
-            var list = _dbRepository.GetAllProjects(User.Identity.Name);
+            var list = await _dbRepository.GetAllProjects(User.Identity.Name);
             home.Projects = list;
             return View(home);
         }

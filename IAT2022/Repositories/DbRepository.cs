@@ -18,7 +18,7 @@ namespace IAT2022.Repositories
         {
             try
             {
-                var project = _appDbContext.Projects.Where(x => x.Id == int.Parse(id)).Include(x => x.Comments).Include(x => x.Tags).Include(x => x.Team).Include(x => x.Customer).FirstOrDefault();
+                var project = _appDbContext.Projects.Where(x => x.Id == int.Parse(id)).Include(x => x.Comments).Include(x => x.Tags).Include(x => x.Team).Include(x => x.Business).FirstOrDefault();
                 project = _appDbContext.Projects.Where(x => x.Id == int.Parse(id)).Include(x => x.Business).Include(x => x.Product).Include(x => x.Finance).Include(x => x.IPR).FirstOrDefault();
 
                 return project;
@@ -43,7 +43,7 @@ namespace IAT2022.Repositories
         {
             try
             {
-                model.Customer = new();
+                model.Business = new();
                 model.IPR = new();
                 model.Business = new();
                 model.Finance = new();
@@ -77,7 +77,7 @@ namespace IAT2022.Repositories
         }
         public async Task<ProjectPoco> UpdateProject(ProjectPoco project)
         {
-            var hej = _appDbContext.Projects.Where((x) => x.Id == project.Id).Include(x => x.Comments).Include(x => x.Customer).FirstOrDefault();
+            var hej = _appDbContext.Projects.Where((x) => x.Id == project.Id).Include(x => x.Comments).Include(x => x.Business).FirstOrDefault();
             if (hej!=null)
             {
                 hej = project;

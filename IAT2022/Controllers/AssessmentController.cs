@@ -15,7 +15,7 @@ namespace IAT2022.Controllers
             _dbRepository = dbRepository;
             
         }
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Customer()
         {
             var data = TempData["data"];
             ProjectInformationViewModel model = new(_dbRepository);
@@ -28,8 +28,51 @@ namespace IAT2022.Controllers
             TempData["data"] = Model.Project.Id;//Skickar med tempdata mellan controllers
             return View(Model);
         }
+        public async Task<IActionResult> Product()
+        {
+            var data = TempData["data"];
+            ProjectInformationViewModel model = new(_dbRepository);
+            model.Project = await _dbRepository.GetSingleProject(data.ToString());
+            Model = model;
+            //if (model.Project.Customer <= 0)
+            //{
+            //    return View(model);
+            //}
+            TempData["data"] = Model.Project.Id;//Skickar med tempdata mellan controllers
+            return View(Model);
+        }
+        public async Task<IActionResult> Business()
+        {
+            var model = await GetModel();
+            TempData["data"] = model.Project.Id;//Skickar med tempdata mellan controllers
+            return View(Model);
+        }
+        public async Task<IActionResult> IPR()
+        {
+            var model = await GetModel();
+            TempData["data"] = model.Project.Id;//Skickar med tempdata mellan controllers
+            return View(Model);
+        }
+        public async Task<IActionResult> Team()
+        {
+            var model = await GetModel();
+            TempData["data"] = model.Project.Id;//Skickar med tempdata mellan controllers
+            return View(Model);
+        }
+        public async Task<IActionResult> Finance()
+        {
+            var model = await GetModel();
+            TempData["data"] = model.Project.Id;//Skickar med tempdata mellan controllers
+            return View(Model);
+        }
+        public async Task<ProjectInformationViewModel> GetModel()
+        {
+            var data = TempData["data"];
+            ProjectInformationViewModel model = new(_dbRepository);
+            model.Project = await _dbRepository.GetSingleProject(data.ToString());
+            return model;
+        }
 
-        
         public async void Test(List<bool> boolResult)
         {
 

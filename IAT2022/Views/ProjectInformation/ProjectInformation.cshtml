@@ -15,7 +15,7 @@
     <table>
       <tr class="tableFormat">
         <td><a asp-action="Index" asp-controller="Assessment" asp-route-id="@Model.Project.Id" class="CategoryLink">KUND</a></td>
-            @foreach (var item in Model.Project.Customer)
+            @foreach (var item in Model.Project.Business)
             {
                 @if (item.Result)
                 {

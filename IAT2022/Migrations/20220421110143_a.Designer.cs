@@ -212,7 +212,7 @@ namespace IAT2022.Migrations
             modelBuilder.Entity("IAT2022.Data.Poco.BusinessPoco", b =>
                 {
                     b.HasOne("IAT2022.Data.Poco.ProjectPoco", null)
-                        .WithMany("Business")
+                        .WithMany("Customer")
                         .HasForeignKey("ProjectPocoId");
                 });
 
@@ -267,7 +267,7 @@ namespace IAT2022.Migrations
 
             modelBuilder.Entity("IAT2022.Data.Poco.ProjectPoco", b =>
                 {
-                    b.Navigation("Business");
+                    b.Navigation("Customer");
 
                     b.Navigation("Comments");
 

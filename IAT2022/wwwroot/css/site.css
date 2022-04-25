@@ -128,7 +128,9 @@ input[type=checkbox]:checked ~ div {
     top: 5px;
     right: 5px;
 }
-
+.TagClass {
+    border-style: solid;
+}
 
 @keyframes slidein {
     from {
@@ -277,7 +279,44 @@ li{
     background-color:red;
     color:black;
 }
+.AssessmentTable{
+    display:flex;
+    justify-content:center;
+    flex-direction:column;
+}
+.AssessmentTable tr {
+    border: 3px solid black;
+    background-color:white;
+    color:black;
+}
+.AssessmentTable tr a{
+    color:black;
+    text-decoration:none;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
+   
+}
+    .AssessmentTable tr td {
+        border: 3px solid black;
+    }
+.TagClass{
+    background-color:white;
+    color:black;
+    border-radius:50%;
+    padding:1%;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.MyProjectsDiv {
+    border-style: solid;
+    border-color: slategray;
+    background-image: url('https://thumbs.dreamstime.com/b/water-ripples-5002425.jpg');
+    justify-content: center;
+}
 
+.AssessmentTable {
+    display: flex;
+    justify-content: center;
+}
 @media screen and (max-width: 1352px) {
     .slideshow-container {
         max-width: 500px;
@@ -297,6 +336,7 @@ li{
         max-height: 600px;
     }
 }
+
 @media screen and (max-width: 489px) {
     .slideshow-container {
         max-width:380px;

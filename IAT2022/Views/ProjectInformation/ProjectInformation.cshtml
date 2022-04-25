@@ -2,19 +2,16 @@
 @model ProjectInformationViewModel
 
 <h1>@Model.Project.ProjectName</h1>
-<h2>HEEEEEEEEEEEJ</h2>
 
-<style>
-table, th, td {
-  border:1px solid black;
-}
-</style>
+
 <h1>@*@Model.GetTagsForProject()*@</h1>
 <div class="AssessmentTable">
+   <div>
    @foreach (var item in Model.Project.Tags)
    {
        <label class="TagClass">@item.Description</label>
    }
+   </div>
     <table>
       <tr class="tableFormat">
         <td><a asp-action="Index" asp-controller="Assessment" asp-route-id="@Model.Project.Id" class="CategoryLink">KUND</a></td>

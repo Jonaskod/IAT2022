@@ -39,31 +39,31 @@ namespace IAT2022.Controllers
             //    return View(model);
             //}
             TempData["data"] = Model.Project.Id;//Skickar med tempdata mellan controllers
-            return View(Model);
+            return View(model);
         }
         public async Task<IActionResult> Business()
         {
             var model = await GetModel();
             TempData["data"] = model.Project.Id;//Skickar med tempdata mellan controllers
-            return View(Model);
+            return View(model);
         }
         public async Task<IActionResult> IPR()
         {
             var model = await GetModel();
             TempData["data"] = model.Project.Id;//Skickar med tempdata mellan controllers
-            return View(Model);
+            return View(model);
         }
         public async Task<IActionResult> Team()
         {
             var model = await GetModel();
             TempData["data"] = model.Project.Id;//Skickar med tempdata mellan controllers
-            return View(Model);
+            return View(model);
         }
         public async Task<IActionResult> Finance()
         {
             var model = await GetModel();
             TempData["data"] = model.Project.Id;//Skickar med tempdata mellan controllers
-            return View(Model);
+            return View(model);
         }
         public async Task<ProjectInformationViewModel> GetModel()
         {

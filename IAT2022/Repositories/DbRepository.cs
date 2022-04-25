@@ -18,7 +18,7 @@ namespace IAT2022.Repositories
         {
             try
             {
-                var project = _appDbContext.Projects.Where(x => x.Id == int.Parse(id)).Include(x => x.Comments).Include(x => x.Tags).Include(x => x.Team).Include(x => x.Business).FirstOrDefault();
+                var project = _appDbContext.Projects.Where(x => x.Id == int.Parse(id)).Include(x => x.Comments).Include(x => x.Tags).Include(x => x.Team).Include(x => x.Customer).FirstOrDefault();
                 project = _appDbContext.Projects.Where(x => x.Id == int.Parse(id)).Include(x => x.Business).Include(x => x.Product).Include(x => x.Finance).Include(x => x.IPR).FirstOrDefault();
 
                 return project;
@@ -43,7 +43,7 @@ namespace IAT2022.Repositories
         {
             try
             {
-                model.Business = new();
+                model.Customer = new();
                 model.IPR = new();
                 model.Business = new();
                 model.Finance = new();
@@ -51,8 +51,8 @@ namespace IAT2022.Repositories
                 model.Product = new();
                 foreach (var item in _appDbContext.CustomerQuestions)
                 {
-                    CustomerPoco question = new();
-                    model.Customer.Add(question);
+                    CustomerPoco customer = new();
+                    model.Customer.Add(customer);
                     ProductPoco temp = new();
                     model.Product.Add(temp);
                     IPRPoco iPRPoco = new();

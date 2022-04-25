@@ -4,19 +4,9 @@ let boolResult = [];
 boolResult.length = checkboxlist.length;
 boolResult.fill(false);
 
-let customerPath = document.getElementById("CustomerPath");
-let productPath = document.getElementById("ProductPath");
-let businessPath = document.getElementById("BusinessPath");
-let iprPath = document.getElementById("IPRPath");
-let teamPath = document.getElementById("TeamPath");
-let financePath = document.getElementById("FinancePath");
 
 
 
-//test.addEventListener('click', function () {
-//    console.log(boolResult);
-//    Update();
-//})
 for (let i = 0; i < checkboxlist.length; i++) {
     checkboxlist[i].addEventListener('change', function () {
         console.log(boolResult);
@@ -84,4 +74,3 @@ function showSlides(n) {
 var myDrop = new drop({
     selector: '#myMulti'
 });
-

@@ -204,12 +204,11 @@ input[type=checkbox]:checked ~ div {
         
 }
 .BtnChoosePath:active, .BtnChoosePath:hover {
-    background-color: lightslategray;
+    
     cursor: pointer;
 }
-.BtnChoosePath:visited{
-    background-color:green;
-    border-radius:50%;
+.BtnChoosePath:visited {
+    text-decoration:none;
 }
 li{
     list-style:none;

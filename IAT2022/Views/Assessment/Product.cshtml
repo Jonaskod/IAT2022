@@ -10,137 +10,41 @@
 
             
                 
-                    
-                    
-                        
-                            @for (var x = 0; x < Model.CustomerQuestions.Count(); x++)
-                            {
-                                @if (x==0)
-                                {
-                                    <div class="mySlides">
-                                        <article class="feature">
-                                        <input type="checkbox" id="feature" asp-for="Project.Product[0].Result" name="checkbox"/>
-                                        <div>
-                                        <span>
-                                        @Model.CustomerQuestions[x].QuestionDescription
-                                        </span>
-                                        </div>
-                                        </article>
-                                        <article class="feature">
-                                        <input type="checkbox" id="feature" asp-for="Project.Product[1].Result" name="checkbox"/>
-                                        <div>
-                                        <span>
-                                        @Model.CustomerQuestions[x+1].QuestionDescription
-                                        </span>
-                                        </div>
-                                        </article>
-                                        <article class="feature">
-                                        <input type="checkbox" id="feature" asp-for="Project.Product[2].Result" name="checkbox"/>
-                                        <div>
-                                        <span>
-                                        @Model.CustomerQuestions[x+2].QuestionDescription
-                                        </span>
-                                        </div>
-                                        </article>
-                                        <article class="feature">
-                                        <input type="checkbox" id="feature" asp-for="Project.Product[3].Result" name="checkbox"/>
-                                        <div>
-                                        <span>
-                                        @Model.CustomerQuestions[x+3].QuestionDescription
-                                        </span>
-                                        </div>
-                                        </article>
-                                    </div>
-                                    
-                                }
+        @{
+            int counter = 0;
 
-                                
-                                @if (x == 3)
-                                {
-                                    <div class="mySlides">
-                                        <article class="feature">
-                                        <input type="checkbox" id="feature" asp-for="Project.Product[4].Result" name="checkbox"/>
-                                        <div>
-                                        <span>
-                                        @Model.CustomerQuestions[x].QuestionDescription
-                                        </span>
-                                        </div>
-                                        </article>
-                                        <article class="feature">
-                                        <input type="checkbox" id="feature" asp-for="Project.Product[5].Result" name="checkbox"/>
-                                        <div>
-                                        <span>
-                                        @Model.CustomerQuestions[x+1].QuestionDescription
-                                        </span>
-                                        </div>
-                                        </article>
-                                        <article class="feature">
-                                        <input type="checkbox" id="feature" asp-for="Project.Product[6].Result" name="checkbox"/>
-                                        <div>
-                                        <span>
-                                        @Model.CustomerQuestions[x+2].QuestionDescription
-                                        </span>
-                                        </div>
-                                        </article>
-                                        <article class="feature">
-                                        <input type="checkbox" id="feature" asp-for="Project.Product[7].Result" name="checkbox"/>
-                                        <div>
-                                        <span>
-                                        @Model.CustomerQuestions[x+3].QuestionDescription
-                                        </span>
-                                        </div>
-                                        </article>
-                                    </div>
-                                }
-                                @if (x == 7)
-                                {
-                                     <div class="mySlides">
-                                        <article class="feature">
-                                        <input type="checkbox" id="feature" asp-for="Project.Product[8].Result" name="checkbox"/>
-                                        <div>
-                                        <span>
-                                        @Model.CustomerQuestions[x].QuestionDescription
-                                        </span>
-                                        </div>
-                                        </article>
-                                        <article class="feature">
-                                        <input type="checkbox" id="feature" asp-for="Project.Product[9].Result" name="checkbox"/>
-                                        <div>
-                                        <span>
-                                        @Model.CustomerQuestions[x+1].QuestionDescription
-                                        </span>
-                                        </div>
-                                        </article>
-                                        <article class="feature">
-                                        <input type="checkbox" id="feature" asp-for="Project.Product[10].Result" name="checkbox"/>
-                                        <div>
-                                        <span>
-                                        @Model.CustomerQuestions[x+2].QuestionDescription
-                                        </span>
-                                        </div>
-                                        </article>
-                                        <article class="feature">
-                                        <input type="checkbox" id="feature" asp-for="Project.Product[11].Result" name="checkbox"/>
-                                        <div>
-                                        <span>
-                                        @Model.CustomerQuestions[x+3].QuestionDescription
-                                        </span>
-                                        </div>
-                                        </article>
-                                        <article class="feature">
-                                        <input type="checkbox" id="feature" asp-for="Project.Product[12].Result" name="checkbox"/>
-                                        <div>
-                                        <span>
-                                        @Model.CustomerQuestions[x+4].QuestionDescription
-                                        </span>
-                                        </div>
-                                        </article>
-                                    </div>
+                        
+                             
+                            @for (var x = 0; x < 3 ; x++)
+                            {
                                     
-                                }
+                                    <div class="mySlides">
+
+                                     @for (var i = 0; i < 4; i++)
+                                     {
+                                         @if (counter < Model.ProductQuestions.Count())
+                                         {
+                                            <article class="feature">
+                                            <input type="checkbox" id="feature" asp-for="Project.Product[counter].Result" name="checkbox"/>
+                                            <div>
+                                            <span>
+                                            @Model.ProductQuestions[counter].QuestionDescription
+                                            </span>
+                                            </div>
+                                            </article>
+                                             counter++;
+
+                                             
+                                         }
+                                    }
                                 
+                                
+                                    </div>
+
+                                   
                             }
                             
+                    }
                     
                 </div>
             

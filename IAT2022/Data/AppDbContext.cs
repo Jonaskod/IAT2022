@@ -8,7 +8,14 @@ namespace IAT2022.Data
     {
         public DbSet<ProjectPoco>? Projects { get; set; }
         public DbSet<CustomerPoco> CustomerValue { get; set; }
-        public  DbSet<CustomerQuestionsPoco> CustomerQuestions  { get; set; }
+        public DbSet<CustomerQuestionsPoco> CustomerQuestions  { get; set; }
+        public DbSet<ProductQuestionsPoco> ProductQuestions { get; set; }
+        public DbSet<BusinessQuestionsPoco> BuisnessQuestions { get; set; }
+        public DbSet<IprQuestionsPoco> IPRQuestions { get; set; }
+        public DbSet<TeamQuestionsPoco> TeamQuestions { get; set; }
+
+        public DbSet<FinanceQuestionsPoco> FinanceQuestions { get; set; }
+
         public DbSet<ProjectTagsPoco> ProjectTags { get; set; } 
 
         

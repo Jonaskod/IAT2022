@@ -124,9 +124,7 @@ namespace IAT2022.Repositories
                 customerQuestionsPoco = new();
                 customerQuestionsPoco.QuestionDescription = "Första produkterna säljs till några kunder.validerad product-market - fit";
                 _appDbContext.CustomerQuestions.Add(customerQuestionsPoco);
-                customerQuestionsPoco = new();
-                customerQuestionsPoco.QuestionDescription = "Ökade struktuerade försäljningsinsatser  genomförs";
-                _appDbContext.CustomerQuestions.Add(customerQuestionsPoco);
+
                 customerQuestionsPoco = new();
                 customerQuestionsPoco.QuestionDescription = "Utbred försäjlning som kan skalas";
                 _appDbContext.CustomerQuestions.Add(customerQuestionsPoco);
@@ -135,6 +133,271 @@ namespace IAT2022.Repositories
             }
 
         }
+        public void SeedProductQuestions()
+        {
+            if (!_appDbContext.ProductQuestions.Any())
+            {
+                ProductQuestionsPoco questionPoco = new();
+
+                questionPoco.QuestionDescription = "Tekniken eller methoden bygger på forskningsresultat";
+                _appDbContext.ProductQuestions.Add(questionPoco);
+                questionPoco = new();
+                questionPoco.QuestionDescription = "Ett produktkoncept har definerats ";
+                _appDbContext.ProductQuestions.Add(questionPoco);
+                questionPoco = new();
+                questionPoco.QuestionDescription = "Praktiska applikationer kan defineras";
+                _appDbContext.ProductQuestions.Add(questionPoco);
+                questionPoco = new();
+                questionPoco.QuestionDescription = "”proof-of-concept” av kritiska egenskaper genom experimentella studier";
+                _appDbContext.ProductQuestions.Add(questionPoco);
+                questionPoco = new();
+                questionPoco.QuestionDescription = "Tekniska komponenter har integrerats och fungera i laboratorium";
+                _appDbContext.ProductQuestions.Add(questionPoco);
+                questionPoco = new();
+                questionPoco.QuestionDescription = "Tekniska komponenter har integrerats och fungera i en simulerat miljö";
+                _appDbContext.ProductQuestions.Add(questionPoco);
+                questionPoco = new();
+                questionPoco.QuestionDescription = "Realistisk prototyp testad i relevant miljö";
+                _appDbContext.ProductQuestions.Add(questionPoco);
+                questionPoco = new();
+                questionPoco.QuestionDescription = "Demonstration av systemprototyp i driftsmiljö ";
+                _appDbContext.ProductQuestions.Add(questionPoco);
+                questionPoco = new();
+                questionPoco.QuestionDescription = "Tekniklösningen är kvalitetssäkrad genom test och demonstration";
+                _appDbContext.ProductQuestions.Add(questionPoco);
+                questionPoco = new();
+                questionPoco.QuestionDescription = "Tekniken tillämpas i dess slutliga form i driftsförhållanden";
+                _appDbContext.ProductQuestions.Add(questionPoco);
+                _appDbContext.SaveChanges();
+
+            }
+        }
+        public void SeedBuisnessQuestions()
+        {
+
+            if (!_appDbContext.BuisnessQuestions.Any())
+            {
+                BusinessQuestionsPoco questionsPoco = new();
+                questionsPoco.QuestionDescription = "Hypotes kring affärsmodell och möjliga applikationer";
+                _appDbContext.BuisnessQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "Marknaden kan beskrivas på övergripande nivå";
+                _appDbContext.BuisnessQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "Utkast till affärsmodellen i from av en canvas";
+                _appDbContext.BuisnessQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "Marknadspotential och –storlek har kvantiferats";
+
+                _appDbContext.BuisnessQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "Fullständig affärtsmodel med specifikation av intäkter och kostnader";
+                _appDbContext.BuisnessQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "Bedömd inträdeshinder och  konkurrensanalys utifrån differentiering";
+                _appDbContext.BuisnessQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "Affärsmodellen har testats mot kunder för att verifiera hypoteser";
+                _appDbContext.BuisnessQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "Detailjerad intäktsmodell med prissättningshypotheser och  tydliga intäktskällor";
+                _appDbContext.BuisnessQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "Komplett affärsmodel verifierad genom testförsäljning";
+                _appDbContext.BuisnessQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "Produkt-market-fit bevisat. Flera kunder visa tydlig betalningsvilja.";
+                _appDbContext.BuisnessQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "Försäljningen visar att affärsmnodellen är hållbart, lönsam och skalbart.";
+                _appDbContext.BuisnessQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "Verksamheten skalas upp med ökande och återkommande intäkter";
+                _appDbContext.BuisnessQuestions.Add(questionsPoco);
+                _appDbContext.SaveChanges();
+
+            }
+        }
+        public void SeedIprQuestions()
+        {
+            if (!_appDbContext.IPRQuestions.Any())
+            {
+                IprQuestionsPoco questionsPoco = new();
+                questionsPoco.QuestionDescription = "Hypothes om eventuella immateriella tillgånger finns";
+                _appDbContext.IPRQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "Befintliga immateriella tillgångar har kartlagts";
+                _appDbContext.IPRQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "Detailjerad beskrivning av viktiga immateriella tillgångar";
+                _appDbContext.IPRQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "Inledande analys genom sökningar i databaser för patent och upphovsrätt";
+                _appDbContext.IPRQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "Bekräftat om skydd är möjligt och för vad";
+                _appDbContext.IPRQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "Beslut finns om vilka tillgångar som ska skyddas och varför (affärsrelevans).";
+                _appDbContext.IPRQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "Utkast till IPR strategi för att använda tillgångar affärsstrategiskt finns.";
+                _appDbContext.IPRQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "Första fullständiga patenansökan eller andra IP-registreringer inskickade.";
+                _appDbContext.IPRQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "Positivt svar på inlämnad ansökan. IPR-stratgi implementerad. ";
+                _appDbContext.IPRQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "Ansökningar för alla relevanta IPR har lämnats in";
+                _appDbContext.IPRQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "IPR används proaktivt för att stödja verksamhet. ";
+                _appDbContext.IPRQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "Starkt immaterialrättsligt stöd och skydd. Eventuella patent beviljat och aktiv.";
+                _appDbContext.IPRQuestions.Add(questionsPoco);
+                _appDbContext.SaveChanges();
+            }
+        }
+
+        public void SeedTeamQuestions()
+        {
+            if (!_appDbContext.TeamQuestions.Any())
+            {
+                TeamQuestionsPoco questionsPoco = new();
+                questionsPoco.QuestionDescription = "En individ kopplad till idén.";
+                _appDbContext.TeamQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "Hypothes finns om vilka kompetenser eller resurser som kan behövas.";
+                _appDbContext.TeamQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "Befintliga och nödvändiga kompetenser är definerade";
+                _appDbContext.TeamQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "En engagerad projektledare och flera viktiga kompetenser finns på plats. ";
+                _appDbContext.TeamQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "Rekrytering av personer med definerade kompetenser enligt en kravprofil.";
+                _appDbContext.TeamQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "Grundteam med nödvändiga kompetenser finns . Alla lägger ner betydande tid.";
+                _appDbContext.TeamQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "Teamet är anpassad til tydliga roller, gemensama mål, och tydig engagemang.";
+                _appDbContext.TeamQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "Kompletterande, mångsidigt och engagerad team med alla nödvändiga resurser.";
+                _appDbContext.TeamQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "Kultur och värderingar formas och används för att stödja teamutvecklingen";
+                _appDbContext.TeamQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "Det finns en kompetent styrelse som används professionellt";
+                _appDbContext.TeamQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = " Ledning och VD på plats. Professionell användning av externt stöd.";
+                _appDbContext.TeamQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "Högpresterande och välstrukturerat team som levererar över tid.";
+                _appDbContext.TeamQuestions.Add(questionsPoco);
+                _appDbContext.SaveChanges();
+
+
+            }
+        }
+
+        public void SeedFinanceQuestions()
+        {
+            if (!_appDbContext.FinanceQuestions.Any())
+            {
+                FinanceQuestionsPoco questionsPoco = new();
+                questionsPoco.QuestionDescription = "Initial affärsidé med otydlig beskrivning på finansieringsbehov";
+                _appDbContext.FinanceQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "Inte specificerad hur mycket finansiering behövs och för vad.";
+                _appDbContext.FinanceQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "Definerad finansieringsbehov och alternativ för första milstolparna";
+                _appDbContext.FinanceQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "En första, mjuk finansiering säkrad. ";
+                _appDbContext.FinanceQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "Affärsidé och inledande verifieringsplan finns";
+                _appDbContext.FinanceQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "Bra pitch och kort presentation av verksamheten på plats";
+                _appDbContext.FinanceQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "Investerarorienterad presentation och stödmaterial har testats";
+                _appDbContext.FinanceQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "Beslut om att söka privat riskkapital och inledande kontakter tagna";
+                _appDbContext.FinanceQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "Teamet kan presentera investeringen inklusive nyckerlområden ";
+                _appDbContext.FinanceQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "Diskussioner om villkor med interesserade inversterare pågår";
+                _appDbContext.FinanceQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "Företaget rimlig strukturerad i form av avtal, bokföring, dokumentation etc. ";
+                _appDbContext.FinanceQuestions.Add(questionsPoco);
+
+                questionsPoco = new();
+                questionsPoco.QuestionDescription = "Investeringen avslutat med erhållna pengar och relevant dokumentation";
+                _appDbContext.FinanceQuestions.Add(questionsPoco);
+                _appDbContext.SaveChanges();
+
+
+            }
+        }
+
         public void SeedTags()
         {
             if (!_appDbContext.ProjectTags.Any())
@@ -172,6 +435,43 @@ namespace IAT2022.Repositories
         public async Task<List<CustomerQuestionsPoco>> GetCustomerQuestions()
         {
             var questions = _appDbContext.CustomerQuestions.ToList();
+            
+
+            return questions;
+        }
+        public async Task<List<ProductQuestionsPoco>> GetProductQuestions()
+        {
+            var questions = _appDbContext.ProductQuestions.ToList();
+
+
+            return questions;
+        }
+        public async Task<List<IprQuestionsPoco>> GetIPRQuestions()
+        {
+            var questions = _appDbContext.IPRQuestions.ToList();
+
+
+            return questions;
+        }
+        public async Task<List<TeamQuestionsPoco>> GetTeamQuestions()
+        {
+            var questions = _appDbContext.TeamQuestions.ToList();
+
+
+            return questions;
+        }
+        public async Task<List<FinanceQuestionsPoco>> GetFinanceQuestions()
+        {
+            var questions = _appDbContext.FinanceQuestions.ToList();
+
+
+            return questions;
+        }
+        public async Task<List<BusinessQuestionsPoco>> GetBuisnessQuestions()
+        {
+            var questions = _appDbContext.BuisnessQuestions.ToList();
+
+
             return questions;
         }
     }

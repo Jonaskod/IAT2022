@@ -4,10 +4,23 @@
 
 namespace IAT2022.Migrations
 {
-    public partial class a : Migration
+    public partial class asd : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.CreateTable(
+                name: "BuisnessQuestions",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    QuestionDescription = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_BuisnessQuestions", x => x.Id);
+                });
+
             migrationBuilder.CreateTable(
                 name: "CustomerQuestions",
                 columns: table => new
@@ -19,6 +32,45 @@ namespace IAT2022.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_CustomerQuestions", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "FinanceQuestions",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    QuestionDescription = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_FinanceQuestions", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "IPRQuestions",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    QuestionDescription = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_IPRQuestions", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ProductQuestions",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    QuestionDescription = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ProductQuestions", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -35,6 +87,19 @@ namespace IAT2022.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Projects", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "TeamQuestions",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
+                    QuestionDescription = table.Column<string>(type: "TEXT", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_TeamQuestions", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -233,6 +298,9 @@ namespace IAT2022.Migrations
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
+                name: "BuisnessQuestions");
+
+            migrationBuilder.DropTable(
                 name: "BusinessPoco");
 
             migrationBuilder.DropTable(
@@ -248,16 +316,28 @@ namespace IAT2022.Migrations
                 name: "FinancePoco");
 
             migrationBuilder.DropTable(
+                name: "FinanceQuestions");
+
+            migrationBuilder.DropTable(
                 name: "IPRPoco");
 
             migrationBuilder.DropTable(
+                name: "IPRQuestions");
+
+            migrationBuilder.DropTable(
                 name: "ProductPoco");
+
+            migrationBuilder.DropTable(
+                name: "ProductQuestions");
 
             migrationBuilder.DropTable(
                 name: "ProjectTags");
 
             migrationBuilder.DropTable(
                 name: "TeamPoco");
+
+            migrationBuilder.DropTable(
+                name: "TeamQuestions");
 
             migrationBuilder.DropTable(
                 name: "Projects");

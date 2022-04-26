@@ -19,6 +19,11 @@ namespace IAT2022.Controllers
             _logger = logger;
             _dbRepository = dbRepository;
             _dbRepository.SeedCustomerQuestions();
+            _dbRepository.SeedProductQuestions();
+            _dbRepository.SeedBuisnessQuestions();
+            _dbRepository.SeedFinanceQuestions();
+            _dbRepository.SeedTeamQuestions();
+            _dbRepository.SeedIprQuestions();
             _dbRepository.SeedTags();
         }
  

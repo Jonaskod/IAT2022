@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IAT2022.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220421110143_a")]
-    partial class a
+    [Migration("20220426093809_asd")]
+    partial class asd
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -119,6 +119,20 @@ namespace IAT2022.Migrations
                     b.ToTable("ProjectTags");
                 });
 
+            modelBuilder.Entity("IAT2022.Data.Poco.QuestionsPoco.BusinessQuestionsPoco", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("QuestionDescription")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("BuisnessQuestions");
+                });
+
             modelBuilder.Entity("IAT2022.Data.Poco.QuestionsPoco.CustomerQuestionsPoco", b =>
                 {
                     b.Property<int>("Id")
@@ -131,6 +145,62 @@ namespace IAT2022.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("CustomerQuestions");
+                });
+
+            modelBuilder.Entity("IAT2022.Data.Poco.QuestionsPoco.FinanceQuestionsPoco", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("QuestionDescription")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("FinanceQuestions");
+                });
+
+            modelBuilder.Entity("IAT2022.Data.Poco.QuestionsPoco.IprQuestionsPoco", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("QuestionDescription")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("IPRQuestions");
+                });
+
+            modelBuilder.Entity("IAT2022.Data.Poco.QuestionsPoco.ProductQuestionsPoco", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("QuestionDescription")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("ProductQuestions");
+                });
+
+            modelBuilder.Entity("IAT2022.Data.Poco.QuestionsPoco.TeamQuestionsPoco", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("QuestionDescription")
+                        .HasColumnType("TEXT");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TeamQuestions");
                 });
 
             modelBuilder.Entity("IAT2022.Data.Poco.SubCategoryPoco.FinancePoco", b =>
@@ -212,7 +282,7 @@ namespace IAT2022.Migrations
             modelBuilder.Entity("IAT2022.Data.Poco.BusinessPoco", b =>
                 {
                     b.HasOne("IAT2022.Data.Poco.ProjectPoco", null)
-                        .WithMany("Customer")
+                        .WithMany("Business")
                         .HasForeignKey("ProjectPocoId");
                 });
 
@@ -267,7 +337,7 @@ namespace IAT2022.Migrations
 
             modelBuilder.Entity("IAT2022.Data.Poco.ProjectPoco", b =>
                 {
-                    b.Navigation("Customer");
+                    b.Navigation("Business");
 
                     b.Navigation("Comments");
 

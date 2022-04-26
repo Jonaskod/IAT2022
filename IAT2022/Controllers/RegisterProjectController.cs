@@ -41,6 +41,8 @@ namespace IAT2022.Controllers
             }
             _dbRepository.RegisterProject(projectPoco);
             TempData["data"] = projectPoco.Id;//Skickar med tempdata mellan controllers
+            model.ProjectPoco = projectPoco;
+            
             return View("ChoosePath", model);
         }
         public async Task<List<ProjectTagsPoco>> Convert(List<bool> tagsBool)
@@ -59,14 +61,15 @@ namespace IAT2022.Controllers
 
         public async Task<IActionResult> ChoosePath()
         {
-            var visited = TempData["visited"];
             var data = TempData["data"];
             if (data != null)
             {
                 RegisterProjectViewModel model = new();
                 model.ProjectPoco = await _dbRepository.GetSingleProject(data.ToString());
                 TempData["data"] = model.ProjectPoco.Id;
-                TempData["visited"] = true;
+
+                var hej = model.ProjectPoco.Customer.Where(x => x.Result == true).ToList();
+
                 return View(model);
             }
             return View();

@@ -18,6 +18,7 @@ namespace IAT2022.Controllers
         public async Task<IActionResult> Customer()
         {
             var data = TempData["data"];
+            var visited = TempData["visited"];
             ProjectInformationViewModel model = new(_dbRepository);
             model.Project = await _dbRepository.GetSingleProject(data.ToString());
             Model = model;

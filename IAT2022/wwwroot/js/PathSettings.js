@@ -4,7 +4,7 @@ let businessPath = document.getElementById("BusinessPath");
 let iprPath = document.getElementById("IPRPath");
 let teamPath = document.getElementById("TeamPath");
 let financePath = document.getElementById("FinancePath");
-let collection = [];
+let collection = [customerPath, productPath, businessPath, iprPath, teamPath, financePath];
 BasicSetting();
 
 function BasicSetting() {
@@ -13,7 +13,6 @@ function BasicSetting() {
     teamPath.hidden = true;
     financePath.hidden = true;
 }
-
 //function CheckSetting(let) {
    
 //}

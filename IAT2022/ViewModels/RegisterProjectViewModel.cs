@@ -18,6 +18,7 @@ namespace IAT2022.ViewModels
         public List<ProjectTagsPoco> Tags { get; set; }
         public List<bool> TagsBool { get; set; }
         public ProjectPoco ProjectPoco { get; set; }
+        public bool Visited { get; set; }
         public RegisterProjectViewModel(IDbRepository dbRepository)
         {
             _dbRepository = dbRepository;
@@ -34,6 +35,13 @@ namespace IAT2022.ViewModels
             Tags = list;
             return Tags;
         }
-        
+        public bool IsVisited(bool input)
+        {
+            if (input)
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }

@@ -59,13 +59,14 @@ namespace IAT2022.Controllers
 
         public async Task<IActionResult> ChoosePath()
         {
-
+            var visited = TempData["visited"];
             var data = TempData["data"];
             if (data != null)
             {
                 RegisterProjectViewModel model = new();
                 model.ProjectPoco = await _dbRepository.GetSingleProject(data.ToString());
                 TempData["data"] = model.ProjectPoco.Id;
+                TempData["visited"] = true;
                 return View(model);
             }
             return View();

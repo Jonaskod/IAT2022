@@ -74,7 +74,7 @@ namespace IAT2022.Controllers
             return model;
         }
 
-        public async void Test(List<bool> boolResult)
+        public async void Test(List<bool> boolResultCustomer)
         {
 
             var data = TempData["data"];
@@ -82,14 +82,85 @@ namespace IAT2022.Controllers
             var categories = await _dbRepository.GetCustomerQuestions();
             for (int i = 0; i < categories.Count; i++)
             {
-                project.Customer[i].Result = boolResult[i];  
+                project.Customer[i].Result = boolResultCustomer[i];  
             }
             
             _dbRepository.UpdateProject(project);
             //SKRIV TILL DB - UPPDATERA PROJEKT
             TempData["data"] = project.Id;
         }
-        
-        
+        public async void ProdutResult(List<bool> boolResultProduct)
+        {
+            var data = TempData["data"];
+            var project = await _dbRepository.GetSingleProject(data.ToString());
+            var categories = await _dbRepository.GetProductQuestions();
+            for (int i = 0; i < categories.Count; i++)
+            {
+                project.Product[i].Result = boolResultProduct[i];
+            }
+
+            _dbRepository.UpdateProject(project);
+            //SKRIV TILL DB - UPPDATERA PROJEKT
+            TempData["data"] = project.Id;
+        }
+        public async void TeamResult(List<bool> boolResultTeam)
+        {
+            var data = TempData["data"];
+            var project = await _dbRepository.GetSingleProject(data.ToString());
+            var categories = await _dbRepository.GetProductQuestions();
+            for (int i = 0; i < categories.Count; i++)
+            {
+                project.Product[i].Result = boolResultTeam[i];
+            }
+
+            _dbRepository.UpdateProject(project);
+            //SKRIV TILL DB - UPPDATERA PROJEKT
+            TempData["data"] = project.Id;
+        }
+        public async void IprResult(List<bool> boolResultIPR)
+        {
+            var data = TempData["data"];
+            var project = await _dbRepository.GetSingleProject(data.ToString());
+            var categories = await _dbRepository.GetProductQuestions();
+            for (int i = 0; i < categories.Count; i++)
+            {
+                project.Product[i].Result = boolResultIPR[i];
+            }
+
+            _dbRepository.UpdateProject(project);
+            //SKRIV TILL DB - UPPDATERA PROJEKT
+            TempData["data"] = project.Id;
+        }
+        public async void FinanceResult(List<bool> boolResultFinance)
+        {
+            var data = TempData["data"];
+            var project = await _dbRepository.GetSingleProject(data.ToString());
+            var categories = await _dbRepository.GetProductQuestions();
+            for (int i = 0; i < categories.Count; i++)
+            {
+                project.Product[i].Result = boolResultFinance[i];
+            }
+
+            _dbRepository.UpdateProject(project);
+            //SKRIV TILL DB - UPPDATERA PROJEKT
+            TempData["data"] = project.Id;
+        }
+        public async void BusinessResult(List<bool> boolResultBusiness)
+        {
+            var data = TempData["data"];
+            var project = await _dbRepository.GetSingleProject(data.ToString());
+            var categories = await _dbRepository.GetProductQuestions();
+            for (int i = 0; i < categories.Count; i++)
+            {
+                project.Product[i].Result = boolResultBusiness[i];
+            }
+
+            _dbRepository.UpdateProject(project);
+            //SKRIV TILL DB - UPPDATERA PROJEKT
+            TempData["data"] = project.Id;
+        }
     }
+        
+        
+    
 }

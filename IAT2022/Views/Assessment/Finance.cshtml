@@ -25,7 +25,7 @@
                                          @if (counter < Model.FinanceQuestions.Count())
                                          {
                                             <article class="feature">
-                                            <input type="checkbox" id="feature" asp-for="Project.Finance[counter].Result" name="checkbox"/>
+                                            <input type="checkbox" id="feature" asp-for="Project.Finance[counter].Result" name="checkboxFinance"/>
                                             <div>
                                             <span>
                                             @Model.FinanceQuestions[counter].QuestionDescription

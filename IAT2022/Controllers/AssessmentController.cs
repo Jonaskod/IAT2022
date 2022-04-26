@@ -110,7 +110,7 @@ namespace IAT2022.Controllers
             var categories = await _dbRepository.GetProductQuestions();
             for (int i = 0; i < categories.Count; i++)
             {
-                project.Product[i].Result = boolResultTeam[i];
+                project.Team[i].Result = boolResultTeam[i];
             }
 
             _dbRepository.UpdateProject(project);
@@ -124,7 +124,7 @@ namespace IAT2022.Controllers
             var categories = await _dbRepository.GetProductQuestions();
             for (int i = 0; i < categories.Count; i++)
             {
-                project.Product[i].Result = boolResultIPR[i];
+                project.IPR[i].Result = boolResultIPR[i];
             }
 
             _dbRepository.UpdateProject(project);
@@ -138,7 +138,7 @@ namespace IAT2022.Controllers
             var categories = await _dbRepository.GetProductQuestions();
             for (int i = 0; i < categories.Count; i++)
             {
-                project.Product[i].Result = boolResultFinance[i];
+                project.Finance[i].Result = boolResultFinance[i];
             }
 
             _dbRepository.UpdateProject(project);
@@ -152,7 +152,7 @@ namespace IAT2022.Controllers
             var categories = await _dbRepository.GetProductQuestions();
             for (int i = 0; i < categories.Count; i++)
             {
-                project.Product[i].Result = boolResultBusiness[i];
+                project.Business[i].Result = boolResultBusiness[i];
             }
 
             _dbRepository.UpdateProject(project);

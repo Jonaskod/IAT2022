@@ -4,22 +4,31 @@
 
 
 <div class="PathChooser">
-    @if (Model.StepOne(Model.ProjectPoco))
+    @if (Model.StepTwo(Model.ProjectPoco))
+    {           
+              
+                <a id="TeamPath" asp-action="Team" asp-controller="Assessment" class="BtnChoosePath">Team</a>
+                <a id="FinancePath" asp-action="Finance" asp-controller="Assessment" class="BtnChoosePath">Finansiering</a>
+                
+    }
+    else if (Model.StepOne(Model.ProjectPoco))
     {
                 <a id="BusinessPath" asp-action="Business" asp-controller="Assessment" class="BtnChoosePath">Affär</a>
                 <a id="IPRPath" asp-action="IPR" asp-controller="Assessment" class="BtnChoosePath">IPR</a>
-    }
-    else if (Model.StepTwo(Model.ProjectPoco))
-    {
-                <a id="TeamPath" asp-action="Team" asp-controller="Assessment" class="BtnChoosePath">Team</a>
-                <a id="FinancePath" asp-action="Finance" asp-controller="Assessment" class="BtnChoosePath">Finansiering</a>
+
+               
     }
     else
     {
                  <a id="CustomerPath" asp-action="Customer" asp-controller="Assessment" class="BtnChoosePath">Behov</a>
                  <a id="ProductPath" asp-action="Product" asp-controller="Assessment" class="BtnChoosePath">Lösning</a>
-        
+   
     }
+    <div>
+        <a id="SaveBtn" asp-action="ProjectInformation" asp-controller="ProjectInformation" asp-route-id="@Model.ProjectPoco.Id">Spara och avsluta</a>
+
+    </div>
+  
 
 
                 

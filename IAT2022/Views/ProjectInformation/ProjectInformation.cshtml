@@ -14,8 +14,8 @@
    </div>
     <table>
       <tr class="tableFormat">
-        <td><a asp-action="Index" asp-controller="Assessment" asp-route-id="@Model.Project.Id" class="CategoryLink">KUND</a></td>
-            @foreach (var item in Model.Project.Business)
+        <td><a asp-action="Customer" asp-controller="Assessment" asp-route-id="@Model.Project.Id" class="CategoryLink">KUND</a></td>
+            @foreach (var item in Model.Project.Customer)
             {
                 @if (item.Result)
                 {
@@ -31,7 +31,7 @@
       </tr>
 
        <tr>
-        <td><a asp-action="Index" asp-controller="Assessment" asp-route-id="@Model.Project.Id" class="CategoryLink">Produkt</a></td>
+        <td><a asp-action="Product" asp-controller="Assessment" asp-route-id="@Model.Project.Id" class="CategoryLink">Produkt</a></td>
         @foreach (var item in Model.Project.Product)
         {
             @if (item.Result)
@@ -46,7 +46,7 @@
       </tr>
 
       <tr>
-        <td><a asp-action="Index" asp-controller="Assessment" asp-route-id="@Model.Project.Id" class="CategoryLink">IPR</a></td>
+        <td><a asp-action="IPR" asp-controller="Assessment" asp-route-id="@Model.Project.Id" class="CategoryLink">IPR</a></td>
         @foreach (var item in Model.Project.IPR)
         {
                         @if (item.Result)
@@ -60,7 +60,7 @@
         }
       </tr>
       <tr>
-        <td><a asp-action="Index" asp-controller="Assessment" asp-route-id="@Model.Project.Id" class="CategoryLink">TEAM</a></td>
+        <td><a asp-action="Team" asp-controller="Assessment" asp-route-id="@Model.Project.Id" class="CategoryLink">TEAM</a></td>
         @foreach (var item in Model.Project.Team)
         {
             @if (item.Result)
@@ -74,7 +74,7 @@
         }
       </tr>
       <tr>
-        <td><a asp-action="Index" asp-controller="Assessment" asp-route-id="@Model.Project.Id" class="CategoryLink">AFFÄR</a></td>
+        <td><a asp-action="Business" asp-controller="Assessment" asp-route-id="@Model.Project.Id" class="CategoryLink">AFFÄR</a></td>
         @foreach (var item in Model.Project.Business)
         {
             @if (item.Result)
@@ -88,7 +88,7 @@
         }
       </tr>
       <tr>
-        <td><a asp-action="Index" asp-controller="Assessment" asp-route-id="@Model.Project.Id" class="CategoryLink">FINNANSIERING</a></td>
+        <td><a asp-action="Finance" asp-controller="Assessment" asp-route-id="@Model.Project.Id" class="CategoryLink">FINNANSIERING</a></td>
         @foreach (var item in Model.Project.Finance)
         {
             @if (item.Result)

@@ -68,7 +68,6 @@ namespace IAT2022.Controllers
                 model.ProjectPoco = await _dbRepository.GetSingleProject(data.ToString());
                 TempData["data"] = model.ProjectPoco.Id;
 
-                var hej = model.ProjectPoco.Customer.Where(x => x.Result == true).ToList();
 
                 return View(model);
             }

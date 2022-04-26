@@ -316,6 +316,12 @@ li{
     display: flex;
     justify-content: center;
 }
+.Testar {
+    height:500px;
+    width:250px;
+    word-wrap:break-word;
+    word-break:break-all;
+}
 @media screen and (max-width: 1352px) {
     .slideshow-container {
         max-width: 500px;

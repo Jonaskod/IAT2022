@@ -32,8 +32,10 @@ namespace IAT2022.Controllers
             projectPoco.Description = model.Description;
             projectPoco.Owner=User.Identity.Name;
             projectPoco.ProjectType = model.TypeOfProject;
-            
-            if (model.Comment!=null)
+
+
+
+            if (model.Comment != null)
             {
                 CommentPoco commentPoco = new();
                 commentPoco.Comment = model.Comment;
@@ -59,21 +61,112 @@ namespace IAT2022.Controllers
             return projectTagsPocoList;
         }
 
-        public async Task<IActionResult> ChoosePath()
+        public async Task<IActionResult> ChoosePathCustomer(string input)
         {
+            
             var data = TempData["data"];
             if (data != null)
             {
                 RegisterProjectViewModel model = new();
                 model.ProjectPoco = await _dbRepository.GetSingleProject(data.ToString());
+                model.ProjectPoco.CustomerComment = input;
+                _dbRepository.UpdateProject(model.ProjectPoco);
                 TempData["data"] = model.ProjectPoco.Id;
 
 
-                return View(model);
+                return View("ChoosePath", model);
+            }
+            return View(); 
+        }
+        public async Task<IActionResult> ChoosePathBusiness(string input)
+        {
+
+            var data = TempData["data"];
+            if (data != null)
+            {
+                RegisterProjectViewModel model = new();
+                model.ProjectPoco = await _dbRepository.GetSingleProject(data.ToString());
+                model.ProjectPoco.BusinessComment = input;
+                _dbRepository.UpdateProject(model.ProjectPoco);
+                TempData["data"] = model.ProjectPoco.Id;
+
+
+                return View("ChoosePath", model);
             }
             return View();
-            
         }
+        public async Task<IActionResult> ChoosePathFinance(string input)
+        {
+
+            var data = TempData["data"];
+            if (data != null)
+            {
+                RegisterProjectViewModel model = new();
+                model.ProjectPoco = await _dbRepository.GetSingleProject(data.ToString());
+                model.ProjectPoco.FinanceComment = input;
+                _dbRepository.UpdateProject(model.ProjectPoco);
+                TempData["data"] = model.ProjectPoco.Id;
+
+
+                return View("ChoosePath", model);
+            }
+            return View();
+        }
+        public async Task<IActionResult> ChoosePathIPR(string input)
+        {
+
+            var data = TempData["data"];
+            if (data != null)
+            {
+                RegisterProjectViewModel model = new();
+                model.ProjectPoco = await _dbRepository.GetSingleProject(data.ToString());
+                model.ProjectPoco.IPRComment = input;
+                _dbRepository.UpdateProject(model.ProjectPoco);
+                TempData["data"] = model.ProjectPoco.Id;
+
+
+                return View("ChoosePath", model);
+            }
+            return View();
+        }
+        public async Task<IActionResult> ChoosePathProduct(string input)
+        {
+
+            var data = TempData["data"];
+            if (data != null)
+            {
+                RegisterProjectViewModel model = new();
+                model.ProjectPoco = await _dbRepository.GetSingleProject(data.ToString());
+                model.ProjectPoco.ProductComment = input;
+                _dbRepository.UpdateProject(model.ProjectPoco);
+                TempData["data"] = model.ProjectPoco.Id;
+
+
+                return View("ChoosePath", model);
+            }
+            return View();
+        }
+        public async Task<IActionResult> ChoosePathTeam(string input)
+        {
+
+            var data = TempData["data"];
+            if (data != null)
+            {
+                RegisterProjectViewModel model = new();
+                model.ProjectPoco = await _dbRepository.GetSingleProject(data.ToString());
+                model.ProjectPoco.TeamComment = input;
+                _dbRepository.UpdateProject(model.ProjectPoco);
+                TempData["data"] = model.ProjectPoco.Id;
+
+
+                return View("ChoosePath", model);
+            }
+            return View();
+        }
+
+
+
+
         public IActionResult Customer(RegisterProjectViewModel model)
         {
             

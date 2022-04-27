@@ -8,5 +8,6 @@ namespace IAT2022.Data.Poco
 
         public bool Result { get; set; }
         
+
     }
 }

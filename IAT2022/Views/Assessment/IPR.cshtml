@@ -73,7 +73,30 @@
   </h3>
   
 
-  <a id="test" class="SaveBtn" asp-controller="RegisterProject" asp-action="ChoosePath">Spara</a>
+@if (Model.Project.IPRComment == null)
+                {
+                        @using (Html.BeginForm("ChoosePathIPR","RegisterProject",FormMethod.Post))
+                    {
+                        <div class="CategoryCommentDiv">
+                        <textarea name="input" class="Testar">
+
+                        </textarea>
+                            <input type="submit" value="Spara"/>
+                        </div>
+                        }
+                    }
+                    else
+                    {
+                         @using (Html.BeginForm("ChoosePathIPR","RegisterProject",FormMethod.Post))
+                        {
+                            <div class="CategoryCommentDiv">
+                            <textarea name="input" class="Testar">
+                            @Model.Project.IPRComment.ToString();
+                            </textarea>
+                            <input type="submit" value="Spara"/>
+                            </div>
+                        }
+                    }
  
   
 </section>

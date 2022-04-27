@@ -80,16 +80,34 @@ namespace IAT2022.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("BusinessComment")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CustomerComment")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Description")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("FinanceComment")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("IPRComment")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Owner")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ProductComment")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ProjectName")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ProjectType")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TeamComment")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");

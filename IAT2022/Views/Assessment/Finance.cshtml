@@ -73,7 +73,30 @@
   </h3>
   
 
-  <a id="test" class="SaveBtn" asp-controller="RegisterProject" asp-action="ChoosePath">Spara</a>
+@if (Model.Project.FinanceComment == null)
+                {
+                        @using (Html.BeginForm("ChoosePathFinance","RegisterProject",FormMethod.Post))
+                    {
+                        <div class="CategoryCommentDiv">
+                        <textarea name="input" class="Testar">
+
+                        </textarea>
+                            <input type="submit" value="Spara"/>
+                        </div>
+                        }
+                    }
+                    else
+                    {
+                         @using (Html.BeginForm("ChoosePathFinance","RegisterProject",FormMethod.Post))
+                        {
+                            <div class="CategoryCommentDiv">
+                            <textarea name="input" class="Testar">
+                            @Model.Project.FinanceComment.ToString();
+                            </textarea>
+                            <input type="submit" value="Spara"/>
+                            </div>
+                        }
+                    }
  
   
 </section>

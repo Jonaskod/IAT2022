@@ -72,8 +72,30 @@
     <span class="blue-color"></span>Välj dom alternativ som stämmer för ditt projekt
   </h3>
   
+@if (Model.Project.BusinessComment == null)
+                {
+                        @using (Html.BeginForm("ChoosePathBusiness","RegisterProject",FormMethod.Post))
+                    {
+                        <div class="CategoryCommentDiv">
+                        <textarea name="input" class="Testar">
 
-  <a id="test" class="SaveBtn" asp-controller="RegisterProject" asp-action="ChoosePath">Spara</a>
+                        </textarea>
+                            <input type="submit" value="Spara"/>
+                        </div>
+                        }
+                    }
+                    else
+                    {
+                         @using (Html.BeginForm("ChoosePathBusiness","RegisterProject",FormMethod.Post))
+                        {
+                            <div class="CategoryCommentDiv">
+                            <textarea  name="input" class="Testar">
+                                @Model.Project.BusinessComment.ToString();
+                            </textarea>
+                            <input type="submit" value="Spara"/>
+                            </div>
+                        }
+                    }
  
   
 </section>

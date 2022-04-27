@@ -71,12 +71,34 @@
   <h3>
     <span class="blue-color"></span>Välj dom alternativ som stämmer för ditt projekt
   </h3>
-  
 
-  <a id="test" class="SaveBtn" asp-controller="RegisterProject" asp-action="ChoosePath">Spara</a>
- 
   
 </section>
+
+                @if (Model.Project.CustomerComment == null)
+                {
+                        @using (Html.BeginForm("ChoosePathCustomer","RegisterProject",FormMethod.Post))
+                    {
+                        <div class="CategoryCommentDiv">
+                        <textarea name="input" class="Testar">
+
+                        </textarea>
+                            <input type="submit" value="Spara"/>
+                        </div>
+                        }
+                    }
+                    else
+                    {
+                         @using (Html.BeginForm("ChoosePathCustomer","RegisterProject",FormMethod.Post))
+                        {
+                            <div class="CategoryCommentDiv">
+                            <textarea name="input" class="Testar">
+                            @Model.Project.CustomerComment.ToString();
+                            </textarea>
+                            <input type="submit" value="Spara"/>
+                            </div>
+                        }
+                    }
 
 <div class="social">
   <a href="https://www.linkedin.com/in/florin-cornea-b5118057/" target="_blank">

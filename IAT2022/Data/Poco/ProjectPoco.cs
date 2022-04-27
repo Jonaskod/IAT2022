@@ -10,11 +10,17 @@ namespace IAT2022.Data.Poco
         public string? Description { get; set; }
         public string? Owner { get; set; }
         public List<CustomerPoco>? Customer { get; set; }
+        public string? CustomerComment { get; set; }
         public List<ProductPoco>? Product { get; set; }
+        public string? ProductComment { get; set; }
         public List<IPRPoco>? IPR { get; set; }
+        public string? IPRComment { get; set; }
         public List<TeamPoco>? Team { get; set; }
+        public string? TeamComment { get; set; }
         public List<BusinessPoco>? Business { get; set; }
+        public string? BusinessComment { get; set; }
         public List<FinancePoco>? Finance { get; set; }
+        public string? FinanceComment { get; set; }
         public string? ProjectType { get; set; }
         public List<CommentPoco>? Comments { get; set; }
         public List<ProjectTagsPoco> Tags { get; set; }

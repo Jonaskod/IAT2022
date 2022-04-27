@@ -4,7 +4,7 @@
 
 namespace IAT2022.Migrations
 {
-    public partial class asd : Migration
+    public partial class addasdasd : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -82,6 +82,12 @@ namespace IAT2022.Migrations
                     ProjectName = table.Column<string>(type: "TEXT", nullable: true),
                     Description = table.Column<string>(type: "TEXT", nullable: true),
                     Owner = table.Column<string>(type: "TEXT", nullable: true),
+                    CustomerComment = table.Column<string>(type: "TEXT", nullable: true),
+                    ProductComment = table.Column<string>(type: "TEXT", nullable: true),
+                    IPRComment = table.Column<string>(type: "TEXT", nullable: true),
+                    TeamComment = table.Column<string>(type: "TEXT", nullable: true),
+                    BusinessComment = table.Column<string>(type: "TEXT", nullable: true),
+                    FinanceComment = table.Column<string>(type: "TEXT", nullable: true),
                     ProjectType = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>

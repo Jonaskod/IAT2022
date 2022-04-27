@@ -321,6 +321,7 @@ li{
     width:250px;
     word-wrap:break-word;
     word-break:break-all;
+    resize:none;
 }
 @media screen and (max-width: 1352px) {
     .slideshow-container {

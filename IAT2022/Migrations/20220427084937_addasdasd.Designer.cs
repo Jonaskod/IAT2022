@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IAT2022.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220426093809_asd")]
-    partial class asd
+    [Migration("20220427084937_addasdasd")]
+    partial class addasdasd
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -82,16 +82,34 @@ namespace IAT2022.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("BusinessComment")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("CustomerComment")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Description")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("FinanceComment")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("IPRComment")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Owner")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("ProductComment")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ProjectName")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("ProjectType")
+                        .HasColumnType("TEXT");
+
+                    b.Property<string>("TeamComment")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");

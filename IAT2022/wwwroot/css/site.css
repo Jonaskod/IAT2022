@@ -429,13 +429,16 @@ button:active {
     justify-content: center;
 }
 .Testar {
-    height:300px;
-    width:350px;
-    word-wrap:break-word;
-    word-break:break-all;
-    resize:none;
-    border-block:solid;
-    border-color:grey;
+
+    width: 500px;
+    height: 150px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    background-color: #f8f8f8;
+    font-size: 16px;
+    resize: none;
 }
 .NameInput{
     width: 350px;

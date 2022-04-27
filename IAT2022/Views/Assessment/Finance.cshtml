@@ -1,5 +1,8 @@
 ﻿@using IAT2022.ViewModels
 @model ProjectInformationViewModel
+  <h3>
+    <span class="blue-color"></span>Välj dom alternativ som stämmer för ditt projekt
+  </h3>
 <div class ="slideshow-container"> 
 
    
@@ -68,21 +71,16 @@
 
 
   
-  <h3>
-    <span class="blue-color"></span>Välj dom alternativ som stämmer för ditt projekt
-  </h3>
-  
 
+<h3>Motivera dina svar med en kommentar</h3>
 @if (Model.Project.FinanceComment == null)
                 {
                         @using (Html.BeginForm("ChoosePathFinance","RegisterProject",FormMethod.Post))
                     {
                         <div class="CategoryCommentDiv">
-                        <textarea name="input" class="Testar">
-
-                        </textarea>
-                            <input type="submit" value="Spara"/>
+                        <textarea name="input" class="Testar"></textarea>
                         </div>
+                        <input class="btn-save" type="submit" value="Spara"/>
                         }
                     }
                     else
@@ -90,11 +88,9 @@
                          @using (Html.BeginForm("ChoosePathFinance","RegisterProject",FormMethod.Post))
                         {
                             <div class="CategoryCommentDiv">
-                            <textarea name="input" class="Testar">
-                            @Model.Project.FinanceComment.ToString();
-                            </textarea>
-                            <input type="submit" value="Spara"/>
+                            <textarea name="input" class="Testar">@Model.Project.FinanceComment.ToString()</textarea>
                             </div>
+                            <input class="btn-save" type="submit" value="Spara"/>
                         }
                     }
  

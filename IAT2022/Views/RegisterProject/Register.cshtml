@@ -4,10 +4,9 @@
 
 <form method="post">
             <div asp-validation-summary="All" class="text-danger"></div>
+                <label>Namn</label>
              <div class="form-group">
-
-                <label asp-for="Name"></label>
-                <input asp-for="Name" class="form-control"/>
+                <input asp-for="Name" class="NameInput"/>
                 <span asp-validation-for="Name" class="text-danger"></span>
              </div>
              <div class="form-group">
@@ -25,17 +24,18 @@
                 </select>
              </div>
 
+                <label>Beskrivning</label>
              <div class="form-group">
-                <label asp-for="Description"></label>
                 <textarea asp-for="Description" class="Testar"></textarea> 
                 <span asp-validation-for="Description" class="text-danger"></span>
              </div>
 
+                <label>Kommentar</label>
              <div class="form-group">
-                <label asp-for="Comment"></label>
                 <textarea asp-for="Comment" class="Testar"></textarea> 
                 <span asp-validation-for="Comment" class="text-danger"></span>
             </div>
+
             <div>
                 <div class="LabelHeader">
                 <label>Välj kategori som passar ditt projekt</label>

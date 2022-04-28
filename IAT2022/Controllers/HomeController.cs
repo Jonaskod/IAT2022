@@ -19,12 +19,18 @@ namespace IAT2022.Controllers
             _logger = logger;
             _dbRepository = dbRepository;
             _dbRepository.SeedCustomerQuestions();
+            _dbRepository.SeedProductQuestions();
+            _dbRepository.SeedBuisnessQuestions();
+            _dbRepository.SeedFinanceQuestions();
+            _dbRepository.SeedTeamQuestions();
+            _dbRepository.SeedIprQuestions();
+            _dbRepository.SeedTags();
         }
  
         public async Task<IActionResult> Index()
         {
             HomeViewModel home = new();
-            var list = _dbRepository.GetAllProjects(User.Identity.Name);
+            var list = await _dbRepository.GetAllProjects(User.Identity.Name);
             home.Projects = list;
             return View(home);
         }

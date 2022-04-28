@@ -12,10 +12,11 @@ namespace IAT2022.Controllers
         {
             _dbRepository = dbRepository;
         }
-        public IActionResult ProjectInformation(int id)
+        public async Task<IActionResult> ProjectInformation(int id)
         {
             ProjectInformationViewModel projectInformationViewModel = new (_dbRepository);
-            projectInformationViewModel.Project = _dbRepository.GetSingleProject(id.ToString());
+            projectInformationViewModel.Project = await _dbRepository.GetSingleProject(id.ToString());
+            TempData["data"] = projectInformationViewModel.Project.Id;
             return View(projectInformationViewModel);
         }
     }

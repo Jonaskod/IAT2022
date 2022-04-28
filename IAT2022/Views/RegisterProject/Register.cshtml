@@ -1,12 +1,12 @@
 ﻿@using IAT2022.ViewModels
 @model RegisterProjectViewModel
 
+
 <form method="post">
             <div asp-validation-summary="All" class="text-danger"></div>
+                <label>Namn</label>
              <div class="form-group">
-
-                <label asp-for="Name"></label>
-                <input asp-for="Name" class="form-control"/>
+                <input asp-for="Name" class="NameInput"/>
                 <span asp-validation-for="Name" class="text-danger"></span>
              </div>
              <div class="form-group">
@@ -24,20 +24,43 @@
                 </select>
              </div>
 
+                <label>Beskrivning</label>
              <div class="form-group">
-                <label asp-for="Description"></label>
-                <input asp-for="Description" class="form-control"/>
+                <textarea asp-for="Description" class="Testar"></textarea> 
                 <span asp-validation-for="Description" class="text-danger"></span>
              </div>
 
+                <label>Kommentar</label>
              <div class="form-group">
-                <label asp-for="Comment"></label>
-                <input asp-for="Comment" class="form-control"/>
+                <textarea asp-for="Comment" class="Testar"></textarea> 
                 <span asp-validation-for="Comment" class="text-danger"></span>
+            </div>
 
+            <div>
+                <div class="LabelHeader">
+                <label>Välj kategori som passar ditt projekt</label>
+                </div>
+                <div class="TagContainer">
+            @for (var i = 0; i < Model.Tags.Count(); i++)
+            {
+                <article class="feature">
+                <input asp-for="TagsBool[i]" type="checkbox" id="feature"/>
+                <div>
+                    <span>
+                    @Model.Tags[i].Description
+                    </span>
+                </div>
+                </article>
+            }
+                </div>
+            
+            
+
+
+            </div>
                  <button type="submit" value="submit" class="btn-save">Registrera</button>
 
                 <button type="submit" class="btn-cancel" asp-area="" asp-controller="Home" asp-action="Index">Cancel</button>
-            </div>
+
        
         </form>

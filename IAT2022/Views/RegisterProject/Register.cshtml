@@ -9,21 +9,18 @@
                 <input asp-for="Name" class="NameInput"/>
                 <span asp-validation-for="Name" class="text-danger"></span>
              </div>
-             <div class="form-group">
-                <label asp-for="TypeOfProject">Typ av Projekt</label>
-                <select name="TypeOfProject" id="TypeOfProject">
-                    <option value="Process">
-                        "Process"
-                    </option>
-                    <option value="Produkt">
-                        "Produkt"
-                    </option>
-                    <option value="Tjänst">
-                        "Tjänst"
-                    </option>
-                </select>
-             </div>
 
+             <div class="form-group">
+
+                <label>Typ av Projekt</label>
+                <input asp-for="TypeOfProject" type="radio" id="Process" name="TypeOfProject" value="Process">
+                <label for="Process">Process</label><br>
+                <input asp-for="TypeOfProject" type="radio" id="Produkt" name="TypeOfProject" value="Produkt">
+                <label for="Produkt">Produkt</label><br>
+                <input asp-for="TypeOfProject" type="radio" id="Tjänst" name="TypeOfProject" value="Tjänst">
+                <label for="Tjänst">Tjänst</label><br>
+                
+            </div>
                 <label>Beskrivning</label>
              <div class="form-group">
                 <textarea asp-for="Description" class="Testar"></textarea> 

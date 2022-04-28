@@ -53,14 +53,30 @@ namespace IAT2022.Repositories
                 {
                     CustomerPoco customer = new();
                     model.Customer.Add(customer);
+  
+                }
+                foreach (var item in _appDbContext.ProductQuestions)
+                {
                     ProductPoco temp = new();
                     model.Product.Add(temp);
+                }
+                foreach (var item in _appDbContext.IPRQuestions)
+                {
                     IPRPoco iPRPoco = new();
                     model.IPR.Add(iPRPoco);
+                }
+                foreach (var item in _appDbContext.BuisnessQuestions)
+                {
                     BusinessPoco iBusinessPoco = new();
                     model.Business.Add(iBusinessPoco);
+                }
+                foreach (var item in _appDbContext.FinanceQuestions)
+                {
                     FinancePoco iFinancePoco = new();
                     model.Finance.Add(iFinancePoco);
+                }
+                foreach (var item in _appDbContext.TeamQuestions)
+                {
                     TeamPoco iTeamPoco = new();
                     model.Team.Add(iTeamPoco);
                 }

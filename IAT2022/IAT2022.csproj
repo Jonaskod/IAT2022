@@ -9,6 +9,7 @@
 
   <ItemGroup>
     <None Remove="Data\Images\button-blue.png" />
+    <None Remove="Images\customer.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -27,6 +28,7 @@
 
   <ItemGroup>
     <Resource Include="Data\Images\button-blue.png" />
+    <Resource Include="Images\customer.png" />
   </ItemGroup>
 
 </Project>

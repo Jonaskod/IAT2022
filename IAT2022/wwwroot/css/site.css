@@ -149,8 +149,21 @@ input[type=checkbox]:checked ~ div {
 }
 .tableFormat {
     width: 1000px;
-    height: 100px;
+    height: 70px;
+
 }
+table {
+    border-spacing: 15px;
+    border-collapse: separate;
+}
+td {
+    background:url(/css/NewFolder/customer.png);
+    background-size:10px 10px;
+    background-repeat:no-repeat;
+}
+
+
+
 .prev {
     display: block;
     background-color: lightslategray;
@@ -385,6 +398,7 @@ button:active {
 .CustomerChecked{
     background-color:green;
     color:white;
+
 }
 .CustomerUnchecked{
     background-color:red;

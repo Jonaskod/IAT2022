@@ -10,15 +10,17 @@
                 <span asp-validation-for="Name" class="text-danger"></span>
              </div>
 
-             <div class="form-group">
-
+             <div class="TypeBox">
+                 <div>
                 <label>Typ av Projekt</label>
-                <input asp-for="TypeOfProject" type="radio" id="Process" name="TypeOfProject" value="Process">
-                <label for="Process">Process</label><br>
-                <input asp-for="TypeOfProject" type="radio" id="Produkt" name="TypeOfProject" value="Produkt">
-                <label for="Produkt">Produkt</label><br>
-                <input asp-for="TypeOfProject" type="radio" id="Tjänst" name="TypeOfProject" value="Tjänst">
-                <label for="Tjänst">Tjänst</label><br>
+                </div>
+                <div class="radio">
+                <input label="Process" asp-for="TypeOfProject" type="radio" id="Process" class="TypeClass" name="TypeOfProject" value="Process">
+                <input label="Produkt" asp-for="TypeOfProject" type="radio" id="Produkt" class="TypeClass" name="TypeOfProject" value="Produkt">
+                
+                <input label="Tjänst" asp-for="TypeOfProject" type="radio" id="Tjänst" class="TypeClass" name="TypeOfProject" value="Tjänst">
+                
+                </div>
                 
             </div>
                 <label>Beskrivning</label>

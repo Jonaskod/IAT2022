@@ -283,3 +283,9 @@ function showSlides(n) {
 var myDrop = new drop({
     selector: '#myMulti'
 });
+function pdfDownload() {
+    var element = document.getElementById('simple_table');
+    html2pdf(element);
+
+}
+

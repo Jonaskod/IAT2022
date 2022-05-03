@@ -12,7 +12,7 @@
        <label class="TagClass">@item.Description</label>
    }
    </div>
-    <table class="tableClass">
+    <table class="tableClass" id="simple_table">
       <tr class="tableFormat">
         <td id="customerTable" class="tableheader"><a asp-action="Customer" asp-controller="Assessment" asp-route-id="@Model.Project.Id" class="CategoryLink">KUND</a></td>
             @foreach (var item in Model.Project.Customer)
@@ -102,4 +102,5 @@
         }
       </tr>
     </table>
+    <input type="button" onclick="pdfDownload()" value="Export To PDF" />
 </div>

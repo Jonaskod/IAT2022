@@ -28,12 +28,26 @@ body {
 
     .app i {
         font-size: 80px;
-        animation-duration: 3s;
+        animation-duration: 2s;
         animation-name: slidein;
         animation-iteration-count: 1;
     }
+.tagstyle {
+    height: 75px;
+    width: 100px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
 
 
+
+    .tagstyle input[type=checkbox]:checked ~ div {
+        background-image: linear-gradient(180deg, #95d891, #74bbad);
+        color: white;
+        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+        font-weight:900;
+        box-shadow: 0 1px 1px #0000002e;
+        text-shadow: 1px 1px black;
+    }
 
 
 
@@ -43,9 +57,11 @@ article {
     height: 200px;
     margin: 5px;
     float: left;
-    border: 2px solid #f5f5f5;
+    border: 2px solid black;
     box-sizing: border-box;
     border-radius: 10%;
+    background-color:whitesmoke;
+    color:black;
 }
 
     article div {
@@ -77,9 +93,11 @@ article {
 }
 
 input[type=checkbox]:checked ~ div {
-    background-color: green;
+    background-image: linear-gradient(180deg, #95d891, #74bbad);
     color: white;
+    text-shadow: 1px 1px black;
     border-radius: 9%;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .upgrade-btn {
@@ -120,9 +138,7 @@ input[type=checkbox]:checked ~ div {
     right: 5px;
 }
 
-.TagClass {
-    border-style: solid;
-}
+
 
 @keyframes slidein {
     from {
@@ -238,7 +254,14 @@ table {
 
 .BtnChoosePath {
     color: black;
+    border-radius: 10%;
+    background-color:whitesmoke;
+    margin: 5%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-style: solid;
+
 }
+
 
     .BtnChoosePath:link {
         background-color: white;
@@ -246,16 +269,14 @@ table {
         text-align: center;
         padding: 5% 5%;
         display: inline-block;
-        border-style: solid;
         text-decoration: none;
         outline: none;
-        border: 0;
     }
 
     .BtnChoosePath:active, .BtnChoosePath:hover {
         cursor: pointer;
         text-decoration: none;
-        background-color: grey;
+        background-image: linear-gradient(180deg, #95d891, #74bbad);
         color: black
     }
 
@@ -383,10 +404,25 @@ h3 {
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     text-shadow: 1px 1px black;
 }
+h4 {
+    color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-shadow: 1px 1px black;
+}
 
 .formstyle {
     display: flex;
     justify-content: center;
+}
+.signup{
+    padding:10%;
+}
+.titlestyle{
+    color:black;
+    font-weight:700;
+}
+.tagstyle{
+
 }
 
 .projectLinks {
@@ -493,11 +529,16 @@ h3 {
         }
 
 .TagClass {
-    background-color: white;
-    color: black;
-    border-radius: 50%;
+    background-image:linear-gradient(to left, #146fd1, #1f88a0);
+    border-style: solid;
+    border-color:black;
+    color: white;
+    border-radius: 20%;
     padding: 1%;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-shadow:1px 1px black;
+    font-weight:800;
+    margin:1% 1% 0 0;
 }
 
 .MyProjectsDiv {
@@ -514,7 +555,7 @@ h3 {
 
 .Testar {
     width: 500px;
-    height: 150px;
+    height: 75px;
     padding: 12px 20px;
     box-sizing: border-box;
     border: 2px solid #ccc;

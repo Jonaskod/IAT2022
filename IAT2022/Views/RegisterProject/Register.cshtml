@@ -4,7 +4,7 @@
 
 <form method="post">
             <div asp-validation-summary="All" class="text-danger"></div>
-                <label>Namn</label>
+                <label class="titlestyle">Namn</label>
              <div class="form-group">
                 <input asp-for="Name" class="NameInput"/>
                 <span asp-validation-for="Name" class="text-danger"></span>
@@ -12,7 +12,7 @@
 
              <div class="TypeBox">
                  <div>
-                <label>Typ av Projekt</label>
+                <label class="titlestyle">Typ av Projekt</label>
                 </div>
                 <div class="radio">
                 <input label="Process" asp-for="TypeOfProject" type="radio" id="Process" class="TypeClass" name="TypeOfProject" value="Process">
@@ -23,13 +23,13 @@
                 </div>
                 
             </div>
-                <label>Beskrivning</label>
+                <label class="titlestyle">Beskrivning</label>
              <div class="form-group">
                 <textarea asp-for="Description" class="Testar"></textarea> 
                 <span asp-validation-for="Description" class="text-danger"></span>
              </div>
 
-                <label>Kommentar</label>
+                <label class="titlestyle">Kommentar</label>
              <div class="form-group">
                 <textarea asp-for="Comment" class="Testar"></textarea> 
                 <span asp-validation-for="Comment" class="text-danger"></span>
@@ -37,14 +37,14 @@
 
             <div>
                 <div class="LabelHeader">
-                <label>Välj kategori som passar ditt projekt</label>
+                <label class="titlestyle">Välj kategori som passar ditt projekt</label>
                 </div>
                 <div class="TagContainer">
             @for (var i = 0; i < Model.Tags.Count(); i++)
             {
-                <article class="feature">
-                <input asp-for="TagsBool[i]" type="checkbox" id="feature"/>
-                <div>
+                <article class="tagstyle">
+                <input class="tagstyle" asp-for="TagsBool[i]" type="checkbox" id="tag"/>
+                <div class="tagstyle">
                     <span>
                     @Model.Tags[i].Description
                     </span>

@@ -1,29 +1,29 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
     text-align: center;
     color: #f5f5f5;
-    background-image: linear-gradient(-90deg, #0c0c0d, #1a1a1a);
+    background-color: white;
     font-family: 'Roboto';
 }
 
 .app {
-    margin: 0 auto;   
-    justify-content:center;
+    margin: 0 auto;
+    justify-content: center;
 }
 
     .app i {
@@ -32,10 +32,10 @@ body {
         animation-name: slidein;
         animation-iteration-count: 1;
     }
-    
-    
 
-    
+
+
+
 
 article {
     position: relative;
@@ -45,8 +45,7 @@ article {
     float: left;
     border: 2px solid #f5f5f5;
     box-sizing: border-box;
-    border-radius:10%;
-    
+    border-radius: 10%;
 }
 
     article div {
@@ -69,26 +68,18 @@ article {
         cursor: pointer;
     }
 
-.slideshow-container{
-    display:flex;
-    margin:0 auto;
-    max-width:33%;
-    justify-content:center;
-    flex-wrap:wrap;
+.slideshow-container {
+    display: flex;
+    margin: 0 auto;
+    max-width: 33%;
+    justify-content: center;
+    flex-wrap: wrap;
 }
-/*.mySlides{
-    display:flex;
-    flex-direction:column;
-    border-style:solid;
-    border-color:saddlebrown;
-}
-*/
+
 input[type=checkbox]:checked ~ div {
     background-color: green;
     color: white;
     border-radius: 9%;
-    
-    
 }
 
 .upgrade-btn {
@@ -128,6 +119,7 @@ input[type=checkbox]:checked ~ div {
     top: 5px;
     right: 5px;
 }
+
 .TagClass {
     border-style: solid;
 }
@@ -143,6 +135,7 @@ input[type=checkbox]:checked ~ div {
         width: 100%;
     }
 }
+
 .register-form {
     padding-bottom: 462px;
     width: 200px;
@@ -152,47 +145,52 @@ table {
     border-spacing: 15px;
     border-collapse: separate;
 }
+
 #customerTable {
     background: url(/css/NewFolder/customer.png);
     background-size: 50px 50px;
     background-repeat: no-repeat;
 }
+
 #productTable {
     background: url(/css/NewFolder/product.png);
     background-size: 50px 50px;
     background-repeat: no-repeat;
 }
+
 #businessTable {
     background: url(/css/NewFolder/business.png);
     background-size: 50px 50px;
     background-repeat: no-repeat;
 }
+
 #iprTable {
     background: url(/css/NewFolder/ipr.png);
     background-size: 50px 50px;
     background-repeat: no-repeat;
 }
+
 #teamTable {
     background: url(/css/NewFolder/team.png);
     background-size: 50px 50px;
     background-repeat: no-repeat;
 }
+
 #financeTable {
     background: url(/css/NewFolder/finance.png);
     background-size: 50px 50px;
     background-repeat: no-repeat;
 }
 
-.CategoryLink{
-    display:inline-block;
-    height:50px;
-    width:200px;
-    
-    
+.CategoryLink {
+    display: inline-block;
+    height: 50px;
+    width: 200px;
 }
-.tableheader{
-    height:50px;
-    width:200px;
+
+.tableheader {
+    height: 50px;
+    width: 200px;
 }
 
 
@@ -212,9 +210,10 @@ table {
     transition: .3s ease;
     text-shadow: 1px 1px #0c0c0d;
 }
-.prev:visited{
-    color:white;
-}
+
+    .prev:visited {
+        color: white;
+    }
 
 .next {
     display: block;
@@ -232,50 +231,52 @@ table {
     color: white;
     text-shadow: 1px 1px #0c0c0d;
 }
-.next:focus{
-    color:red;
 
+    .next:focus {
+        color: red;
+    }
 
+.BtnChoosePath {
+    color: black;
 }
-.BtnChoosePath{
-    color:black;
-}
-.BtnChoosePath:link{
-    background-color:white;
-    color:black;
-    text-align:center;
-    padding:5% 5%;
-    display: inline-block;
-    border-style:solid;
-    text-decoration:none;
-    outline:none;
-    border:0;
-    
-}
-.BtnChoosePath:active, .BtnChoosePath:hover {
-    cursor: pointer;
-    text-decoration:none;
-    background-color:grey;
-    color:black
-    
-}
-.BtnChoosePath:visited {
-    text-decoration: none;
-    
-}
-.ChosePathBtnDiv{
-    padding:100px;
+
+    .BtnChoosePath:link {
+        background-color: white;
+        color: black;
+        text-align: center;
+        padding: 5% 5%;
+        display: inline-block;
+        border-style: solid;
+        text-decoration: none;
+        outline: none;
+        border: 0;
+    }
+
+    .BtnChoosePath:active, .BtnChoosePath:hover {
+        cursor: pointer;
+        text-decoration: none;
+        background-color: grey;
+        color: black
+    }
+
+    .BtnChoosePath:visited {
+        text-decoration: none;
+    }
+
+.ChosePathBtnDiv {
+    padding: 100px;
 }
 
 
 li {
     list-style: none;
 }
-.MyProjectsDiv{
-    display:flex;
-    flex-wrap:wrap;
-    
+
+.MyProjectsDiv {
+    display: flex;
+    flex-wrap: wrap;
 }
+
 .SaveBtn:link, .SaveBtn:visited {
     background-color: white;
     color: black;
@@ -285,6 +286,7 @@ li {
     border-style: solid;
     border-color: slategray
 }
+
 a#btn-save {
     color: #090909;
     padding: 0.7em 1.7em;
@@ -294,11 +296,12 @@ a#btn-save {
     transition: all .3s;
     border-style: solid;
     border-color: black;
-    
 }
-.saveDiv{
-    padding:30px;
+
+.saveDiv {
+    padding: 30px;
 }
+
 .btn-cancel {
     color: #090909;
     padding: 0.7em 1.7em;
@@ -309,9 +312,11 @@ a#btn-save {
     border-style: solid;
     border-color: black;
 }
+
     .btn-cancel:hover {
         background-color: grey;
     }
+
 .btn-save {
     color: #090909;
     padding: 0.7em 1.7em;
@@ -321,21 +326,22 @@ a#btn-save {
     transition: all .3s;
     border-style: solid;
     border-color: black;
-    text-decoration:none;
-    
+    text-decoration: none;
 }
-    .btn-save:hover{
-        background-color:grey;
+
+    .btn-save:hover {
+        background-color: grey;
     }
 
 
-    button:hover {
-        border: 1px solid white;
-    }
+button:hover {
+    border: 1px solid white;
+}
 
-    button:active {
-        box-shadow: 4px 4px 12px #c5c5c5, -4px -4px 12px #ffffff;
-    }
+button:active {
+    box-shadow: 4px 4px 12px #c5c5c5, -4px -4px 12px #ffffff;
+}
+
 .btn-cancel {
     color: #090909;
     padding: 0.7em 1.7em;
@@ -354,32 +360,57 @@ button:hover {
 button:active {
     box-shadow: 4px 4px 12px #c5c5c5, -4px -4px 12px #ffffff;
 }
-.HomeProjects{
-    display:flex;
-    flex-direction:column;
-    position:center;
-    display:block;
 
+.HomeProjects {
+    display: flex;
+    flex-direction: column;
 }
+
+h1 {
+    color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-shadow: 1px 1px black;
+}
+
+h2 {
+    color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-shadow: 1px 1px black;
+}
+
+h3 {
+    color: black;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-shadow: 1px 1px black;
+}
+
+.formstyle {
+    display: flex;
+    justify-content: center;
+}
+
 .projectLinks {
     display: block;
-    padding: 1%1%;
-    color: #090909;
+    color: black;
     padding: 0.7em 1.7em;
     font-size: 18px;
     background: #e8e8e8;
-    border: 4px solid #e8e8e8;
-    height: 150px;
+    border: 3px solid #e8e8e8;
     transition: all .3s;
     border-style: solid;
     border-color: black;
     text-decoration: none;
-    text-align:left;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
 }
+
     .projectLinks:hover {
-        background-color: grey;
-        color:black;
+        background-color: lightslategrey;
+        color: white;
+        text-shadow: 1px 1px black;
     }
+
 .MyProjects:link, .MyProjects:visited {
     display: inline-grid;
     display: block;
@@ -415,9 +446,10 @@ button:active {
     align-items: center;
     line-height: 25px;
     transition: .5s ease;
-    padding:50px;
+    padding: 50px;
 }
-.TagLabel{
+
+.TagLabel {
     position: relative;
     width: 100px;
     height: 50px;
@@ -432,39 +464,42 @@ button:active {
     background-color: green;
     color: white;
 }
-.CustomerUnchecked{
-    background-color:red;
-    color:black;
+
+.CustomerUnchecked {
+    background-color: red;
+    color: black;
 }
-.AssessmentTable{
-    display:flex;
-    justify-content:center;
-    flex-direction:column;
+
+.AssessmentTable {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
-.AssessmentTable tr {
-    border: 3px solid black;
-    background-color:white;
-    color:black;
-    
-}
-.AssessmentTable tr a{
-    color:black;
-    text-decoration:none;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    
-   
-}
-    .AssessmentTable tr td {
+
+    .AssessmentTable tr {
         border: 3px solid black;
-        
+        background-color: white;
+        color: black;
     }
-.TagClass{
-    background-color:white;
-    color:black;
-    border-radius:50%;
-    padding:1%;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+        .AssessmentTable tr a {
+            color: black;
+            text-decoration: none;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+
+        .AssessmentTable tr td {
+            border: 3px solid black;
+        }
+
+.TagClass {
+    background-color: white;
+    color: black;
+    border-radius: 50%;
+    padding: 1%;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
 .MyProjectsDiv {
     border-style: solid;
     border-color: slategray;
@@ -476,8 +511,8 @@ button:active {
     display: flex;
     justify-content: center;
 }
-.Testar {
 
+.Testar {
     width: 500px;
     height: 150px;
     padding: 12px 20px;
@@ -488,42 +523,33 @@ button:active {
     font-size: 16px;
     resize: none;
 }
-.NameInput{
+
+.NameInput {
     width: 350px;
-    
 }
-.form-group{
-    padding:8px;
+
+.form-group {
+    padding: 8px;
+    color: black;
 }
-a.next{
-    border-color:white;
+
+a.next {
+    border-color: white;
 }
+
     a.next:hover {
-        color:black;
+        color: black;
     }
-a.prev{
-    border-color:white;
+
+a.prev {
+    border-color: white;
 }
+
     a.prev:hover {
         color: black;
     }
-/*.TypeBox{
-    border-style:solid;
-    border-color:pink;
-    display:flex;
-    flex-direction:column;
-}
-.TypeBox div{
-    border-style:solid;
-    border-color:red;
-}
-.RadioContainer{
-    justify-content:center;
-    display:flex;
-    flex-direction:row;
-}*/
+
 .radio {
-    /*background: #454857;*/
     padding: 4px;
     position: relative;
 }
@@ -557,6 +583,8 @@ a.prev{
             width: 100%;
         }
 
+
+
 @media screen and (max-width: 1352px) {
     .slideshow-container {
         max-width: 500px;
@@ -576,26 +604,27 @@ a.prev{
         max-height: 600px;
     }
 }
+
 @media screen and (max-width: 489px) {
     .slideshow-container {
-        max-width:380px;
-        padding:0 0 0 25px;
-        
-    }
-    .next{
-        width:250px;
-        
-    }
-    .prev{
-        width:250px;
+        max-width: 380px;
+        padding: 0 0 0 25px;
     }
 
-    .feature{
-        max-width:150px;
-        max-height:150px;
+    .next {
+        width: 250px;
     }
-    
+
+    .prev {
+        width: 250px;
+    }
+
+    .feature {
+        max-width: 150px;
+        max-height: 150px;
+    }
 }
+
 @media screen and (max-width: 365px) {
     .slideshow-container {
         max-width: 380px;

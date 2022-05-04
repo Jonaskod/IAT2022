@@ -39,15 +39,14 @@ body {
 }
 
 
-
-    .tagstyle input[type=checkbox]:checked ~ div {
-        background-image: linear-gradient(180deg, #95d891, #74bbad);
-        color: white;
-        font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-        font-weight:900;
-        box-shadow: 0 1px 1px #0000002e;
-        text-shadow: 1px 1px black;
-    }
+.tagstyle input[type=checkbox]:checked ~ div {
+    background-image: linear-gradient(180deg, #95d891, #74bbad);
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 900;
+    box-shadow: 0 1px 1px #0000002e;
+    text-shadow: 1px 1px black;
+}
 
 .SingleProject div {
     color: black;
@@ -70,6 +69,22 @@ body {
         font-weight: 400;
         font-style:italic;
     }
+
+.LogOutDiv{
+    margin-left:80%;
+
+}
+.HeadDiv{
+    display:flex;
+    flex-direction:row;
+}
+.ContainerDiv{
+
+    width:100%;
+    
+    display:flex;
+    flex-direction:row;
+}
 
 
 article {
@@ -272,15 +287,37 @@ table {
     .next:focus {
         color: red;
     }
+.BtnVisitedPath {
+    color: black;
+    border-radius: 10%;
+    background-image: linear-gradient(180deg, #95d891, #74bbad);
+    margin: 5%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    border-style: solid;
+}
+    .BtnVisitedPath:link {
+        background-color: white;
+        color: black;
+        text-align: center;
+        padding: 5% 5%;
+        display: inline-block;
+        text-decoration: none;
+        outline: none;
+    }
+    .BtnVisitedPath:active, .BtnVisitedPath:hover {
+        cursor: pointer;
+        text-decoration: none;
+        background-image: linear-gradient(180deg, #95d891, #74bbad);
+        color: black
+    }
 
 .BtnChoosePath {
     color: black;
     border-radius: 10%;
-    background-color:whitesmoke;
+    background-color: whitesmoke;
     margin: 5%;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     border-style: solid;
-
 }
 
 
@@ -301,13 +338,22 @@ table {
         color: black
     }
 
-    .BtnChoosePath:visited {
+    .BtnChoosePath a:visited {
+        
+        /*background-image: linear-gradient(180deg, #95d891, #74bbad);*/
         text-decoration: none;
     }
+
+
+#imgCheck {
+    height: 50px;
+    width: 50px;
+}
 
 .ChosePathBtnDiv {
     padding: 100px;
 }
+
 
 
 li {

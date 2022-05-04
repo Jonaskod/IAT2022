@@ -13,8 +13,33 @@
 <div class=HomeProjects>
     @foreach (var item in Model.Projects)
     {
-        <a class="projectLinks" asp-controller="ProjectInformation" asp-action="ProjectInformation" asp-route-id="@item.Id">@item.ProjectName <br/>@item.Description</a>
-        <br />
+        <div class="SingleProject">
+            <div>Skapad: @item.Created</div>
+        <a
+        class="projectLinks" asp-controller="ProjectInformation" asp-action="ProjectInformation" asp-route-id="@item.Id">
+        <div> 
+            
+            <h3>@item.ProjectName</h3>
+            </div>
+        <div>
+            
+            <h5>@item.Description</h5>
+        </div>
+        @if (item.Tags != null)
+        {
+            <div class ="tagsForProject"> 
+                
+            @foreach (var tag in item.Tags)
+                {
+                    
+                    <p>@tag.Description</p>
+                }
+            </div>
+        }
+        </a>
+
+       
+        </div>
     }
 
 

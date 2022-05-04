@@ -49,6 +49,27 @@ body {
         text-shadow: 1px 1px black;
     }
 
+.SingleProject div {
+    color: black;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 600;
+    justify-content:center;
+}
+.SingleProject h5 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+}
+.tagsForProject{
+    display:flex;
+    flex-direction:row;
+    
+}
+    .tagsForProject p {
+        margin: 1%;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-weight: 400;
+        font-style:italic;
+    }
 
 
 article {
@@ -60,8 +81,8 @@ article {
     border: 2px solid black;
     box-sizing: border-box;
     border-radius: 10%;
-    background-color:whitesmoke;
-    color:black;
+    background-color: whitesmoke;
+    color: black;
 }
 
     article div {

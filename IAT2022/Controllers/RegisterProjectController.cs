@@ -32,6 +32,8 @@ namespace IAT2022.Controllers
             projectPoco.Description = model.Description;
             projectPoco.Owner=User.Identity.Name;
             projectPoco.ProjectType = model.TypeOfProject;
+            projectPoco.Created = DateTime.Now.ToShortDateString();
+           
 
 
 

@@ -24,6 +24,7 @@ namespace IAT2022.Data.Poco
         public string? ProjectType { get; set; }
         public List<CommentPoco>? Comments { get; set; }
         public List<ProjectTagsPoco> Tags { get; set; }
+        public string? Created { get; set; }
         //public TagsForProject? TagsForProject { get; set; } 
     
     }

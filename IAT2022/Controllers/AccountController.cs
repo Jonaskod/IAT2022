@@ -61,11 +61,11 @@ namespace IAT2022.Controllers
 
                 };
 
-                System.Threading.Thread.Sleep(1000); // Got error if you tried to log in directly after you logged out.
+                 // Got error if you tried to log in directly after you logged out.
                 var result = await _userManager.CreateAsync(user, registerViewModel.Password);
                 if (result.Succeeded) // Checks if login succeded.
                 {
-                    System.Threading.Thread.Sleep(1000); // Got error if you tried to log in directly after you logged out.
+                     // Got error if you tried to log in directly after you logged out.
                     await _signInManager.SignInAsync(user, isPersistent: false);
                     return RedirectToAction("Index", "Home");
                 }

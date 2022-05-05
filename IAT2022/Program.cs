@@ -12,12 +12,12 @@ string connectionPostgres = builder.Configuration["ConnectionStrings:Default"];
 string connectionSQLite = builder.Configuration["ConnectionStrings:Develop"];
 
 builder.Services.AddDbContext<AppDbContext>(
-    o => o.UseNpgsql(builder.Configuration.GetConnectionString("Default"),
-    o => o.SetPostgresVersion(new Version(12, 10))));
+    o => o.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
+    
 
 builder.Services.AddDbContext<LoginDbContext>(
-    o => o.UseNpgsql(builder.Configuration.GetConnectionString("Default"),
-    o => o.SetPostgresVersion(new Version(12, 10))));
+    o => o.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
+
 
 #region SQLite
 //builder.Services.AddDbContext<AppDbContext>(o => o.UseSqlite(connectionSQLite)); // Hur man ansluter till sqllite databas (DBeaver) Pirater/Hockeyclubar
@@ -26,6 +26,8 @@ builder.Services.AddDbContext<LoginDbContext>(
 //builder.Services.AddDbContext<LoginDbContext>(
 //   options => options.UseSqlite(connectionSQLite));
 #endregion
+
+builder.Services.AddScoped<IDbRepository, DbRepository>();
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()
  .AddEntityFrameworkStores<LoginDbContext>().AddDefaultTokenProviders();
 

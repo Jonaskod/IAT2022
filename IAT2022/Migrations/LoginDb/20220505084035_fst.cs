@@ -2,9 +2,9 @@
 
 #nullable disable
 
-namespace IAT2022.Migrations
+namespace IAT2022.Migrations.LoginDb
 {
-    public partial class afffsd : Migration
+    public partial class fst : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

@@ -23,31 +23,43 @@ namespace IAT2022.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(RegisterProjectViewModel model) //Snygga till!
         {
+            if (ModelState.IsValid)
+            {
+                ProjectPoco projectPoco = new();
             
-            ProjectPoco projectPoco = new();
-            
-            projectPoco.Tags = await Convert(model.TagsBool);
-            projectPoco.Comments = new();
-            projectPoco.ProjectName = model.Name;
-            projectPoco.Description = model.Description;
-            projectPoco.Owner=User.Identity.Name;
-            projectPoco.ProjectType = model.TypeOfProject;
-            projectPoco.Created = DateTime.Now.ToShortDateString();
+                projectPoco.Tags = await Convert(model.TagsBool);
+                projectPoco.Comments = new();
+                projectPoco.ProjectName = model.Name;
+                projectPoco.Description = model.Description;
+                projectPoco.Owner=User.Identity.Name;
+                projectPoco.ProjectType = model.TypeOfProject;
+                projectPoco.Created = DateTime.Now.ToShortDateString();
            
 
 
 
-            if (model.Comment != null)
-            {
-                CommentPoco commentPoco = new();
-                commentPoco.Comment = model.Comment;
-                projectPoco.Comments.Add(commentPoco);
-            }
-            _dbRepository.RegisterProject(projectPoco);
-            TempData["data"] = projectPoco.Id;//Skickar med tempdata mellan controllers
-            model.ProjectPoco = projectPoco;
+                if (model.Comment != null)
+                {
+                    CommentPoco commentPoco = new();
+                    commentPoco.Comment = model.Comment;
+                    projectPoco.Comments.Add(commentPoco);
+                }
+                _dbRepository.RegisterProject(projectPoco);
+                TempData["data"] = projectPoco.Id;//Skickar med tempdata mellan controllers
+                model.ProjectPoco = projectPoco;
             
-            return View("ChoosePath", model);
+                return View("ChoosePath", model);
+
+            }
+            if (!ModelState.IsValid)
+            {
+                 ModelState.AddModelError(string.Empty, "Du måste fylla i ett namn på ditt projekt");
+                RegisterProjectViewModel asd = new(_dbRepository);
+                return View(asd);
+
+            }
+            RegisterProjectViewModel registerProjectViewModel = new(_dbRepository);
+            return View(registerProjectViewModel);
         }
         public async Task<List<ProjectTagsPoco>> Convert(List<bool> tagsBool)
         {

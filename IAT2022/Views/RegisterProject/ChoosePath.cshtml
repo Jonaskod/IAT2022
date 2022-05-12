@@ -4,7 +4,7 @@
 
 
 <div class="PathChooser">
-    @if (Model.StepTwo(Model.ProjectPoco))
+    @if (Model.StepTwo(Model.ProjectPoco)&&Model.StepOne(Model.ProjectPoco))
     {           
                 <div>
                     <a id="CustomerPath" asp-action="Customer" asp-controller="Assessment" class="BtnVisitedPath">Behov <i class="fa-solid fa-check"></i></a>

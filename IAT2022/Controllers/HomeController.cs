@@ -3,7 +3,6 @@ using IAT2022.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
 using IAT2022.ViewModels;
 
 namespace IAT2022.Controllers
@@ -46,6 +45,11 @@ namespace IAT2022.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+        [AllowAnonymous]
+        public IActionResult AboutUs()
+        {
+            return View();
         }
     }
 }

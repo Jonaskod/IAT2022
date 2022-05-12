@@ -23,8 +23,14 @@ namespace IAT2022.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(RegisterProjectViewModel model) //Snygga till!
         {
-            if (ModelState.IsValid)
-            {
+                if (model.Name == null)
+                {
+                     ModelState.AddModelError(string.Empty, "Du måste fylla i ett namn på ditt projekt");
+                    RegisterProjectViewModel asd = new(_dbRepository);
+                    return View(asd);
+
+                }
+           
                 ProjectPoco projectPoco = new();
             
                 projectPoco.Tags = await Convert(model.TagsBool);
@@ -50,14 +56,7 @@ namespace IAT2022.Controllers
             
                 return View("ChoosePath", model);
 
-            }
-            if (!ModelState.IsValid)
-            {
-                 ModelState.AddModelError(string.Empty, "Du måste fylla i ett namn på ditt projekt");
-                RegisterProjectViewModel asd = new(_dbRepository);
-                return View(asd);
-
-            }
+            
             RegisterProjectViewModel registerProjectViewModel = new(_dbRepository);
             return View(registerProjectViewModel);
         }

@@ -10,6 +10,14 @@
                 <span asp-validation-for="Name" class="text-danger"></span>
              </div>
 
+                
+            </div>
+                <label class="titlestyle">Beskrivning</label>
+             <div class="form-group">
+                <textarea asp-for="Description" placeholder="Här kan du om du vill beskriva ditt projekt max 500 bokstäver" maxlength="500" class="Testar"></textarea> 
+                <span asp-validation-for="Description" class="text-danger"></span>
+             </div>
+
              <div class="TypeBox">
                  <div>
                 <label class="titlestyle">Typ av Projekt</label>
@@ -21,20 +29,6 @@
                 <input label="Tjänst" asp-for="TypeOfProject" type="radio" id="Tjänst" class="TypeClass" name="TypeOfProject" value="Tjänst">
                 
                 </div>
-                
-            </div>
-                <label class="titlestyle">Beskrivning</label>
-             <div class="form-group">
-                <textarea asp-for="Description" class="Testar"></textarea> 
-                <span asp-validation-for="Description" class="text-danger"></span>
-             </div>
-
-                <label class="titlestyle">Kommentar</label>
-             <div class="form-group">
-                <textarea asp-for="Comment" class="Testar"></textarea> 
-                <span asp-validation-for="Comment" class="text-danger"></span>
-            </div>
-
             <div>
                 <div class="LabelHeader">
                 <label class="titlestyle">Välj kategori som passar ditt projekt</label>
@@ -42,6 +36,7 @@
                 <div class="TagContainer">
             @for (var i = 0; i < Model.Tags.Count(); i++)
             {
+
                 <article class="tagstyle">
                 <input class="tagstyle" asp-for="TagsBool[i]" type="checkbox" id="tag"/>
                 <div class="tagstyle">
@@ -50,6 +45,7 @@
                     </span>
                 </div>
                 </article>
+
             }
                 </div>
             

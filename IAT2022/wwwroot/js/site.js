@@ -29,6 +29,16 @@ let boolResultBusiness = [];
 boolResultBusiness.length = checkboxlistBusiness.length;
 boolResultBusiness.fill(false);
 
+$("input:radio").on("click", function (e) {
+    var inp = $(this); //cache the selector
+    if (inp.is(".theone")) { //see if it has the selected class
+        inp.prop("checked", false).removeClass("theone");
+        return;
+    }
+    $("input:radio[name='" + inp.prop("name") + "'].theone").removeClass("theone");
+    inp.addClass("theone");
+});
+
 for (let i = 0; i < checkboxlistBusiness.length; i++) {
     checkboxlistBusiness[i].addEventListener('change', function () {
         console.log(boolResultBusiness);
@@ -288,4 +298,12 @@ function pdfDownload() {
     html2pdf(element);
 
 }
+$("textarea").each(function () {
+    this.setAttribute("style", "height:" + (this.scrollHeight) + "px;overflow-y:hidden;");
+}).on("input", function () {
+    this.style.height = "auto";
+    this.style.height = (this.scrollHeight) + "px";
+});
+
+
 

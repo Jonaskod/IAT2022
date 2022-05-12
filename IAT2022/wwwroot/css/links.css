@@ -14,8 +14,6 @@
 }
     .headerLinks:hover {
         cursor: pointer;
-        color: white;
-        background-color: darkgray;
         border-radius: 4%;
         box-shadow: inset 150px 0 0 0 black;
         color: white;

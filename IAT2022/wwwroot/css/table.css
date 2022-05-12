@@ -1,0 +1,39 @@
+﻿
+.CustomerChecked {
+    background-color: green;
+    color: white;
+}
+
+.CustomerUnchecked {
+    background-color: whitesmoke;
+    color: black;
+}
+
+.AssessmentTable {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+    .AssessmentTable tr {
+        background-color: white;
+        color: black;
+    }
+
+        .AssessmentTable tr a {
+            color: black;
+            text-decoration: none;
+            padding: 1%;
+        }
+
+        .AssessmentTable tr td {
+            border: 1px solid black;
+        }
+
+        .AssessmentTable tr a:hover {
+            transition: color .2s ease-in-out, box-shadow .2s ease-in-out;
+            cursor: pointer;
+            border-radius: 4%;
+            box-shadow: inset 200px 0 0 0 black;
+            color: white;
+        }

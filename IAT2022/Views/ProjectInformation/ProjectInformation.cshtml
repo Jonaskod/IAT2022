@@ -14,96 +14,95 @@
    </div>
     <table class="tableClass" id="simple_table">
       <tr class="tableFormat">
-        <td id="customerTable" class="tableheader"><a asp-action="Customer" asp-controller="Assessment" asp-route-id="@Model.Project.Id" class="CategoryLink">KUND</a></td>
+        <td id="customerTable" class="tableheader"><a asp-action="Customer" asp-controller="Assessment" asp-route-id="@Model.Project.Id" class="CategoryLink"><i class="fa-solid fa-user-group"><br />Kund</i></a></td>
             @for (var i = 0; i < Model.ConvertCustomer(Model.Project).Count; i++)
             {
                 int value = i + 1;
                 @if (Model.ConvertCustomer(Model.Project)[i])
                 {
-                    <td class="CustomerChecked">K @value</td>
+                    <td class="CustomerChecked">@value</td>
+                    
                 }
                 else
                 {
-                    <td class="CustomerUnchecked">K @value</td>
+                    <td class="CustomerUnchecked">@value</td>
                 }
             }
-            
-           
       </tr>
 
        <tr class="tableFormat">
-        <td id="productTable"><a asp-action="Product" asp-controller="Assessment" asp-route-id="@Model.Project.Id" class="CategoryLink">Produkt</a></td>
+        <td id="productTable"><a asp-action="Product" asp-controller="Assessment" asp-route-id="@Model.Project.Id" class="CategoryLink"><i class="fa-solid fa-box"><br />Produkt</i></a></td>
         @for (var i = 0; i < Model.ConvertProduct(Model.Project).Count; i++)
             {
                 int value = i + 1;
                 @if (Model.ConvertProduct(Model.Project)[i])
                 {
-                    <td class="CustomerChecked">P @value</td>
+                    <td class="CustomerChecked">@value</td>
                 }
                 else
                 {
-                    <td class="CustomerUnchecked">P @value</td>
+                    <td class="CustomerUnchecked">@value</td>
                 }
             }
       </tr>
 
       <tr class="tableFormat">
-        <td id="iprTable"><a asp-action="IPR" asp-controller="Assessment" asp-route-id="@Model.Project.Id" class="CategoryLink">IPR</a></td>
+        <td id="iprTable"><a asp-action="IPR" asp-controller="Assessment" asp-route-id="@Model.Project.Id" class="CategoryLink"><i class="fa-solid fa-lightbulb"><br />IPR</i></a></td>
        @for (var i = 0; i < Model.ConvertIpr(Model.Project).Count; i++)
             {
                 int value = i + 1;
                 @if (Model.ConvertIpr(Model.Project)[i])
                 {
-                    <td class="CustomerChecked">I @value</td>
+                    <td class="CustomerChecked">@value</td>
                 }
                 else
                 {
-                    <td class="CustomerUnchecked">I @value</td>
+                    <td class="CustomerUnchecked">@value</td>
                 }
             }
       </tr>
       <tr class="tableFormat">
-        <td id="teamTable"><a asp-action="Team" asp-controller="Assessment" asp-route-id="@Model.Project.Id" class="CategoryLink">TEAM</a></td>
+        <td id="teamTable"><a asp-action="Team" asp-controller="Assessment" asp-route-id="@Model.Project.Id" class="CategoryLink"><i class="fa-solid fa-people-group"><br />Team</i></a></td>
         @for (var i = 0; i < Model.ConvertTeam(Model.Project).Count; i++)
             {
                 int value = i + 1;
                 @if (Model.ConvertTeam(Model.Project)[i])
                 {
-                    <td class="CustomerChecked">T @value</td>
+                    <td class="CustomerChecked">@value</td>
                 }
                 else
                 {
-                    <td class="CustomerUnchecked">T @value</td>
+                    <td class="CustomerUnchecked">@value</td>
                 }
             }
       </tr>
       <tr class="tableFormat">
-        <td id="businessTable"><a asp-action="Business" asp-controller="Assessment" asp-route-id="@Model.Project.Id" class="CategoryLink">AFFÄR</a></td>
+        <td id="businessTable"><a asp-action="Business" asp-controller="Assessment" asp-route-id="@Model.Project.Id" class="CategoryLink"><i class="fa-solid fa-suitcase"><br />Marknad</i></a></td>
         @for (var i = 0; i < Model.ConvertBusiness(Model.Project).Count; i++)
             {
                 int value = i + 1;
                 @if (Model.ConvertBusiness(Model.Project)[i])
                 {
-                    <td class="CustomerChecked">B @value</td>
+                    <td class="CustomerChecked">@value</td>
                 }
                 else
                 {
-                    <td class="CustomerUnchecked">B @value</td>
+                    <td class="CustomerUnchecked">@value</td>
                 }
             }
       </tr>
       <tr class="tableFormat">
-        <td id="financeTable"><a asp-action="Finance" asp-controller="Assessment" asp-route-id="@Model.Project.Id" class="CategoryLink">FINNANSIERING</a></td>
+        <td id="financeTable"><a asp-action="Finance" asp-controller="Assessment" asp-route-id="@Model.Project.Id" class="CategoryLink"><i class="fa-solid fa-money-bill"><br />Finansiering</i></a></td>
         @for (var i = 0; i < Model.ConvertFinance(Model.Project).Count; i++)
             {
                 int value = i + 1;
                 @if (Model.ConvertFinance(Model.Project)[i])
                 {
-                    <td class="CustomerChecked">F @value</td>
+                    <td class="CustomerChecked">@value</td>
                 }
                 else
                 {
-                    <td class="CustomerUnchecked">F @value</td>
+                    <td class="CustomerUnchecked">@value</td>
                 }
             }
       </tr>

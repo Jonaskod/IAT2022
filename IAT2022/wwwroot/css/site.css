@@ -32,21 +32,7 @@ body {
         animation-name: slidein;
         animation-iteration-count: 1;
     }
-.tagstyle {
-    height: 75px;
-    width: 100px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
 
-
-.tagstyle input[type=checkbox]:checked ~ div {
-    background-image: linear-gradient(180deg, #95d891, #74bbad);
-    color: white;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-weight: 900;
-    box-shadow: 0 1px 1px #0000002e;
-    text-shadow: 1px 1px black;
-}
 
 .SingleProject div {
     color: black;
@@ -132,6 +118,7 @@ input[type=checkbox]:checked ~ div {
     text-shadow: 1px 1px black;
     border-radius: 9%;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+ 
 }
 
 .upgrade-btn {
@@ -486,9 +473,22 @@ h4 {
     color:black;
     font-weight:700;
 }
-.tagstyle{
-
+.tagstyle {
+    width: 150px;
+    height: 30px;
+    background-color: #454857;
+    color: white;
+    text-decoration:none;
+    border-radius:0;
+    border-style:none;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
+    .tagstyle input[type=checkbox]:checked ~ div {
+        text-shadow: 7px 7px 14px rgba(0, 0, 0, 0.51);
+        border-radius:0;
+    }
+   
+    
 
 .projectLinks {
     display: block;
@@ -547,7 +547,7 @@ h4 {
     align-items: center;
     line-height: 25px;
     transition: .5s ease;
-    padding: 50px;
+    padding: 10px;
 }
 
 .TagLabel {
@@ -656,7 +656,7 @@ a.prev {
     }
 
 .radio {
-    padding: 4px;
+    padding: 10px;
     position: relative;
 }
 
@@ -688,6 +688,9 @@ a.prev {
             text-align: center;
             width: 100%;
         }
+
+
+
 
 
 

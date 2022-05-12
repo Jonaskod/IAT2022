@@ -39,6 +39,14 @@ $("input:radio").on("click", function (e) {
     inp.addClass("theone");
 });
 
+$("textarea").each(function () {
+    this.setAttribute("style", "height:" + (this.scrollHeight) + "px;overflow-y:hidden;");
+}).on("input", function () {
+    this.style.height = "auto";
+    this.style.height = (this.scrollHeight) + "px";
+});
+
+
 for (let i = 0; i < checkboxlistBusiness.length; i++) {
     checkboxlistBusiness[i].addEventListener('change', function () {
         console.log(boolResultBusiness);
@@ -298,12 +306,5 @@ function pdfDownload() {
     html2pdf(element);
 
 }
-$("textarea").each(function () {
-    this.setAttribute("style", "height:" + (this.scrollHeight) + "px;overflow-y:hidden;");
-}).on("input", function () {
-    this.style.height = "auto";
-    this.style.height = (this.scrollHeight) + "px";
-});
-
 
 

@@ -22,8 +22,14 @@
             <h4>@item.ProjectName</h4>
             </div>
         <div>
+        
             
             <p id="descP">@item.Description</p>
+        </div>
+        <div>
+        
+            
+            <p id="descP">@item.ProjectType</p>
         </div>
         @if (item.Tags != null)
         {
@@ -32,12 +38,12 @@
             @foreach (var tag in item.Tags)
                 {
                     
-                    <p>@tag.Description</p>
+                    <p>@tag.Description</p> 
                 }
             </div>
         }
         </a>
-
+        <a id="editBtn" class="btn-save" asp-controller="EditProject" asp-action="EditProject" asp-route-id="@item.Id"></a>
        
         </div>
     }

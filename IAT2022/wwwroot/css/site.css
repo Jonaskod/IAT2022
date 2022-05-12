@@ -56,9 +56,23 @@ body {
         font-style:italic;
     }
 
-.LogOutDiv{
-    margin-left:65%;
+.SingleProject #editBtn {
+    float: right;
+    margin-top: -30px;
+    background: url(/css/NewFolder/edit.png);
+    background-size: 25px 25px;
+    background-repeat: no-repeat;
+    position:center;
+    border-style:none;
+    
+}
+#editBtn:hover{
+    cursor:initial;
+}
 
+
+.LogOutDiv {
+    margin-left: 65%;
 }
 .HeadDiv{
     display:flex;

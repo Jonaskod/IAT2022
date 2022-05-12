@@ -1,12 +1,12 @@
-﻿
-.CustomerChecked {
+﻿.CustomerChecked {
     background-color: green;
     color: white;
+    
 }
 
 .CustomerUnchecked {
-    background-color: whitesmoke;
-    color: black;
+    background-color: dimgrey;
+    color: white;
 }
 
 .AssessmentTable {

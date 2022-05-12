@@ -16,6 +16,37 @@
 //function CheckSetting(let) {
    
 //}
+let PositiveAwnsersInTable = document.getElementsByName("CustomerChecked");
+
+for (let i = 0; i < PositiveAwnsersInTable.length; i++) {
+    if (i == 0) {
+        PositiveAwnsersInTable[i].style.backgroundColor ="#FEFB01"
+    }
+    if (i == 1) {
+        PositiveAwnsersInTable[i].style.backgroundColor = "#CEFB02"
+    }
+    if (i == 2) {
+        PositiveAwnsersInTable[i].style.backgroundColor = "#87FA00"
+    }
+    if (i == 3) {
+        PositiveAwnsersInTable[i].style.backgroundColor = "#3AF901"
+    }
+    if (i == 4) {
+        PositiveAwnsersInTable[i].style.backgroundColor = "#00ED01"
+    }
+    if (i == 5) {
+        PositiveAwnsersInTable[i].style.backgroundColor = "#FEFB01"
+    }
+    if (i == 6) {
+        PositiveAwnsersInTable[i].style.backgroundColor = "#FEFB01"
+    }
+    if (i == 7) {
+        PositiveAwnsersInTable[i].style.backgroundColor = "#FEFB01"
+    }
+    if (i == 8) {
+        PositiveAwnsersInTable[i].style.backgroundColor = "#FEFB01"
+    }
+}
 
 
 

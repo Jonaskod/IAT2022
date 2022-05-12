@@ -1,19 +1,25 @@
 ﻿@using IAT2022.ViewModels
 @model RegisterProjectViewModel
-<h1>Välj vad du först vill registrera</h1>
+<h1>Klicka på den kategori du vill registrera</h1>
 
 
 <div class="PathChooser">
     @if (Model.StepTwo(Model.ProjectPoco))
     {           
-              
-                
+                <div>
+                    <a id="CustomerPath" asp-action="Customer" asp-controller="Assessment" class="BtnVisitedPath">Behov <i class="fa-solid fa-check"></i></a>
+                    <a id="ProductPath" asp-action="Product" asp-controller="Assessment" class="BtnVisitedPath">Lösning <i class="fa-solid fa-check"></i></a>
+                </div>
+                <div>
+                    <a id="BusinessPath" asp-action="Business" asp-controller="Assessment" class="BtnVisitedPath">Marknad <i class="fa-solid fa-check"></i></a>
+                    <a id="IPRPath" asp-action="IPR" asp-controller="Assessment" class="BtnVisitedPath">IPR <i class="fa-solid fa-check"></i></a>
+                </div>
                 
 
                 @if (Model.CheckIfAnswerd(Model.ProjectPoco, "Team"))
                 {
-                    <a id="TeamPath" asp-action="Team" asp-controller="Assessment" class="BtnVisitedPath">Team</a>
- 
+                    <a id="TeamPath" asp-action="Team" asp-controller="Assessment" class="BtnVisitedPath">Team <i class="fa-solid fa-check"></i></a>
+                    
                 }
                 else
                 {
@@ -23,8 +29,8 @@
 
                 @if (Model.CheckIfAnswerd(Model.ProjectPoco, "Finance"))
                 {
-                    <a id="FinancePath" asp-action="Finance" asp-controller="Assessment" class="BtnVisitedPath">Finansiering</a>
-                
+                    <a id="FinancePath" asp-action="Finance" asp-controller="Assessment" class="BtnVisitedPath">Finansiering <i class="fa-solid fa-check"></i></a>
+                    
 
                 }
                 else{
@@ -36,23 +42,25 @@
     else if (Model.StepOne(Model.ProjectPoco))
     {
                 
-               
-
+              <div>
+                    <a id="CustomerPath" asp-action="Customer" asp-controller="Assessment" class="BtnVisitedPath">Behov <i class="fa-solid fa-check"></i></a>
+                    <a id="ProductPath" asp-action="Product" asp-controller="Assessment" class="BtnVisitedPath">Lösning <i class="fa-solid fa-check"></i></a>
+             </div>
                 @if (Model.CheckIfAnswerd(Model.ProjectPoco, "Business"))
                 {
-                    <a id="BusinessPath" asp-action="Business" asp-controller="Assessment" class="BtnVisitedPath">Affär</a>
- 
+                    <a id="BusinessPath" asp-action="Business" asp-controller="Assessment" class="BtnVisitedPath">Marknad <i class="fa-solid fa-check"></i></a>
+                    
                 }
                 else
                 {
-                    <a id="BusinessPath" asp-action="Business" asp-controller="Assessment" class="BtnChoosePath">Affär</a>
+                    <a id="BusinessPath" asp-action="Business" asp-controller="Assessment" class="BtnChoosePath">Marknad</a>
 
                 }
 
                 @if (Model.CheckIfAnswerd(Model.ProjectPoco, "IPR"))
                 {
-                    <a id="IPRPath" asp-action="IPR" asp-controller="Assessment" class="BtnVisitedPath">IPR</a>
-                
+                    <a id="IPRPath" asp-action="IPR" asp-controller="Assessment" class="BtnVisitedPath">IPR <i class="fa-solid fa-check"></i></a>
+                    
 
                 }
                 else{
@@ -67,18 +75,19 @@
             
             @if (Model.CheckIfAnswerd(Model.ProjectPoco, "Customer"))
             {
-              <a id="CustomerPath" asp-action="Customer" asp-controller="Assessment" class="BtnVisitedPath">Behov</a>
- 
+              <a id="CustomerPath" asp-action="Customer" asp-controller="Assessment" class="BtnVisitedPath">Behov <i class="fa-solid fa-check"></i></a>
+               
             }
             else
             {
                <a id="CustomerPath" asp-action="Customer" asp-controller="Assessment" class="BtnChoosePath">Behov</a>
+               
 
             }
 
             @if (Model.CheckIfAnswerd(Model.ProjectPoco, "Product"))
             {
-                <a id="ProductPath" asp-action="Product" asp-controller="Assessment" class="BtnVisitedPath">Lösning</a>
+                <a id="ProductPath" asp-action="Product" asp-controller="Assessment" class="BtnVisitedPath">Lösning <i class="fa-solid fa-check"></i></a>
                 
 
             }

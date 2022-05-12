@@ -20,12 +20,12 @@
                 int value = i + 1;
                 @if (Model.ConvertCustomer(Model.Project)[i])
                 {
-                    <td class="CustomerChecked">@value</td>
+                    <td class="CustomerChecked">@value<br /><i class="fa-solid fa-check"></i></td>
                     
                 }
                 else
                 {
-                    <td class="CustomerUnchecked">@value</td>
+                    <td class="CustomerUnchecked">@value<br /><i class="fa-solid fa-xmark"></i></td>
                 }
             }
       </tr>
@@ -37,11 +37,11 @@
                 int value = i + 1;
                 @if (Model.ConvertProduct(Model.Project)[i])
                 {
-                    <td class="CustomerChecked">@value</td>
+                    <td class="CustomerChecked" id="Customer#@value">@value<br /><i class="fa-solid fa-check"></i></td>
                 }
                 else
                 {
-                    <td class="CustomerUnchecked">@value</td>
+                    <td class="CustomerUnchecked">@value<br /><i class="fa-solid fa-xmark"></i></td>
                 }
             }
       </tr>
@@ -53,11 +53,11 @@
                 int value = i + 1;
                 @if (Model.ConvertIpr(Model.Project)[i])
                 {
-                    <td class="CustomerChecked">@value</td>
+                    <td class="CustomerChecked">@value<br /><i class="fa-solid fa-check"></i></td>
                 }
                 else
                 {
-                    <td class="CustomerUnchecked">@value</td>
+                    <td class="CustomerUnchecked">@value<br /><i class="fa-solid fa-xmark"></i></td>
                 }
             }
       </tr>
@@ -68,11 +68,11 @@
                 int value = i + 1;
                 @if (Model.ConvertTeam(Model.Project)[i])
                 {
-                    <td class="CustomerChecked">@value</td>
+                    <td class="CustomerChecked" id="Team#@value">@value<br /><i class="fa-solid fa-check"></i></td>
                 }
                 else
                 {
-                    <td class="CustomerUnchecked">@value</td>
+                    <td class="CustomerUnchecked">@value<br /><i class="fa-solid fa-xmark"></i></td>
                 }
             }
       </tr>
@@ -83,11 +83,11 @@
                 int value = i + 1;
                 @if (Model.ConvertBusiness(Model.Project)[i])
                 {
-                    <td class="CustomerChecked">@value</td>
+                    <td class="CustomerChecked">@value<br /><i class="fa-solid fa-check"></i></td>
                 }
                 else
                 {
-                    <td class="CustomerUnchecked">@value</td>
+                    <td class="CustomerUnchecked">@value<br /><i class="fa-solid fa-xmark"></i></td>
                 }
             }
       </tr>
@@ -98,11 +98,11 @@
                 int value = i + 1;
                 @if (Model.ConvertFinance(Model.Project)[i])
                 {
-                    <td class="CustomerChecked">@value</td>
+                    <td class="CustomerChecked">@value<br /><i class="fa-solid fa-check"></i></td>
                 }
                 else
                 {
-                    <td class="CustomerUnchecked">@value</td>
+                    <td class="CustomerUnchecked">@value<br /><i class="fa-solid fa-xmark"></i></td>
                 }
             }
       </tr>

@@ -17,13 +17,17 @@
         color: white;
         background-color: darkgray;
         border-radius: 4%;
-        box-shadow: inset 150px 0 0 0 #54b3d6;
+        box-shadow: inset 150px 0 0 0 black;
         color: white;
     }
     .headerLinks i{
         margin-top:5%;
         height:100%;
     }
+p {
+    color: black;
+    font-family: 'Roboto', sans-serif;
+}
 @media screen and (max-width: 1352px) {
     
 }

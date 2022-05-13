@@ -35,6 +35,7 @@ namespace IAT2022.Repositories
             List<ProjectPoco>? list = _appDbContext.Projects?.Where(x => x.Owner == name).Include(x => x.Comments).Include(x=> x.Tags).ToList();
             if (list != null)
             {
+                list = list.OrderByDescending(x=>x.Id).ToList();
                 return list;
             }
             return null;

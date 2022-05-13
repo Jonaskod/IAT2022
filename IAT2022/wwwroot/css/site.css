@@ -56,18 +56,18 @@ body {
 
 .SingleProject #editBtn {
     float: right;
-    margin-top: -30px;
-    background: url(/css/NewFolder/edit.png);
-    background-size: 25px 25px;
-    background-repeat: no-repeat;
+    margin-top: -55px;
     position:center;
     border-style:none;
-    
+    background-color:white;
+    opacity:0.6;
+    margin-right:3px;
 }
 #editBtn:hover {
     cursor: pointer;
-    box-shadow: 5px 5px 18px 5px rgba(0,0,0,0.29);
-    border-radius:30%;
+    color:white;
+    background-color:black;
+    border-radius:40%;
 }
 
 

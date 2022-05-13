@@ -64,8 +64,10 @@ body {
     border-style:none;
     
 }
-#editBtn:hover{
-    cursor:initial;
+#editBtn:hover {
+    cursor: pointer;
+    box-shadow: 5px 5px 18px 5px rgba(0,0,0,0.29);
+    border-radius:30%;
 }
 
 

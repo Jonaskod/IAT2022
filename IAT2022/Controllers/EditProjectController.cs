@@ -17,11 +17,13 @@ namespace IAT2022.Controllers
         {
             EditProjectViewModel editProjectViewModel = new(_dbRepository);
             editProjectViewModel.Project = await _dbRepository.GetSingleProject(id.ToString());
+            editProjectViewModel.Description = editProjectViewModel.Project.Description;
             TempData["data"] = editProjectViewModel.Project.Id;
             return View(editProjectViewModel);
 
         }
         [HttpPost]
+        
         public async Task<IActionResult> EditProject(EditProjectViewModel model)
         {
             var data = TempData["data"];

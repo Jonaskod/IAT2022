@@ -1,6 +1,6 @@
 ﻿@using IAT2022.ViewModels
 @model EditProjectViewModel
-
+<h1>Redigera ditt projekt</h1>
 
 <form method="post">
             <div asp-validation-summary="All" class="text-danger"></div>
@@ -14,7 +14,7 @@
             </div>
                 <label class="titlestyle">Beskrivning</label>
              <div class="form-group">
-                <textarea asp-for="Description" placeholder="Här kan du om du vill beskriva ditt projekt &#10;max 500 bokstäver" maxlength="500" id="DescInput" class="Testar">@Model.Project.Description</textarea> 
+                <textarea asp-for="Description" placeholder="@Model.Project.Description" maxlength="500" id="DescInput" class="Testar">@Model.Description</textarea> 
                 <span asp-validation-for="Description" class="text-danger"></span>
              </div>
             

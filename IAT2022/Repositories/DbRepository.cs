@@ -104,6 +104,13 @@ namespace IAT2022.Repositories
             _appDbContext.SaveChanges();
             return project;
         }
+        public async Task DeleteProject(string id)
+        {
+            var project = await GetSingleProject(id);
+            _appDbContext.Projects.Attach(project);
+            _appDbContext.Projects.Remove(project);
+            _appDbContext.SaveChanges();
+        }
         public void SeedCustomerQuestions() 
         {
             if (!_appDbContext.CustomerQuestions.Any()) 

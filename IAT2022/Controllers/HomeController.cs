@@ -51,5 +51,10 @@ namespace IAT2022.Controllers
         {
             return View();
         }
+        public IActionResult DeleteProject(string id)
+        {
+            _dbRepository.DeleteProject(id);
+            return RedirectToAction("Index", "Home");
+        }
     }
 }

@@ -5,6 +5,7 @@ namespace IAT2022.Repositories
 {
     public interface IDbRepository
     {
+        Task DeleteProject(string id);
         Task<List<ProjectPoco>> GetAllProjects(string name);
         Task<List<BusinessQuestionsPoco>> GetBuisnessQuestions();
         Task<List<CustomerQuestionsPoco>> GetCustomerQuestions();

@@ -43,8 +43,17 @@
             </div>
         }
         </a>
+        <div class="projectButtons">
         <a id="editBtn" class="btn-save" asp-controller="EditProject" asp-action="EditProject" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square"></i></a>
-       
+        <button onclick="on()" id="deleteBtn" class="btn-delete"><i class="fa-solid fa-trash-can"></i></button>
+       </div>
+       <div id="overlay">
+           <h1>Är du säker på att du vill ta bort detta projekt?</h1>
+           <div>
+            <a id="YesDelete" class="choicemakers" asp-controller="Home" asp-action="DeleteProject" asp-route-id="@item.Id">Ja</a>
+            <a id="NoDelete" class="choicemakers" onclick="off()">Avbryt</a>
+            </div>
+       </div>
         </div>
     }
 

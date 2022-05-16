@@ -20,12 +20,12 @@
                 int value = i + 1;
                 @if (Model.ConvertCustomer(Model.Project)[i])
                 {
-                    <td class="CustomerChecked">@value<br /><i class="fa-solid fa-check"></i></td>
-                    
+                    <td class="CustomerChecked" style="background-color:#@Model.Colors[i].ToString();color:white;">@value</td>
+
                 }
                 else
                 {
-                    <td class="CustomerUnchecked">@value<br /><i class="fa-solid fa-xmark"></i></td>
+                    <td class="CustomerUnchecked"><br /></td>
                 }
             }
       </tr>

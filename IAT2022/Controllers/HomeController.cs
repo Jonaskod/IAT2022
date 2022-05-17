@@ -31,6 +31,7 @@ namespace IAT2022.Controllers
             HomeViewModel home = new();
             var list = await _dbRepository.GetAllProjects(User.Identity.Name);
             home.Projects = list;
+            var name = User.Identity.Name;
             return View(home);
         }
 

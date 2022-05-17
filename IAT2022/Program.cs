@@ -18,9 +18,14 @@ builder.Services.AddDbContext<AppDbContext>(
 builder.Services.AddDbContext<LoginDbContext>(
     o => o.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("Admin", policy => policy.RequireRole("Admin"));
+});
+
 
 #region SQLite
-//builder.Services.AddDbContext<AppDbContext>(o => o.UseSqlite(connectionSQLite)); // Hur man ansluter till sqllite databas (DBeaver) Pirater/Hockeyclubar
+//builder.Services.AddDbContext<AppDbContext>(o => o.UseSqlite(connectionSQLite)); //
 //builder.Services.AddScoped<IDbRepository, DbRepository>();
 
 //builder.Services.AddDbContext<LoginDbContext>(

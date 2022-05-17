@@ -1,6 +1,9 @@
-﻿@using IAT2022.ViewModels
+﻿
+@using IAT2022.ViewModels
 @model ProjectInformationViewModel
-
+@if (Model != null)
+{
+    
 <h1>@Model.Project.ProjectName</h1>
 
 
@@ -109,3 +112,7 @@
     </table>
     <input type="button" onclick="pdfDownload()" value="Export To PDF" />
 </div>
+}
+else {
+    <h1>Här var det tomt</h1>
+}

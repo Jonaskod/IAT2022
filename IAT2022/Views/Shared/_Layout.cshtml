@@ -30,7 +30,8 @@
                     <ul class="navbar-nav flex-grow-1">
                         @if (User.Identity.IsAuthenticated)
                         {
-                        <div class="ContainerDiv"> 
+                            
+                            <div class="ContainerDiv"> 
                             <div class="HeadDiv"> 
                                 <li class="nav-item">
                                     <a class="headerLinks" asp-area="" asp-controller="Home" asp-action="Index"><i class="fas fa-home"><br>Home</i></a>
@@ -45,6 +46,15 @@
                                     <a class="headerLinks" asp-controller="Home" asp-action="AboutUs"><i class="fa-solid fa-circle-info"><br>Om Sidan</i></a>
                                 </li>
                             </div>
+                            @if (User.IsInRole("Admin"))
+                            {
+                                <div>
+                                    <li class="nav-item">
+                                       <a class="headerLinks" asp-area="" asp-controller="Account" asp-action="Logout"><i class="fa-solid fa-gears"><br>Inställningar</i></a>
+                                    </li>
+                                </div>
+                                
+                            }
                             <div class="LogOutDiv"> 
                                 <li class="nav-item">
                                     <a id="logoutBtn" class="headerLinks" asp-area="" asp-controller="Account" asp-action="Logout"><i class="fa-solid fa-arrow-right-to-bracket"><br>Logga Ut</i></a>

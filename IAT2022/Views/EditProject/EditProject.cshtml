@@ -22,35 +22,7 @@
                  <div>
                 <label class="titlestyle">Typ av Projekt</label>
                 </div>
-                <div class="radio">
-                    @if (Model.Project.ProjectType == "Process")
-                    {
-                    <input label="Process" asp-for="TypeOfProject" type="radio" id="Process" class="TypeClass" name="TypeOfProject" checked="checked"  value="Process">
 
-                    }
-                    else
-                    {
-                       <input label="Process" asp-for="TypeOfProject" type="radio" id="Process" class="TypeClass" name="TypeOfProject"  value="Process">
-                    }
-                    @if(Model.Project.ProjectType == "Produkt")
-                    {
-                         <input label="Produkt" asp-for="TypeOfProject" type="radio" id="Produkt" class="TypeClass" name="TypeOfProject" checked="checked" value="Produkt">
-                    }
-                    else
-                    {
-                        <input label="Produkt" asp-for="TypeOfProject" type="radio" id="Produkt" class="TypeClass" name="TypeOfProject" value="Produkt">
-                    }
-                    @if(Model.Project.ProjectType == "Tjänst")
-                    {
-                        <input label="Tjänst" asp-for="TypeOfProject" type="radio" id="Tjänst" class="TypeClass" name="TypeOfProject" checked="checked"  value="Tjänst">
-                    }
-                    else
-                    {
-                        <input label="Tjänst" asp-for="TypeOfProject" type="radio" id="Tjänst" class="TypeClass" name="TypeOfProject" value="Tjänst">
-                    }
-
-                
-                </div>
             <div>
                 <div class="LabelHeader">
                 <label class="titlestyle">Välj kategori som passar ditt projekt</label>
@@ -96,7 +68,7 @@
             </div>
                  <button type="submit" value="submit" class="btn-save">Spara</button>
 
-                <button type="submit" class="btn-cancel" asp-area="" asp-controller="Home" asp-action="Index">Cancel</button>
+                <button type="submit" class="btn-save" asp-area="" asp-controller="Home" asp-action="Index">Cancel</button>
 
        
         </form>

@@ -9,7 +9,18 @@ namespace IAT2022.ViewModels
         private readonly IDbRepository _dbRepository;
 
         public ProjectPoco Project { get; set; }
-        public colors[] Colors { get; set; } = (colors[])Enum.GetValues(typeof(colors));
+        public string[] Colors { get; set; } = {
+            "#6D1DC6",
+            "#9B04DB",
+            "#E200A3",
+            "#FF8103",
+            "#FBDD49",
+            "#FEFB01",
+            "#CEFB02",
+            "#87FA00",
+            "#3AF901",
+            "#00ED01"
+        };
         public List<CustomerQuestionsPoco> CustomerQuestions { get; set; }
         public List<BusinessQuestionsPoco> BusinessQuestions { get; set; }
         public List<IprQuestionsPoco> IPRQuestions { get; set; }
@@ -22,20 +33,20 @@ namespace IAT2022.ViewModels
             _dbRepository = dbRepository;
             //ProjectTagsPoco = _dbRepository.GetTags();
             _ = GetAll();
-            Colors = (colors[])Enum.GetValues(typeof(colors));
         }
-        public enum colors {
-            d58f22,
-            e9940e,
-            d5a723,
-            e9b00c,
-            d5bc1d,
-            e8cb0f,
-            dde23d,
-            c1ee2d,
-            cFFF00
+        //public string[] Xolors { get; set; } = {
+        //    "#d58f22",
+        //    e9940e,
+        //    d5a723,
+        //    e9b00c,
+        //    d5bc1d,
+        //    e8cb0f,
+        //    dde23d,
+        //    c1ee2d,
+        //    cFFF00
+            
 
-        }
+        //}
         public async Task<List<CustomerQuestionsPoco>> GetAll()
         {
             var list = await _dbRepository.GetCustomerQuestions();

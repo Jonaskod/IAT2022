@@ -220,6 +220,7 @@ table {
 #overlay div{
     margin-top:4%;
     margin-right:10%;
+    
 }
 
 
@@ -478,7 +479,10 @@ a.prev {
             width: 100%;
         }
 
-
+.AssementDiv {
+    display: flex;
+    justify-content: space-around;
+}
 
 
 

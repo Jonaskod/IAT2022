@@ -59,8 +59,16 @@
             
     </section>
 </div>
-            <a class="next" onclick="plusSlides(1)">Nästa</a>
-            <a class="prev" onclick="plusSlides(-1)">Tillbaka</a>
+            <div class="AssementDiv">
+                <a class="prev" onclick="plusSlides(-1)"><i class="fa-solid fa-left-long"></i> </a>
+                @using (Html.BeginForm("ChoosePathBusiness","RegisterProject",FormMethod.Post))
+                        {
+                            <input class="btn-save" type="submit" value="Spara"/>
+                        }
+                <a class="next" onclick="plusSlides(1)"><i class="fa-solid fa-right-long"></i></a>
+
+
+            </div>
             
 
             </div>
@@ -70,32 +78,6 @@
                 <span class="dot" onclick="currentSlide(2)"></span> 
                 <span class="dot" onclick="currentSlide(3)"></span> 
             </div>
-
-
-  
-
-
-<h3>Motivera dina svar med en kommentar</h3>
-@if (Model.Project.BusinessComment == null)
-                {
-                        @using (Html.BeginForm("ChoosePathBusiness","RegisterProject",FormMethod.Post))
-                    {
-                        <div class="CategoryCommentDiv">
-                        <textarea name="input" class="Testar"></textarea>
-                        </div>
-                        <input class="btn-save" type="submit" value="Spara"/>
-                        }
-                    }
-                    else
-                    {
-                         @using (Html.BeginForm("ChoosePathBusiness","RegisterProject",FormMethod.Post))
-                        {
-                            <div class="CategoryCommentDiv">
-                            <textarea  name="input" class="Testar">@Model.Project.BusinessComment.ToString()</textarea>
-                            </div>
-                            <input class="btn-save" type="submit" value="Spara"/>
-                        }
-                    }
- 
+            <h3 id="pageCounter"></h3>
   
 </section>

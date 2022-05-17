@@ -44,7 +44,7 @@
         }
         </a>
         <div class="projectButtons">
-        <a id="editBtn" class="btn-save" asp-controller="EditProject" asp-action="EditProject" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square"></i></a>
+        <a id="editBtn" asp-controller="EditProject" asp-action="EditProject" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square"></i></a>
         <button onclick="on()" id="deleteBtn" class="btn-delete"><i class="fa-solid fa-trash-can"></i></button>
        </div>
        <div id="overlay">

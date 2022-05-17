@@ -20,12 +20,12 @@
                 int value = i + 1;
                 @if (Model.ConvertCustomer(Model.Project)[i])
                 {
-                    <td class="CustomerChecked" style="background-color:#@Model.Colors[i].ToString();color:white;">@value</td>
+                    <td class="CustomerChecked" style="background-color:@Model.Colors[i];color:black; font-weight:700;font-size:200%;width:116px;height:54px;">@value</td>
 
                 }
                 else
                 {
-                    <td class="CustomerUnchecked"><br /></td>
+                    <td class="CustomerUnchecked" style="width:116px;height:54px;"></td>
                 }
             }
       </tr>
@@ -37,11 +37,11 @@
                 int value = i + 1;
                 @if (Model.ConvertProduct(Model.Project)[i])
                 {
-                    <td class="CustomerChecked" id="Customer#@value">@value<br /><i class="fa-solid fa-check"></i></td>
+                    <td class="CustomerChecked" style="background-color:@Model.Colors[i];color:black; font-weight:700;font-size:200%;">@value</td>
                 }
                 else
                 {
-                    <td class="CustomerUnchecked">@value<br /><i class="fa-solid fa-xmark"></i></td>
+                    <td class="CustomerUnchecked" style="width:116px;height:54px;"></td>
                 }
             }
       </tr>
@@ -53,11 +53,11 @@
                 int value = i + 1;
                 @if (Model.ConvertIpr(Model.Project)[i])
                 {
-                    <td class="CustomerChecked">@value<br /><i class="fa-solid fa-check"></i></td>
+                    <td class="CustomerChecked" style="background-color:@Model.Colors[i];color:black; font-weight:700;font-size:200%;">@value</td>
                 }
                 else
                 {
-                    <td class="CustomerUnchecked">@value<br /><i class="fa-solid fa-xmark"></i></td>
+                    <td class="CustomerUnchecked" style="width:116px;height:54px;"></td>
                 }
             }
       </tr>
@@ -68,11 +68,11 @@
                 int value = i + 1;
                 @if (Model.ConvertTeam(Model.Project)[i])
                 {
-                    <td class="CustomerChecked" id="Team#@value">@value<br /><i class="fa-solid fa-check"></i></td>
+                    <td class="CustomerChecked" style="background-color:@Model.Colors[i];color:black; font-weight:700;font-size:200%;">@value</td>
                 }
                 else
                 {
-                    <td class="CustomerUnchecked">@value<br /><i class="fa-solid fa-xmark"></i></td>
+                    <td class="CustomerUnchecked" style="width:116px;height:54px;"></td>
                 }
             }
       </tr>
@@ -83,11 +83,11 @@
                 int value = i + 1;
                 @if (Model.ConvertBusiness(Model.Project)[i])
                 {
-                    <td class="CustomerChecked">@value<br /><i class="fa-solid fa-check"></i></td>
+                    <td class="CustomerChecked" style="background-color:@Model.Colors[i];color:black; font-weight:700;font-size:200%;">@value</td>
                 }
                 else
                 {
-                    <td class="CustomerUnchecked">@value<br /><i class="fa-solid fa-xmark"></i></td>
+                    <td class="CustomerUnchecked" style="width:116px;height:54px;"></td>
                 }
             }
       </tr>
@@ -98,11 +98,11 @@
                 int value = i + 1;
                 @if (Model.ConvertFinance(Model.Project)[i])
                 {
-                    <td class="CustomerChecked">@value<br /><i class="fa-solid fa-check"></i></td>
+                    <td class="CustomerChecked" style="background-color:@Model.Colors[i];color:black; font-weight:700;font-size:200%;">@value</td>
                 }
                 else
                 {
-                    <td class="CustomerUnchecked">@value<br /><i class="fa-solid fa-xmark"></i></td>
+                   <td class="CustomerUnchecked" style="width:116px;height:54px;"></td>
                 }
             }
       </tr>

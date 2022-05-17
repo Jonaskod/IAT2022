@@ -286,6 +286,9 @@ function showSlides(n) {
     var i;
     var slides = document.getElementsByClassName("mySlides");
     var dots = document.getElementsByClassName("dot");
+    var counter = document.getElementById("pageCounter");
+    let slideCounter = n;
+
     if (n > slides.length) { slideIndex = 1 }
     if (n < 1) { slideIndex = slides.length }
     for (i = 0; i < slides.length; i++) {
@@ -296,6 +299,14 @@ function showSlides(n) {
     }
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
+
+    if (n == 4) {
+        slideCounter = 1;
+    }
+    if (n == 0) {
+        slideCounter = 3;
+    }
+    counter.innerHTML = slideCounter + "/" + "3";
 }
 
 var myDrop = new drop({

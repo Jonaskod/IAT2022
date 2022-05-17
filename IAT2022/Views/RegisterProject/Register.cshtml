@@ -17,27 +17,14 @@
                 <span @*asp-validation-for="Description"*@ class="text-danger"></span>
              </div>
             
-             <div class="TypeBox">
-                 <div>
-                <label class="titlestyle">Typ av Projekt</label>
-                </div>
-                <div class="radio">
-                <input label="Process" asp-for="TypeOfProject" type="radio" id="Process" class="TypeClass" name="TypeOfProject" value="Process">
-                <input label="Produkt" asp-for="TypeOfProject" type="radio" id="Produkt" class="TypeClass" name="TypeOfProject" value="Produkt">
-                
-                <input label="Tjänst" asp-for="TypeOfProject" type="radio" id="Tjänst" class="TypeClass" name="TypeOfProject" value="Tjänst">
-                
-                </div>
-            <div>
                 <div class="LabelHeader">
-                <label class="titlestyle">Välj kategori som passar ditt projekt</label>
+                <label class="titlestyle">Välj dem alternativ som passar ditt projekt</label>
                 </div>
 
                 
-                <div class="TagContainer">
+            <div class="TagContainer">
             @for (var i = 0; i < Model.Tags.Count(); i++)
             {
-
                 <article class="tagstyle">
                 <input class="tagstyle" asp-for="TagsBool[i]" type="checkbox" id="tag"/>
                 <div class="tagstyle">
@@ -46,17 +33,9 @@
                     </span>
                 </div>
                 </article>
-
             }
                 </div>
-            
-            
-
-
             </div>
                  <button type="submit" value="submit" class="btn-save">Registrera</button>
-
-                <button type="submit" class="btn-cancel" asp-area="" asp-controller="Home" asp-action="Index">Cancel</button>
-
-       
+                <button type="submit" class="btn-save" asp-area="" asp-controller="Home" asp-action="Index">Cancel</button>
         </form>

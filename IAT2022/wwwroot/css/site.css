@@ -73,15 +73,18 @@ body {
 
 article {
     position: relative;
-    width: 200px;
+    width: 400px;
     height: 200px;
-    margin: 5px;
+    margin:5px;
+    margin-left:6%;
     float: left;
     border: 2px solid black;
     box-sizing: border-box;
-    border-radius: 10%;
+    border-radius: 1%;
     background-color: whitesmoke;
     color: black;
+    font-size:150%;
+    font-weight:500;
 }
 
     article div {
@@ -98,7 +101,7 @@ article {
         position: absolute;
         top: 0;
         left: 0;
-        width: 200px;
+        width: 400px;
         height: 200px;
         opacity: 0;
         cursor: pointer;
@@ -107,18 +110,13 @@ article {
 .slideshow-container {
     display: flex;
     margin: 0 auto;
-    max-width: 33%;
+    max-width: 75%;
     justify-content: center;
     flex-wrap: wrap;
-    
 }
 
 input[type=checkbox]:checked ~ div {
     background-image: linear-gradient(180deg, #95d891, #74bbad);
-    color: white;
-    text-shadow: 1px 1px black;
-    border-radius: 9%;
- 
 }
 
 .upgrade-btn {
@@ -222,6 +220,47 @@ table {
     margin-right:10%;
     
 }
+#informationMessage {
+    position: fixed;
+    width: 90%;
+    margin-left:5%;
+    height: 75%;
+    margin-top:5%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: ghostwhite;
+    z-index: 2;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    justify-items:center;
+    text-align:center;
+    border-style:solid;
+    border-color:black;
+}
+#helpInformation {
+    position: fixed;
+    width: 90%;
+    margin-left: 5%;
+    height: 75%;
+    margin-top: 5%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: ghostwhite;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    border-style: solid;
+    border-color: black;
+}
+
 
 
 #imgCheck {
@@ -305,11 +344,17 @@ button:active {
     text-decoration:none;
     border-radius:0;
     border-style:none;
+    font-size:100%;
+    font-weight:100;
 }
     .tagstyle input[type=checkbox]:checked ~ div {
         text-shadow: 7px 7px 14px rgba(0, 0, 0, 0.51);
         border-radius:0;
     }
+.tagstyle input[type=checkbox]:hover ~ div {
+    background-color: black;
+    color: white;
+}
 
 
 
@@ -362,16 +407,16 @@ button:active {
 
 .TagContainer {
     display: flex;
-    flex-direction: row;
+    flex-direction:row;
     justify-content: center;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    align-items:center;
     line-height: 25px;
     transition: .5s ease;
     padding: 10px;
+    flex-wrap:wrap;
+    width:50%;
+    margin-left:25%;
+
 }
 
 .TagLabel {

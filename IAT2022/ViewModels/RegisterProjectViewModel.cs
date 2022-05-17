@@ -1,6 +1,8 @@
 ﻿using IAT2022.Data.Poco;
 using IAT2022.Repositories;
+using SendGrid.Helpers.Mail;
 using System.ComponentModel.DataAnnotations;
+using System.Web.Mvc;
 
 namespace IAT2022.ViewModels
 {
@@ -124,6 +126,15 @@ namespace IAT2022.ViewModels
             }
             return false;
             
+        }
+        public bool InformationPush(ProjectPoco poco)
+        {
+            if (!CheckIfAnswerd(poco, "Customer") && !CheckIfAnswerd(poco, "Product"))
+            {
+                return true;
+            }
+
+            return false;
         }
 
 

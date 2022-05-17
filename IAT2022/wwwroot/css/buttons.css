@@ -232,3 +232,16 @@
         box-shadow: inset 150px 0 0 0 black;
         color: white;
     }
+.informationButton{
+    background-color:rgb(255, 255, 255,0);
+    color:black;
+    display:inline-block;
+    text-decoration:none;
+    justify-content:center;
+    font-size:250%;
+}
+
+
+.informationButton:hover{
+    cursor:pointer;
+}

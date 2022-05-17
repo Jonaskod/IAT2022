@@ -446,10 +446,23 @@ namespace IAT2022.Repositories
                 projectTagsPoco.Description = "Ny metodik";
                 
                 _appDbContext.ProjectTags.Add(projectTagsPoco);
+                projectTagsPoco = new();
+                projectTagsPoco.Description = "Process";
+
+                _appDbContext.ProjectTags.Add(projectTagsPoco);
+                projectTagsPoco = new();
+                projectTagsPoco.Description = "Produkt";
+
+                _appDbContext.ProjectTags.Add(projectTagsPoco);
+                projectTagsPoco = new();
+                projectTagsPoco.Description = "Tjänst";
+
+                _appDbContext.ProjectTags.Add(projectTagsPoco);
                 _appDbContext.SaveChanges();
 
             }
         }
+        
         public async Task<List<ProjectTagsPoco>> GetTags()
         {
             var tags = _appDbContext.ProjectTags.ToList();

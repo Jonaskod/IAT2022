@@ -13,8 +13,48 @@
 <div class=HomeProjects>
     @foreach (var item in Model.Projects)
     {
-        <a class="projectLinks" asp-controller="ProjectInformation" asp-action="ProjectInformation" asp-route-id="@item.Id">@item.ProjectName <br/>@item.Description</a>
-        <br />
+        <div class="SingleProject">
+            <div>Skapad: @item.Created</div>
+        <a
+        class="projectLinks" asp-controller="ProjectInformation" asp-action="ProjectInformation" asp-route-id="@item.Id">
+        <div> 
+            
+            <h4>@item.ProjectName</h4>
+            </div>
+        <div>
+        
+            
+            <p id="descP">@item.Description</p>
+        </div>
+        <div>
+        
+            
+            <p id="descP">@item.ProjectType</p>
+        </div>
+        @if (item.Tags != null)
+        {
+            <div class ="tagsForProject"> 
+                
+            @foreach (var tag in item.Tags)
+                {
+                    
+                    <p>@tag.Description</p> 
+                }
+            </div>
+        }
+        </a>
+        <div class="projectButtons">
+        <a id="editBtn" asp-controller="EditProject" asp-action="EditProject" asp-route-id="@item.Id"><i class="fa-solid fa-pen-to-square"></i></a>
+        <button onclick="on()" id="deleteBtn" class="btn-delete"><i class="fa-solid fa-trash-can"></i></button>
+       </div>
+       <div id="overlay">
+           <h1>Är du säker på att du vill ta bort detta projekt?</h1>
+           <div>
+            <a id="YesDelete" class="choicemakers" asp-controller="Home" asp-action="DeleteProject" asp-route-id="@item.Id">Ja</a>
+            <a id="NoDelete" class="choicemakers" onclick="off()">Avbryt</a>
+            </div>
+       </div>
+        </div>
     }
 
 

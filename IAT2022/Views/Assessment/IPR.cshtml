@@ -57,9 +57,16 @@
             
     </section>
 </div>
-            <a class="next" onclick="plusSlides(1)">Nästa</a>
-            <a class="prev" onclick="plusSlides(-1)">Tillbaka</a>
-            
+            <div class="AssementDiv">
+                <a class="prev" onclick="plusSlides(-1)"><i class="fa-solid fa-left-long"></i> </a>
+                @using (Html.BeginForm("ChoosePathIPR","RegisterProject",FormMethod.Post))
+                        {
+                            <input class="btn-save" type="submit" value="Spara"/>
+                        }
+                <a class="next" onclick="plusSlides(1)"><i class="fa-solid fa-right-long"></i></a>
+
+
+            </div>
 
             </div>
 
@@ -71,36 +78,7 @@
 
 
   
-
-  
-<h3>Motivera dina svar med en kommentar</h3>
-@if (Model.Project.IPRComment == null)
-                {
-                        @using (Html.BeginForm("ChoosePathIPR","RegisterProject",FormMethod.Post))
-                    {
-                        <div class="CategoryCommentDiv">
-                        <textarea name="input" class="Testar"></textarea>
-                        <br/>
-                        </div>
-                        <input class="btn-save" type="submit" value="Spara"/>
-                        }
-                    }
-                    else
-                    {
-                         @using (Html.BeginForm("ChoosePathIPR","RegisterProject",FormMethod.Post))
-                        {
-                            <div class="CategoryCommentDiv">
-                            <textarea name="input" class="Testar">@Model.Project.IPRComment.ToString()</textarea>
-                            </div>
-                            <input class="btn-save" type="submit" value="Spara"/>
-                        }
-                    }
- 
+            <h3 id="pageCounter"></h3>
   
 </section>
 
-<div class="social">
-  <a href="https://www.linkedin.com/in/florin-cornea-b5118057/" target="_blank">
-    <i class="fab fa-linkedin"></i>
-  </a>
-</div>

@@ -3,7 +3,6 @@ using IAT2022.Repositories;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
 using IAT2022.ViewModels;
 
 namespace IAT2022.Controllers
@@ -32,6 +31,7 @@ namespace IAT2022.Controllers
             HomeViewModel home = new();
             var list = await _dbRepository.GetAllProjects(User.Identity.Name);
             home.Projects = list;
+            var name = User.Identity.Name;
             return View(home);
         }
 
@@ -46,6 +46,16 @@ namespace IAT2022.Controllers
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
+        }
+        [AllowAnonymous]
+        public IActionResult AboutUs()
+        {
+            return View();
+        }
+        public IActionResult DeleteProject(string id)
+        {
+            _dbRepository.DeleteProject(id);
+            return RedirectToAction("Index", "Home");
         }
     }
 }

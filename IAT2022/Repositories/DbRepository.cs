@@ -32,9 +32,10 @@ namespace IAT2022.Repositories
         
         public async Task<List<ProjectPoco>>? GetAllProjects(string name)
         {
-            List<ProjectPoco>? list = _appDbContext.Projects?.Where(x => x.Owner == name).Include(x => x.Comments).ToList();
+            List<ProjectPoco>? list = _appDbContext.Projects?.Where(x => x.Owner == name).Include(x => x.Comments).Include(x=> x.Tags).ToList();
             if (list != null)
             {
+                list = list.OrderByDescending(x=>x.Id).ToList();
                 return list;
             }
             return null;
@@ -53,14 +54,30 @@ namespace IAT2022.Repositories
                 {
                     CustomerPoco customer = new();
                     model.Customer.Add(customer);
+  
+                }
+                foreach (var item in _appDbContext.ProductQuestions)
+                {
                     ProductPoco temp = new();
                     model.Product.Add(temp);
+                }
+                foreach (var item in _appDbContext.IPRQuestions)
+                {
                     IPRPoco iPRPoco = new();
                     model.IPR.Add(iPRPoco);
+                }
+                foreach (var item in _appDbContext.BuisnessQuestions)
+                {
                     BusinessPoco iBusinessPoco = new();
                     model.Business.Add(iBusinessPoco);
+                }
+                foreach (var item in _appDbContext.FinanceQuestions)
+                {
                     FinancePoco iFinancePoco = new();
                     model.Finance.Add(iFinancePoco);
+                }
+                foreach (var item in _appDbContext.TeamQuestions)
+                {
                     TeamPoco iTeamPoco = new();
                     model.Team.Add(iTeamPoco);
                 }
@@ -86,6 +103,13 @@ namespace IAT2022.Repositories
             _appDbContext.Entry(hej).State = EntityState.Modified;
             _appDbContext.SaveChanges();
             return project;
+        }
+        public async Task DeleteProject(string id)
+        {
+            var project = await GetSingleProject(id);
+            _appDbContext.Projects.Attach(project);
+            _appDbContext.Projects.Remove(project);
+            _appDbContext.SaveChanges();
         }
         public void SeedCustomerQuestions() 
         {
@@ -422,10 +446,23 @@ namespace IAT2022.Repositories
                 projectTagsPoco.Description = "Ny metodik";
                 
                 _appDbContext.ProjectTags.Add(projectTagsPoco);
+                projectTagsPoco = new();
+                projectTagsPoco.Description = "Process";
+
+                _appDbContext.ProjectTags.Add(projectTagsPoco);
+                projectTagsPoco = new();
+                projectTagsPoco.Description = "Produkt";
+
+                _appDbContext.ProjectTags.Add(projectTagsPoco);
+                projectTagsPoco = new();
+                projectTagsPoco.Description = "Tjänst";
+
+                _appDbContext.ProjectTags.Add(projectTagsPoco);
                 _appDbContext.SaveChanges();
 
             }
         }
+        
         public async Task<List<ProjectTagsPoco>> GetTags()
         {
             var tags = _appDbContext.ProjectTags.ToList();

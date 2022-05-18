@@ -4,7 +4,7 @@
 
 namespace IAT2022.Migrations
 {
-    public partial class addasdasd : Migration
+    public partial class adddfad : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -12,9 +12,9 @@ namespace IAT2022.Migrations
                 name: "BuisnessQuestions",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    QuestionDescription = table.Column<string>(type: "TEXT", nullable: true)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    QuestionDescription = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -25,9 +25,9 @@ namespace IAT2022.Migrations
                 name: "CustomerQuestions",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    QuestionDescription = table.Column<string>(type: "TEXT", nullable: true)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    QuestionDescription = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -38,9 +38,9 @@ namespace IAT2022.Migrations
                 name: "FinanceQuestions",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    QuestionDescription = table.Column<string>(type: "TEXT", nullable: true)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    QuestionDescription = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -51,9 +51,9 @@ namespace IAT2022.Migrations
                 name: "IPRQuestions",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    QuestionDescription = table.Column<string>(type: "TEXT", nullable: true)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    QuestionDescription = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -64,9 +64,9 @@ namespace IAT2022.Migrations
                 name: "ProductQuestions",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    QuestionDescription = table.Column<string>(type: "TEXT", nullable: true)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    QuestionDescription = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -77,18 +77,19 @@ namespace IAT2022.Migrations
                 name: "Projects",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    ProjectName = table.Column<string>(type: "TEXT", nullable: true),
-                    Description = table.Column<string>(type: "TEXT", nullable: true),
-                    Owner = table.Column<string>(type: "TEXT", nullable: true),
-                    CustomerComment = table.Column<string>(type: "TEXT", nullable: true),
-                    ProductComment = table.Column<string>(type: "TEXT", nullable: true),
-                    IPRComment = table.Column<string>(type: "TEXT", nullable: true),
-                    TeamComment = table.Column<string>(type: "TEXT", nullable: true),
-                    BusinessComment = table.Column<string>(type: "TEXT", nullable: true),
-                    FinanceComment = table.Column<string>(type: "TEXT", nullable: true),
-                    ProjectType = table.Column<string>(type: "TEXT", nullable: true)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    ProjectName = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Owner = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    CustomerComment = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ProductComment = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    IPRComment = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    TeamComment = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    BusinessComment = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    FinanceComment = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ProjectType = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Created = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -99,9 +100,9 @@ namespace IAT2022.Migrations
                 name: "TeamQuestions",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    QuestionDescription = table.Column<string>(type: "TEXT", nullable: true)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    QuestionDescription = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -112,10 +113,10 @@ namespace IAT2022.Migrations
                 name: "BusinessPoco",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Result = table.Column<bool>(type: "INTEGER", nullable: false),
-                    ProjectPocoId = table.Column<int>(type: "INTEGER", nullable: true)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Result = table.Column<bool>(type: "bit", nullable: false),
+                    ProjectPocoId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -131,10 +132,10 @@ namespace IAT2022.Migrations
                 name: "CommentPoco",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Comment = table.Column<string>(type: "TEXT", nullable: true),
-                    ProjectPocoId = table.Column<int>(type: "INTEGER", nullable: true)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Comment = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    ProjectPocoId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -150,10 +151,10 @@ namespace IAT2022.Migrations
                 name: "CustomerValue",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Result = table.Column<bool>(type: "INTEGER", nullable: false),
-                    ProjectPocoId = table.Column<int>(type: "INTEGER", nullable: true)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Result = table.Column<bool>(type: "bit", nullable: false),
+                    ProjectPocoId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -169,10 +170,10 @@ namespace IAT2022.Migrations
                 name: "FinancePoco",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Result = table.Column<bool>(type: "INTEGER", nullable: false),
-                    ProjectPocoId = table.Column<int>(type: "INTEGER", nullable: true)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Result = table.Column<bool>(type: "bit", nullable: false),
+                    ProjectPocoId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -188,10 +189,10 @@ namespace IAT2022.Migrations
                 name: "IPRPoco",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Result = table.Column<bool>(type: "INTEGER", nullable: false),
-                    ProjectPocoId = table.Column<int>(type: "INTEGER", nullable: true)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Result = table.Column<bool>(type: "bit", nullable: false),
+                    ProjectPocoId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -207,10 +208,10 @@ namespace IAT2022.Migrations
                 name: "ProductPoco",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Result = table.Column<bool>(type: "INTEGER", nullable: false),
-                    ProjectPocoId = table.Column<int>(type: "INTEGER", nullable: true)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Result = table.Column<bool>(type: "bit", nullable: false),
+                    ProjectPocoId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -226,10 +227,10 @@ namespace IAT2022.Migrations
                 name: "ProjectTags",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Description = table.Column<string>(type: "TEXT", nullable: false),
-                    ProjectPocoId = table.Column<int>(type: "INTEGER", nullable: true)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ProjectPocoId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -245,10 +246,10 @@ namespace IAT2022.Migrations
                 name: "TeamPoco",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "INTEGER", nullable: false)
-                        .Annotation("Sqlite:Autoincrement", true),
-                    Result = table.Column<bool>(type: "INTEGER", nullable: false),
-                    ProjectPocoId = table.Column<int>(type: "INTEGER", nullable: true)
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Result = table.Column<bool>(type: "bit", nullable: false),
+                    ProjectPocoId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {

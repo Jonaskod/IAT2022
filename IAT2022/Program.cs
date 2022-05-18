@@ -11,14 +11,28 @@ builder.Services.AddControllersWithViews();
 string connectionPostgres = builder.Configuration["ConnectionStrings:Default"];
 string connectionSQLite = builder.Configuration["ConnectionStrings:Develop"];
 
-
-
-builder.Services.AddDbContext<AppDbContext>(o => o.UseSqlite(connectionSQLite)); // Hur man ansluter till sqllite databas (DBeaver) Pirater/Hockeyclubar
-builder.Services.AddScoped<IDbRepository, DbRepository>();
+builder.Services.AddDbContext<AppDbContext>(
+    o => o.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
+    
 
 builder.Services.AddDbContext<LoginDbContext>(
-   options => options.UseSqlite(connectionSQLite));
+    o => o.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("Admin", policy => policy.RequireRole("Admin"));
+});
+
+
+#region SQLite
+//builder.Services.AddDbContext<AppDbContext>(o => o.UseSqlite(connectionSQLite)); //
+//builder.Services.AddScoped<IDbRepository, DbRepository>();
+
+//builder.Services.AddDbContext<LoginDbContext>(
+//   options => options.UseSqlite(connectionSQLite));
+#endregion
+
+builder.Services.AddScoped<IDbRepository, DbRepository>();
 builder.Services.AddIdentity<IdentityUser, IdentityRole>()
  .AddEntityFrameworkStores<LoginDbContext>().AddDefaultTokenProviders();
 
@@ -46,6 +60,6 @@ app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Account}/{action=Login}/{id?}");
+    pattern: "{controller=Home}/{action=Index}/{id?}");
 
 app.Run();

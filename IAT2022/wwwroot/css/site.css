@@ -1,52 +1,90 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
     text-align: center;
     color: #f5f5f5;
-    background-image: linear-gradient(-90deg, #0c0c0d, #1a1a1a);
-    font-family: 'Roboto';
+    background-color: whitesmoke;
+    
 }
 
 .app {
-    margin: 0 auto;   
-    justify-content:center;
+    margin: 0 auto;
+    justify-content: center;
 }
 
     .app i {
         font-size: 80px;
-        animation-duration: 3s;
+        animation-duration: 2s;
         animation-name: slidein;
         animation-iteration-count: 1;
     }
-    
-    
 
+
+.SingleProject div {
+    color: black;
     
+    font-weight: 600;
+    justify-content:center;
+}
+.SingleProject h5 {
+    font-weight: 400;
+}
+.tagsForProject{
+    display:flex;
+    flex-direction:row;
+    
+}
+    .tagsForProject p {
+        margin: 1%;
+        font-weight: 400;
+        font-style:italic;
+    }
+
+
+
+
+.LogOutDiv {
+    margin-left: 65%;
+}
+.HeadDiv{
+    display:flex;
+    flex-direction:row;
+}
+.ContainerDiv{
+    width:100%;
+    display:flex;
+    flex-direction:row;
+}
+
 
 article {
     position: relative;
-    width: 200px;
+    width: 400px;
     height: 200px;
-    margin: 5px;
+    margin:5px;
+    margin-left:6%;
     float: left;
-    border: 2px solid #f5f5f5;
+    border: 2px solid black;
     box-sizing: border-box;
-    border-radius:10%;
-    
+    border-radius: 1%;
+    background-color: whitesmoke;
+    color: black;
+    font-size:150%;
+    font-weight:500;
 }
 
     article div {
@@ -63,32 +101,22 @@ article {
         position: absolute;
         top: 0;
         left: 0;
-        width: 200px;
+        width: 400px;
         height: 200px;
         opacity: 0;
         cursor: pointer;
     }
 
-.slideshow-container{
-    display:flex;
-    margin:0 auto;
-    max-width:33%;
-    justify-content:center;
-    flex-wrap:wrap;
+.slideshow-container {
+    display: flex;
+    margin: 0 auto;
+    max-width: 75%;
+    justify-content: center;
+    flex-wrap: wrap;
 }
-/*.mySlides{
-    display:flex;
-    flex-direction:column;
-    border-style:solid;
-    border-color:saddlebrown;
-}
-*/
+
 input[type=checkbox]:checked ~ div {
-    background-color: green;
-    color: white;
-    border-radius: 9%;
-    
-    
+    background-image: linear-gradient(180deg, #95d891, #74bbad);
 }
 
 .upgrade-btn {
@@ -128,9 +156,8 @@ input[type=checkbox]:checked ~ div {
     top: 5px;
     right: 5px;
 }
-.TagClass {
-    border-style: solid;
-}
+
+
 
 @keyframes slidein {
     from {
@@ -143,166 +170,135 @@ input[type=checkbox]:checked ~ div {
         width: 100%;
     }
 }
+
 .register-form {
     padding-bottom: 462px;
     width: 200px;
 }
-.tableFormat {
-    width: 1000px;
-    height: 70px;
 
-}
 table {
-    border-spacing: 15px;
+    border-spacing: 5px;
     border-collapse: separate;
 }
-td {
-    background:url(/css/NewFolder/customer.png);
-    background-size:10px 10px;
-    background-repeat:no-repeat;
-}
 
-
-
-.prev {
-    display: block;
-    background-color: lightslategray;
-    margin: 30px auto;
+.CategoryLink {
+    display: inline-block;
+    height: 50px;
     width: 200px;
-    padding: 10px 20px;
-    border: 2px solid #f00f;
-    border-radius: 50px;
-    color: #f5f5f5;
-    font-size: 18px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: .3s ease;
-    text-shadow:1px 1px #0c0c0d;
 }
-.prev:visited{
+
+.tableheader {
+    height: 50px;
+    width: 200px;
+}
+
+.projectButtons{
+    display:flex;
+    flex-direction:row;
+    float:right;
+    margin-top:-60px;
+}
+
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+}
+#overlay h1{
+    margin-top:10%;
     color:white;
 }
-
-.next {
-    display: block;
-    background-color: lightslategray;
-    margin: 30px auto;
-    width: 200px;
-    padding: 10px 20px;
-    border: 2px solid #4cff00;
-    border-radius: 50px;
-    color: #f5f5f5;
-    font-size: 18px;
-    font-weight: 600;
-    text-decoration: none;
-    transition: .3s ease;
-    color: white;
-    text-shadow: 1px 1px #0c0c0d;
+#overlay div{
+    margin-top:4%;
+    margin-right:10%;
+    
 }
-.next:focus{
-    color:red;
-
-
-}
-.BtnChoosePath{
-    color:black;
-}
-.BtnChoosePath:link{
-    background-color:white;
-    color:black;
+#informationMessage {
+    position: fixed;
+    width: 90%;
+    margin-left:5%;
+    height: 75%;
+    margin-top:5%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: ghostwhite;
+    z-index: 2;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    justify-items:center;
     text-align:center;
-    padding:5% 5%;
-    display: inline-block;
     border-style:solid;
-    text-decoration:none;
-    outline:none;
-    border:0;
-    
+    border-color:black;
 }
-.BtnChoosePath:active, .BtnChoosePath:hover {
-    cursor: pointer;
-    text-decoration:none;
-    background-color:grey;
-    color:black
-    
+#helpInformation {
+    position: fixed;
+    width: 90%;
+    margin-left: 5%;
+    height: 75%;
+    margin-top: 5%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: ghostwhite;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-items: center;
+    text-align: center;
+    border-style: solid;
+    border-color: black;
 }
-.BtnChoosePath:visited {
-    text-decoration: none;
-    
+
+
+
+#imgCheck {
+    height: 50px;
+    width: 50px;
 }
-.ChosePathBtnDiv{
-    padding:100px;
+
+.ChosePathBtnDiv {
+    padding: 100px;
 }
+
 
 
 li {
     list-style: none;
 }
-.MyProjectsDiv{
-    display:flex;
-    flex-wrap:wrap;
-    
+
+.MyProjectsDiv {
+    display: flex;
+    flex-wrap: wrap;
 }
-.SaveBtn:link, .SaveBtn:visited {
-    background-color: white;
-    color: black;
-    text-align: center;
-    padding: 5% 5%;
-    display: inline-block;
-    border-style: solid;
-    border-color: slategray
-}
-a#btn-save {
-    color: #090909;
-    padding: 0.7em 1.7em;
-    font-size: 18px;
-    background: #e8e8e8;
-    border: 1px solid #e8e8e8;
-    transition: all .3s;
-    border-style: solid;
-    border-color: black;
-    
-}
-.saveDiv{
-    padding:30px;
-}
-.btn-cancel {
-    color: #090909;
-    padding: 0.7em 1.7em;
-    font-size: 18px;
-    background: #e8e8e8;
-    border: 1px solid #e8e8e8;
-    transition: all .3s;
-    border-style: solid;
-    border-color: black;
-}
-    .btn-cancel:hover {
-        background-color: grey;
-    }
-.btn-save {
-    color: #090909;
-    padding: 0.7em 1.7em;
-    font-size: 18px;
-    background: #e8e8e8;
-    border: 1px solid #e8e8e8;
-    transition: all .3s;
-    border-style: solid;
-    border-color: black;
-    text-decoration:none;
-    
-}
-    .btn-save:hover{
-        background-color:grey;
-    }
 
 
-    button:hover {
-        border: 1px solid white;
-    }
 
-    button:active {
-        box-shadow: 4px 4px 12px #c5c5c5, -4px -4px 12px #ffffff;
-    }
+.saveDiv {
+    padding: 30px;
+}
+
+
+
+button:hover {
+    border: 1px solid white;
+}
+
+button:active {
+    box-shadow: 4px 4px 12px #c5c5c5, -4px -4px 12px #ffffff;
+}
+
 .btn-cancel {
     color: #090909;
     padding: 0.7em 1.7em;
@@ -321,32 +317,71 @@ button:hover {
 button:active {
     box-shadow: 4px 4px 12px #c5c5c5, -4px -4px 12px #ffffff;
 }
-.HomeProjects{
-    display:flex;
-    flex-direction:column;
-    position:center;
-    display:block;
 
+.HomeProjects {
+    display: flex;
+    flex-direction: column;
 }
+
+
+
+.formstyle {
+    display: flex;
+    justify-content: center;
+}
+.signup{
+    padding:10%;
+}
+.titlestyle{
+    color:black;
+    font-weight:700;
+}
+.tagstyle {
+    width: 150px;
+    height: 30px;
+    background-color: #454857;
+    color: white;
+    text-decoration:none;
+    border-radius:0;
+    border-style:none;
+    font-size:100%;
+    font-weight:100;
+}
+    .tagstyle input[type=checkbox]:checked ~ div {
+        text-shadow: 7px 7px 14px rgba(0, 0, 0, 0.51);
+        border-radius:0;
+    }
+.tagstyle input[type=checkbox]:hover ~ div {
+    background-color: black;
+    color: white;
+}
+
+
+
 .projectLinks {
     display: block;
-    padding: 1%1%;
-    color: #090909;
+    color: black;
     padding: 0.7em 1.7em;
     font-size: 18px;
-    background: #e8e8e8;
-    border: 4px solid #e8e8e8;
-    height: 150px;
+    background: white;
+    border: 3px solid #e8e8e8;
     transition: all .3s;
-    border-style: solid;
-    border-color: black;
     text-decoration: none;
-    text-align:left;
+    text-align: left;
+    overflow-wrap: break-word;
+    font-weight: 600;
+    
+    height: 144px;
 }
-    .projectLinks:hover {
-        background-color: grey;
-        color:black;
+    .projectLinks p {
+        font-size: 11px;
     }
+
+    .projectLinks:hover {
+        box-shadow: 8px 6px 31px -2px rgba(0,0,0,0.37);
+        color: white;
+    }
+
 .MyProjects:link, .MyProjects:visited {
     display: inline-grid;
     display: block;
@@ -361,7 +396,6 @@ button:active {
     border-style: solid;
     border-color: lightslategrey;
     border-radius: 25%;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-style: italic;
     text-decoration: none;
 }
@@ -373,18 +407,19 @@ button:active {
 
 .TagContainer {
     display: flex;
-    flex-direction: row;
+    flex-direction:row;
     justify-content: center;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    align-items:center;
     line-height: 25px;
     transition: .5s ease;
-    padding:50px;
+    padding: 10px;
+    flex-wrap:wrap;
+    width:50%;
+    margin-left:25%;
+
 }
-.TagLabel{
+
+.TagLabel {
     position: relative;
     width: 100px;
     height: 50px;
@@ -395,42 +430,20 @@ button:active {
     border-radius: 10%;
 }
 
-.CustomerChecked{
-    background-color:green;
-    color:white;
 
+
+.TagClass {
+    background-image:linear-gradient(to left, #146fd1, #1f88a0);
+    border-style: solid;
+    border-color:black;
+    color: white;
+    border-radius: 20%;
+    padding: 1%;
+    text-shadow:1px 1px black;
+    font-weight:800;
+    margin:1% 1% 0 0;
 }
-.CustomerUnchecked{
-    background-color:red;
-    color:black;
-}
-.AssessmentTable{
-    display:flex;
-    justify-content:center;
-    flex-direction:column;
-}
-.AssessmentTable tr {
-    border: 3px solid black;
-    background-color:white;
-    color:black;
-}
-.AssessmentTable tr a{
-    color:black;
-    text-decoration:none;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    
-   
-}
-    .AssessmentTable tr td {
-        border: 3px solid black;
-    }
-.TagClass{
-    background-color:white;
-    color:black;
-    border-radius:50%;
-    padding:1%;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
+
 .MyProjectsDiv {
     border-style: solid;
     border-color: slategray;
@@ -438,14 +451,11 @@ button:active {
     justify-content: center;
 }
 
-.AssessmentTable {
-    display: flex;
-    justify-content: center;
-}
-.Testar {
 
+
+.Testar {
     width: 500px;
-    height: 150px;
+    height: 75px;
     padding: 12px 20px;
     box-sizing: border-box;
     border: 2px solid #ccc;
@@ -454,25 +464,74 @@ button:active {
     font-size: 16px;
     resize: none;
 }
-.NameInput{
+
+.NameInput {
     width: 350px;
-    
 }
-.form-group{
-    padding:8px;
+
+.form-group {
+    padding: 8px;
+    color: black;
 }
-a.next{
-    border-color:white;
+
+a.next {
+    border-color: white;
 }
+
     a.next:hover {
-        color:black;
+        color: black;
     }
-a.prev{
-    border-color:white;
+
+a.prev {
+    border-color: white;
 }
+
     a.prev:hover {
         color: black;
     }
+
+.radio {
+    padding: 10px;
+    position: relative;
+}
+
+    .radio input {
+        width: auto;
+        height: 100%;
+        appearance: none;
+        outline: none;
+        cursor: pointer;
+        border-radius: 2px;
+        padding: 4px 8px;
+        background: #454857;
+        color: white;
+        font-size: 14px;
+        
+        transition: all 100ms linear;
+    }
+
+        .radio input:checked {
+            background-image: linear-gradient(180deg, #95d891, #74bbad);
+            color: #fff;
+            box-shadow: 0 1px 1px #0000002e;
+            text-shadow: 0 1px 0px #79485f7a;
+        }
+
+        .radio input:before {
+            content: attr(label);
+            display: inline-block;
+            text-align: center;
+            width: 100%;
+        }
+
+.AssementDiv {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+
+
 @media screen and (max-width: 1352px) {
     .slideshow-container {
         max-width: 500px;
@@ -492,26 +551,27 @@ a.prev{
         max-height: 600px;
     }
 }
+
 @media screen and (max-width: 489px) {
     .slideshow-container {
-        max-width:380px;
-        padding:0 0 0 25px;
-        
-    }
-    .next{
-        width:250px;
-        
-    }
-    .prev{
-        width:250px;
+        max-width: 380px;
+        padding: 0 0 0 25px;
     }
 
-    .feature{
-        max-width:150px;
-        max-height:150px;
+    .next {
+        width: 250px;
     }
-    
+
+    .prev {
+        width: 250px;
+    }
+
+    .feature {
+        max-width: 150px;
+        max-height: 150px;
+    }
 }
+
 @media screen and (max-width: 365px) {
     .slideshow-container {
         max-width: 380px;

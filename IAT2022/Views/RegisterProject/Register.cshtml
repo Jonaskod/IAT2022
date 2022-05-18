@@ -3,49 +3,31 @@
 
 
 <form method="post">
-            <div asp-validation-summary="All" class="text-danger"></div>
-                <label>Namn</label>
+            <div @*asp-validation-summary="All"*@ class="text-danger"></div>
+                <label class="titlestyle">Namn</label>
              <div class="form-group">
                 <input asp-for="Name" class="NameInput"/>
+                <br />
                 <span asp-validation-for="Name" class="text-danger"></span>
              </div>
-             <div class="form-group">
-                <label asp-for="TypeOfProject">Typ av Projekt</label>
-                <select name="TypeOfProject" id="TypeOfProject">
-                    <option value="Process">
-                        "Process"
-                    </option>
-                    <option value="Produkt">
-                        "Produkt"
-                    </option>
-                    <option value="Tjänst">
-                        "Tjänst"
-                    </option>
-                </select>
-             </div>
-
-                <label>Beskrivning</label>
-             <div class="form-group">
-                <textarea asp-for="Description" class="Testar"></textarea> 
-                <span asp-validation-for="Description" class="text-danger"></span>
-             </div>
-
-                <label>Kommentar</label>
-             <div class="form-group">
-                <textarea asp-for="Comment" class="Testar"></textarea> 
-                <span asp-validation-for="Comment" class="text-danger"></span>
             </div>
-
-            <div>
+                <label class="titlestyle">Beskrivning</label>
+             <div class="form-group">
+                <textarea asp-for="Description" placeholder="Här kan du om du vill beskriva ditt projekt &#10;max 500 bokstäver" maxlength="500" id="DescInput" class="Testar"></textarea> 
+                <span @*asp-validation-for="Description"*@ class="text-danger"></span>
+             </div>
+            
                 <div class="LabelHeader">
-                <label>Välj kategori som passar ditt projekt</label>
+                <label class="titlestyle">Välj dem alternativ som passar ditt projekt</label>
                 </div>
-                <div class="TagContainer">
+
+                
+            <div class="TagContainer">
             @for (var i = 0; i < Model.Tags.Count(); i++)
             {
-                <article class="feature">
-                <input asp-for="TagsBool[i]" type="checkbox" id="feature"/>
-                <div>
+                <article class="tagstyle">
+                <input class="tagstyle" asp-for="TagsBool[i]" type="checkbox" id="tag"/>
+                <div class="tagstyle">
                     <span>
                     @Model.Tags[i].Description
                     </span>
@@ -53,14 +35,7 @@
                 </article>
             }
                 </div>
-            
-            
-
-
             </div>
                  <button type="submit" value="submit" class="btn-save">Registrera</button>
-
-                <button type="submit" class="btn-cancel" asp-area="" asp-controller="Home" asp-action="Index">Cancel</button>
-
-       
+                <button type="submit" class="btn-save" asp-area="" asp-controller="Home" asp-action="Index">Cancel</button>
         </form>

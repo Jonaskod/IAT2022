@@ -29,6 +29,24 @@ let boolResultBusiness = [];
 boolResultBusiness.length = checkboxlistBusiness.length;
 boolResultBusiness.fill(false);
 
+$("input:radio").on("click", function (e) {
+    var inp = $(this); //cache the selector
+    if (inp.is(".theone")) { //see if it has the selected class
+        inp.prop("checked", false).removeClass("theone");
+        return;
+    }
+    $("input:radio[name='" + inp.prop("name") + "'].theone").removeClass("theone");
+    inp.addClass("theone");
+});
+
+$("textarea").each(function () {
+    this.setAttribute("style", "height:" + (this.scrollHeight) + "px;overflow-y:hidden;");
+}).on("input", function () {
+    this.style.height = "auto";
+    this.style.height = (this.scrollHeight) + "px";
+});
+
+
 for (let i = 0; i < checkboxlistBusiness.length; i++) {
     checkboxlistBusiness[i].addEventListener('change', function () {
         console.log(boolResultBusiness);
@@ -268,6 +286,9 @@ function showSlides(n) {
     var i;
     var slides = document.getElementsByClassName("mySlides");
     var dots = document.getElementsByClassName("dot");
+    var counter = document.getElementById("pageCounter");
+    let slideCounter = n;
+
     if (n > slides.length) { slideIndex = 1 }
     if (n < 1) { slideIndex = slides.length }
     for (i = 0; i < slides.length; i++) {
@@ -278,8 +299,23 @@ function showSlides(n) {
     }
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
+
+    if (n == 4) {
+        slideCounter = 1;
+    }
+    if (n == 0) {
+        slideCounter = 3;
+    }
+    counter.innerHTML = slideCounter + "/" + "3";
 }
 
 var myDrop = new drop({
     selector: '#myMulti'
 });
+function pdfDownload() {
+    var element = document.getElementById('simple_table');
+    html2pdf(element);
+
+}
+
+

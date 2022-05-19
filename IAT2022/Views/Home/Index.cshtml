@@ -9,8 +9,9 @@
 </div>
 
 
-
-<div class=HomeProjects>
+@if (Model.Projects!=null)
+{
+    <div class=HomeProjects>
     @foreach (var item in Model.Projects)
     {
         <div class="SingleProject">
@@ -38,7 +39,7 @@
             @foreach (var tag in item.Tags)
                 {
                     
-                    <p>@tag.Description</p> 
+                    <p class="projectTag">@tag.Description</p> 
                 }
             </div>
         }
@@ -58,4 +59,9 @@
     }
 
 
-</div>
+    </div>
+}
+@if(Model.Projects.Count()==0)
+{
+    <a class="SaveBtn" asp-area="" asp-controller="RegisterProject" asp-action="Register"><i class="fa-solid fa-person-walking-arrow-right"><br>Registrera ett nytt projekt</i></a>
+}

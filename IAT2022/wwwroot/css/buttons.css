@@ -13,17 +13,12 @@
     transition: .3s ease;
     text-shadow: 1px 1px #0c0c0d;
 }
-
-    .prev:visited {
-        color: white;
-    }
-
     .prev:hover {
         background-color: black;
         cursor: pointer;
-        color: white;
+        color:white;
     }
-
+    
 .next {
     display: block;
     background-color: white;
@@ -39,17 +34,12 @@
     transition: .3s ease;
     text-shadow: 1px 1px #0c0c0d;
 }
-
-.next:focus {
-
-}
-
-
 .next:hover {
     background-color: black;
     cursor: pointer;
     color:white;
 }
+
 
 .BtnVisitedPath {
     color: black;

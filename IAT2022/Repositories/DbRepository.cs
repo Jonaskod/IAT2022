@@ -111,6 +111,57 @@ namespace IAT2022.Repositories
             _appDbContext.Projects.Remove(project);
             _appDbContext.SaveChanges();
         }
+        #region Question Updaters
+        public async Task<CustomerQuestionsPoco> UpdateCustomerQuestion(CustomerQuestionsPoco question)
+        {
+           
+                _appDbContext.Attach(question);
+                _appDbContext.Entry(question).State = EntityState.Modified;
+                _appDbContext.SaveChanges();
+                return question;
+        }
+        public async Task<ProductQuestionsPoco> UpdateProductQuestion(ProductQuestionsPoco question)
+        {
+            
+            _appDbContext.Attach(question);
+            _appDbContext.Entry(question).State = EntityState.Modified;
+            _appDbContext.SaveChanges();
+            return question;
+        }
+        public async Task<IprQuestionsPoco> UpdateIprQuestion(IprQuestionsPoco question)
+        {
+            
+            _appDbContext.Attach(question);
+            _appDbContext.Entry(question).State = EntityState.Modified;
+            _appDbContext.SaveChanges();
+            return question;
+        }
+        public async Task<TeamQuestionsPoco> UpdateTeamQuestion(TeamQuestionsPoco question)
+        {
+            
+            _appDbContext.Attach(question);
+            _appDbContext.Entry(question).State = EntityState.Modified;
+            _appDbContext.SaveChanges();
+            return question;
+        }
+        public async Task<BusinessQuestionsPoco> UpdateBusinessQuestion(BusinessQuestionsPoco question)
+        {
+            
+            _appDbContext.Attach(question);
+            _appDbContext.Entry(question).State = EntityState.Modified;
+            _appDbContext.SaveChanges();
+            return question;
+        }
+        public async Task<FinanceQuestionsPoco> UpdateFinanceQuestion(FinanceQuestionsPoco question)
+        {
+            
+            _appDbContext.Attach(question);
+            _appDbContext.Entry(question).State = EntityState.Modified;
+            _appDbContext.SaveChanges();
+            return question;
+        }
+        #endregion
+        #region Seed Methods
         public void SeedCustomerQuestions() 
         {
             if (!_appDbContext.CustomerQuestions.Any()) 
@@ -462,13 +513,13 @@ namespace IAT2022.Repositories
 
             }
         }
-        
+        #endregion
+        #region Get Methods
         public async Task<List<ProjectTagsPoco>> GetTags()
         {
             var tags = _appDbContext.ProjectTags.ToList();
             return tags;
         }
-
         public async Task<List<CustomerQuestionsPoco>> GetCustomerQuestions()
         {
             var questions = _appDbContext.CustomerQuestions.ToList();
@@ -511,5 +562,6 @@ namespace IAT2022.Repositories
 
             return questions;
         }
+        #endregion
     }
 }

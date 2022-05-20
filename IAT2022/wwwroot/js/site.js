@@ -29,6 +29,9 @@ let boolResultBusiness = [];
 boolResultBusiness.length = checkboxlistBusiness.length;
 boolResultBusiness.fill(false);
 
+let nextButton = document.getElementById("nextBtn");
+let prevButton = document.getElementById("prevBtn");
+
 $("input:radio").on("click", function (e) {
     var inp = $(this); //cache the selector
     if (inp.is(".theone")) { //see if it has the selected class
@@ -299,14 +302,25 @@ function showSlides(n) {
     }
     slides[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " active";
-
-    if (n == 4) {
-        slideCounter = 1;
-    }
-    if (n == 0) {
-        slideCounter = 3;
-    }
+    disableNextBtn(n);
+    disablePrevBtn(n);
     counter.innerHTML = slideCounter + "/" + "3";
+}
+function disableNextBtn(x) {
+    if (x >= 3) {
+        nextButton.disabled = true;
+    }
+    else {
+        nextButton.disabled = false;
+    }
+}
+function disablePrevBtn(x) {
+    if (x <= 1) {
+        prevButton.disabled = true;
+    }
+    else {
+        prevButton.disabled = false;
+    }
 }
 
 var myDrop = new drop({

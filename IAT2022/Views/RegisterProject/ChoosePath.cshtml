@@ -1,6 +1,6 @@
 ﻿@using IAT2022.ViewModels
 @model RegisterProjectViewModel
-<h1>Klicka på den kategori du vill registrera</h1>
+<h1>Välj kategori du vill besvara</h1>
 
 
 <div class="PathChooser">
@@ -95,6 +95,7 @@
                 <a id="ProductPath" asp-action="Product" asp-controller="Assessment" class="BtnChoosePath">Lösning</a>
 
             }
+            
         
     }
       <div class="saveDiv">
@@ -156,10 +157,8 @@
         <h1>Välkommen! Här kommer information om hur registreringen fungerar!</h1>
         
         <div class="informationText">
-            <p>Du kommer nu få välja mellan två olika kategorier. Tanken med dessa två kategorier är att du skall besvara påståenden som stämmer för din innovation.</p>
-            <p>Du kommer få börja med att läsa fyra påståenden gällande din innovation. Klicka på de påståenden som stämmer med utvecklingen av din innovation.</p>
-            <p>Därefter kan du klicka dig vidare på pilen till höger för att få läsa nästa fyra påståenden. Du kan gå tillbaka genom att klicka på pilen till vänster.</p>
-            <p>När du är klar klickar du på knappen "Spara" för att kunna välja och registrera ytterligare kategorier.</p>
+            <p>Du kommer att få börja med att registrera två olika kategorier, det spelar ingen roll vilken kategori du väljer. När dessa två kategorier är besvarade kommer ytterligare två kategorier dyka upp. Det finns totalt sex olika kategorier som behöver besvaras för att kunna utvärdera din innovation.</p>
+            <p>Du registrerar nivåer i kategorierna genom att klicka på de påståenden som stämmer överens med var du befinner dig i din utveckling av innovation. Du kan alltid välja att avbryta och spara din registrering genom att klcika på knappen "Spara".</p>
         </div>
         <div>
             <p>När du är klar kommer en sammanställning av dina svar visas och en visuell representation av vilka nivåer du befinner dig på i din utveckling.</p>

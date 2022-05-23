@@ -89,3 +89,25 @@
 .questionChanger button{
     margin-left:33%;
 }
+.searchDiv{
+    margin-bottom:3%;    
+}
+.adminContent{
+    display:flex;
+    flex-wrap:wrap;
+    flex-direction:row;
+    justify-content:space-evenly;
+    
+}
+.searchResult{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    flex-direction:column;
+}
+.searchResult div{
+    border-style:solid;
+    border-color:black;
+    margin:1%;
+    padding:1%;
+}

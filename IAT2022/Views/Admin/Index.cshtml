@@ -2,22 +2,27 @@
 @model AdminViewModel
 <h1>Konfiguration</h1>
 
+<form>
+    <div class="searchDiv">
+        <input id="search" placeholder="Sök på projektnamn" name="search" type="text"/>
+        <input asp-controller="Admin" asp-action="SearchProjects" type="submit" value="Sök"/>
+    </div>
+</form>
+
 <div class="dropdown">
   <button class="dropbtn">Välj vilken kategori du vill uppdatera</button>
-  <div>
-    <button onclick="closeAllCategories()"><i class="fa-solid fa-rectangle-xmark">Rensa</i></button>
-</div>
+ 
   <div class="dropdown-content">
     <a onclick="showCustomer()">Behov</a>
     <a onclick="showProduct()">Lösning</a>
     <a onclick="showIPR()">IPR</a>
     <a onclick="showTeam()">Team</a>
-    <a onclick="showBusiness()">Marknad?</a>
+    <a onclick="showBusiness()">Marknad</a>
     <a onclick="showFinance()">Finansiering</a>
   </div>
 </div>
-
-
+<div> <button onclick="closeAllCategories()"><i class="fa-solid fa-rectangle-xmark">Rensa</i></button></div>
+<div class="adminContent">
 <div id="CustomerQuestionChanger">
     @if (Model.CustomerQuestions!=null)
     {
@@ -95,4 +100,5 @@
         }
     }
     
+</div>
 </div>

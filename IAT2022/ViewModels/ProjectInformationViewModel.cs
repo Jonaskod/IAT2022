@@ -31,22 +31,9 @@ namespace IAT2022.ViewModels
         public ProjectInformationViewModel(IDbRepository dbRepository)
         {
             _dbRepository = dbRepository;
-            //ProjectTagsPoco = _dbRepository.GetTags();
             _ = GetAll();
         }
-        //public string[] Xolors { get; set; } = {
-        //    "#d58f22",
-        //    e9940e,
-        //    d5a723,
-        //    e9b00c,
-        //    d5bc1d,
-        //    e8cb0f,
-        //    dde23d,
-        //    c1ee2d,
-        //    cFFF00
-            
-
-        //}
+        
         public async Task<List<CustomerQuestionsPoco>> GetAll()
         {
             var list = await _dbRepository.GetCustomerQuestions();
@@ -65,7 +52,104 @@ namespace IAT2022.ViewModels
 
             return CustomerQuestions;
         }
+        #region NextStepMethods
+        public string GetNextCustomerStep(ProjectPoco project)
+        {
+            int highestLevel = 0;
+            int nextStep = highestLevel + 1;
+            for (int i = 0; i < project.Customer.Count; i++)
+            {
+                if (project.Customer[i].Result)
+                {
+                    highestLevel = i;
+                }
 
+            }
+            
+            return CustomerQuestions[nextStep].QuestionDescription;
+            
+        }
+        public string GetNextProductStep(ProjectPoco project)
+        {
+            int highestLevel = 0;
+            int nextStep = highestLevel + 1;
+            for (int i = 0; i < project.Product.Count; i++)
+            {
+                if (project.Customer[i].Result)
+                {
+                    highestLevel = i;
+                }
+
+            }
+
+            return ProductQuestions[nextStep].QuestionDescription;
+
+        }
+        public string GetNextIprStep(ProjectPoco project)
+        {
+            int highestLevel = 0;
+            int nextStep = highestLevel + 1;
+            for (int i = 0; i < project.IPR.Count; i++)
+            {
+                if (project.IPR[i].Result)
+                {
+                    highestLevel = i;
+                }
+
+            }
+
+            return IPRQuestions[nextStep].QuestionDescription;
+
+        }
+        public string GetNextBusinessStep(ProjectPoco project)
+        {
+            int highestLevel = 0;
+            int nextStep = highestLevel + 1;
+            for (int i = 0; i < project.Business.Count; i++)
+            {
+                if (project.Business[i].Result)
+                {
+                    highestLevel = i;
+                }
+
+            }
+
+            return BusinessQuestions[nextStep].QuestionDescription;
+
+        }
+        public string GetNextTeamStep(ProjectPoco project)
+        {
+            int highestLevel = 0;
+            int nextStep = highestLevel + 1;
+            for (int i = 0; i < project.Team.Count; i++)
+            {
+                if (project.Customer[i].Result)
+                {
+                    highestLevel = i;
+                }
+
+            }
+
+            return TeamQuestions[nextStep].QuestionDescription;
+
+        }
+        public string GetNextFinanceStep(ProjectPoco project)
+        {
+            int highestLevel = 0;
+            int nextStep = highestLevel + 1;
+            for (int i = 0; i < project.Finance.Count; i++)
+            {
+                if (project.Finance[i].Result)
+                {
+                    highestLevel = i;
+                }
+
+            }
+
+            return FinanceQuestions[nextStep].QuestionDescription;
+
+        }
+        #endregion
         #region Converters for UI 
         public List<bool> ConvertCustomer(ProjectPoco poco)
         {

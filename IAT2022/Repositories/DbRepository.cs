@@ -111,6 +111,16 @@ namespace IAT2022.Repositories
             _appDbContext.Projects.Remove(project);
             _appDbContext.SaveChanges();
         }
+        public async Task<List<ProjectPoco>> SearchProjects(string input)
+        {
+            var result = _appDbContext.Projects.Where(x => x.ProjectName == input).Include(x => x.Customer).Include(x => x.Product).Include(x=>x.IPR).ToList();
+            result = _appDbContext.Projects.Where(x=>x.ProjectName==input).Include(x=>x.Business).Include(x=>x.Team).Include(x=>x.Finance).ToList();
+            if (result.Any())
+            {
+                result = result.OrderByDescending(x => x.Created).ToList();
+            }
+            return result;
+        }
         #region Question Updaters
         public async Task<CustomerQuestionsPoco> UpdateCustomerQuestion(CustomerQuestionsPoco question)
         {

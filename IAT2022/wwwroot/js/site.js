@@ -326,8 +326,14 @@ function disablePrevBtn(x) {
 var myDrop = new drop({
     selector: '#myMulti'
 });
+function showPdfSuggestions() {
+    document.getElementById("pdfSuggestions").style.display = "block";
+}
+function closePdfSuggestions() {
+    document.getElementById("pdfSuggestions").style.display = "none";
+}
 function pdfDownload() {
-    var element = document.getElementById('simple_table');
+    var element = document.getElementById('assessmentPage');
     html2pdf(element);
 
 }

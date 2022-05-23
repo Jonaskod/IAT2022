@@ -17,7 +17,7 @@ namespace IAT2022.Controllers
             ProjectInformationViewModel projectInformationViewModel = new (_dbRepository);
             projectInformationViewModel.Project = await _dbRepository.GetSingleProject(id.ToString());
           
-            if (projectInformationViewModel.Project.Owner == User.Identity.Name)
+            if (projectInformationViewModel.Project.Owner == User.Identity.Name || User.IsInRole("Admin"))
             {
                 TempData["data"] = projectInformationViewModel.Project.Id;
                 return View(projectInformationViewModel);

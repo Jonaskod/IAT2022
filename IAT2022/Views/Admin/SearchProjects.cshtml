@@ -1,0 +1,20 @@
+﻿@using IAT2022.ViewModels
+@model AdminViewModel
+
+@if (Model.SearchResults != null)
+{
+    <div class="searchResult">
+    @foreach (var item in Model.SearchResults)
+    {
+        <div >
+            <a asp-controller="ProjectInformation" asp-action="ProjectInformation" asp-route-id="@item.Id"><h1>@item.ProjectName</h1></a>
+            <h2>@item.Owner</h2>
+            <h6>Skapad @item.Created</h6>
+        </div>
+    }
+    </div>
+}
+else
+{
+    <h1>Inga Resultat</h1>
+}

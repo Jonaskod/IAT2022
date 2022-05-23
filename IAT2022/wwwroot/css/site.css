@@ -540,7 +540,15 @@ button:active {
     border-radius:10%;
 }
 
-
+#pdfSuggestions{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-evenly;
+}
+#pdfSuggestions div{
+    margin:1%;
+ 
+}
 
 
 @media screen and (max-width: 1352px) {

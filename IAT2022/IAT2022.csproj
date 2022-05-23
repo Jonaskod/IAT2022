@@ -29,8 +29,9 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+    <PackageReference Include="Microsoft.PowerBI.Api" Version="4.6.0" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="6.0.3" />
-    <PackageReference Include="SendGrid" Version="9.27.0" />
+    <PackageReference Include="SendGrid" Version="9.28.0" />
     <PackageReference Include="sqlite3" Version="3.8.8.3" />
   </ItemGroup>
 

@@ -24,10 +24,13 @@
                 <input asp-for="Password" class="form-control" />
                 <span asp-validation-for="Password" class="text-danger"></span>
             </div>
+            <div>
+                <a asp-controller="Account" asp-action="ResetMyPassword">Glömt lösenord?</a>
+            </div>
             <div class="loginbtn">
             <button type="submit" class="btn-save">Login</button>
             <h4 class="signup">Har du inget konto?</h4>
-            <a class="btn-save" asp-controller="Account" asp-action="RegisterAccount">Registrera dig här</a>
+            <a class="btn-save" asp-controller="Account" asp-action="RegisterAccount">Registrera dig här</a>            
             </div>
         </form>
      </div>

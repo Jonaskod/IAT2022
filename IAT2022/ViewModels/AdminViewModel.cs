@@ -1,4 +1,5 @@
-﻿using IAT2022.Data.Poco.QuestionsPoco;
+﻿using IAT2022.Data.Poco;
+using IAT2022.Data.Poco.QuestionsPoco;
 using IAT2022.Repositories;
 
 namespace IAT2022.ViewModels
@@ -6,7 +7,8 @@ namespace IAT2022.ViewModels
     public class AdminViewModel
     {
         private readonly IDbRepository _dbRepository;
-
+        public string SearchPhrase { get; set; }
+        public List<ProjectPoco>? SearchResults { get; set; }
         public List<CustomerQuestionsPoco>? CustomerQuestions { get; set; }
         public List<ProductQuestionsPoco>? ProductQuestions { get; set; }
         public List<IprQuestionsPoco>? IprQuestions { get; set; }

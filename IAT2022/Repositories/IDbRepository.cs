@@ -16,6 +16,7 @@ namespace IAT2022.Repositories
         Task<List<ProjectTagsPoco>> GetTags();
         Task<List<TeamQuestionsPoco>> GetTeamQuestions();
         Task<ProjectPoco> RegisterProject(ProjectPoco model);
+        Task<List<ProjectPoco>> SearchProjects(string input);
         void SeedBuisnessQuestions();
         void SeedCustomerQuestions();
         void SeedFinanceQuestions();

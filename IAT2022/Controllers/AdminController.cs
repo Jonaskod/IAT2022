@@ -19,6 +19,20 @@ namespace IAT2022.Controllers
             AdminViewModel adminView = new(_dbRepository);
             return View(adminView);
         }
+        public async Task<IActionResult> SearchProjects(string search)
+        {
+            if (ModelState.IsValid)
+            {
+                var result = await _dbRepository.SearchProjects(search);
+                AdminViewModel viewModel = new(_dbRepository);
+                viewModel.SearchResults = result;
+                return View(viewModel);
+            }
+            return View();
+
+
+        }
+        #region SelectQuestionMethods
         public async Task<IActionResult> SelectCustomerQuestion(int id)
         {
             var qList = await _dbRepository.GetCustomerQuestions();
@@ -68,7 +82,7 @@ namespace IAT2022.Controllers
             ChangeQuestion.FinanceQuestion = selectedF;
             return View("ChangeQuestion", ChangeQuestion);
         }
-
+        #endregion
         [HttpPost]
         public async Task<IActionResult> UpdateQuestion(ChangeQuestionViewModel model, int id)
         {
@@ -121,6 +135,8 @@ namespace IAT2022.Controllers
             AdminViewModel admin = new (_dbRepository);
             return View("index", admin);
         }
-
+       
+        
+        
     }
 }

@@ -3,7 +3,7 @@
 @model ProjectInformationViewModel
 @if (Model != null)
 {
-    
+<div id="assessmentPage">
 <h1>@Model.Project.ProjectName</h1>
 
 
@@ -111,6 +111,38 @@
       </tr>
     </table>
     <input type="button" onclick="pdfDownload()" value="Export To PDF" />
+</div>
+
+<div id="pdfSuggestions">
+    <div>
+        <div>
+            <h5>Nästa Kund-steg</h5>
+            <p>@Model.GetNextCustomerStep(Model.Project)</p>
+        </div>
+        <div>
+            <h5>Nästa Produkt-steg</h5>
+            <p>@Model.GetNextProductStep(Model.Project)</p>
+        </div>
+        <div>
+            <h5>Nästa IPR-steg</h5>
+            <p>@Model.GetNextIprStep(Model.Project)</p>
+        </div>
+    </div>
+    <div>
+        <div>
+            <h5>Nästa Team-steg</h5>
+            <p>@Model.GetNextTeamStep(Model.Project)</p>
+        </div>
+        <div>
+            <h5>Nästa Marknadssteg</h5>
+            <p>@Model.GetNextBusinessStep(Model.Project)</p>
+        </div>        
+        <div>
+            <h5>Nästa Finansieringssteg</h5>
+            <p>@Model.GetNextFinanceStep(Model.Project)</p>
+        </div>
+    </div>
+</div>
 </div>
 }
 else {

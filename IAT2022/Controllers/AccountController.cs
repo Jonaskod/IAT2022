@@ -132,6 +132,7 @@ namespace IAT2022.Controllers
                 return View("Error");
 
             var result = await _userManager.ConfirmEmailAsync(user, token);
+            
             return RedirectToAction("Login", "Account");
             
         }

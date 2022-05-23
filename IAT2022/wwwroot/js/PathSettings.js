@@ -28,6 +28,14 @@ function showTeam() {
 function showBusiness() {
     document.getElementById("BusinessQuestionChanger").style.display = "block";
 }
-function showFinance() {7
+function showFinance() {
     document.getElementById("FinanceQuestionChanger").style.display = "block";
+}
+function closeAllCategories() {
+    document.getElementById("CustomerQuestionChanger").style.display = "none";
+    document.getElementById("ProductQuestionChanger").style.display = "none";
+    document.getElementById("IPRQuestionChanger").style.display = "none";
+    document.getElementById("TeamQuestionChanger").style.display = "none";
+    document.getElementById("BusinessQuestionChanger").style.display = "none";
+    document.getElementById("FinanceQuestionChanger").style.display = "none";
 }

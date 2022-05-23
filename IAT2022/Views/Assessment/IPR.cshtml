@@ -58,12 +58,12 @@
     </section>
 </div>
             <div class="AssementDiv">
-                <a class="prev" onclick="plusSlides(-1)"><i class="fa-solid fa-left-long"></i> </a>
+                <button class="prev" id="prevBtn" onclick="plusSlides(-1)"><i class="fa-solid fa-left-long"></i> </button>
                 @using (Html.BeginForm("ChoosePathIPR","RegisterProject",FormMethod.Post))
                         {
                             <input class="btn-save" type="submit" value="Spara"/>
                         }
-                <a class="next" onclick="plusSlides(1)"><i class="fa-solid fa-right-long"></i></a>
+                <button class="next" id="nextBtn" onclick="plusSlides(1)"><i class="fa-solid fa-right-long"></i></button>
 
 
             </div>

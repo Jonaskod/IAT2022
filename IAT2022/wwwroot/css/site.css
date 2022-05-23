@@ -259,7 +259,22 @@ table {
     text-align: center;
     border-style: solid;
     border-color: black;
+    flex-direction:column;
 }
+.categoryInfo{
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:center;
+    
+}
+    .categoryInfo div {
+        margin-left: 1%;
+        margin-right:1%;
+        margin-top:1%;
+        flex-wrap:wrap;
+        width:150px;
+    }
 
 
 
@@ -433,15 +448,14 @@ button:active {
 
 
 .TagClass {
-    background-image:linear-gradient(to left, #146fd1, #1f88a0);
-    border-style: solid;
-    border-color:black;
-    color: white;
-    border-radius: 20%;
-    padding: 1%;
-    text-shadow:1px 1px black;
-    font-weight:800;
-    margin:1% 1% 0 0;
+    background-color: white;
+    border-color: black;
+    color: black;
+    padding-left: 1%;
+    padding-right: 1%;
+    font-weight: 700;
+    margin: 1% 1% 0 0;
+    box-shadow: 2px 2px 10px 5px rgba(0,0,0,0.29);
 }
 
 .MyProjectsDiv {
@@ -474,21 +488,7 @@ button:active {
     color: black;
 }
 
-a.next {
-    border-color: white;
-}
 
-    a.next:hover {
-        color: black;
-    }
-
-a.prev {
-    border-color: white;
-}
-
-    a.prev:hover {
-        color: black;
-    }
 
 .radio {
     padding: 10px;
@@ -528,8 +528,27 @@ a.prev {
     display: flex;
     justify-content: space-around;
 }
+.registrationForm{
+    width:50%;
+    margin-left:25%;
+}
+.projectTag {
+    padding-left: 1%;
+    padding-right: 1%;
+    border-style: double;
+    box-shadow: 1px 2px 5px rgba(0,0,0,0.29);
+    border-radius:10%;
+}
 
-
+#pdfSuggestions{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-evenly;
+}
+#pdfSuggestions div{
+    margin:1%;
+ 
+}
 
 
 @media screen and (max-width: 1352px) {

@@ -13,17 +13,20 @@
     transition: .3s ease;
     text-shadow: 1px 1px #0c0c0d;
 }
-
-    .prev:visited {
-        color: white;
-    }
-
     .prev:hover {
         background-color: black;
         cursor: pointer;
-        color: white;
+        color:white;
     }
-
+    .prev:disabled {
+        background-color: rgba(148, 148, 150, 0.2);
+        color: gray;
+    }
+        .prev:disabled:hover {
+            border-color: gray;
+            cursor: not-allowed;
+        }
+    
 .next {
     display: block;
     background-color: white;
@@ -39,17 +42,20 @@
     transition: .3s ease;
     text-shadow: 1px 1px #0c0c0d;
 }
-
-.next:focus {
-
-}
-
-
 .next:hover {
     background-color: black;
     cursor: pointer;
     color:white;
 }
+    .next:disabled {
+        background-color: rgba(148, 148, 150, 0.2);
+        color: gray;
+    }
+    .next:disabled:hover{
+        border-color:gray;
+        cursor:not-allowed;
+    }
+
 
 .BtnVisitedPath {
     color: black;
@@ -191,6 +197,8 @@
     width: 150px;
     text-align: center;
     margin-top: 50px;
+    border-style:solid;
+    border-color:black;
 }
 
     .btn-save:hover {
@@ -244,4 +252,32 @@
 
 .informationButton:hover{
     cursor:pointer;
+}
+.disabledCatagory {
+    color: black;
+    border-radius: 10%;
+    background-color: whitesmoke;
+    margin: 2%;
+    border-style: solid;
+    display:inline-block;
+    height:px;
+}
+.disabledCatagory:link {
+    background-color: white;
+    color: black;
+    text-align: center;
+    display: inline-block;
+    text-decoration: none;
+    outline: none;
+    height: 150px;
+    width: 250PX;
+    text-align: center;
+    padding-top: 4%;
+}
+
+.disabledCatagory:active, .BtnChoosePath:hover {
+    cursor: pointer;
+    text-decoration: none;
+    background-image: linear-gradient(180deg, #95d891, #74bbad, 0.2);
+    color: black
 }

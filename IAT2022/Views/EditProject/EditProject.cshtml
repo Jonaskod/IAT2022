@@ -4,7 +4,7 @@
 
 <form method="post">
             <div asp-validation-summary="All" class="text-danger"></div>
-                <label class="titlestyle">Namn</label>
+                <label class="titlestyle">Projektnamn</label>
              <div class="form-group">
                 <input asp-for="Name" class="NameInput" value="@Model.Project.ProjectName"/>
                 <span asp-validation-for="Name" class="text-danger"></span>

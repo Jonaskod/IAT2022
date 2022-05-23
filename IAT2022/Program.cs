@@ -10,6 +10,7 @@ builder.Services.AddControllersWithViews();
 
 string connectionPostgres = builder.Configuration["ConnectionStrings:Default"];
 string connectionSQLite = builder.Configuration["ConnectionStrings:Develop"];
+string EmailApi = builder.Configuration["MailApiKey"];
 
 builder.Services.AddDbContext<AppDbContext>(
     o => o.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
@@ -43,6 +44,7 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.Password.RequireUppercase = false;
     options.Password.RequiredLength = 5;
     options.Password.RequireNonAlphanumeric = false;
+    options.SignIn.RequireConfirmedEmail = true;
 });
 
 var app = builder.Build();

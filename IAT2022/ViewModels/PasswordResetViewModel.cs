@@ -2,11 +2,8 @@
 
 namespace IAT2022.ViewModels
 {
-    public class RegisterAccountViewModel
+    public class PasswordResetViewModel
     {
-        /// <summary>
-        /// Input from an interface, props for setting input values.
-        /// </summary>
         [Required]
         [EmailAddress]
         public string Email { get; set; }
@@ -21,6 +18,7 @@ namespace IAT2022.ViewModels
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "Passwords didnt match!")]
         public string ConfirmPassword { get; set; }
-      
+        public string? Token { get; set; }
+       
     }
 }

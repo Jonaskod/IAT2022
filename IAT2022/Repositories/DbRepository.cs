@@ -111,6 +111,67 @@ namespace IAT2022.Repositories
             _appDbContext.Projects.Remove(project);
             _appDbContext.SaveChanges();
         }
+        public async Task<List<ProjectPoco>> SearchProjects(string input)
+        {
+            var result = _appDbContext.Projects.Where(x => x.ProjectName == input).Include(x => x.Customer).Include(x => x.Product).Include(x=>x.IPR).ToList();
+            result = _appDbContext.Projects.Where(x=>x.ProjectName==input).Include(x=>x.Business).Include(x=>x.Team).Include(x=>x.Finance).ToList();
+            if (result.Any())
+            {
+                result = result.OrderByDescending(x => x.Created).ToList();
+            }
+            return result;
+        }
+        #region Question Updaters
+        public async Task<CustomerQuestionsPoco> UpdateCustomerQuestion(CustomerQuestionsPoco question)
+        {
+           
+                _appDbContext.Attach(question);
+                _appDbContext.Entry(question).State = EntityState.Modified;
+                _appDbContext.SaveChanges();
+                return question;
+        }
+        public async Task<ProductQuestionsPoco> UpdateProductQuestion(ProductQuestionsPoco question)
+        {
+            
+            _appDbContext.Attach(question);
+            _appDbContext.Entry(question).State = EntityState.Modified;
+            _appDbContext.SaveChanges();
+            return question;
+        }
+        public async Task<IprQuestionsPoco> UpdateIprQuestion(IprQuestionsPoco question)
+        {
+            
+            _appDbContext.Attach(question);
+            _appDbContext.Entry(question).State = EntityState.Modified;
+            _appDbContext.SaveChanges();
+            return question;
+        }
+        public async Task<TeamQuestionsPoco> UpdateTeamQuestion(TeamQuestionsPoco question)
+        {
+            
+            _appDbContext.Attach(question);
+            _appDbContext.Entry(question).State = EntityState.Modified;
+            _appDbContext.SaveChanges();
+            return question;
+        }
+        public async Task<BusinessQuestionsPoco> UpdateBusinessQuestion(BusinessQuestionsPoco question)
+        {
+            
+            _appDbContext.Attach(question);
+            _appDbContext.Entry(question).State = EntityState.Modified;
+            _appDbContext.SaveChanges();
+            return question;
+        }
+        public async Task<FinanceQuestionsPoco> UpdateFinanceQuestion(FinanceQuestionsPoco question)
+        {
+            
+            _appDbContext.Attach(question);
+            _appDbContext.Entry(question).State = EntityState.Modified;
+            _appDbContext.SaveChanges();
+            return question;
+        }
+        #endregion
+        #region Seed Methods
         public void SeedCustomerQuestions() 
         {
             if (!_appDbContext.CustomerQuestions.Any()) 
@@ -462,13 +523,13 @@ namespace IAT2022.Repositories
 
             }
         }
-        
+        #endregion
+        #region Get Methods
         public async Task<List<ProjectTagsPoco>> GetTags()
         {
             var tags = _appDbContext.ProjectTags.ToList();
             return tags;
         }
-
         public async Task<List<CustomerQuestionsPoco>> GetCustomerQuestions()
         {
             var questions = _appDbContext.CustomerQuestions.ToList();
@@ -511,5 +572,6 @@ namespace IAT2022.Repositories
 
             return questions;
         }
+        #endregion
     }
 }

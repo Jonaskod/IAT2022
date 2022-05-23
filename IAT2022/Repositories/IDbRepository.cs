@@ -16,6 +16,7 @@ namespace IAT2022.Repositories
         Task<List<ProjectTagsPoco>> GetTags();
         Task<List<TeamQuestionsPoco>> GetTeamQuestions();
         Task<ProjectPoco> RegisterProject(ProjectPoco model);
+        Task<List<ProjectPoco>> SearchProjects(string input);
         void SeedBuisnessQuestions();
         void SeedCustomerQuestions();
         void SeedFinanceQuestions();
@@ -23,6 +24,12 @@ namespace IAT2022.Repositories
         void SeedProductQuestions();
         void SeedTags();
         void SeedTeamQuestions();
+        Task<BusinessQuestionsPoco> UpdateBusinessQuestion(BusinessQuestionsPoco question);
+        Task<CustomerQuestionsPoco> UpdateCustomerQuestion(CustomerQuestionsPoco question);
+        Task<FinanceQuestionsPoco> UpdateFinanceQuestion(FinanceQuestionsPoco question);
+        Task<IprQuestionsPoco> UpdateIprQuestion(IprQuestionsPoco question);
+        Task<ProductQuestionsPoco> UpdateProductQuestion(ProductQuestionsPoco question);
         Task<ProjectPoco> UpdateProject(ProjectPoco project);
+        Task<TeamQuestionsPoco> UpdateTeamQuestion(TeamQuestionsPoco question);
     }
 }

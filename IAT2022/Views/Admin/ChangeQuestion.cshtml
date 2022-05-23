@@ -1,0 +1,37 @@
+﻿@using IAT2022.ViewModels
+@model ChangeQuestionViewModel
+<form method="post">
+    <div class="questionChanger">
+        @if (Model.CustomerQuestion!=null)
+        {
+            <textarea asp-for="CustomerQuestion.QuestionDescription">@Model.CustomerQuestion.QuestionDescription</textarea>
+            <button type="submit" value="submit" asp-controller="Admin" asp-action="UpdateQuestion" asp-route-id="@Model.CustomerQuestion.Id" class="btn-save">Spara</button>
+        }
+        else if(Model.ProductQuestion!=null){
+            <textarea asp-for="ProductQuestion.QuestionDescription">@Model.ProductQuestion.QuestionDescription</textarea>
+            <button type="submit" value="submit" asp-controller="Admin" asp-action="UpdateQuestion" asp-route-id="@Model.ProductQuestion.Id" class="btn-save">Spara</button>
+        }
+        else if (Model.TeamQuestion != null)
+        {
+            <textarea asp-for="TeamQuestion.QuestionDescription">@Model.TeamQuestion.QuestionDescription</textarea>
+            <button type="submit" value="submit" asp-controller="Admin" asp-action="UpdateQuestion" asp-route-id="@Model.TeamQuestion.Id" class="btn-save">Spara</button>
+        }
+        else if (Model.IprQuestion != null)
+        {
+            <textarea asp-for="IprQuestion.QuestionDescription">@Model.IprQuestion.QuestionDescription</textarea>
+            <button type="submit" value="submit" asp-controller="Admin" asp-action="UpdateQuestion" asp-route-id="@Model.IprQuestion.Id" class="btn-save">Spara</button>
+        }
+        else if (Model.BusinessQuestion != null)
+        {
+            <textarea asp-for="BusinessQuestion.QuestionDescription">@Model.BusinessQuestion.QuestionDescription</textarea>
+            <button type="submit" value="submit" asp-controller="Admin" asp-action="UpdateQuestion" asp-route-id="@Model.BusinessQuestion.Id" class="btn-save">Spara</button>
+    
+        }
+        else if(Model.FinanceQuestion!=null)
+        {
+            <textarea asp-for="FinanceQuestion.QuestionDescription">@Model.FinanceQuestion.QuestionDescription</textarea>
+            <button type="submit" value="submit" asp-controller="Admin" asp-action="UpdateQuestion" asp-route-id="@Model.FinanceQuestion.Id" class="btn-save">Spara</button>
+        }
+    </div>
+    
+</form>

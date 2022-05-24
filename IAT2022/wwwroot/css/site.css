@@ -553,6 +553,15 @@ button:active {
     margin:1%;
  
 }
+.informationText{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+.informationText a{
+    margin-left:45%;
+    margin-top:15%;
+}
 
 
 @media screen and (max-width: 1352px) {

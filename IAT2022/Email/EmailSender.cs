@@ -31,7 +31,7 @@ namespace IAT2022.Email
             {
                 var apiKey = _configuration["MailApiKey"];
                 var client = new SendGridClient(apiKey);
-                var from = new EmailAddress("keeew1992@gmail.com");
+                var from = new EmailAddress("innovationatool@gmail.com");
                 var subject = selctedSubject;
                 var to = new EmailAddress(email);
                 var plainTextContent = token;

@@ -302,3 +302,17 @@
     background-color:black;
     color:white;
 }
+#cancelPWbtn {
+    display:inline-block;
+    border-style:solid;
+    border-color:black;
+    text-decoration:none;
+    padding:1%;
+    margin-top:25%;
+    color:black;
+    background-color:white;
+}
+#cancelPWbtn:hover{
+    background-color:black;
+    color:white;
+}

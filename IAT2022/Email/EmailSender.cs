@@ -29,7 +29,8 @@ namespace IAT2022.Email
 
            public async Task Execute(string email, string token, string selctedSubject)
             {
-                var apiKey = _configuration["MailApiKey"];
+            //var apiKey = _configuration["MailApiKey"];
+                var apiKey = "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";
                 var client = new SendGridClient(apiKey);
                 var from = new EmailAddress("keeew1992@gmail.com");
                 var subject = selctedSubject;

@@ -63,6 +63,7 @@
     background-image: linear-gradient(180deg, #95d891, #74bbad);
     margin: 2%;
     border-style: solid;
+    font-weight:700;
 }
 
     .BtnVisitedPath:link {
@@ -91,6 +92,7 @@
     background-color: whitesmoke;
     margin: 2%;
     border-style: solid;
+    font-weight:700;
 }
 
 
@@ -280,4 +282,23 @@
     text-decoration: none;
     background-image: linear-gradient(180deg, #95d891, #74bbad, 0.2);
     color: black
+}
+#homeCreateBtn{
+    font-size:200%;
+}
+.pdfDownloadBtn {
+    display: inline-block;
+    width: 20%;
+    margin-left: 40%;
+    margin-top:1%;
+    margin-bottom:1%;
+    background-color: white;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    font-weight:600;
+    border-color:black;
+}
+.pdfDownloadBtn:hover{
+    background-color:black;
+    color:white;
 }

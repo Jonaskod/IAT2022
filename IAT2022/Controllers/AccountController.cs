@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Globalization;
 
 namespace IAT2022.Controllers
 {
@@ -71,7 +72,7 @@ namespace IAT2022.Controllers
                     
                     return RedirectToAction("Index", "Home");
                 }
-                ModelState.AddModelError(string.Empty, "Wrong password or accountname");
+                ModelState.AddModelError(string.Empty, "Fel e-postadress eller lösenord");
             }
             return View(model);
         }

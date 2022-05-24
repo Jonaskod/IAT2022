@@ -334,8 +334,13 @@ function closePdfSuggestions() {
 }
 function pdfDownload() {
     var element = document.getElementById('assessmentPage');
+    let aTags = document.getElementsByTagName("a");
+    let atl = aTags.length;
+    for (i = 0; i < atl; i++) {
+        aTags[i].removeAttribute("href"); //Removes href from <a>
+    }
     html2pdf(element);
-
+    location.reload(); //Reload to page to reset the removed href
 }
 
 

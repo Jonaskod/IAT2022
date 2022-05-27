@@ -38,8 +38,8 @@ namespace IAT2022.ViewModels
         {
             if (Project != null)
             {
-                var test = Project.Tags;
-                foreach (var item in test)
+                var projectTags = Project.Tags;
+                foreach (var item in projectTags)
                 {
                     if (item.Description == tag.Description)
                     {

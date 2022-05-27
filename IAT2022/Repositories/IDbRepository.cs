@@ -1,10 +1,12 @@
 ﻿using IAT2022.Data.Poco;
 using IAT2022.Data.Poco.QuestionsPoco;
+using IAT2022.Data.Poco.SubCategoryPoco;
 
 namespace IAT2022.Repositories
 {
     public interface IDbRepository
     {
+        Task<List<TagPoco>> ConvertTags(List<bool> tagsBool);
         Task DeleteProject(string id);
         Task<List<ProjectPoco>> GetAllProjects(string name);
         Task<List<BusinessQuestionsPoco>> GetBuisnessQuestions();
@@ -16,6 +18,7 @@ namespace IAT2022.Repositories
         Task<List<ProjectTagsPoco>> GetTags();
         Task<List<TeamQuestionsPoco>> GetTeamQuestions();
         Task<ProjectPoco> RegisterProject(ProjectPoco model);
+        Task<List<ProjectPoco>> SearchByTags(List<TagPoco> projectTags);
         Task<List<ProjectPoco>> SearchProjects(string input);
         void SeedBuisnessQuestions();
         void SeedCustomerQuestions();

@@ -18,7 +18,7 @@ namespace IAT2022.Repositories
         {
             try
             {
-                var project = _appDbContext.Projects.Where(x => x.Id == int.Parse(id)).Include(x => x.Comments).Include(x => x.Tags).Include(x => x.Team).Include(x => x.Customer).FirstOrDefault();
+                var project = _appDbContext.Projects.Where(x => x.Id == int.Parse(id)).Include(x => x.Tags).Include(x => x.Team).Include(x => x.Customer).FirstOrDefault();
                 project = _appDbContext.Projects.Where(x => x.Id == int.Parse(id)).Include(x => x.Business).Include(x => x.Product).Include(x => x.Finance).Include(x => x.IPR).FirstOrDefault();
 
                 return project;
@@ -32,7 +32,7 @@ namespace IAT2022.Repositories
         
         public async Task<List<ProjectPoco>>? GetAllProjects(string name)
         {
-            List<ProjectPoco>? list = _appDbContext.Projects?.Where(x => x.Owner == name).Include(x => x.Comments).Include(x=> x.Tags).ToList();
+            List<ProjectPoco>? list = _appDbContext.Projects?.Where(x => x.Owner == name).Include(x=> x.Tags).ToList();
             if (list != null)
             {
                 list = list.OrderByDescending(x=>x.Id).ToList();
@@ -94,7 +94,7 @@ namespace IAT2022.Repositories
         }
         public async Task<ProjectPoco> UpdateProject(ProjectPoco project)
         {
-            var hej = _appDbContext.Projects.Where((x) => x.Id == project.Id).Include(x => x.Comments).Include(x => x.Business).FirstOrDefault();
+            var hej = _appDbContext.Projects.Where((x) => x.Id == project.Id).Include(x => x.Business).FirstOrDefault();
             if (hej!=null)
             {
                 hej = project;
@@ -111,16 +111,67 @@ namespace IAT2022.Repositories
             _appDbContext.Projects.Remove(project);
             _appDbContext.SaveChanges();
         }
+        #region SearchMethods
         public async Task<List<ProjectPoco>> SearchProjects(string input)
         {
-            var result = _appDbContext.Projects.Where(x => x.ProjectName == input).Include(x => x.Customer).Include(x => x.Product).Include(x=>x.IPR).ToList();
-            result = _appDbContext.Projects.Where(x=>x.ProjectName==input).Include(x=>x.Business).Include(x=>x.Team).Include(x=>x.Finance).ToList();
+            var result = _appDbContext.Projects.Where(x => x.ProjectName.Contains(input)).Include(x => x.Customer).Include(x => x.Product).Include(x=>x.IPR).ToList();
+            result = _appDbContext.Projects.Where(x=>x.ProjectName.Contains(input)).Include(x=>x.Business).Include(x=>x.Team).Include(x=>x.Finance).ToList();
             if (result.Any())
             {
                 result = result.OrderByDescending(x => x.Created).ToList();
             }
             return result;
         }
+        public async Task<List<ProjectPoco>> SearchByTags(List<TagPoco> projectTags)
+        {
+            
+            var list = new List<ProjectPoco>();
+            var tags = await GetTags();
+            for (int i = 0; i < tags.Count; i++)
+            {
+                if (projectTags[i].Description == tags[i].Description)
+                {
+                    projectTags[i].Id = tags[i].Id;
+                }
+            }
+            foreach (var tag in projectTags)
+            {
+                var result = _appDbContext.Projects.Include(x => x.Tags).Where(x => x.Tags.Contains(tag)).ToList();
+                if (result != null)
+                {
+                    foreach (var item in result)
+                    {
+                        if (!list.Contains(item))
+                        {
+                            list.Add(item);
+
+                        }
+                    }
+                }
+            }
+            list = list.OrderByDescending(x => x.Created).ToList();
+            return list;
+        }
+        #endregion
+        #region Converters
+        public async Task<List<TagPoco>> ConvertTags(List<bool> tagsBool)
+        {
+            List<TagPoco> projectTagsPocoList = new();
+            var tags = await GetTags();
+            for (int i = 0; i < tagsBool.Count; i++)
+            {
+                if (tagsBool[i])
+                {
+                    TagPoco tag = new()
+                    {
+                        Description = tags[i].Description
+                    };
+                    projectTagsPocoList.Add(tag);
+                }
+            }
+            return projectTagsPocoList;
+        }
+        #endregion
         #region Question Updaters
         public async Task<CustomerQuestionsPoco> UpdateCustomerQuestion(CustomerQuestionsPoco question)
         {

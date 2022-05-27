@@ -562,7 +562,16 @@ button:active {
     margin-left:45%;
     margin-top:15%;
 }
+.searchDiv {
+    display: none;
+}
 
+#tagSearchDiv {
+    display: none;
+}
+#adminDiv{
+    margin-right:-10%;
+}
 
 @media screen and (max-width: 1352px) {
     .slideshow-container {

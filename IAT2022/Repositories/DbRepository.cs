@@ -126,17 +126,9 @@ namespace IAT2022.Repositories
         {
             
             var list = new List<ProjectPoco>();
-            var tags = await GetTags();
-            for (int i = 0; i < tags.Count; i++)
-            {
-                if (projectTags[i].Description == tags[i].Description)
-                {
-                    projectTags[i].Id = tags[i].Id;
-                }
-            }
             foreach (var tag in projectTags)
             {
-                var result = _appDbContext.Projects.Include(x => x.Tags).Where(x => x.Tags.Contains(tag)).ToList();
+                var result = _appDbContext.Projects.Include(x => x.Tags).Where(x=>x.Tags.Any(x=>x.Description==tag.Description)).ToList();
                 if (result != null)
                 {
                     foreach (var item in result)

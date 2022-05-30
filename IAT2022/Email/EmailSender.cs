@@ -31,12 +31,12 @@ namespace IAT2022.Email
             {
                 var apiKey = _configuration["MailApiKey"];
                 var client = new SendGridClient(apiKey);
-                var from = new EmailAddress("keeew1992@gmail.com");
+                var from = new EmailAddress("innovationatool@gmail.com");
                 var subject = selctedSubject;
                 var to = new EmailAddress(email);
                 var plainTextContent = token;
                 
-                var htmlContent = $"<strong>{token}</strong>";
+                var htmlContent = $"<strong>{token} <br /> Svara inte på detta mail. Ingen övervakar detta konto och alla svar raderas för att inte spara personlig information (GDPR)</strong>";
                 var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
                 var response = await client.SendEmailAsync(msg);
             }

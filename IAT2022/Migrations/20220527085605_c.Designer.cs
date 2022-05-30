@@ -4,6 +4,7 @@ using IAT2022.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IAT2022.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20220527085605_c")]
+    partial class c
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -101,7 +103,12 @@ namespace IAT2022.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("ProjectPocoId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("ProjectPocoId");
 
                     b.ToTable("ProjectTags");
                 });
@@ -265,27 +272,6 @@ namespace IAT2022.Migrations
                     b.ToTable("ProductPoco");
                 });
 
-            modelBuilder.Entity("IAT2022.Data.Poco.SubCategoryPoco.TagPoco", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
-
-                    b.Property<string>("Description")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<int?>("ProjectPocoId")
-                        .HasColumnType("int");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ProjectPocoId");
-
-                    b.ToTable("TagPoco");
-                });
-
             modelBuilder.Entity("IAT2022.Data.Poco.SubCategoryPoco.TeamPoco", b =>
                 {
                     b.Property<int>("Id")
@@ -321,6 +307,13 @@ namespace IAT2022.Migrations
                         .HasForeignKey("ProjectPocoId");
                 });
 
+            modelBuilder.Entity("IAT2022.Data.Poco.ProjectTagsPoco", b =>
+                {
+                    b.HasOne("IAT2022.Data.Poco.ProjectPoco", null)
+                        .WithMany("Tags")
+                        .HasForeignKey("ProjectPocoId");
+                });
+
             modelBuilder.Entity("IAT2022.Data.Poco.SubCategoryPoco.FinancePoco", b =>
                 {
                     b.HasOne("IAT2022.Data.Poco.ProjectPoco", null)
@@ -339,13 +332,6 @@ namespace IAT2022.Migrations
                 {
                     b.HasOne("IAT2022.Data.Poco.ProjectPoco", null)
                         .WithMany("Product")
-                        .HasForeignKey("ProjectPocoId");
-                });
-
-            modelBuilder.Entity("IAT2022.Data.Poco.SubCategoryPoco.TagPoco", b =>
-                {
-                    b.HasOne("IAT2022.Data.Poco.ProjectPoco", null)
-                        .WithMany("Tags")
                         .HasForeignKey("ProjectPocoId");
                 });
 

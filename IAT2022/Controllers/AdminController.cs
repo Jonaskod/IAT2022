@@ -32,6 +32,13 @@ namespace IAT2022.Controllers
 
 
         }
+        public async Task<IActionResult> SearchTags(AdminViewModel model)
+        {
+            model.MyTags = await _dbRepository.ConvertTags(model.TagsBool);
+            var result = await _dbRepository.SearchByTags(model.MyTags);
+            model.SearchResults = result;
+            return View("SearchProjects", model);
+        }
         #region SelectQuestionMethods
         public async Task<IActionResult> SelectCustomerQuestion(int id)
         {

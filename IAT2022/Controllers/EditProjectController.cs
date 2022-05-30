@@ -28,29 +28,16 @@ namespace IAT2022.Controllers
         {
             var data = TempData["data"];
             var project = await _dbRepository.GetSingleProject(data.ToString());
-            project.Tags = await Convert(model.TagsBool);
+            project.Tags = await _dbRepository.ConvertTags(model.TagsBool);
             project.ProjectName = model.Name;
-            project.Description = model.Description;    
-            project.ProjectType = model.TypeOfProject;
+            project.Description = model.Description;
 
             _dbRepository.UpdateProject(project);
             return RedirectToAction("Index", "Home");   
 
 
         }
-        public async Task<List<ProjectTagsPoco>> Convert(List<bool> tagsBool)
-        {
-            List<ProjectTagsPoco> projectTagsPocoList = new();
-            var tags = await _dbRepository.GetTags();
-            for (int i = 0; i < tagsBool.Count; i++)
-            {
-                if (tagsBool[i])
-                {
-                    projectTagsPocoList.Add(tags[i]);
-                }
-            }
-            return projectTagsPocoList;
-        }
+        
 
     }
 }

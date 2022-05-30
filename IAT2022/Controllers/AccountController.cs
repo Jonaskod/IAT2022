@@ -1,8 +1,11 @@
 ﻿using IAT2022.Email;
+using IAT2022.Models;
 using IAT2022.ViewModels;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
+using System.Diagnostics;
+using System.Globalization;
 
 namespace IAT2022.Controllers
 {
@@ -69,7 +72,7 @@ namespace IAT2022.Controllers
                     
                     return RedirectToAction("Index", "Home");
                 }
-                ModelState.AddModelError(string.Empty, "Wrong password or accountname");
+                ModelState.AddModelError(string.Empty, "Fel e-postadress eller lösenord");
             }
             return View(model);
         }
@@ -120,9 +123,9 @@ namespace IAT2022.Controllers
                 {
                     ModelState.AddModelError("", error.Description);
                 }
-                ModelState.AddModelError("", "Inloggningen misslyckades");
+                ModelState.AddModelError("", "Skapande av kontot misslyckades");
             }
-
+            
             return View(registerViewModel); // Returns the view with a viewmodel.
         }
         public async Task<IActionResult> ConfirmEmail(string token, string email)
@@ -132,18 +135,36 @@ namespace IAT2022.Controllers
                 return View("Error");
 
             var result = await _userManager.ConfirmEmailAsync(user, token);
+            
             return RedirectToAction("Login", "Account");
             
         }
         [HttpPost]
         public async Task<IActionResult> SendResetMail(string Email)
         {
-            var user = await _userManager.FindByEmailAsync(Email);
-            var token = await _userManager.GeneratePasswordResetTokenAsync(user);
-            var clink = Url.Action("PasswordReset", "Account", new { token, email = user.Email }, Request.Scheme).ToString();
-            EmailSender emailSender = new EmailSender(user.Email, clink, "Återställ Lösenord", _configuration);
+            if (Email != null)
+            {
+                var user = await _userManager.FindByEmailAsync(Email);
+                if (user != null)
+                {
+                var token = await _userManager.GeneratePasswordResetTokenAsync(user);
+                var clink = Url.Action("PasswordReset", "Account", new { token, email = user.Email }, Request.Scheme).ToString();
+                EmailSender emailSender = new EmailSender(user.Email, clink, "Återställ Lösenord", _configuration);
+                return View();
 
-            return View();
+                }
+                else
+                {
+                    
+                    ModelState.AddModelError("Email", "E-postadressen hittades inte");
+                    return View("ResetMyPassword");
+                }
+
+            }
+            ModelState.AddModelError("Email", "Vänligen fyll i en e-postadress");
+            return View("ResetMyPassword");
+
+
         }
         public async Task<IActionResult> PasswordReset(string token, string Email)
         {

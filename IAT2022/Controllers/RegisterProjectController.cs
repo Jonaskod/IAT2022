@@ -1,5 +1,6 @@
 ﻿using IAT2022.Data;
 using IAT2022.Data.Poco;
+using IAT2022.Data.Poco.SubCategoryPoco;
 using IAT2022.Repositories;
 using IAT2022.ViewModels;
 using Microsoft.AspNetCore.Mvc;
@@ -33,23 +34,12 @@ namespace IAT2022.Controllers
            
                 ProjectPoco projectPoco = new();
             
-                projectPoco.Tags = await Convert(model.TagsBool);
-                projectPoco.Comments = new();
+                projectPoco.Tags = await _dbRepository.ConvertTags(model.TagsBool);
                 projectPoco.ProjectName = model.Name;
                 projectPoco.Description = model.Description;
-                projectPoco.Owner=User.Identity.Name;
-                projectPoco.ProjectType = model.TypeOfProject;
+                projectPoco.Owner = User.Identity.Name;
                 projectPoco.Created = DateTime.Now.ToShortDateString();
            
-
-
-
-                if (model.Comment != null)
-                {
-                    CommentPoco commentPoco = new();
-                    commentPoco.Comment = model.Comment;
-                    projectPoco.Comments.Add(commentPoco);
-                }
                 _dbRepository.RegisterProject(projectPoco);
                 TempData["data"] = projectPoco.Id;//Skickar med tempdata mellan controllers
                 model.ProjectPoco = projectPoco;
@@ -60,21 +50,9 @@ namespace IAT2022.Controllers
             RegisterProjectViewModel registerProjectViewModel = new(_dbRepository);
             return View(registerProjectViewModel);
         }
-        public async Task<List<ProjectTagsPoco>> Convert(List<bool> tagsBool)
-        {
-            List<ProjectTagsPoco> projectTagsPocoList = new();
-            var tags = await _dbRepository.GetTags();
-            for (int i = 0; i < tagsBool.Count; i++)
-            {
-                if (tagsBool[i])
-                {
-                    projectTagsPocoList.Add(tags[i]);
-                }
-            }
-            return projectTagsPocoList;
-        }
+        
 
-        public async Task<IActionResult> ChoosePathCustomer(string input)
+        public async Task<IActionResult> ChoosePathCustomer()
         {
             
             var data = TempData["data"];
@@ -82,7 +60,6 @@ namespace IAT2022.Controllers
             {
                 RegisterProjectViewModel model = new();
                 model.ProjectPoco = await _dbRepository.GetSingleProject(data.ToString());
-                model.ProjectPoco.CustomerComment = input;
                 _dbRepository.UpdateProject(model.ProjectPoco);
                 TempData["data"] = model.ProjectPoco.Id;
 
@@ -91,7 +68,7 @@ namespace IAT2022.Controllers
             }
             return View(); 
         }
-        public async Task<IActionResult> ChoosePathBusiness(string input)
+        public async Task<IActionResult> ChoosePathBusiness()
         {
 
             var data = TempData["data"];
@@ -99,7 +76,6 @@ namespace IAT2022.Controllers
             {
                 RegisterProjectViewModel model = new();
                 model.ProjectPoco = await _dbRepository.GetSingleProject(data.ToString());
-                model.ProjectPoco.BusinessComment = input;
                 _dbRepository.UpdateProject(model.ProjectPoco);
                 TempData["data"] = model.ProjectPoco.Id;
 
@@ -108,7 +84,7 @@ namespace IAT2022.Controllers
             }
             return View();
         }
-        public async Task<IActionResult> ChoosePathFinance(string input)
+        public async Task<IActionResult> ChoosePathFinance()
         {
 
             var data = TempData["data"];
@@ -116,7 +92,6 @@ namespace IAT2022.Controllers
             {
                 RegisterProjectViewModel model = new();
                 model.ProjectPoco = await _dbRepository.GetSingleProject(data.ToString());
-                model.ProjectPoco.FinanceComment = input;
                 _dbRepository.UpdateProject(model.ProjectPoco);
                 TempData["data"] = model.ProjectPoco.Id;
 
@@ -125,7 +100,7 @@ namespace IAT2022.Controllers
             }
             return View();
         }
-        public async Task<IActionResult> ChoosePathIPR(string input)
+        public async Task<IActionResult> ChoosePathIPR()
         {
 
             var data = TempData["data"];
@@ -133,7 +108,6 @@ namespace IAT2022.Controllers
             {
                 RegisterProjectViewModel model = new();
                 model.ProjectPoco = await _dbRepository.GetSingleProject(data.ToString());
-                model.ProjectPoco.IPRComment = input;
                 _dbRepository.UpdateProject(model.ProjectPoco);
                 TempData["data"] = model.ProjectPoco.Id;
 
@@ -142,7 +116,7 @@ namespace IAT2022.Controllers
             }
             return View();
         }
-        public async Task<IActionResult> ChoosePathProduct(string input)
+        public async Task<IActionResult> ChoosePathProduct()
         {
 
             var data = TempData["data"];
@@ -150,7 +124,6 @@ namespace IAT2022.Controllers
             {
                 RegisterProjectViewModel model = new();
                 model.ProjectPoco = await _dbRepository.GetSingleProject(data.ToString());
-                model.ProjectPoco.ProductComment = input;
                 _dbRepository.UpdateProject(model.ProjectPoco);
                 TempData["data"] = model.ProjectPoco.Id;
 
@@ -159,7 +132,7 @@ namespace IAT2022.Controllers
             }
             return View();
         }
-        public async Task<IActionResult> ChoosePathTeam(string input)
+        public async Task<IActionResult> ChoosePathTeam()
         {
 
             var data = TempData["data"];
@@ -167,7 +140,6 @@ namespace IAT2022.Controllers
             {
                 RegisterProjectViewModel model = new();
                 model.ProjectPoco = await _dbRepository.GetSingleProject(data.ToString());
-                model.ProjectPoco.TeamComment = input;
                 _dbRepository.UpdateProject(model.ProjectPoco);
                 TempData["data"] = model.ProjectPoco.Id;
 

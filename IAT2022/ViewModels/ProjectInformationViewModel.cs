@@ -13,7 +13,7 @@ namespace IAT2022.ViewModels
             "#6D1DC6",
             "#9B04DB",
             "#E200A3",
-            "#FF8103",
+            "#fdcbcb",
             "#FBDD49",
             "#FEFB01",
             "#CEFB02",
@@ -56,7 +56,7 @@ namespace IAT2022.ViewModels
         public string GetNextCustomerStep(ProjectPoco project)
         {
             int highestLevel = 0;
-            int nextStep = highestLevel + 1;
+            
             for (int i = 0; i < project.Customer.Count; i++)
             {
                 if (project.Customer[i].Result)
@@ -65,30 +65,38 @@ namespace IAT2022.ViewModels
                 }
 
             }
-            
+            int nextStep = highestLevel + 1;
+            if (nextStep >= project.Customer.Count)
+            {
+                nextStep = project.Customer.Count - 1;
+            }
             return CustomerQuestions[nextStep].QuestionDescription;
             
         }
         public string GetNextProductStep(ProjectPoco project)
         {
             int highestLevel = 0;
-            int nextStep = highestLevel + 1;
+            
             for (int i = 0; i < project.Product.Count; i++)
             {
-                if (project.Customer[i].Result)
+                if (project.Product[i].Result)
                 {
                     highestLevel = i;
                 }
 
             }
-
+            int nextStep = highestLevel + 1;
+            if(nextStep > project.Product.Count)
+            {
+                nextStep = project.Product.Count -1;
+            }
             return ProductQuestions[nextStep].QuestionDescription;
 
         }
         public string GetNextIprStep(ProjectPoco project)
         {
             int highestLevel = 0;
-            int nextStep = highestLevel + 1;
+            
             for (int i = 0; i < project.IPR.Count; i++)
             {
                 if (project.IPR[i].Result)
@@ -97,14 +105,18 @@ namespace IAT2022.ViewModels
                 }
 
             }
-
+            int nextStep = highestLevel + 1;
+            if (nextStep > project.IPR.Count)
+            {
+                nextStep = project.IPR.Count -1 ;
+            }
             return IPRQuestions[nextStep].QuestionDescription;
 
         }
         public string GetNextBusinessStep(ProjectPoco project)
         {
             int highestLevel = 0;
-            int nextStep = highestLevel + 1;
+            
             for (int i = 0; i < project.Business.Count; i++)
             {
                 if (project.Business[i].Result)
@@ -113,30 +125,38 @@ namespace IAT2022.ViewModels
                 }
 
             }
-
+            int nextStep = highestLevel + 1;
+            if (nextStep > project.Business.Count)
+            {
+                nextStep = project.Business.Count-1;
+            }
             return BusinessQuestions[nextStep].QuestionDescription;
 
         }
         public string GetNextTeamStep(ProjectPoco project)
         {
             int highestLevel = 0;
-            int nextStep = highestLevel + 1;
+            
             for (int i = 0; i < project.Team.Count; i++)
             {
-                if (project.Customer[i].Result)
+                if (project.Team[i].Result)
                 {
                     highestLevel = i;
                 }
 
             }
-
+            int nextStep = highestLevel + 1;
+            if (nextStep > project.Team.Count)
+            {
+                nextStep = project.Team.Count-1;
+            }
             return TeamQuestions[nextStep].QuestionDescription;
 
         }
         public string GetNextFinanceStep(ProjectPoco project)
         {
             int highestLevel = 0;
-            int nextStep = highestLevel + 1;
+            
             for (int i = 0; i < project.Finance.Count; i++)
             {
                 if (project.Finance[i].Result)
@@ -145,7 +165,11 @@ namespace IAT2022.ViewModels
                 }
 
             }
-
+            int nextStep = highestLevel + 1;
+            if (nextStep > project.Finance.Count)
+            {
+                nextStep = project.Finance.Count-1;
+            }
             return FinanceQuestions[nextStep].QuestionDescription;
 
         }

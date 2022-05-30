@@ -39,3 +39,22 @@ function closeAllCategories() {
     document.getElementById("BusinessQuestionChanger").style.display = "none";
     document.getElementById("FinanceQuestionChanger").style.display = "none";
 }
+function displaySearch() {
+
+    let checkBoxName = document.getElementById("checkBoxName");
+    let checkBoxTag = document.getElementById("checkBoxTag");
+
+
+    if (checkBoxName.checked == true) {
+        let searchNameDiv = document.getElementById("searchNameDiv").style.display = "block";
+    }
+    else {
+        let searchNameDiv = document.getElementById("searchNameDiv").style.display = "none";
+    }
+    if (checkBoxTag.checked == true) {
+        let tagSearchDiv = document.getElementById("tagSearchDiv").style.display = "block";
+    }
+    else {
+        let tagSearchDiv = document.getElementById("tagSearchDiv").style.display = "none";
+    }
+}

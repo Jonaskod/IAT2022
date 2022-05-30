@@ -4,7 +4,7 @@ namespace IAT2022.ViewModels
 {
     public class PasswordResetViewModel
     {
-        [Required]
+        [Required(ErrorMessage ="Epost adressen hittades inte")]
         [EmailAddress]
         public string Email { get; set; }
 
@@ -19,6 +19,8 @@ namespace IAT2022.ViewModels
         [Compare("Password", ErrorMessage = "Passwords didnt match!")]
         public string ConfirmPassword { get; set; }
         public string? Token { get; set; }
-       
+        public string? Titel { get; set; }
+        public string? Description { get; set; }
+
     }
 }

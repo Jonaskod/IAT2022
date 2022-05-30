@@ -1,5 +1,6 @@
 ﻿using IAT2022.Data;
 using IAT2022.Data.Poco;
+using IAT2022.Data.Poco.AboutUsInfoPoco;
 using IAT2022.Data.Poco.QuestionsPoco;
 using IAT2022.Data.Poco.SubCategoryPoco;
 using Microsoft.EntityFrameworkCore;
@@ -165,6 +166,13 @@ namespace IAT2022.Repositories
         }
         #endregion
         #region Question Updaters
+        public async Task<AboutUsInfoPoco> UpdateAboutUsInformation(AboutUsInfoPoco question)
+        {
+            _appDbContext.Attach(question);
+            _appDbContext.Entry(question).State = EntityState.Modified;
+            _appDbContext.SaveChanges();
+            return question;
+        }
         public async Task<CustomerQuestionsPoco> UpdateCustomerQuestion(CustomerQuestionsPoco question)
         {
            
@@ -260,6 +268,19 @@ namespace IAT2022.Repositories
 
             }
 
+        }
+        public void SeedAboutUsInformation()
+        {
+            if (!_appDbContext.AboutUsInformation.Any())
+            {
+                AboutUsInfoPoco infoPoco = new()
+                {
+                    Title = "Working Title",
+                    Paragraph = "Working Paragraph"
+                };
+                _appDbContext.AboutUsInformation.Add(infoPoco);
+                _appDbContext.SaveChanges();
+            }
         }
         public void SeedProductQuestions()
         {
@@ -568,6 +589,11 @@ namespace IAT2022.Repositories
         }
         #endregion
         #region Get Methods
+        public async Task<AboutUsInfoPoco> GetAboutUsInformation()
+        {
+            var info = _appDbContext.AboutUsInformation.FirstOrDefault();
+            return info;
+        }
         public async Task<List<ProjectTagsPoco>> GetTags()
         {
             var tags = _appDbContext.ProjectTags.ToList();

@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IAT2022.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220530085026_adasdff")]
-    partial class adasdff
+    [Migration("20220530121848_a")]
+    partial class a
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -20,6 +20,23 @@ namespace IAT2022.Migrations
             modelBuilder
                 .HasAnnotation("ProductVersion", "6.0.3")
                 .HasAnnotation("Relational:MaxIdentifierLength", 64);
+
+            modelBuilder.Entity("IAT2022.Data.Poco.AboutUsInfoPoco.AboutUsInfoPoco", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Paragraph")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("AboutUsInformation");
+                });
 
             modelBuilder.Entity("IAT2022.Data.Poco.BusinessPoco", b =>
                 {

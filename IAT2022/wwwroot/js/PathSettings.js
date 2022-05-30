@@ -31,6 +31,9 @@ function showBusiness() {
 function showFinance() {
     document.getElementById("FinanceQuestionChanger").style.display = "block";
 }
+function showAboutUsInfo() {
+    document.getElementById("AboutUsTextChanger").style.display = "block";
+}
 function closeAllCategories() {
     document.getElementById("CustomerQuestionChanger").style.display = "none";
     document.getElementById("ProductQuestionChanger").style.display = "none";
@@ -38,6 +41,7 @@ function closeAllCategories() {
     document.getElementById("TeamQuestionChanger").style.display = "none";
     document.getElementById("BusinessQuestionChanger").style.display = "none";
     document.getElementById("FinanceQuestionChanger").style.display = "none";
+    document.getElementById("AboutUsTextChanger").style.display = "none";
 }
 function displaySearch() {
 

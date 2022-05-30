@@ -17,6 +17,7 @@ namespace IAT2022.Controllers
         {
             _logger = logger;
             _dbRepository = dbRepository;
+            #region Seed methods that seeds if DB is empty
             _dbRepository.SeedCustomerQuestions();
             _dbRepository.SeedProductQuestions();
             _dbRepository.SeedBuisnessQuestions();
@@ -24,8 +25,10 @@ namespace IAT2022.Controllers
             _dbRepository.SeedTeamQuestions();
             _dbRepository.SeedIprQuestions();
             _dbRepository.SeedTags();
+            _dbRepository.SeedAboutUsInformation();
+            #endregion
         }
- 
+
         public async Task<IActionResult> Index()
         {
             HomeViewModel home = new();
@@ -36,21 +39,16 @@ namespace IAT2022.Controllers
         }
 
 
-        
-        public async Task<IActionResult> Privacy()
-        {
-            return View();
-        }
-
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
         [AllowAnonymous]
-        public IActionResult AboutUs()
+        public async Task<IActionResult> AboutUs()
         {
-            return View();
+            var model = await _dbRepository.GetAboutUsInformation();
+            return View(model);
         }
         public IActionResult DeleteProject(string id)
         {

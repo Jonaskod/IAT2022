@@ -1,4 +1,5 @@
-﻿using IAT2022.Data.Poco.QuestionsPoco;
+﻿using IAT2022.Data.Poco.AboutUsInfoPoco;
+using IAT2022.Data.Poco.QuestionsPoco;
 using IAT2022.Repositories;
 using IAT2022.ViewModels;
 using Microsoft.AspNetCore.Authorization;
@@ -89,6 +90,13 @@ namespace IAT2022.Controllers
             ChangeQuestion.FinanceQuestion = selectedF;
             return View("ChangeQuestion", ChangeQuestion);
         }
+        public async Task<IActionResult> SelectAboutUsInfo(int id)
+        {
+            var flist = await _dbRepository.GetAboutUsInformation();
+            ChangeQuestionViewModel changeQuestion = new();
+            changeQuestion.AboutUsInfo = flist;
+            return View("ChangeQuestion", changeQuestion);
+        }
         #endregion
         [HttpPost]
         public async Task<IActionResult> UpdateQuestion(ChangeQuestionViewModel model, int id)
@@ -136,6 +144,14 @@ namespace IAT2022.Controllers
                     poco = model.FinanceQuestion;
                     poco.Id = id;
                     await _dbRepository.UpdateFinanceQuestion(poco);
+                }
+                else if(model.AboutUsInfo!= null)
+                {
+                    AboutUsInfoPoco poco = new();
+                    poco.Id = id;
+                    poco.Title = model.AboutUsInfo.Title;
+                    poco.Paragraph = model.AboutUsInfo.Paragraph;
+                    await _dbRepository.UpdateAboutUsInformation(poco);
                 }
             }
 

@@ -40,86 +40,94 @@
     <a onclick="showTeam()">Team</a>
     <a onclick="showBusiness()">Marknad</a>
     <a onclick="showFinance()">Finansiering</a>
+    <a onclick="showAboutUsInfo()">Om Sidan</a>
   </div>
 </div>
 <div> <button onclick="closeAllCategories()"><i class="fa-solid fa-rectangle-xmark">Rensa</i></button></div>
 <div class="adminContent">
-<div id="CustomerQuestionChanger">
-    @if (Model.CustomerQuestions!=null)
-    {
-        @foreach(var q in Model.CustomerQuestions)
+    <div id="CustomerQuestionChanger">
+        @if (Model.CustomerQuestions!=null)
         {
-            <a asp-action="SelectCustomerQuestion" asp-controller="Admin" asp-route-id="@q.Id"><div class="singleQuestion">
-                <p>@q.Id.ToString()</p>
-                <p>@q.QuestionDescription</p>
-            </div></a>
+            @foreach(var q in Model.CustomerQuestions)
+            {
+                <a asp-action="SelectCustomerQuestion" asp-controller="Admin" asp-route-id="@q.Id"><div class="singleQuestion">
+                    <p>@q.Id.ToString()</p>
+                    <p>@q.QuestionDescription</p>
+                </div></a>
+            }
         }
-    }
     
-</div>
-<div id="ProductQuestionChanger">
-    @if (Model.ProductQuestions!=null)
-    {
-        @foreach(var q in Model.ProductQuestions)
+    </div>
+    <div id="ProductQuestionChanger">
+        @if (Model.ProductQuestions!=null)
         {
-            <a asp-action="SelectProductQuestion" asp-controller="Admin" asp-route-id="@q.Id"><div class="singleQuestion">
-                <p>@q.Id.ToString()</p>
-                <p>@q.QuestionDescription</p>
-            </div></a>
+            @foreach(var q in Model.ProductQuestions)
+            {
+                <a asp-action="SelectProductQuestion" asp-controller="Admin" asp-route-id="@q.Id"><div class="singleQuestion">
+                    <p>@q.Id.ToString()</p>
+                    <p>@q.QuestionDescription</p>
+                </div></a>
+            }
         }
-    }
     
-</div>
-<div id="IPRQuestionChanger">
-    @if (Model.IprQuestions!=null)
-    {
-        @foreach(var q in Model.IprQuestions)
+    </div>
+    <div id="IPRQuestionChanger">
+        @if (Model.IprQuestions!=null)
         {
-            <a asp-action="SelectIprQuestion" asp-controller="Admin" asp-route-id="@q.Id"><div class="singleQuestion">
-                <p>@q.Id.ToString()</p>
-                <p>@q.QuestionDescription</p>
-            </div></a>
+            @foreach(var q in Model.IprQuestions)
+            {
+                <a asp-action="SelectIprQuestion" asp-controller="Admin" asp-route-id="@q.Id"><div class="singleQuestion">
+                    <p>@q.Id.ToString()</p>
+                    <p>@q.QuestionDescription</p>
+                </div></a>
+            }
         }
-    }
     
-</div>
-<div id="TeamQuestionChanger">
-    @if (Model.TeamQuestions!=null)
-    {
-        @foreach(var q in Model.TeamQuestions)
+    </div>
+    <div id="TeamQuestionChanger">
+        @if (Model.TeamQuestions!=null)
         {
-            <a asp-action="SelectTeamQuestion" asp-controller="Admin" asp-route-id="@q.Id"><div class="singleQuestion">
-                <p>@q.Id.ToString()</p>
-                <p>@q.QuestionDescription</p>
-            </div></a>
+            @foreach(var q in Model.TeamQuestions)
+            {
+                <a asp-action="SelectTeamQuestion" asp-controller="Admin" asp-route-id="@q.Id"><div class="singleQuestion">
+                    <p>@q.Id.ToString()</p>
+                    <p>@q.QuestionDescription</p>
+                </div></a>
+            }
         }
-    }
     
-</div>
-<div id="BusinessQuestionChanger">
-    @if (Model.BusinessQuestions!=null)
-    {
-        @foreach(var q in Model.BusinessQuestions)
+    </div>
+    <div id="BusinessQuestionChanger">
+        @if (Model.BusinessQuestions!=null)
         {
-            <a asp-action="SelectBusinessQuestion" asp-controller="Admin" asp-route-id="@q.Id"><div class="singleQuestion">
-                <p>@q.Id.ToString()</p>
-                <p>@q.QuestionDescription</p>
-            </div></a>
+            @foreach(var q in Model.BusinessQuestions)
+            {
+                <a asp-action="SelectBusinessQuestion" asp-controller="Admin" asp-route-id="@q.Id"><div class="singleQuestion">
+                    <p>@q.Id.ToString()</p>
+                    <p>@q.QuestionDescription</p>
+                </div></a>
+            }
         }
-    }
     
-</div>
-<div id="FinanceQuestionChanger">
-    @if (Model.FinanceQuestions!=null)
-    {
-        @foreach(var q in Model.FinanceQuestions)
+    </div>
+    <div id="FinanceQuestionChanger">
+        @if (Model.FinanceQuestions!=null)
         {
-            <a asp-action="SelectFinanceQuestion" asp-controller="Admin" asp-route-id="@q.Id"><div class="singleQuestion">
-                <p>@q.Id.ToString()</p>
-                <p>@q.QuestionDescription</p>
-            </div></a>
+            @foreach(var q in Model.FinanceQuestions)
+            {
+                <a asp-action="SelectFinanceQuestion" asp-controller="Admin" asp-route-id="@q.Id"><div class="singleQuestion">
+                    <p>@q.Id.ToString()</p>
+                    <p>@q.QuestionDescription</p>
+                </div></a>
+            }
         }
-    }
     
-</div>
+    </div>
+    <div id="AboutUsTextChanger" class="singleQuestion">
+        <a asp-controller="Admin" asp-action="SelectAboutUsInfo" asp-route-id="@Model.AboutUsInfo.Id">
+            <p>@Model.AboutUsInfo.Id.ToString()</p>
+            <p>@Model.AboutUsInfo.Title</p>
+            <p>@Model.AboutUsInfo.Paragraph</p>
+        </a>
+    </div>
 </div>

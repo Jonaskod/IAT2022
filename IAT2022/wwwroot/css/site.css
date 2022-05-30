@@ -572,6 +572,9 @@ button:active {
 #adminDiv{
     margin-right:-10%;
 }
+#AboutUsTextChanger{
+   display:none;
+}
 
 @media screen and (max-width: 1352px) {
     .slideshow-container {

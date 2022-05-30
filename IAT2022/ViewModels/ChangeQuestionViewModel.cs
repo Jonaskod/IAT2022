@@ -1,4 +1,5 @@
-﻿using IAT2022.Data.Poco.QuestionsPoco;
+﻿using IAT2022.Data.Poco.AboutUsInfoPoco;
+using IAT2022.Data.Poco.QuestionsPoco;
 using IAT2022.Repositories;
 
 namespace IAT2022.ViewModels
@@ -12,6 +13,7 @@ namespace IAT2022.ViewModels
         public TeamQuestionsPoco? TeamQuestion { get; set; }
         public BusinessQuestionsPoco? BusinessQuestion { get; set; }
         public FinanceQuestionsPoco? FinanceQuestion { get; set; }
+        public AboutUsInfoPoco AboutUsInfo { get; set; }    
 
         
     }

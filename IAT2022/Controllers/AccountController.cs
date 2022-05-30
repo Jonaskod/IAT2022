@@ -61,7 +61,7 @@ namespace IAT2022.Controllers
             return View();
         }
         [HttpPost]
-        [AllowAnonymous]
+        
         public async Task<IActionResult> Login(LoginViewModel model)
         {
             if (ModelState.IsValid)
@@ -77,6 +77,7 @@ namespace IAT2022.Controllers
             return View(model);
         }
 
+        [Authorize]
         public async Task<IActionResult> Logout()
         {
             await _signInManager.SignOutAsync();

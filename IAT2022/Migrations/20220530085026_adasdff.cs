@@ -1,121 +1,150 @@
-﻿using Microsoft.EntityFrameworkCore.Migrations;
+﻿using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
 namespace IAT2022.Migrations
 {
-    public partial class adddfad : Migration
+    public partial class adasdff : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.AlterDatabase()
+                .Annotation("MySql:CharSet", "utf8mb4");
+
             migrationBuilder.CreateTable(
                 name: "BuisnessQuestions",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    QuestionDescription = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    QuestionDescription = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_BuisnessQuestions", x => x.Id);
-                });
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "CustomerQuestions",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    QuestionDescription = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    QuestionDescription = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_CustomerQuestions", x => x.Id);
-                });
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "FinanceQuestions",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    QuestionDescription = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    QuestionDescription = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_FinanceQuestions", x => x.Id);
-                });
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "IPRQuestions",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    QuestionDescription = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    QuestionDescription = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_IPRQuestions", x => x.Id);
-                });
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "ProductQuestions",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    QuestionDescription = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    QuestionDescription = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_ProductQuestions", x => x.Id);
-                });
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "Projects",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    ProjectName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Owner = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CustomerComment = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ProductComment = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    IPRComment = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    TeamComment = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    BusinessComment = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    FinanceComment = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ProjectType = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Created = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    ProjectName = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Description = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Owner = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Created = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Projects", x => x.Id);
-                });
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
+                name: "ProjectTags",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Description = table.Column<string>(type: "longtext", nullable: false)
+                        .Annotation("MySql:CharSet", "utf8mb4")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ProjectTags", x => x.Id);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "TeamQuestions",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    QuestionDescription = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    QuestionDescription = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4")
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_TeamQuestions", x => x.Id);
-                });
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "BusinessPoco",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Result = table.Column<bool>(type: "bit", nullable: false),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Result = table.Column<bool>(type: "tinyint(1)", nullable: false),
                     ProjectPocoId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
@@ -126,34 +155,16 @@ namespace IAT2022.Migrations
                         column: x => x.ProjectPocoId,
                         principalTable: "Projects",
                         principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "CommentPoco",
-                columns: table => new
-                {
-                    Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Comment = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    ProjectPocoId = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CommentPoco", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_CommentPoco_Projects_ProjectPocoId",
-                        column: x => x.ProjectPocoId,
-                        principalTable: "Projects",
-                        principalColumn: "Id");
-                });
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "CustomerValue",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Result = table.Column<bool>(type: "bit", nullable: false),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Result = table.Column<bool>(type: "tinyint(1)", nullable: false),
                     ProjectPocoId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
@@ -164,15 +175,16 @@ namespace IAT2022.Migrations
                         column: x => x.ProjectPocoId,
                         principalTable: "Projects",
                         principalColumn: "Id");
-                });
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "FinancePoco",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Result = table.Column<bool>(type: "bit", nullable: false),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Result = table.Column<bool>(type: "tinyint(1)", nullable: false),
                     ProjectPocoId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
@@ -183,15 +195,16 @@ namespace IAT2022.Migrations
                         column: x => x.ProjectPocoId,
                         principalTable: "Projects",
                         principalColumn: "Id");
-                });
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "IPRPoco",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Result = table.Column<bool>(type: "bit", nullable: false),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Result = table.Column<bool>(type: "tinyint(1)", nullable: false),
                     ProjectPocoId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
@@ -202,15 +215,16 @@ namespace IAT2022.Migrations
                         column: x => x.ProjectPocoId,
                         principalTable: "Projects",
                         principalColumn: "Id");
-                });
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "ProductPoco",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Result = table.Column<bool>(type: "bit", nullable: false),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Result = table.Column<bool>(type: "tinyint(1)", nullable: false),
                     ProjectPocoId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
@@ -221,34 +235,37 @@ namespace IAT2022.Migrations
                         column: x => x.ProjectPocoId,
                         principalTable: "Projects",
                         principalColumn: "Id");
-                });
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
-                name: "ProjectTags",
+                name: "TagPoco",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Description = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Description = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
                     ProjectPocoId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_ProjectTags", x => x.Id);
+                    table.PrimaryKey("PK_TagPoco", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_ProjectTags_Projects_ProjectPocoId",
+                        name: "FK_TagPoco_Projects_ProjectPocoId",
                         column: x => x.ProjectPocoId,
                         principalTable: "Projects",
                         principalColumn: "Id");
-                });
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
                 name: "TeamPoco",
                 columns: table => new
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Result = table.Column<bool>(type: "bit", nullable: false),
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Result = table.Column<bool>(type: "tinyint(1)", nullable: false),
                     ProjectPocoId = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
@@ -259,16 +276,12 @@ namespace IAT2022.Migrations
                         column: x => x.ProjectPocoId,
                         principalTable: "Projects",
                         principalColumn: "Id");
-                });
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateIndex(
                 name: "IX_BusinessPoco_ProjectPocoId",
                 table: "BusinessPoco",
-                column: "ProjectPocoId");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_CommentPoco_ProjectPocoId",
-                table: "CommentPoco",
                 column: "ProjectPocoId");
 
             migrationBuilder.CreateIndex(
@@ -292,8 +305,8 @@ namespace IAT2022.Migrations
                 column: "ProjectPocoId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ProjectTags_ProjectPocoId",
-                table: "ProjectTags",
+                name: "IX_TagPoco_ProjectPocoId",
+                table: "TagPoco",
                 column: "ProjectPocoId");
 
             migrationBuilder.CreateIndex(
@@ -309,9 +322,6 @@ namespace IAT2022.Migrations
 
             migrationBuilder.DropTable(
                 name: "BusinessPoco");
-
-            migrationBuilder.DropTable(
-                name: "CommentPoco");
 
             migrationBuilder.DropTable(
                 name: "CustomerQuestions");
@@ -339,6 +349,9 @@ namespace IAT2022.Migrations
 
             migrationBuilder.DropTable(
                 name: "ProjectTags");
+
+            migrationBuilder.DropTable(
+                name: "TagPoco");
 
             migrationBuilder.DropTable(
                 name: "TeamPoco");

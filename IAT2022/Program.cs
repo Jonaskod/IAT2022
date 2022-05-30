@@ -2,6 +2,8 @@ using IAT2022.Data;
 using IAT2022.Repositories;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Configuration;
+using Pomelo.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -12,12 +14,20 @@ string connectionPostgres = builder.Configuration["ConnectionStrings:Default"];
 string connectionSQLite = builder.Configuration["ConnectionStrings:Develop"];
 string EmailApi = builder.Configuration["MailApiKey"];
 
+//builder.Services.AddDbContext<AppDbContext>(
+//    o => o.UseMySql(builder.Configuration.GetConnectionString("Default"), ServerVersion.AutoDetect("Default")));
+
+
+
+//builder.Services.AddDbContext<LoginDbContext>(
+//    o => o.UseMySql(builder.Configuration.GetConnectionString("Default"), ServerVersion.AutoDetect("Default")));
+
+var connectionString = builder.Configuration.GetConnectionString("Default");
 builder.Services.AddDbContext<AppDbContext>(
-    o => o.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
-    
+    o => o.UseMySql(connectionString, ServerVersion.AutoDetect(connectionPostgres)));
 
 builder.Services.AddDbContext<LoginDbContext>(
-    o => o.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
+    o => o.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 
 builder.Services.AddAuthorization(options =>
 {

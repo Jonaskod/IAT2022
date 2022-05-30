@@ -74,6 +74,23 @@ namespace IAT2022.Migrations
                     b.ToTable("CustomerValue");
                 });
 
+            modelBuilder.Entity("IAT2022.Data.Poco.InformationPoco.HowToRegisterInformationPoco", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<string>("Paragraph")
+                        .HasColumnType("longtext");
+
+                    b.Property<string>("Title")
+                        .HasColumnType("longtext");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("HowToRegister");
+                });
+
             modelBuilder.Entity("IAT2022.Data.Poco.ProjectPoco", b =>
                 {
                     b.Property<int>("Id")

@@ -41,6 +41,7 @@
     <a onclick="showBusiness()">Marknad</a>
     <a onclick="showFinance()">Finansiering</a>
     <a onclick="showAboutUsInfo()">Om Sidan</a>
+    <a onclick="showHowToRegisterInformation()">Hur man registrerar info</a>
   </div>
 </div>
 <div> <button onclick="closeAllCategories()"><i class="fa-solid fa-rectangle-xmark">Rensa</i></button></div>
@@ -128,6 +129,13 @@
             <p>@Model.AboutUsInfo.Id.ToString()</p>
             <p>@Model.AboutUsInfo.Title</p>
             <p>@Model.AboutUsInfo.Paragraph</p>
+        </a>
+    </div>
+    <div id="HowToRegisterInformationChanger" class="singleQuestion">
+        <a asp-controller="Admin" asp-action="SelectHowToRegisterInformation" asp-route-id="@Model.HowToRegister.Id">
+            <p>@Model.HowToRegister.Id.ToString()</p>
+            <p>@Model.HowToRegister.Title</p>
+            <p>@Model.HowToRegister.Paragraph</p>
         </a>
     </div>
 </div>

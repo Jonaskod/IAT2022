@@ -13,6 +13,23 @@ namespace IAT2022.Migrations
                 .Annotation("MySql:CharSet", "utf8mb4");
 
             migrationBuilder.CreateTable(
+                name: "HowToRegister",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
+                    Title = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4"),
+                    Paragraph = table.Column<string>(type: "longtext", nullable: true)
+                        .Annotation("MySql:CharSet", "utf8mb4")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_HowToRegister", x => x.Id);
+                })
+                .Annotation("MySql:CharSet", "utf8mb4");
+
+            migrationBuilder.CreateTable(
                 name: "AboutUsInformation",
                 columns: table => new
                 {
@@ -73,6 +90,8 @@ namespace IAT2022.Migrations
                     table.PrimaryKey("PK_FinanceQuestions", x => x.Id);
                 })
                 .Annotation("MySql:CharSet", "utf8mb4");
+
+            
 
             migrationBuilder.CreateTable(
                 name: "IPRQuestions",
@@ -354,6 +373,9 @@ namespace IAT2022.Migrations
 
             migrationBuilder.DropTable(
                 name: "FinanceQuestions");
+
+            migrationBuilder.DropTable(
+                name: "HowToRegister");
 
             migrationBuilder.DropTable(
                 name: "IPRPoco");

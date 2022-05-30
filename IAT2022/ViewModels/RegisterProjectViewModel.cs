@@ -1,4 +1,5 @@
 ﻿using IAT2022.Data.Poco;
+using IAT2022.Data.Poco.InformationPoco;
 using IAT2022.Repositories;
 using SendGrid.Helpers.Mail;
 using System.ComponentModel.DataAnnotations;
@@ -20,6 +21,7 @@ namespace IAT2022.ViewModels
         public List<ProjectTagsPoco> Tags { get; set; }
         public List<bool> TagsBool { get; set; }
         public ProjectPoco ProjectPoco { get; set; }
+        public HowToRegisterInformationPoco HowToRegister { get; set; }
         
         public bool Visited { get; set; }
         
@@ -27,11 +29,16 @@ namespace IAT2022.ViewModels
         {
             _dbRepository = dbRepository;
             _ = GetAll();
-            
+            GetHowToRegisterInformation();
         }
         public RegisterProjectViewModel()
         {
            
+        }
+        public async Task<HowToRegisterInformationPoco> GetHowToRegisterInformation()
+        {
+            var aids = _dbRepository;
+            return HowToRegister;
         }
         public async Task<List<ProjectTagsPoco>> GetAll()
         {
@@ -39,14 +46,7 @@ namespace IAT2022.ViewModels
             Tags = list;
             return Tags;
         }
-        public bool IsVisited(bool input)
-        {
-            if (input)
-            {
-                return true;
-            }
-            return false;
-        }
+        
         public bool StepOne(ProjectPoco projectPoco)
         {
             var customer = projectPoco.Customer.Where(x => x.Result == true).ToList();
@@ -129,6 +129,7 @@ namespace IAT2022.ViewModels
         }
         public bool InformationPush(ProjectPoco poco)
         {
+            
             if (!CheckIfAnswerd(poco, "Customer") && !CheckIfAnswerd(poco, "Product"))
             {
                 return true;

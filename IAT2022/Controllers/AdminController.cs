@@ -1,4 +1,5 @@
 ﻿using IAT2022.Data.Poco.AboutUsInfoPoco;
+using IAT2022.Data.Poco.InformationPoco;
 using IAT2022.Data.Poco.QuestionsPoco;
 using IAT2022.Repositories;
 using IAT2022.ViewModels;
@@ -97,6 +98,13 @@ namespace IAT2022.Controllers
             changeQuestion.AboutUsInfo = flist;
             return View("ChangeQuestion", changeQuestion);
         }
+        public async Task<IActionResult> SelectHowToRegisterInformation()
+        {
+            var info = await _dbRepository.GetHowToRegisterInformation();
+            ChangeQuestionViewModel model = new();
+            model.HowToRegister = info;
+            return View("ChangeQuestion", model);
+        }
         #endregion
         [HttpPost]
         public async Task<IActionResult> UpdateQuestion(ChangeQuestionViewModel model, int id)
@@ -152,6 +160,14 @@ namespace IAT2022.Controllers
                     poco.Title = model.AboutUsInfo.Title;
                     poco.Paragraph = model.AboutUsInfo.Paragraph;
                     await _dbRepository.UpdateAboutUsInformation(poco);
+                }
+                else if (model.HowToRegister != null)
+                {
+                    HowToRegisterInformationPoco poco = new();
+                    poco.Id = id;
+                    poco.Title = model.HowToRegister.Title;
+                    poco.Paragraph = model.HowToRegister.Paragraph;
+                    await _dbRepository.UpdateHowToRegisterInformation(poco);
                 }
             }
 

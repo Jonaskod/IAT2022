@@ -34,6 +34,9 @@ function showFinance() {
 function showAboutUsInfo() {
     document.getElementById("AboutUsTextChanger").style.display = "block";
 }
+function showHowToRegisterInformation() {
+    document.getElementById("HowToRegisterInformationChanger").style.display = "block";
+}
 function closeAllCategories() {
     document.getElementById("CustomerQuestionChanger").style.display = "none";
     document.getElementById("ProductQuestionChanger").style.display = "none";
@@ -42,6 +45,7 @@ function closeAllCategories() {
     document.getElementById("BusinessQuestionChanger").style.display = "none";
     document.getElementById("FinanceQuestionChanger").style.display = "none";
     document.getElementById("AboutUsTextChanger").style.display = "none";
+    document.getElementById("HowToRegisterInformationChanger").style.display = "none";
 }
 function displaySearch() {
 

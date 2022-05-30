@@ -1,6 +1,7 @@
 ﻿using IAT2022.Data;
 using IAT2022.Data.Poco;
 using IAT2022.Data.Poco.AboutUsInfoPoco;
+using IAT2022.Data.Poco.InformationPoco;
 using IAT2022.Data.Poco.QuestionsPoco;
 using IAT2022.Data.Poco.SubCategoryPoco;
 using Microsoft.EntityFrameworkCore;
@@ -10,6 +11,8 @@ namespace IAT2022.Repositories
     public class DbRepository : IDbRepository
     {
         private readonly AppDbContext _appDbContext;
+
+        public object HowToRegisterInformationPoco { get; private set; }
 
         public DbRepository(AppDbContext appDbContext)
         {
@@ -221,6 +224,13 @@ namespace IAT2022.Repositories
             _appDbContext.SaveChanges();
             return question;
         }
+        public async Task<HowToRegisterInformationPoco> UpdateHowToRegisterInformation(HowToRegisterInformationPoco information)
+        {
+            _appDbContext.Attach(information);
+            _appDbContext.Entry(information).State = EntityState.Modified;
+            _appDbContext.SaveChanges();
+            return information;
+        }
         #endregion
         #region Seed Methods
         public void SeedCustomerQuestions() 
@@ -268,6 +278,19 @@ namespace IAT2022.Repositories
 
             }
 
+        }
+        public void SeedHowToRegisterInformation()
+        {
+            if (!_appDbContext.HowToRegister.Any())
+            {
+                HowToRegisterInformationPoco poco = new()
+                {
+                    Title = "Information gällande registrering av information",
+                    Paragraph= "Du kommer att få börja med att registrera två olika kategorier, det spelar ingen roll vilken kategori du väljer. När dessa två kategorier är besvarade kommer ytterligare två kategorier dyka upp. Det finns totalt sex olika kategorier som behöver besvaras för att kunna utvärdera din innovation. Du registrerar nivåer i kategorierna genom att klicka på de påståenden som stämmer överens med var du befinner dig i din utveckling av innovation. Du kan alltid välja att avbryta och spara din registrering genom att klcika på knappen 'Spara'. När du är klar kommer en sammanställning av dina svar visas och en visuell representation av vilka nivåer du befinner dig på i din utveckling."
+                };
+                _appDbContext.HowToRegister.Add(poco);
+                _appDbContext.SaveChanges();
+            }
         }
         public void SeedAboutUsInformation()
         {
@@ -592,6 +615,11 @@ namespace IAT2022.Repositories
         public async Task<AboutUsInfoPoco> GetAboutUsInformation()
         {
             var info = _appDbContext.AboutUsInformation.FirstOrDefault();
+            return info;
+        }
+        public async Task<HowToRegisterInformationPoco> GetHowToRegisterInformation()
+        {
+            var info = _appDbContext.HowToRegister.FirstOrDefault();
             return info;
         }
         public async Task<List<ProjectTagsPoco>> GetTags()

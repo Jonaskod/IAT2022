@@ -1,5 +1,6 @@
 ﻿using IAT2022.Data.Poco;
 using IAT2022.Data.Poco.AboutUsInfoPoco;
+using IAT2022.Data.Poco.InformationPoco;
 using IAT2022.Data.Poco.QuestionsPoco;
 using IAT2022.Data.Poco.SubCategoryPoco;
 using IAT2022.Repositories;
@@ -21,6 +22,7 @@ namespace IAT2022.ViewModels
         public List<TagPoco> MyTags { get; set; }
         public List<bool> TagsBool { get; set; }
         public AboutUsInfoPoco AboutUsInfo { get; set; }
+        public HowToRegisterInformationPoco HowToRegister { get; set; }
 
         public AdminViewModel(IDbRepository dbRepository)
         {
@@ -46,6 +48,7 @@ namespace IAT2022.ViewModels
             TeamQuestions = await _dbRepository.GetTeamQuestions();
             FinanceQuestions = await _dbRepository.GetFinanceQuestions();
             AboutUsInfo = await _dbRepository.GetAboutUsInformation();
+            HowToRegister = await _dbRepository.GetHowToRegisterInformation();
 
         }
 

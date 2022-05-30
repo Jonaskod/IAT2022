@@ -1,5 +1,6 @@
 ﻿using IAT2022.Data.Poco;
 using IAT2022.Data.Poco.AboutUsInfoPoco;
+using IAT2022.Data.Poco.InformationPoco;
 using IAT2022.Data.Poco.QuestionsPoco;
 using IAT2022.Data.Poco.SubCategoryPoco;
 
@@ -14,6 +15,7 @@ namespace IAT2022.Repositories
         Task<List<BusinessQuestionsPoco>> GetBuisnessQuestions();
         Task<List<CustomerQuestionsPoco>> GetCustomerQuestions();
         Task<List<FinanceQuestionsPoco>> GetFinanceQuestions();
+        Task<HowToRegisterInformationPoco> GetHowToRegisterInformation();
         Task<List<IprQuestionsPoco>> GetIPRQuestions();
         Task<List<ProductQuestionsPoco>> GetProductQuestions();
         Task<ProjectPoco> GetSingleProject(string id);
@@ -26,6 +28,7 @@ namespace IAT2022.Repositories
         void SeedBuisnessQuestions();
         void SeedCustomerQuestions();
         void SeedFinanceQuestions();
+        void SeedHowToRegisterInformation();
         void SeedIprQuestions();
         void SeedProductQuestions();
         void SeedTags();
@@ -34,6 +37,7 @@ namespace IAT2022.Repositories
         Task<BusinessQuestionsPoco> UpdateBusinessQuestion(BusinessQuestionsPoco question);
         Task<CustomerQuestionsPoco> UpdateCustomerQuestion(CustomerQuestionsPoco question);
         Task<FinanceQuestionsPoco> UpdateFinanceQuestion(FinanceQuestionsPoco question);
+        Task<HowToRegisterInformationPoco> UpdateHowToRegisterInformation(HowToRegisterInformationPoco information);
         Task<IprQuestionsPoco> UpdateIprQuestion(IprQuestionsPoco question);
         Task<ProductQuestionsPoco> UpdateProductQuestion(ProductQuestionsPoco question);
         Task<ProjectPoco> UpdateProject(ProjectPoco project);

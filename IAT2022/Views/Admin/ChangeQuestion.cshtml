@@ -38,6 +38,12 @@
             <textarea asp-for="AboutUsInfo.Paragraph">@Model.AboutUsInfo.Paragraph</textarea>
             <button type="submit" value="submit" asp-controller="Admin" asp-action="UpdateQuestion" asp-route-id="@Model.AboutUsInfo.Id" class="btn-save">Spara</button>
         }
+        else if (Model.HowToRegister != null)
+        {
+            <textarea asp-for="HowToRegister.Title">@Model.HowToRegister.Title</textarea>
+            <textarea asp-for="HowToRegister.Paragraph">@Model.HowToRegister.Paragraph</textarea>
+            <button type="submit" value="submit" asp-controller="Admin" asp-action="UpdateQuestion" asp-route-id="@Model.HowToRegister.Id" class="btn-save">Spara</button>
+        }
     </div>
     
 </form>

@@ -1,5 +1,6 @@
 ﻿using IAT2022.Data.Poco;
 using IAT2022.Data.Poco.AboutUsInfoPoco;
+using IAT2022.Data.Poco.InformationPoco;
 using IAT2022.Data.Poco.QuestionsPoco;
 using Microsoft.EntityFrameworkCore;
 
@@ -10,6 +11,7 @@ namespace IAT2022.Data
         public DbSet<ProjectPoco>? Projects { get; set; }
         public DbSet<CustomerPoco> CustomerValue { get; set; }
         public DbSet<AboutUsInfoPoco> AboutUsInformation { get; set; }
+        public DbSet<HowToRegisterInformationPoco> HowToRegister { get; set; }
         public DbSet<CustomerQuestionsPoco> CustomerQuestions  { get; set; }
         public DbSet<ProductQuestionsPoco> ProductQuestions { get; set; }
         public DbSet<BusinessQuestionsPoco> BuisnessQuestions { get; set; }

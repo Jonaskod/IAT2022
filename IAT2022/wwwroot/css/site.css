@@ -575,6 +575,9 @@ button:active {
 #AboutUsTextChanger{
    display:none;
 }
+#HowToRegisterInformationChanger{
+    display:none;
+}
 
 @media screen and (max-width: 1352px) {
     .slideshow-container {

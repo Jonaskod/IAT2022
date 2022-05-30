@@ -107,44 +107,11 @@
         </div>
 </div>
  <div id="helpInformation" style="display:none">
-     <div>
-        <h1>Välkommen! Här kommer information om hur registreringen fungerar!</h1>
-        
         <div>
-            <p>Registreringen fungerar genom att du väljer en kategori av sex möjliga. Du svarar på 10-12 påståenden inom kategorin. Dessa relaterar till en nivå i kategorin för att lättare utvärdera din innovation.</p>
-            <p>Du väljer en kategori genom att klicka på boxen med den kategori du vill registrera.</p>
-            <p>Du går sedan igenom ett antal påståenden inom kategorin och klickar på de påståenden som stämmer för din nuvarande situation.</p>
-            <p>Dessa svar sammanställs sedan till en tabell där du får en visuell representation av hur din innovation har utvecklats i nuläget.</p>
-            <p>Du kan alltid uppdatera dina svar genom att klicka på kategorin inne i projektet från startsidan.</p>
+            <h1>Title</h1>
         </div>
-        </div>
-        <div>
-        <div class="categoryInfo">
-            <div>
-                <h3>Behov</h3>
-                <p>Med behov menas utforskande av det behov som din innovation är tänkt att bemöta.</p>
-            </div>
-        <div>
-            <h3>Lösning</h3>
-            <p>Med lösning menas din innovation och utvecklingen av idén samt realiseringen av en produkt eller tjänst.</p>
-        </div>
-        <div>
-            <h3>Team</h3>
-            <p>Detta är kategorin som undersöker hur ditt sammarbete med andra som kan hjälpa dig att utveckla din innovation</p>
-        </div>
-        <div>
-            <h3>IPR</h3>
-            <p>Här undersöks din utveckling för immateriella rättigheter för innovationen om så skulle vara relevant.</p>
-        </div>
-        <div>
-            <h3>Marknad</h3>
-            <p>Här undersöks vilken potentiell marknad din innovation kan befinnas i samt utvecklingen inom denna.</p>
-        </div>
-        <div>
-            <h3>Finansiering</h3>
-            <p>Här undersöks finansieringen för realiseringen av din innovation.</p>
-        </div>
-        </div>
+        <div class="informationText">
+            <p>Paragraph</p>
         </div>
         <div>
             <button onclick="closeHelp()" class="btn-save">Ok</button>
@@ -154,15 +121,13 @@
 @if (@Model.InformationPush(@Model.ProjectPoco))
 {
     <div id="informationMessage">
-        <h1>Välkommen! Här kommer information om hur registreringen fungerar!</h1>
-        
-        <div class="informationText">
-            <p>Du kommer att få börja med att registrera två olika kategorier, det spelar ingen roll vilken kategori du väljer. När dessa två kategorier är besvarade kommer ytterligare två kategorier dyka upp. Det finns totalt sex olika kategorier som behöver besvaras för att kunna utvärdera din innovation.</p>
-            <p>Du registrerar nivåer i kategorierna genom att klicka på de påståenden som stämmer överens med var du befinner dig i din utveckling av innovation. Du kan alltid välja att avbryta och spara din registrering genom att klcika på knappen "Spara".</p>
-        </div>
         <div>
-            <p>När du är klar kommer en sammanställning av dina svar visas och en visuell representation av vilka nivåer du befinner dig på i din utveckling.</p>
+            <h1>Title</h1>
         </div>
+        <div class="informationText">
+            <p>Paragraph</p>
+        </div>
+        
         <div>
             <button onclick="informationRecieved()" class="btn-save">Ok</button>
         </div>

@@ -31,7 +31,7 @@
                     <ul class="navbar-nav flex-grow-1">
                         @if (User.Identity.IsAuthenticated)
                         {
-                            
+                            <div class="headcontainer">
                             <div class="ContainerDiv"> 
                                 <div class="HeadDiv"> 
                                     <li class="nav-item">
@@ -56,11 +56,14 @@
                                 </div>
                                 
                             }
+                            </div>
+                            
                                 <div class="LogOutDiv"> 
                                     <li class="nav-item">
                                         <a id="logoutBtn" class="headerLinks" asp-area="" asp-controller="Account" asp-action="Logout"><i class="fa-solid fa-arrow-right-to-bracket"><br>Logga Ut</i></a>
                                     </li>
                                 </div>
+                            
                         </div>
                             
                         }

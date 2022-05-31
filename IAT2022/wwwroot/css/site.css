@@ -57,9 +57,9 @@ body {
 
 
 
-.LogOutDiv {
+/*.LogOutDiv {
     margin-left: 65%;
-}
+}*/
 .HeadDiv{
     display:flex;
     flex-direction:row;
@@ -547,11 +547,14 @@ button:active {
 #pdfSuggestions{
     display:flex;
     flex-wrap:wrap;
-    justify-content:space-evenly;
+    justify-content:space-around;
 }
 #pdfSuggestions div{
     margin:1%;
- 
+    justify-content:center;
+}
+#pdfSuggestions div div{
+    width:200px;
 }
 .informationText{
     display:flex;
@@ -569,9 +572,9 @@ button:active {
 #tagSearchDiv {
     display: none;
 }
-#adminDiv{
+/*#adminDiv{
     margin-right:-10%;
-}
+}*/
 #AboutUsTextChanger{
    display:none;
 }
@@ -603,10 +606,13 @@ header{
         max-height: 600px;
     }
 }
+.headcontainer{
+    display:flex;
+    justify-content:space-around;
+    width:100%;
+}
 @media screen and (max-width: 1280px) {
-    #adminDiv{
-       margin-right:-30%;
-    }
+   
     .ContainerDiv div{
         margin-right:1%;
     }
@@ -635,9 +641,12 @@ header{
 }
 
 @media screen and (max-width: 575px){
-    .ContainerDiv{
+    .headcontainer{
         flex-direction:column;
-        justify-content:left;
+    }
+    .ContainerDiv {
+        flex-direction: column;
+        justify-content: left;
     }
     .ContainerDiv div{
         margin:0%;

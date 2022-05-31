@@ -42,7 +42,6 @@ namespace IAT2022.Controllers
            
                 _dbRepository.RegisterProject(projectPoco);
                 TempData["data"] = projectPoco.Id;//Skickar med tempdata mellan controllers
-                model = new(_dbRepository);    
                 model.ProjectPoco = projectPoco;
                 
                 return View("ChoosePath", model);

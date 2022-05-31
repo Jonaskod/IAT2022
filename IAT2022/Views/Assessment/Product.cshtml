@@ -25,7 +25,7 @@
 
                                      @for (var i = 0; i < 4; i++)
                                      {
-                                         @if (counter < Model.ProductQuestions.Count())
+                                         @if (counter < Model.ProductQuestions.Count)
                                          {
                                             <article class="feature">
                                             <input type="checkbox" id="feature" asp-for="Project.Product[counter].Result" name="checkboxProduct"/>

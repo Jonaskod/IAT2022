@@ -323,8 +323,18 @@ namespace IAT2022.Repositories
                 questionPoco = new();
                 questionPoco.QuestionDescription = "”proof-of-concept” av kritiska egenskaper genom experimentella studier";
                 _appDbContext.ProductQuestions.Add(questionPoco);
+                questionPoco = new()
+                {
+                    QuestionDescription = "Temp # 4"
+                };
+                _appDbContext.ProductQuestions.Add(questionPoco);
                 questionPoco = new();
                 questionPoco.QuestionDescription = "Tekniska komponenter har integrerats och fungera i laboratorium";
+                _appDbContext.ProductQuestions.Add(questionPoco);
+                questionPoco = new()
+                {
+                    QuestionDescription = "Temp # 5"
+                };
                 _appDbContext.ProductQuestions.Add(questionPoco);
                 questionPoco = new();
                 questionPoco.QuestionDescription = "Tekniska komponenter har integrerats och fungera i en simulerat miljö";

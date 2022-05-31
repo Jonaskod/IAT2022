@@ -228,12 +228,26 @@ namespace IAT2022.ViewModels
                     result.Add(false);
                 }
                 result.Add(poco.Product[3].Result);
-                result.Add(poco.Product[4].Result);
-                result.Add(poco.Product[5].Result);
-                result.Add(poco.Product[6].Result);
-                result.Add(poco.Product[7].Result);
+                if (poco.Product[4].Result || poco.Product[5].Result)
+                {
+                    result.Add(true);
+                }
+                else
+                {
+                    result.Add(false);
+                }
+                if (poco.Product[6].Result || poco.Product[7].Result)
+                {
+                    result.Add(true);
+                }
+                else
+                {
+                    result.Add(false);
+                }
                 result.Add(poco.Product[8].Result);
                 result.Add(poco.Product[9].Result);
+                result.Add(poco.Product[10].Result);
+                result.Add(poco.Product[11].Result);
             }
             return result;
         }

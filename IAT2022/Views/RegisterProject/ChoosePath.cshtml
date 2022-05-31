@@ -1,4 +1,5 @@
-﻿@using IAT2022.ViewModels
+﻿@using IAT2022.GlobalClasses
+@using IAT2022.ViewModels
 @model RegisterProjectViewModel
 <h1>Välj kategori du vill besvara</h1>
 
@@ -108,10 +109,10 @@
 </div>
  <div id="helpInformation" style="display:none">
         <div>
-            <h1>Title</h1>
+            <h1>@HowToRegisterInformation.Title</h1>
         </div>
         <div class="informationText">
-            <p>Paragraph</p>
+            <p>@HowToRegisterInformation.Paragraph</p>
         </div>
         <div>
             <button onclick="closeHelp()" class="btn-save">Ok</button>
@@ -122,10 +123,10 @@
 {
     <div id="informationMessage">
         <div>
-            <h1>Title</h1>
+            <h1>@HowToRegisterInformation.Title</h1>
         </div>
         <div class="informationText">
-            <p>Paragraph</p>
+            <p>@HowToRegisterInformation.Paragraph</p>
         </div>
         
         <div>

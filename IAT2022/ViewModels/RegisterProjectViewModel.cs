@@ -1,5 +1,6 @@
 ﻿using IAT2022.Data.Poco;
 using IAT2022.Data.Poco.InformationPoco;
+using IAT2022.GlobalClasses;
 using IAT2022.Repositories;
 using SendGrid.Helpers.Mail;
 using System.ComponentModel.DataAnnotations;
@@ -21,7 +22,6 @@ namespace IAT2022.ViewModels
         public List<ProjectTagsPoco> Tags { get; set; }
         public List<bool> TagsBool { get; set; }
         public ProjectPoco ProjectPoco { get; set; }
-        public HowToRegisterInformationPoco HowToRegister { get; set; }
         
         public bool Visited { get; set; }
         
@@ -29,17 +29,21 @@ namespace IAT2022.ViewModels
         {
             _dbRepository = dbRepository;
             _ = GetAll();
-            GetHowToRegisterInformation();
+            _ = SetHowToRegisterInformationGlobal();
         }
         public RegisterProjectViewModel()
         {
            
         }
-        public async Task<HowToRegisterInformationPoco> GetHowToRegisterInformation()
+        public async Task<string> SetHowToRegisterInformationGlobal()
         {
-            var aids = _dbRepository;
-            return HowToRegister;
+            var information = await _dbRepository.GetHowToRegisterInformation();
+            HowToRegisterInformation.Title = information.Title;
+            HowToRegisterInformation.Paragraph = information.Paragraph;
+            return "";
         }
+        
+
         public async Task<List<ProjectTagsPoco>> GetAll()
         {
             var list = await _dbRepository.GetTags();

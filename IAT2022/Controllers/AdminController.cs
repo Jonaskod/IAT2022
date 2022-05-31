@@ -1,6 +1,7 @@
 ﻿using IAT2022.Data.Poco.AboutUsInfoPoco;
 using IAT2022.Data.Poco.InformationPoco;
 using IAT2022.Data.Poco.QuestionsPoco;
+using IAT2022.GlobalClasses;
 using IAT2022.Repositories;
 using IAT2022.ViewModels;
 using Microsoft.AspNetCore.Authorization;
@@ -168,6 +169,8 @@ namespace IAT2022.Controllers
                     poco.Title = model.HowToRegister.Title;
                     poco.Paragraph = model.HowToRegister.Paragraph;
                     await _dbRepository.UpdateHowToRegisterInformation(poco);
+                    HowToRegisterInformation.Title = model.HowToRegister.Title;
+                    HowToRegisterInformation.Paragraph = model.HowToRegister.Paragraph;
                 }
             }
 

@@ -4,6 +4,7 @@ using IAT2022.Data.Poco.AboutUsInfoPoco;
 using IAT2022.Data.Poco.InformationPoco;
 using IAT2022.Data.Poco.QuestionsPoco;
 using IAT2022.Data.Poco.SubCategoryPoco;
+using IAT2022.GlobalClasses;
 using Microsoft.EntityFrameworkCore;
 
 namespace IAT2022.Repositories
@@ -612,6 +613,16 @@ namespace IAT2022.Repositories
         }
         #endregion
         #region Get Methods
+        public async Task<string> GetHowToRegisterInformationGlobal()
+        {
+            if(HowToRegisterInformation.Title ==null && HowToRegisterInformation.Paragraph == null)
+            {
+                var information = await GetHowToRegisterInformation();
+                HowToRegisterInformation.Title = information.Title;
+                HowToRegisterInformation.Paragraph = information.Paragraph;
+            }
+            return "";
+        }
         public async Task<AboutUsInfoPoco> GetAboutUsInformation()
         {
             var info = _appDbContext.AboutUsInformation.FirstOrDefault();

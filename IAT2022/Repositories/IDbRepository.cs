@@ -16,6 +16,7 @@ namespace IAT2022.Repositories
         Task<List<CustomerQuestionsPoco>> GetCustomerQuestions();
         Task<List<FinanceQuestionsPoco>> GetFinanceQuestions();
         Task<HowToRegisterInformationPoco> GetHowToRegisterInformation();
+        Task<string> GetHowToRegisterInformationGlobal();
         Task<List<IprQuestionsPoco>> GetIPRQuestions();
         Task<List<ProductQuestionsPoco>> GetProductQuestions();
         Task<ProjectPoco> GetSingleProject(string id);

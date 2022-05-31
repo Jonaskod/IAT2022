@@ -27,6 +27,7 @@ namespace IAT2022.Controllers
             _dbRepository.SeedTags();
             _dbRepository.SeedAboutUsInformation();
             _dbRepository.SeedHowToRegisterInformation();
+            _ = _dbRepository.GetHowToRegisterInformationGlobal();
             #endregion
         }
 

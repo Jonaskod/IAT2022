@@ -29,19 +29,12 @@ namespace IAT2022.ViewModels
         {
             _dbRepository = dbRepository;
             _ = GetAll();
-            _ = SetHowToRegisterInformationGlobal();
         }
         public RegisterProjectViewModel()
         {
            
         }
-        public async Task<string> SetHowToRegisterInformationGlobal()
-        {
-            var information = await _dbRepository.GetHowToRegisterInformation();
-            HowToRegisterInformation.Title = information.Title;
-            HowToRegisterInformation.Paragraph = information.Paragraph;
-            return "";
-        }
+        
         
 
         public async Task<List<ProjectTagsPoco>> GetAll()

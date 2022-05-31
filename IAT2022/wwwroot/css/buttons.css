@@ -315,3 +315,34 @@
     background-color:black;
     color:white;
 }
+.loginbtn {
+    display: flex;
+    flex-direction: column;
+}
+.loginbtn button{
+    margin-left:15%;
+    margin-bottom:-10%;
+}
+.loginbtn a{
+    margin-left:15%;
+}
+
+@media screen and (max-width: 1280px) {
+    .BtnChoosePath:link {
+        height: 90px;
+        padding: 1%;
+        margin-bottom:-1%;
+    }
+    .BtnVisitedPath:link {
+        height: 90px;
+        padding: 1%;
+        margin-bottom: -1%;
+    }
+}
+@media screen and (max-width: 575px){
+    .pdfDownloadBtn{
+        width:175px;
+        height:50px;
+        
+    }
+}

@@ -28,33 +28,18 @@ namespace IAT2022.Controllers
 
 
         }
-        //public async Task<IActionResult> CreateAdmin(IdentityUser user) för att skapa admin
-        //{
-            
+        public async Task<IActionResult> CreateAdmin(IdentityUser user)
+        {
+            var result = await _userManager.AddToRoleAsync(user, "Admin");
+            await _signInManager.SignInAsync(user, isPersistent: false);
 
-
-
-            
-            
-            
-        //        var result = await _userManager.AddToRoleAsync(user, "Admin");
-        //        await _signInManager.SignInAsync(user, isPersistent: false);
-
-        //    return View();
-        //}
-        //public void seedRoles(string input)
+            return View();
+        }
+        //public async void seedRoles(string input)
         //{
         //    var admin = new IdentityRole(input);
-
-
-        //    var roleExist =  _roleManager.RoleExistsAsync(admin.Name);
-        //    if (!roleExist.Result)
-        //    {
-        //        var result = _roleManager.CreateAsync(admin);
-        //    }
-
-
-
+        //    var roleExist = _roleManager.RoleExistsAsync(admin.Name);
+        //    var result = _roleManager.CreateAsync(admin);
         //}
         public IActionResult Login()
         {
@@ -74,6 +59,7 @@ namespace IAT2022.Controllers
                 }
                 ModelState.AddModelError(string.Empty, "Fel e-postadress eller lösenord");
             }
+
             return View(model);
         }
 
@@ -101,32 +87,22 @@ namespace IAT2022.Controllers
                 {
                     UserName = registerViewModel.Email,
                     Email = registerViewModel.Email,
-                    
-
                 };
-
                  // Got error if you tried to log in directly after you logged out.
-                var result = await _userManager.CreateAsync(user, registerViewModel.Password);
+                var result = await _userManager.CreateAsync(user, registerViewModel.Password);                
                 if (result.Succeeded) // Checks if login succeded.
                 {
-                    
-
                     var token = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                     var clink = Url.Action("ConfirmEmail", "Account", new { token, email = user.Email }, Request.Scheme).ToString();
-                   
-                   
-                    
                     EmailSender emailSender = new EmailSender(user.Email, clink, "Verifiera din Epost", _configuration);
                     return View("VerifyEmail");
-
                 }
                 foreach (var error in result.Errors) // Errors = do this.
                 {
                     ModelState.AddModelError("", error.Description);
                 }
                 ModelState.AddModelError("", "Skapande av kontot misslyckades");
-            }
-            
+            }            
             return View(registerViewModel); // Returns the view with a viewmodel.
         }
         public async Task<IActionResult> ConfirmEmail(string token, string email)

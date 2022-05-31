@@ -38,3 +38,13 @@
             box-shadow: inset 200px 0 0 0 black;
             color: white;
         }
+@media screen and (max-width: 1280px){
+        
+        #pdfSuggestions div {
+            width: 40%;
+        }
+        #pdfSuggestions div div{
+            width:100%;
+        }
+    
+}

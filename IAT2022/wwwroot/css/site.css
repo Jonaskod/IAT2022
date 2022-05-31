@@ -578,13 +578,18 @@ button:active {
 #HowToRegisterInformationChanger{
     display:none;
 }
+header{
+    width:100%;
+}
 
 @media screen and (max-width: 1352px) {
     .slideshow-container {
         max-width: 500px;
         padding: 0 0 0 50px;
     }
-
+    header{
+        width:100%;
+    }
     .next {
         width: 400px;
     }
@@ -598,6 +603,50 @@ button:active {
         max-height: 600px;
     }
 }
+@media screen and (max-width: 1280px) {
+    #adminDiv{
+       margin-right:-30%;
+    }
+    .ContainerDiv div{
+        margin-right:1%;
+    }
+    header{
+        width:100%;
+    }
+    .feature{
+        max-width:200px;
+        max-height:150px;
+        font-size:100%;
+    }
+    .slideshow-container {
+        min-width:50%;
+        height:350px;
+        margin-bottom:-5%;
+    }
+    #pageCounter{
+        margin-top:-3%;
+    }
+    .feature input {
+        max-width: 200px;
+        max-height: 150px;
+    }
+    
+
+}
+
+@media screen and (max-width: 575px){
+    .ContainerDiv{
+        flex-direction:column;
+        justify-content:left;
+    }
+    .ContainerDiv div{
+        margin:0%;
+    }
+    .HeadDiv{
+        flex-direction:column;
+    }
+}
+
 
 @media screen and (max-width: 489px) {
     .slideshow-container {

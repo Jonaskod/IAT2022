@@ -135,6 +135,9 @@ namespace IAT2022.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<int?>("Level")
+                        .HasColumnType("int");
+
                     b.Property<string>("QuestionDescription")
                         .HasColumnType("longtext");
 
@@ -147,6 +150,9 @@ namespace IAT2022.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Level")
                         .HasColumnType("int");
 
                     b.Property<string>("QuestionDescription")
@@ -163,6 +169,9 @@ namespace IAT2022.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<int?>("Level")
+                        .HasColumnType("int");
+
                     b.Property<string>("QuestionDescription")
                         .HasColumnType("longtext");
 
@@ -175,6 +184,9 @@ namespace IAT2022.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Level")
                         .HasColumnType("int");
 
                     b.Property<string>("QuestionDescription")
@@ -191,6 +203,9 @@ namespace IAT2022.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<int?>("Level")
+                        .HasColumnType("int");
+
                     b.Property<string>("QuestionDescription")
                         .HasColumnType("longtext");
 
@@ -203,6 +218,9 @@ namespace IAT2022.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Level")
                         .HasColumnType("int");
 
                     b.Property<string>("QuestionDescription")

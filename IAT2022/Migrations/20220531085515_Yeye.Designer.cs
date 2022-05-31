@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace IAT2022.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220530162727_a")]
-    partial class a
+    [Migration("20220531085515_Yeye")]
+    partial class Yeye
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -137,6 +137,9 @@ namespace IAT2022.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<int?>("Level")
+                        .HasColumnType("int");
+
                     b.Property<string>("QuestionDescription")
                         .HasColumnType("longtext");
 
@@ -149,6 +152,9 @@ namespace IAT2022.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Level")
                         .HasColumnType("int");
 
                     b.Property<string>("QuestionDescription")
@@ -165,6 +171,9 @@ namespace IAT2022.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<int?>("Level")
+                        .HasColumnType("int");
+
                     b.Property<string>("QuestionDescription")
                         .HasColumnType("longtext");
 
@@ -177,6 +186,9 @@ namespace IAT2022.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Level")
                         .HasColumnType("int");
 
                     b.Property<string>("QuestionDescription")
@@ -193,6 +205,9 @@ namespace IAT2022.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
+                    b.Property<int?>("Level")
+                        .HasColumnType("int");
+
                     b.Property<string>("QuestionDescription")
                         .HasColumnType("longtext");
 
@@ -205,6 +220,9 @@ namespace IAT2022.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    b.Property<int?>("Level")
                         .HasColumnType("int");
 
                     b.Property<string>("QuestionDescription")

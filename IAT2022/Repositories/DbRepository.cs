@@ -240,40 +240,52 @@ namespace IAT2022.Repositories
             {
                 CustomerQuestionsPoco customerQuestionsPoco = new ();
                 customerQuestionsPoco.QuestionDescription = "Du har identifierad ett behov eller problem.";
+                customerQuestionsPoco.Level = 1;
                 _appDbContext.CustomerQuestions.Add(customerQuestionsPoco);
                 customerQuestionsPoco = new();
                 customerQuestionsPoco.QuestionDescription = "Du har undersökt vilka som har behovet.";
+                customerQuestionsPoco.Level = 2;
                 _appDbContext.CustomerQuestions.Add (customerQuestionsPoco);
                 customerQuestionsPoco=new();
                 customerQuestionsPoco.QuestionDescription = "Du har haft direkt kontakt med några behovsägare och ämnesexperter.";
+                customerQuestionsPoco.Level = 3;
                 _appDbContext.CustomerQuestions.Add(customerQuestionsPoco);
                 customerQuestionsPoco = new();
                 customerQuestionsPoco.QuestionDescription = "Flera berörda personer har bekräftad behovet och vikten av att hitta en lösning.";
+                customerQuestionsPoco.Level = 4;
                 _appDbContext.CustomerQuestions.Add(customerQuestionsPoco);
                 customerQuestionsPoco = new();
                 customerQuestionsPoco.QuestionDescription = "Du har etablerade relationer med några användare som visa intresse för din lösning.";
+                customerQuestionsPoco.Level = 5;
                 _appDbContext.CustomerQuestions.Add(customerQuestionsPoco);
                 customerQuestionsPoco = new();
                 customerQuestionsPoco.QuestionDescription = "Du har en potential målkund som specificera vilka krav din lösning behöver uppfyller.";
+                customerQuestionsPoco.Level = 5;
                 _appDbContext.CustomerQuestions.Add(customerQuestionsPoco);
                 customerQuestionsPoco = new();
                 customerQuestionsPoco.QuestionDescription = "Nyttan och fördelar av din lösning har verifierads genom första kundtester.";
+                customerQuestionsPoco.Level = 6;
                 _appDbContext.CustomerQuestions.Add(customerQuestionsPoco);
                 customerQuestionsPoco = new();
                 customerQuestionsPoco.QuestionDescription = "Du har ett partnerskap som bidra med resurser till utveckling av din lösning";
+                customerQuestionsPoco.Level = 6;
                 _appDbContext.CustomerQuestions.Add(customerQuestionsPoco);
                 customerQuestionsPoco = new();
                 customerQuestionsPoco.QuestionDescription = "Du har kundavtal och börjar med testförsäljning.initial product-market - fit";
+                customerQuestionsPoco.Level = 7;
                 _appDbContext.CustomerQuestions.Add(customerQuestionsPoco);
                 customerQuestionsPoco = new();
                 customerQuestionsPoco.QuestionDescription = "Pilotkunder och relevanter intressenter deltar i utökad produkttestning";
+                customerQuestionsPoco.Level = 7;
                 _appDbContext.CustomerQuestions.Add(customerQuestionsPoco);
                 customerQuestionsPoco = new();
                 customerQuestionsPoco.QuestionDescription = "Första produkterna säljs till några kunder.validerad product-market - fit";
+                customerQuestionsPoco.Level = 8;
                 _appDbContext.CustomerQuestions.Add(customerQuestionsPoco);
 
                 customerQuestionsPoco = new();
                 customerQuestionsPoco.QuestionDescription = "Utbred försäjlning som kan skalas";
+                customerQuestionsPoco.Level = 9;
                 _appDbContext.CustomerQuestions.Add(customerQuestionsPoco);
                 _appDbContext.SaveChanges();
 
@@ -313,43 +325,55 @@ namespace IAT2022.Repositories
                 ProductQuestionsPoco questionPoco = new();
 
                 questionPoco.QuestionDescription = "Tekniken eller methoden bygger på forskningsresultat";
+                questionPoco.Level = 1;
                 _appDbContext.ProductQuestions.Add(questionPoco);
                 questionPoco = new();
                 questionPoco.QuestionDescription = "Ett produktkoncept har definerats ";
+                questionPoco.Level = 2;
                 _appDbContext.ProductQuestions.Add(questionPoco);
                 questionPoco = new();
                 questionPoco.QuestionDescription = "Praktiska applikationer kan defineras";
+                questionPoco.Level = 2;
                 _appDbContext.ProductQuestions.Add(questionPoco);
                 questionPoco = new();
                 questionPoco.QuestionDescription = "”proof-of-concept” av kritiska egenskaper genom experimentella studier";
+                questionPoco.Level = 3;
                 _appDbContext.ProductQuestions.Add(questionPoco);
                 questionPoco = new()
                 {
                     QuestionDescription = "Temp # 4"
                 };
+                questionPoco.Level = 4;
                 _appDbContext.ProductQuestions.Add(questionPoco);
                 questionPoco = new();
                 questionPoco.QuestionDescription = "Tekniska komponenter har integrerats och fungera i laboratorium";
+                questionPoco.Level = 4;
                 _appDbContext.ProductQuestions.Add(questionPoco);
                 questionPoco = new()
                 {
                     QuestionDescription = "Temp # 5"
                 };
+                questionPoco.Level = 5;
                 _appDbContext.ProductQuestions.Add(questionPoco);
                 questionPoco = new();
-                questionPoco.QuestionDescription = "Tekniska komponenter har integrerats och fungera i en simulerat miljö";
+                questionPoco.QuestionDescription = "Tekniska komponenter har integrerats och fungera i en simulerad miljö";
+                questionPoco.Level = 5;
                 _appDbContext.ProductQuestions.Add(questionPoco);
                 questionPoco = new();
                 questionPoco.QuestionDescription = "Realistisk prototyp testad i relevant miljö";
+                questionPoco.Level = 6;
                 _appDbContext.ProductQuestions.Add(questionPoco);
                 questionPoco = new();
                 questionPoco.QuestionDescription = "Demonstration av systemprototyp i driftsmiljö ";
+                questionPoco.Level = 7;
                 _appDbContext.ProductQuestions.Add(questionPoco);
                 questionPoco = new();
                 questionPoco.QuestionDescription = "Tekniklösningen är kvalitetssäkrad genom test och demonstration";
+                questionPoco.Level = 8;
                 _appDbContext.ProductQuestions.Add(questionPoco);
                 questionPoco = new();
                 questionPoco.QuestionDescription = "Tekniken tillämpas i dess slutliga form i driftsförhållanden";
+                questionPoco.Level = 9;
                 _appDbContext.ProductQuestions.Add(questionPoco);
                 _appDbContext.SaveChanges();
 
@@ -362,51 +386,63 @@ namespace IAT2022.Repositories
             {
                 BusinessQuestionsPoco questionsPoco = new();
                 questionsPoco.QuestionDescription = "Hypotes kring affärsmodell och möjliga applikationer";
+                questionsPoco.Level = 1;
                 _appDbContext.BuisnessQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "Marknaden kan beskrivas på övergripande nivå";
+                questionsPoco.Level = 2;
                 _appDbContext.BuisnessQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "Utkast till affärsmodellen i from av en canvas";
+                questionsPoco.Level = 3;
                 _appDbContext.BuisnessQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "Marknadspotential och –storlek har kvantiferats";
+                questionsPoco.Level = 3;
 
                 _appDbContext.BuisnessQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "Fullständig affärtsmodel med specifikation av intäkter och kostnader";
+                questionsPoco.Level = 4;
                 _appDbContext.BuisnessQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "Bedömd inträdeshinder och  konkurrensanalys utifrån differentiering";
+                questionsPoco.Level = 4;
                 _appDbContext.BuisnessQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "Affärsmodellen har testats mot kunder för att verifiera hypoteser";
+                questionsPoco.Level = 5;
                 _appDbContext.BuisnessQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "Detailjerad intäktsmodell med prissättningshypotheser och  tydliga intäktskällor";
+                questionsPoco.Level = 5;
                 _appDbContext.BuisnessQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "Komplett affärsmodel verifierad genom testförsäljning";
+                questionsPoco.Level = 6;
                 _appDbContext.BuisnessQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "Produkt-market-fit bevisat. Flera kunder visa tydlig betalningsvilja.";
+                questionsPoco.Level = 7;
                 _appDbContext.BuisnessQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "Försäljningen visar att affärsmnodellen är hållbart, lönsam och skalbart.";
+                questionsPoco.Level = 8;
                 _appDbContext.BuisnessQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "Verksamheten skalas upp med ökande och återkommande intäkter";
+                questionsPoco.Level = 9;
                 _appDbContext.BuisnessQuestions.Add(questionsPoco);
                 _appDbContext.SaveChanges();
 
@@ -418,50 +454,62 @@ namespace IAT2022.Repositories
             {
                 IprQuestionsPoco questionsPoco = new();
                 questionsPoco.QuestionDescription = "Hypothes om eventuella immateriella tillgånger finns";
+                questionsPoco.Level = 1;
                 _appDbContext.IPRQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "Befintliga immateriella tillgångar har kartlagts";
+                questionsPoco.Level = 2;
                 _appDbContext.IPRQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "Detailjerad beskrivning av viktiga immateriella tillgångar";
+                questionsPoco.Level = 3;
                 _appDbContext.IPRQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "Inledande analys genom sökningar i databaser för patent och upphovsrätt";
+                questionsPoco.Level = 3;
                 _appDbContext.IPRQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "Bekräftat om skydd är möjligt och för vad";
+                questionsPoco.Level = 4;
                 _appDbContext.IPRQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "Beslut finns om vilka tillgångar som ska skyddas och varför (affärsrelevans).";
+                questionsPoco.Level = 4;
                 _appDbContext.IPRQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "Utkast till IPR strategi för att använda tillgångar affärsstrategiskt finns.";
+                questionsPoco.Level = 5;
                 _appDbContext.IPRQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "Första fullständiga patenansökan eller andra IP-registreringer inskickade.";
+                questionsPoco.Level = 5;
                 _appDbContext.IPRQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "Positivt svar på inlämnad ansökan. IPR-stratgi implementerad. ";
+                questionsPoco.Level = 6;
                 _appDbContext.IPRQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "Ansökningar för alla relevanta IPR har lämnats in";
+                questionsPoco.Level = 7;
                 _appDbContext.IPRQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "IPR används proaktivt för att stödja verksamhet. ";
+                questionsPoco.Level = 8;
                 _appDbContext.IPRQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "Starkt immaterialrättsligt stöd och skydd. Eventuella patent beviljat och aktiv.";
+                questionsPoco.Level = 9;
                 _appDbContext.IPRQuestions.Add(questionsPoco);
                 _appDbContext.SaveChanges();
             }
@@ -473,50 +521,62 @@ namespace IAT2022.Repositories
             {
                 TeamQuestionsPoco questionsPoco = new();
                 questionsPoco.QuestionDescription = "En individ kopplad till idén.";
+                questionsPoco.Level = 1;
                 _appDbContext.TeamQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "Hypothes finns om vilka kompetenser eller resurser som kan behövas.";
+                questionsPoco.Level = 2;
                 _appDbContext.TeamQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "Befintliga och nödvändiga kompetenser är definerade";
+                questionsPoco.Level = 3;
                 _appDbContext.TeamQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "En engagerad projektledare och flera viktiga kompetenser finns på plats. ";
+                questionsPoco.Level = 4;
                 _appDbContext.TeamQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "Rekrytering av personer med definerade kompetenser enligt en kravprofil.";
+                questionsPoco.Level = 4;
                 _appDbContext.TeamQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "Grundteam med nödvändiga kompetenser finns . Alla lägger ner betydande tid.";
+                questionsPoco.Level = 5;
                 _appDbContext.TeamQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "Teamet är anpassad til tydliga roller, gemensama mål, och tydig engagemang.";
+                questionsPoco.Level = 5;
                 _appDbContext.TeamQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "Kompletterande, mångsidigt och engagerad team med alla nödvändiga resurser.";
+                questionsPoco.Level = 6;
                 _appDbContext.TeamQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "Kultur och värderingar formas och används för att stödja teamutvecklingen";
+                questionsPoco.Level = 7;
                 _appDbContext.TeamQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "Det finns en kompetent styrelse som används professionellt";
+                questionsPoco.Level = 8;
                 _appDbContext.TeamQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = " Ledning och VD på plats. Professionell användning av externt stöd.";
+                questionsPoco.Level = 8;
                 _appDbContext.TeamQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "Högpresterande och välstrukturerat team som levererar över tid.";
+                questionsPoco.Level = 9;
                 _appDbContext.TeamQuestions.Add(questionsPoco);
                 _appDbContext.SaveChanges();
 
@@ -530,50 +590,62 @@ namespace IAT2022.Repositories
             {
                 FinanceQuestionsPoco questionsPoco = new();
                 questionsPoco.QuestionDescription = "Initial affärsidé med otydlig beskrivning på finansieringsbehov";
+                questionsPoco.Level = 1;
                 _appDbContext.FinanceQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "Inte specificerad hur mycket finansiering behövs och för vad.";
+                questionsPoco.Level = 1;
                 _appDbContext.FinanceQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "Definerad finansieringsbehov och alternativ för första milstolparna";
+                questionsPoco.Level = 2;
                 _appDbContext.FinanceQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "En första, mjuk finansiering säkrad. ";
+                questionsPoco.Level = 3;
                 _appDbContext.FinanceQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "Affärsidé och inledande verifieringsplan finns";
+                questionsPoco.Level = 3;
                 _appDbContext.FinanceQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "Bra pitch och kort presentation av verksamheten på plats";
+                questionsPoco.Level = 4;
                 _appDbContext.FinanceQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "Investerarorienterad presentation och stödmaterial har testats";
+                questionsPoco.Level = 5;
                 _appDbContext.FinanceQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "Beslut om att söka privat riskkapital och inledande kontakter tagna";
+                questionsPoco.Level = 6;
                 _appDbContext.FinanceQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "Teamet kan presentera investeringen inklusive nyckerlområden ";
+                questionsPoco.Level = 7;
                 _appDbContext.FinanceQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "Diskussioner om villkor med interesserade inversterare pågår";
+                questionsPoco.Level = 8;
                 _appDbContext.FinanceQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "Företaget rimlig strukturerad i form av avtal, bokföring, dokumentation etc. ";
+                questionsPoco.Level = 8;
                 _appDbContext.FinanceQuestions.Add(questionsPoco);
 
                 questionsPoco = new();
                 questionsPoco.QuestionDescription = "Investeringen avslutat med erhållna pengar och relevant dokumentation";
+                questionsPoco.Level = 9;
                 _appDbContext.FinanceQuestions.Add(questionsPoco);
                 _appDbContext.SaveChanges();
 

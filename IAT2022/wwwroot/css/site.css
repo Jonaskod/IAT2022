@@ -648,7 +648,36 @@ header{
     
 
 }
+@media screen and (max-width: 712px) {
+    .container-fluid {
+        width: 100%;
+    }
 
+    .tagsForProject {
+        margin-right: 10px;
+    }
+
+    .projectLinks {
+        height: 200px;
+        width: 705px;
+        margin-left: -18%;
+    }
+
+    .projectButtons {
+        margin-right: -15%;
+    }
+
+    .TagContainer {
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        margin-left: -3%;
+    }
+    .PathChooser{
+        width:700px;
+        margin-left:-15%;
+    }
+}
 @media screen and (max-width: 575px){
     .headcontainer{
         flex-direction:column;
@@ -663,6 +692,28 @@ header{
     .HeadDiv{
         flex-direction:column;
     }
+    .projectLinks {
+        height: 200px;
+        width: 100%;
+        margin-left:0%;
+    }
+    .tagsForProject {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-top:-1%;
+    }
+    .projectButtons{
+        margin-right:0%;
+    }
+    .AssementDiv{
+
+    }
+    .prev{
+        width:33%;
+        font-size:25%;
+    }
+    
 }
 
 

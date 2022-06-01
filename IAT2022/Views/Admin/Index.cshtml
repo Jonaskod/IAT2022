@@ -1,147 +1,150 @@
 ﻿@using IAT2022.ViewModels
 @model AdminViewModel
 <h1>Konfiguration</h1>
-<div class="searchTypeDiv">
-    <input type="checkbox" name="check1" id="checkBoxName" onclick="displaySearch()" /> 
-    <label for="check1">Sök på projektnamn</label>
-    <input type="checkbox" name="check2" id="checkBoxTag" onclick="displaySearch()" />
-    <label for="check2">Sök på taggar</label>
-</div>
-<form>
-    <div id="searchNameDiv" class="searchDiv">
-        <input id="search" placeholder="Sök på projektnamn" name="search" type="text"/>
-        <input asp-controller="Admin" asp-action="SearchProjects" type="submit" value="Sök"/>
+<div class="adminContainer">
+    <div class="searchTypeDiv">
+        <input type="checkbox" name="check1" id="checkBoxName" onclick="displaySearch()" /> 
+        <label for="check1">Sök på projektnamn</label>
+        <input type="checkbox" name="check2" id="checkBoxTag" onclick="displaySearch()" />
+        <label for="check2">Sök på taggar</label>
     </div>
-</form>
-<form>
-    <div id="tagSearchDiv" class="TagContainer">
-            @for (var i = 0; i < Model.Tags.Count(); i++)
-            {
-                <article class="tagstyle">
-                <input class="tagstyle" asp-for="TagsBool[i]" type="checkbox" id="tag"/>
-                <div class="tagstyle">
-                    <span>
-                    @Model.Tags[i].Description
-                    </span>
-                </div>
-                </article>
-            }
-            <input asp-controller="Admin" asp-action="SearchTags" type="submit" value="sök" />
+    <form>
+        <div id="searchNameDiv" class="searchDiv">
+            <input id="search" placeholder="Sök på projektnamn" name="search" type="text"/>
+            <input asp-controller="Admin" asp-action="SearchProjects" type="submit" value="Sök"/>
         </div>
+    </form>
+    <form>
+        <div id="tagSearchDiv" class="TagContainer">
+                @for (var i = 0; i < Model.Tags.Count(); i++)
+                {
+                    <article class="tagstyle">
+                    <input class="tagstyle" asp-for="TagsBool[i]" type="checkbox" id="tag"/>
+                    <div class="tagstyle">
+                        <span>
+                        @Model.Tags[i].Description
+                        </span>
+                    </div>
+                    </article>
+                }
+                <input asp-controller="Admin" asp-action="SearchTags" type="submit" value="sök" />
+            </div>
 
-</form>
-<div class="dropdown">
-  <button class="dropbtn">Välj vilken kategori du vill uppdatera</button>
+    </form>
+    <div> <button onclick="closeAllCategories()"><i class="fa-solid fa-rectangle-xmark">Rensa</i></button></div>
+    <div class="dropdown">
+      <button class="dropbtn">Välj vilken kategori du vill uppdatera</button>
  
-  <div class="dropdown-content">
-    <a onclick="showCustomer()">Behov</a>
-    <a onclick="showProduct()">Lösning</a>
-    <a onclick="showIPR()">IPR</a>
-    <a onclick="showTeam()">Team</a>
-    <a onclick="showBusiness()">Marknad</a>
-    <a onclick="showFinance()">Finansiering</a>
-    <a onclick="showAboutUsInfo()">Om Sidan</a>
-    <a onclick="showHowToRegisterInformation()">Hur man registrerar info</a>
-  </div>
-</div>
-<div> <button onclick="closeAllCategories()"><i class="fa-solid fa-rectangle-xmark">Rensa</i></button></div>
-<div class="adminContent">
-    <div id="CustomerQuestionChanger">
-        @if (Model.CustomerQuestions!=null)
-        {
-            @foreach(var q in Model.CustomerQuestions)
-            {
-                <a asp-action="SelectCustomerQuestion" asp-controller="Admin" asp-route-id="@q.Id"><div class="singleQuestion">
-                    <p>@q.Id.ToString()</p>
-                    <p>@q.QuestionDescription</p>
-                    <p>Nivå @q.Level</p>
-                </div></a>
-            }
-        }
+      <div class="dropdown-content">
+        <a onclick="showCustomer()">Behov</a>
+        <a onclick="showProduct()">Lösning</a>
+        <a onclick="showIPR()">IPR</a>
+        <a onclick="showTeam()">Team</a>
+        <a onclick="showBusiness()">Marknad</a>
+        <a onclick="showFinance()">Finansiering</a>
+        <a onclick="showAboutUsInfo()">Om Sidan</a>
+        <a onclick="showHowToRegisterInformation()">Hur man registrerar info</a>
+      </div>
+    </div>
     
-    </div>
-    <div id="ProductQuestionChanger">
-        @if (Model.ProductQuestions!=null)
-        {
-            @foreach(var q in Model.ProductQuestions)
+    <div class="adminContent">
+        <div id="CustomerQuestionChanger">
+            @if (Model.CustomerQuestions!=null)
             {
-                <a asp-action="SelectProductQuestion" asp-controller="Admin" asp-route-id="@q.Id"><div class="singleQuestion">
-                    <p>@q.Id.ToString()</p>
-                    <p>@q.QuestionDescription</p>
-                    <p>Nivå @q.Level</p>
-                </div></a>
+                @foreach(var q in Model.CustomerQuestions)
+                {
+                    <a asp-action="SelectCustomerQuestion" asp-controller="Admin" asp-route-id="@q.Id"><div class="singleQuestion">
+                        <p>@q.Id.ToString()</p>
+                        <p>@q.QuestionDescription</p>
+                        <p>Nivå @q.Level</p>
+                    </div></a>
+                }
             }
-        }
     
-    </div>
-    <div id="IPRQuestionChanger">
-        @if (Model.IprQuestions!=null)
-        {
-            @foreach(var q in Model.IprQuestions)
+        </div>
+        <div id="ProductQuestionChanger">
+            @if (Model.ProductQuestions!=null)
             {
-                <a asp-action="SelectIprQuestion" asp-controller="Admin" asp-route-id="@q.Id"><div class="singleQuestion">
-                    <p>@q.Id.ToString()</p>
-                    <p>@q.QuestionDescription</p>
-                    <p>Nivå @q.Level</p>
-                </div></a>
+                @foreach(var q in Model.ProductQuestions)
+                {
+                    <a asp-action="SelectProductQuestion" asp-controller="Admin" asp-route-id="@q.Id"><div class="singleQuestion">
+                        <p>@q.Id.ToString()</p>
+                        <p>@q.QuestionDescription</p>
+                        <p>Nivå @q.Level</p>
+                    </div></a>
+                }
             }
-        }
     
-    </div>
-    <div id="TeamQuestionChanger">
-        @if (Model.TeamQuestions!=null)
-        {
-            @foreach(var q in Model.TeamQuestions)
+        </div>
+        <div id="IPRQuestionChanger">
+            @if (Model.IprQuestions!=null)
             {
-                <a asp-action="SelectTeamQuestion" asp-controller="Admin" asp-route-id="@q.Id"><div class="singleQuestion">
-                    <p>@q.Id.ToString()</p>
-                    <p>@q.QuestionDescription</p>
-                    <p>Nivå @q.Level</p>
-                </div></a>
+                @foreach(var q in Model.IprQuestions)
+                {
+                    <a asp-action="SelectIprQuestion" asp-controller="Admin" asp-route-id="@q.Id"><div class="singleQuestion">
+                        <p>@q.Id.ToString()</p>
+                        <p>@q.QuestionDescription</p>
+                        <p>Nivå @q.Level</p>
+                    </div></a>
+                }
             }
-        }
     
-    </div>
-    <div id="BusinessQuestionChanger">
-        @if (Model.BusinessQuestions!=null)
-        {
-            @foreach(var q in Model.BusinessQuestions)
+        </div>
+        <div id="TeamQuestionChanger">
+            @if (Model.TeamQuestions!=null)
             {
-                <a asp-action="SelectBusinessQuestion" asp-controller="Admin" asp-route-id="@q.Id"><div class="singleQuestion">
-                    <p>@q.Id.ToString()</p>
-                    <p>@q.QuestionDescription</p>
-                    <p>Nivå @q.Level</p>
-                </div></a>
+                @foreach(var q in Model.TeamQuestions)
+                {
+                    <a asp-action="SelectTeamQuestion" asp-controller="Admin" asp-route-id="@q.Id"><div class="singleQuestion">
+                        <p>@q.Id.ToString()</p>
+                        <p>@q.QuestionDescription</p>
+                        <p>Nivå @q.Level</p>
+                    </div></a>
+                }
             }
-        }
     
-    </div>
-    <div id="FinanceQuestionChanger">
-        @if (Model.FinanceQuestions!=null)
-        {
-            @foreach(var q in Model.FinanceQuestions)
+        </div>
+        <div id="BusinessQuestionChanger">
+            @if (Model.BusinessQuestions!=null)
             {
-                <a asp-action="SelectFinanceQuestion" asp-controller="Admin" asp-route-id="@q.Id"><div class="singleQuestion">
-                    <p>@q.Id.ToString()</p>
-                    <p>@q.QuestionDescription</p>
-                    <p>Nivå @q.Level</p>
-                </div></a>
+                @foreach(var q in Model.BusinessQuestions)
+                {
+                    <a asp-action="SelectBusinessQuestion" asp-controller="Admin" asp-route-id="@q.Id"><div class="singleQuestion">
+                        <p>@q.Id.ToString()</p>
+                        <p>@q.QuestionDescription</p>
+                        <p>Nivå @q.Level</p>
+                    </div></a>
+                }
             }
-        }
     
-    </div>
-    <div id="AboutUsTextChanger" class="singleQuestion">
-        <a asp-controller="Admin" asp-action="SelectAboutUsInfo" asp-route-id="@Model.AboutUsInfo.Id">
-            <p>@Model.AboutUsInfo.Id.ToString()</p>
-            <p>@Model.AboutUsInfo.Title</p>
-            <p>@Model.AboutUsInfo.Paragraph</p>
-        </a>
-    </div>
-    <div id="HowToRegisterInformationChanger" class="singleQuestion">
-        <a asp-controller="Admin" asp-action="SelectHowToRegisterInformation" asp-route-id="@Model.HowToRegister.Id">
-            <p>@Model.HowToRegister.Id.ToString()</p>
-            <p>@Model.HowToRegister.Title</p>
-            <p>@Model.HowToRegister.Paragraph</p>
-        </a>
+        </div>
+        <div id="FinanceQuestionChanger">
+            @if (Model.FinanceQuestions!=null)
+            {
+                @foreach(var q in Model.FinanceQuestions)
+                {
+                    <a asp-action="SelectFinanceQuestion" asp-controller="Admin" asp-route-id="@q.Id"><div class="singleQuestion">
+                        <p>@q.Id.ToString()</p>
+                        <p>@q.QuestionDescription</p>
+                        <p>Nivå @q.Level</p>
+                    </div></a>
+                }
+            }
+    
+        </div>
+        <div id="AboutUsTextChanger" class="singleQuestion">
+            <a asp-controller="Admin" asp-action="SelectAboutUsInfo" asp-route-id="@Model.AboutUsInfo.Id">
+                <p>@Model.AboutUsInfo.Id.ToString()</p>
+                <p>@Model.AboutUsInfo.Title</p>
+                <p>@Model.AboutUsInfo.Paragraph</p>
+            </a>
+        </div>
+        <div id="HowToRegisterInformationChanger" class="singleQuestion">
+            <a asp-controller="Admin" asp-action="SelectHowToRegisterInformation" asp-route-id="@Model.HowToRegister.Id">
+                <p>@Model.HowToRegister.Id.ToString()</p>
+                <p>@Model.HowToRegister.Title</p>
+                <p>@Model.HowToRegister.Paragraph</p>
+            </a>
+        </div>
     </div>
 </div>

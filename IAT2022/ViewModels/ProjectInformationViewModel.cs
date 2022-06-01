@@ -68,7 +68,7 @@ namespace IAT2022.ViewModels
             int nextStep = highestLevel + 1;
             if (nextStep >= project.Customer.Count)
             {
-                nextStep = project.Customer.Count - 1;
+                return "Du har uppnått högsta nivån för kategorin";
             }
             return CustomerQuestions[nextStep].QuestionDescription;
             
@@ -86,9 +86,9 @@ namespace IAT2022.ViewModels
 
             }
             int nextStep = highestLevel + 1;
-            if(nextStep > project.Product.Count)
+            if(nextStep >= project.Product.Count)
             {
-                nextStep = project.Product.Count -1;
+                return "Du har uppnått högsta nivån för kategorin";
             }
             return ProductQuestions[nextStep].QuestionDescription;
 
@@ -106,9 +106,9 @@ namespace IAT2022.ViewModels
 
             }
             int nextStep = highestLevel + 1;
-            if (nextStep > project.IPR.Count)
+            if (nextStep >= project.IPR.Count)
             {
-                nextStep = project.IPR.Count -1 ;
+                return "Du har uppnått högsta nivån för kategorin";
             }
             return IPRQuestions[nextStep].QuestionDescription;
 
@@ -126,9 +126,9 @@ namespace IAT2022.ViewModels
 
             }
             int nextStep = highestLevel + 1;
-            if (nextStep > project.Business.Count)
+            if (nextStep >= project.Business.Count)
             {
-                nextStep = project.Business.Count-1;
+                return "Du har uppnått högsta nivån för kategorin";
             }
             return BusinessQuestions[nextStep].QuestionDescription;
 
@@ -146,9 +146,9 @@ namespace IAT2022.ViewModels
 
             }
             int nextStep = highestLevel + 1;
-            if (nextStep > project.Team.Count)
+            if (nextStep >= project.Team.Count)
             {
-                nextStep = project.Team.Count-1;
+                return "Du har uppnått högsta nivån för kategorin";
             }
             return TeamQuestions[nextStep].QuestionDescription;
 
@@ -166,9 +166,9 @@ namespace IAT2022.ViewModels
 
             }
             int nextStep = highestLevel + 1;
-            if (nextStep > project.Finance.Count)
+            if (nextStep >= project.Finance.Count)
             {
-                nextStep = project.Finance.Count-1;
+                return "Du har uppnått högsta nivån för kategorin";
             }
             return FinanceQuestions[nextStep].QuestionDescription;
 

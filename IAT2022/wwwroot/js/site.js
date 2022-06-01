@@ -340,7 +340,7 @@ function pdfDownload() {
         aTags[i].removeAttribute("href"); //Removes href from <a>
     }
     html2pdf(element);
-    /*location.reload();*/ //Reload to page to reset the removed href
+    setTimeout(() => { location.reload(); }, 3000);
 }
 
 

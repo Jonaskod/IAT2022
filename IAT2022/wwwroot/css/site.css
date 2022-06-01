@@ -744,8 +744,6 @@ header{
     .AssementDiv {
         width: 99%;
         margin-right: 0;
-        border-style: solid;
-        border-color: red;
         margin-left:0.5%;
     }
     footer{

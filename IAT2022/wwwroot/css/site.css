@@ -737,6 +737,30 @@ header{
     }
 }
 
+@media screen and (max-width: 390px){
+    .PathChooser{
+        width:100%;
+    }
+    .AssementDiv {
+        width: 99%;
+        margin-right: 0;
+        border-style: solid;
+        border-color: red;
+        margin-left:0.5%;
+    }
+    footer{
+        width:100%;
+    }
+    h3{
+        font-size:120%;
+    }
+    html{
+        width:100%;
+    }
+    header{
+        width:100%;
+    }
+}
 @media screen and (max-width: 365px) {
     .slideshow-container {
         max-width: 380px;

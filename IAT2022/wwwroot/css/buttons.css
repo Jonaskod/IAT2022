@@ -358,6 +358,15 @@
         text-align:center;
         padding:1%;
     }
+    #login-btn{
+        margin-bottom:10%;
+        margin-top:10%;
+        margin-left:25%;
+    }
+    #register-btn{
+        margin-left:25%;
+    }
+    
 }
 @media screen and (max-width:398px){
     .feature{

@@ -366,6 +366,10 @@
     #register-btn{
         margin-left:25%;
     }
+    #DescInput{
+        width:100%;
+        font-size:12px;
+    }
     
 }
 @media screen and (max-width:398px){

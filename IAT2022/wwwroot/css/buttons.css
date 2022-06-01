@@ -395,6 +395,10 @@
         width:125px;
         margin-right:2%;
     }
+    #register{
+        margin:10%;
+    }
+    
 }
 @media screen and (max-width:330px) {
     .feature {

@@ -20,8 +20,8 @@
              <div class="form-group">
                 <label asp-for="ConfirmPassword">Bekräfta lösenord</label>
                 <input asp-for="ConfirmPassword" class="form-control"/>
-                <button type="submit" class="btn-save">Registrera</button>
-                <button type="submit" class="btn-save" asp-area="" asp-controller="Account" asp-action="login" >Avbryt</button>
+                <button type="submit" id="register" class="btn-save">Registrera</button>
+                <button type="submit" id="cancelRegistration" class="btn-save" asp-area="" asp-controller="Account" asp-action="login" >Avbryt</button>
             </div>
        
         </form>

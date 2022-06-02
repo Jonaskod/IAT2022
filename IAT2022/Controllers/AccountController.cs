@@ -28,13 +28,13 @@ namespace IAT2022.Controllers
 
 
         }
-        public async Task<IActionResult> CreateAdmin(IdentityUser user)
-        {
-            var result = await _userManager.AddToRoleAsync(user, "Admin");
-            await _signInManager.SignInAsync(user, isPersistent: false);
+        //public async Task<IActionResult> CreateAdmin(IdentityUser user)
+        //{
+        //    var result = await _userManager.AddToRoleAsync(user, "Admin");
+        //    await _signInManager.SignInAsync(user, isPersistent: false);
 
-            return View();
-        }
+        //    return View();
+        //}
         //public async void seedRoles(string input)
         //{
         //    var admin = new IdentityRole(input);

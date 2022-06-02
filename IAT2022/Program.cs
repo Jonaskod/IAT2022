@@ -4,6 +4,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Pomelo.EntityFrameworkCore;
+using Microsoft.AspNetCore.Http;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -55,7 +56,18 @@ builder.Services.Configure<IdentityOptions>(options =>
     options.Password.RequiredLength = 5;
     options.Password.RequireNonAlphanumeric = false;
     options.SignIn.RequireConfirmedEmail = true;
+
 });
+
+    builder.Services.Configure<CookiePolicyOptions>(options =>
+    {
+        // This lambda determines whether user consent for non-essential 
+        // cookies is needed for a given request.
+        options.CheckConsentNeeded = context => true;
+        // requires using Microsoft.AspNetCore.Http;
+        options.MinimumSameSitePolicy = SameSiteMode.None;
+    });
+
 
 var app = builder.Build();
 // Configure the HTTP request pipeline.
@@ -68,6 +80,7 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseRouting();
+app.UseCookiePolicy();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllerRoute(

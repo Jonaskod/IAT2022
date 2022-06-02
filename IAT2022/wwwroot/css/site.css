@@ -715,6 +715,16 @@ header{
     }
     
 }
+.tableLable{
+    width:35%;
+    display:flex;
+    justify-content:space-evenly;
+    margin-bottom:-1%;
+    
+}
+.tableLable div h6{
+    font-size:150%;
+}
 
 
 @media screen and (max-width: 489px) {

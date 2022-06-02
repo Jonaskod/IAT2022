@@ -38,6 +38,12 @@
             box-shadow: inset 200px 0 0 0 black;
             color: white;
         }
+@media screen and (max-width: 1399px){
+    .tableLable{
+        width:40%;
+    }
+}
+
 @media screen and (max-width: 1280px){
         
         #pdfSuggestions div {
@@ -48,11 +54,34 @@
         }
     
 }
+@media screen and (max-width: 1199px) {
+    .tableLable{
+        width:48%;
+    }
+}
+@media screen and (max-width: 991px){
+    .tableLable{
+        width:65%;
+    }
+}
+@media screen and (max-width:767px){
+    .tableLable{
+        width:82%;
+    }
+}
 @media screen and (max-width: 712px) {
     .CategoryLink {
         width: 125px;
     }
     #assessmentPage {
         width: 100%;
+    }
+}
+@media screen and (max-width:350px) {
+    .tableLable {
+        width: 89%;
+    }
+    .tableLable div h6{
+        font-size:120%;
     }
 }
